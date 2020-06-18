@@ -250,7 +250,7 @@
   </entry>
   <entry>
     <title>VIM笔记</title>
-    <url>/2020/06/18/~IT/~Software/VIM%E7%AC%94%E8%AE%B0/</url>
+    <url>/2020/06/18/+IT/+Software/VIM%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="三种模式（记忆！）"><a href="#三种模式（记忆！）" class="headerlink" title="三种模式（记忆！）"></a>三种模式（记忆！）</h1><p><strong>三种常见的模式：</strong></p>
 <ul>
 <li><strong>Normal Mode</strong></li>
@@ -282,7 +282,7 @@
   </entry>
   <entry>
     <title>HTML笔记</title>
-    <url>/2020/06/18/~IT/~Coding/~HTML/HTML%E7%AC%94%E8%AE%B0/</url>
+    <url>/2020/06/18/+IT/+Coding/+HTML/HTML%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="标签查询"><a href="#标签查询" class="headerlink" title="标签查询"></a>标签查询</h1><h2 id="img"><a href="#img" class="headerlink" title="img"></a>img</h2><p><code>img</code> means image</p>
 <p>一般格式</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;Image&quot; width:100% height:100%&gt;</span><br></pre></td></tr></table></figure>
