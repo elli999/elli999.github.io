@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/05/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Hexo笔记</title>
     <url>/2020/05/15/Hexo%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="1-图片插入测试"><a href="#1-图片插入测试" class="headerlink" title="1. 图片插入测试"></a>1. 图片插入测试</h1><p><code>![20180501110502137](/_v_images/20200515005203539_20136.png)</code></p>
@@ -222,13 +204,21 @@
       </tags>
   </entry>
   <entry>
-    <title>我的第一篇博客文章</title>
-    <url>/2020/05/14/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.ek.com" target="_blank" rel="noopener">www.ek.com</a></p>
+    <title>Hello World</title>
+    <url>/2020/05/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -242,18 +232,84 @@
 <li>安装插件管理器</li>
 <li>安装插件与配置插件</li>
 </ol>
+<a id="more"></a>
+
 <h1 id="安装Vim"><a href="#安装Vim" class="headerlink" title="安装Vim"></a>安装Vim</h1><p>要使用</p>
 <h2 id="vimrc文件"><a href="#vimrc文件" class="headerlink" title="vimrc文件"></a>vimrc文件</h2><h2 id="vim-plug插件管理器"><a href="#vim-plug插件管理器" class="headerlink" title="vim-plug插件管理器"></a>vim-plug插件管理器</h2><h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://zhuanlan.zhihu.com/p/84773275" target="_blank" rel="noopener">无火老大哥：《高效做笔记:vim + markdown》</a></p>
 ]]></content>
       <categories>
         <category>笔记方法学</category>
-        <category>vim</category>
+        <category>VIM</category>
       </categories>
       <tags>
         <tag>笔记方法学</tag>
         <tag>笔记</tag>
         <tag>note</tag>
-        <tag>vim</tag>
+        <tag>VIM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VIM笔记</title>
+    <url>/2020/06/18/~IT/~Software/VIM%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="三种模式（记忆！）"><a href="#三种模式（记忆！）" class="headerlink" title="三种模式（记忆！）"></a>三种模式（记忆！）</h1><p><strong>三种常见的模式：</strong></p>
+<ul>
+<li><strong>Normal Mode</strong></li>
+<li><strong>Insert Mode</strong></li>
+<li><strong>Visual Mode</strong></li>
+</ul>
+<p>Normal mode和Insert Mode的切换有Append，Insert，Replace，Subsitute 记作AIRS，这种记忆方法特别方便，英文单词的意思是空气。</p>
+<p>vim在命令模式和输入模式的切换可以通过光标位置和形状的变化观察，以及部分编辑器下方的状态栏会显示。</p>
+<p><img src="VIM%E7%AC%94%E8%AE%B0/ThreeMode.png" alt="ThreeMode"></p>
+<a id="more"></a>
+
+<p><img src="hahaha.png" alt="Image">   </p>
+<p>测试：</p>
+<p><img src="pangeru.png" alt="Image"></p>
+<div align="center"><img src="pangeru.png" alt="Image" style="width:50px;height:50px;" /></div>
+
+<div align="center"><img src="pangeru.png" alt="Image" style="width:150px;height:150px;" /></div>
+<div align="center"><img src="pangeru.png" alt="Image" style="width:200%;height:200%;" /></div>
+
+
+<div align="center"><img src="pangeru.png" alt="Image" style="transform:scale(1)" /></div>
+
+<p><img src="ddd.png" alt="j"></p>
+<p><img src="VIM%E7%AC%94%E8%AE%B0/cat.png" alt="cat"></p>
+]]></content>
+      <tags>
+        <tag>VIM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML笔记</title>
+    <url>/2020/06/18/~IT/~Coding/~HTML/HTML%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="标签查询"><a href="#标签查询" class="headerlink" title="标签查询"></a>标签查询</h1><h2 id="img"><a href="#img" class="headerlink" title="img"></a>img</h2><p><code>img</code> means image</p>
+<p>一般格式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;Image&quot; width:100% height:100%&gt;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h3 id="改变图像大小"><a href="#改变图像大小" class="headerlink" title="改变图像大小"></a>改变图像大小</h3><p><strong>按像素</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">width:100px</span> <span class="attr">height:100px</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:50px;height:50px;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>按比例</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"zoom:70%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:80%;height:80%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pangeru.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"transform:scale(0.9)"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>第一行的方法好像不行？（待测试！）<br>第三行的0.9即90%的意思。</p>
+<hr>
+<h1 id="名词-属性-查询"><a href="#名词-属性-查询" class="headerlink" title="名词(属性?)查询"></a>名词(属性?)查询</h1><h2 id="alt"><a href="#alt" class="headerlink" title="alt"></a>alt</h2><p><code>alt</code> means alternate，“替代（文本）”</p>
+<p>当设置了alt属性的元素无法加载显示时，会在html页面留下一个对应大小的空间，里面显示着alt的内容。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;上海鲜花港 - 郁金香&quot;  &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<div align="center"><img src="test.png" alt="上海鲜花港 - 郁金香"  /></div>
+]]></content>
+      <categories>
+        <category>Coding</category>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
 </search>
