@@ -259,22 +259,13 @@
 </ul>
 <p>Normal mode和Insert Mode的切换有Append，Insert，Replace，Subsitute 记作AIRS，这种记忆方法特别方便，英文单词的意思是空气。</p>
 <p>vim在命令模式和输入模式的切换可以通过光标位置和形状的变化观察，以及部分编辑器下方的状态栏会显示。</p>
-<p><img src="VIM%E7%AC%94%E8%AE%B0/ThreeMode.png" alt="ThreeMode"></p>
+<p><img src="ThreeMode.png" alt="ThreeMode"></p>
 <a id="more"></a>
 
-<p><img src="hahaha.png" alt="Image">   </p>
-<p>测试：</p>
-<p><img src="pangeru.png" alt="Image"></p>
-<div align="center"><img src="pangeru.png" alt="Image" style="width:50px;height:50px;" /></div>
-
-<div align="center"><img src="pangeru.png" alt="Image" style="width:150px;height:150px;" /></div>
-<div align="center"><img src="pangeru.png" alt="Image" style="width:200%;height:200%;" /></div>
-
-
-<div align="center"><img src="pangeru.png" alt="Image" style="transform:scale(1)" /></div>
-
-<p><img src="ddd.png" alt="j"></p>
-<p><img src="VIM%E7%AC%94%E8%AE%B0/cat.png" alt="cat"></p>
+<p><img src="example01.png" alt="example01"></p>
+<hr>
+<h1 id="简单功能"><a href="#简单功能" class="headerlink" title="简单功能"></a>简单功能</h1><h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><p><strong>撤销上一个命令</strong><br>按键： u（小写）<br>模式： Normal</p>
+<p><strong>撤销最后编辑的一行的所有修改</strong><br>按键： U（大写）<br>模式： Normal</p>
 ]]></content>
       <tags>
         <tag>VIM</tag>
