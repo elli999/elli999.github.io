@@ -30,7 +30,7 @@
 <meta property="og:description" content="通过对键盘进行更改按键映射的操作，实现在windows和linux中，按A键输出B，或者屏蔽某个按键的功能。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-23T11:15:38.000Z">
-<meta property="article:modified_time" content="2020-06-23T14:46:15.690Z">
+<meta property="article:modified_time" content="2020-06-24T14:19:33.205Z">
 <meta property="article:author" content="EK阿墙">
 <meta property="article:tag" content="keyboard">
 <meta property="article:tag" content="键盘">
@@ -233,10 +233,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-23 19:15:38 / Modified: 22:46:15" itemprop="dateCreated datePublished" datetime="2020-06-23T19:15:38+08:00">2020-06-23</time>
+              <time title="Created: 2020-06-23 19:15:38" itemprop="dateCreated datePublished" datetime="2020-06-23T19:15:38+08:00">2020-06-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-24 22:19:33" itemprop="dateModified" datetime="2020-06-24T22:19:33+08:00">2020-06-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -268,20 +274,53 @@
 </blockquote>
 <a id="more"></a>
 
-<h1 id="方法种类"><a href="#方法种类" class="headerlink" title="方法种类"></a>方法种类</h1><h2 id="软件更改"><a href="#软件更改" class="headerlink" title="软件更改"></a>软件更改</h2><blockquote>
+
+
+
+
+<hr>
+<hr>
+<h1 id="方法种类"><a href="#方法种类" class="headerlink" title="方法种类"></a>方法种类</h1><ul>
+<li><h2 id="软件法"><a href="#软件法" class="headerlink" title="软件法"></a>软件法</h2></li>
+</ul>
+<blockquote>
 <p>网上搜索有很多，这里不列举，有条件的可以使用autohotkey自行编写（很简单的）</p>
 </blockquote>
 <p>缺点：软件要常驻后台，占用少量内存。</p>
 <p>优点：灵活方便，不用的时候可以关掉。</p>
-<h2 id="系统更改"><a href="#系统更改" class="headerlink" title="系统更改"></a>系统更改</h2><p>通过<code>更改注册表(windows)</code>或使用<code>系统命令(Linux)</code>实现，<mark><strong><em>本文主要讲解这种方法。</em></strong></mark></p>
+<ul>
+<li><h2 id="系统法"><a href="#系统法" class="headerlink" title="系统法"></a>系统法</h2></li>
+</ul>
+<p>通过<code>更改注册表(windows)</code>或使用<code>系统命令(Linux)</code>实现，<mark><strong><em>本文主要讲解这种方法。</em></strong></mark></p>
+<hr>
 <hr>
 <h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><p>适用系统：Windows XP、Windows 2000、Windows 10</p>
 <p>通过更改系统注册表中的<code>“Scancode Map”</code>值实现。</p>
+<ul>
+<li><h2 id="替换按键"><a href="#替换按键" class="headerlink" title="替换按键"></a>替换按键</h2></li>
+</ul>
+<p>在桌面新建一个txt文件</p>
+<p>复制以下内容并粘贴在其中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br><span class="line">&quot;Scancode Map&quot;&#x3D;hex:00,00,00,00,00,00,00,00,02,00,00,00,5c,e0,38,e0,00,00,00,00</span><br></pre></td></tr></table></figure>
+
+<p>第一行：是写入注册表的标准开头，包含系统和版本信息，无需理会</p>
+<p>第二行：写入注册表的路径</p>
+<p>第三行：</p>
+<p><code>Scancode Map</code>代表写入的值的名称</p>
+<p><code>hex</code>代表写入的数据类型是16进制(BINARY类型)</p>
+<p><code>00,00,00,00,00,00,00,00,02,00,00,00,5c,e0,38,e0,00,00,00,00</code>是写入数据的值</p>
+<p>为了方便讲解，将上面的值重新排版</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">00,00,00,00,00,00,00,00,</span><br><span class="line">02,00,00,00,</span><br><span class="line">5c,e0,38,e0,</span><br><span class="line">00,00,00,00</span><br></pre></td></tr></table></figure>
+
+<p>前 8 个 <code>00</code> (DWord两个0)是版本号和头部字节，不用改动</p>
+<p>&lt;++&gt;</p>
 <p><code>“Scancode Map”</code>是注册表中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[HKEY_LOCAL_MacHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br></pre></td></tr></table></figure>
 
 <p>中的一个二进制键值(默认没有，需新建)，并且有固定的格式。Scancode Map 代码的一般格式是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hex:00,00,00,00,00,00,00,00,|02|,00,00,00,|映射之后的扫描码（XX XX）,原扫描码(XX XX)|00,00,00,00”</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hex:00,00,00,00,00,00,00,00,02,00,00,00,AA,AA,BB,BB,00,00,00,00”</span><br></pre></td></tr></table></figure>
+
+
 
 <p>其含义为：</p>
 <p>前 8 个 <code>00</code> (DWord两个0)是版本号和头部字节</p>
@@ -289,7 +328,7 @@
 <p>一般不用改，前8个默认全是<code>00</code>即可）</p>
 </blockquote>
 <p>&lt;++&gt;</p>
-<p>接下来的 02 表示映射数，其最小为值为 02，表示只映射一组（这里的数值是映射数目加上末尾用作结尾的 00，00，00，00 ，因此总是比实际的映射数目大一），若要映射多组，只需增加相应的值即可，如映射 2 组其值应为 03,3 组为 04。</p>
+<p>接下来的 <code>02</code> 表示映射数，如果只修改一组映射，则其值为 <code>02</code>，因为这个数值是映射数目加上末尾的一组 <code>00，00，00，00</code> ，因此总是比实际的映射数目大一），若要映射多组，只需增加相应的值即可，如映射 2 组其值应为 03,3 组为 04。</p>
 <p>后边代码每4个是一组：前两个是映射后键位的扫描码，后两个是键位原扫描码。</p>
 <p>如果要交换两个键，则一个有两组映射，四个值的排列形式是：键A，键B，键B，键A——它表示：键A成为键B，键B成为键A。</p>
 <p>最后以 00,00,00,00 结尾。</p>
@@ -459,7 +498,7 @@ ThinkPad 上的 Fn 键是不能被映射的，因为它不能被OS识别，所�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方法种类"><span class="nav-text">方法种类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件更改"><span class="nav-text">软件更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统更改"><span class="nav-text">系统更改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows"><span class="nav-text">Windows</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方法种类"><span class="nav-text">方法种类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件法"><span class="nav-text">软件法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统法"><span class="nav-text">系统法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows"><span class="nav-text">Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#替换按键"><span class="nav-text">替换按键</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
