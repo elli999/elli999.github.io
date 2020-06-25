@@ -250,6 +250,134 @@
       </tags>
   </entry>
   <entry>
+    <title>如何更改键盘映射</title>
+    <url>/2020/06/23/+IT/+OS/%E6%9B%B4%E6%94%B9%E9%94%AE%E7%9B%98%E6%98%A0%E5%B0%84/</url>
+    <content><![CDATA[<!-- 简介 -->
+<blockquote>
+<p>通过对键盘进行更改按键映射的操作，实现在windows和linux中，按A键输出B，或者屏蔽某个按键的功能。</p>
+</blockquote>
+<a id="more"></a>
+
+
+
+
+
+<hr>
+<hr>
+<h1 id="方法种类"><a href="#方法种类" class="headerlink" title="方法种类"></a>方法种类</h1><ul>
+<li><h2 id="软件法"><a href="#软件法" class="headerlink" title="软件法"></a>软件法</h2></li>
+</ul>
+<blockquote>
+<p>网上搜索有很多，这里不列举，有条件的可以使用autohotkey自行编写（很简单的）</p>
+</blockquote>
+<p>缺点：软件要常驻后台，占用少量内存。</p>
+<p>优点：灵活方便，不用的时候可以关掉。</p>
+<ul>
+<li><h2 id="系统法"><a href="#系统法" class="headerlink" title="系统法"></a>系统法</h2></li>
+</ul>
+<p>通过<code>更改注册表(windows)</code>或使用<code>系统命令(Linux)</code>实现，<mark><strong><em>本文主要讲解这种方法。</em></strong></mark></p>
+<hr>
+<hr>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h2><p>适用系统：Windows XP、Windows 2000、Windows 10</p>
+<p>通过更改系统注册表中的<code>“Scancode Map”</code>值实现。</p>
+<p><code>“Scancode Map”</code>是注册表中</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[HKEY_LOCAL_MacHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br></pre></td></tr></table></figure>
+
+<p>中的一个二进制键值(默认没有，需新建)，并且有固定的格式。Scancode Map 代码的一般格式是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hex:00,00,00,00,00,00,00,00,02,00,00,00,AA,AA,BB,BB,00,00,00,00”</span><br></pre></td></tr></table></figure>
+
+<p>（ 含义为：          |    版本号和头部字节 | 两组映射 |   第一组 | 第二组 | 结尾终止 | ）</p>
+<p>为了方便讲解，将上面的值重新排版</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">00,00,00,00,00,00,00,00,</span><br><span class="line">02,00,00,00,</span><br><span class="line">AA,AA,BB,BB,</span><br><span class="line">00,00,00,00</span><br></pre></td></tr></table></figure>
+
+<p>第一行（版本号和头部字节）：</p>
+<p>前 8 个 <code>00</code> (DWord两个0)是版本号和头部字节，不用改动</p>
+<blockquote>
+<p>一般不用改，前8个默认全是<code>00</code>即可）</p>
+</blockquote>
+<p>第二行（两组映射）：</p>
+<p><code>02</code> 表示映射数，如果只修改一组映射，则其值为<code>02</code>，因为这个数值是映射数目加上末尾的一组（第四行） <code>00，00，00，00</code> ，因此总是比实际的映射数目多一组（如映射2组其值应为<code>03</code>，3组为<code>04</code>）。</p>
+<p>第三行：</p>
+<p><code>AA,AA,BB,BB</code>，<code>AA,AA</code>是按键A的代码，<code>BB,BB</code>是按键B的代码，连起来就是把按键A的功能放在按键B的位置，即用A替代B，B就没有了。</p>
+<blockquote>
+<p>注意：在注册表中输入时，需要将扫描码的高低字节交换一下。即如果查到的按键扫描码是<code>12,34</code>，需要把它调整为<code>34,12</code></p>
+</blockquote>
+<p>如果要改动多一组映射，则在此后再添加一组数<code>CC,CC,DD,DD</code></p>
+<p>第四行：</p>
+<p>最后固定以 <code>00,00,00,00</code> 结尾。</p>
+<h2 id="替换按键示例"><a href="#替换按键示例" class="headerlink" title="替换按键示例"></a>替换按键示例</h2><p>在桌面新建一个txt文件</p>
+<p>复制以下内容并粘贴在其中</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br><span class="line">&quot;Scancode Map&quot;&#x3D;hex:00,00,00,00,00,00,00,00,02,00,00,00,5c,e0,38,e0,00,00,00,00</span><br></pre></td></tr></table></figure>
+
+<p>第一行：是写入注册表的标准开头，包含系统和版本信息，无需理会</p>
+<p>第二行：写入注册表的路径</p>
+<p>第三行：</p>
+<p><code>Scancode Map</code>代表写入的值的名称</p>
+<p><code>hex</code>代表写入的数据类型是16进制(BINARY类型)</p>
+<p><code>00,00,00,00,00,00,00,00,02,00,00,00,5c,e0,38,e0,00,00,00,00</code>是写入数据的值</p>
+<p>通过查按键代码表，这里的<code>5c,e0</code>是Right Windows键，<code>38,e0</code>是Right Alt键，所以是把键盘中的右Alt键更改成右win键了。</p>
+<p>编辑好内容后，保存为<code>任意文件名.reg</code>，双击运行即可导入</p>
+<br/>
+
+
+
+<h2 id="屏蔽按键示例"><a href="#屏蔽按键示例" class="headerlink" title="屏蔽按键示例"></a>屏蔽按键示例</h2><p>如果想要某个键失效，在更改后的扫描码中填写<code>00,00</code>即可。</p>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br><span class="line">&quot;Scancode Map&quot;&#x3D;hex:00,00,00,00,00,00,00,00,02,00,00,00,00,00,38,e0,00,00,00,00</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>（未测试，应该是这样）</p>
+</blockquote>
+<p>主要看的是<code>02,00,00,00</code>后面的<code>00,00,38,e0</code>，意思是用<code>00,00</code>（空键）写入到<code>38,e0</code>的键盘位置中，即<code>38,e0</code>这个按键被屏蔽、无效了。</p>
+<p>操作方法参考上方的“替换按键示例”</p>
+<h2 id="恢复原按键功能"><a href="#恢复原按键功能" class="headerlink" title="恢复原按键功能"></a>恢复原按键功能</h2><p>即撤销修改</p>
+<p>若要恢复键盘键位原来的布局，只需在<code>开始</code> - <code>运行</code> - <code>输入regedit后回车</code>（打开注册表），然后进入<code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</code>路径中，找到并删除<code>Scancode Map</code>键值，然后重启即可。</p>
+<h2 id="特别说明："><a href="#特别说明：" class="headerlink" title="特别说明："></a>特别说明：</h2><ul>
+<li>在目前的Windows版本下面，对键盘映射是全局的，而不是针对某个用户的，如果您修改添加或者删除了某个映射，那么不管哪个用户使用，键盘都发生了变化；</li>
+<li>如果一台电脑有多个键盘，那这些键盘都会产生同样的变化。</li>
+<li>在XP上不能屏闭 POWER SLEEP WAKE UP 这三个键。（没有亲自测试，笔记本上没有这三个键</li>
+<li>ThinkPad 上的 Fn 键是不能被映射的，因为它不能被OS识别，所以不能使用上面的方式进行设置。thinkpad新版的bios里面提供了一个功能，让左侧的“Fn”键和相邻的“Ctrl”键进行功能互换。（如果在笔记本的 bios上找不到这个功能的话，需要刷新版bios）</li>
+<li>导入或设置或修改或删除注册表键值后，重启你的电脑，改变就生效了。</li>
+</ul>
+<hr>
+<hr>
+<p>&lt;++&gt;</p>
+<h1 id="Linux（未实践！！！）"><a href="#Linux（未实践！！！）" class="headerlink" title="Linux（未实践！！！）"></a>Linux（未实践！！！）</h1><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>Linux系统中可以用下面命令:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# setkeycodes e06a 104</span><br><span class="line">[root@localhost ~]# setkeycodes e069 109</span><br></pre></td></tr></table></figure>
+
+<p>在linux环境下可以用 <code>showkey</code> 命令测试按键的键盘码或者扫描码（加 <code>-s</code> 选项），注意按键“按下”和“松开”的扫描码可能不一样，例如大小写切换键，按下是3A，松开是BA</p>
+<p>键盘扫描码对应表</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Backspace       00 0E</span><br><span class="line">Caps Lock       00 3A</span><br><span class="line">Delete          E0 53</span><br><span class="line">End             E0 4F</span><br><span class="line">Enter           00 1C</span><br><span class="line">Escape          00 01</span><br><span class="line">HOME            E0 47</span><br><span class="line">Insert          E0 52</span><br><span class="line">Left Alt        00 38</span><br><span class="line">Left Ctrl       00 1D</span><br><span class="line">Left Shift      00 2A</span><br><span class="line">Left Windows    E0 5B</span><br><span class="line">Num Lock        00 45</span><br><span class="line">Page Down       E0 51</span><br><span class="line">Page Up         E0 49</span><br><span class="line">Power           E0 5E</span><br><span class="line">PrtSc           E0 37</span><br><span class="line">Right Alt       E0 38</span><br><span class="line">Right Ctrl      E0 1D</span><br><span class="line">Right Shift     00 36</span><br><span class="line">Right Windows   E0 5C</span><br><span class="line">Scroll Lock     00 46</span><br><span class="line">Sleep           E0 5F</span><br><span class="line">Space           00 39</span><br><span class="line">Tab             00 0F</span><br><span class="line">Wake            E0 63</span><br><span class="line">0               00 52</span><br><span class="line">1               00 4F</span><br><span class="line">2               00 50</span><br><span class="line">3               00 51</span><br><span class="line">4               00 4B</span><br><span class="line">5               00 4C</span><br><span class="line">6               00 4D</span><br><span class="line">7               00 47</span><br><span class="line">8               00 48</span><br><span class="line">9               00 49</span><br><span class="line">-               00 4A</span><br><span class="line">*               00 37</span><br><span class="line">.               00 53</span><br><span class="line">&#x2F;               00 35</span><br><span class="line">+               00 4E</span><br><span class="line">Enter           E0 1C</span><br><span class="line">F1              00 3B</span><br><span class="line">F2              00 3C</span><br><span class="line">F3              00 3D</span><br><span class="line">F4              00 3E</span><br><span class="line">F5              00 3F</span><br><span class="line">F6              00 40</span><br><span class="line">F7              00 41</span><br><span class="line">F8              00 42</span><br><span class="line">F9              00 43</span><br><span class="line">F10             00 44</span><br><span class="line">F11             00 57</span><br><span class="line">F12             00 58</span><br><span class="line">F13             00 64</span><br><span class="line">F14             00 65</span><br><span class="line">F15             00 66</span><br><span class="line">Down            E0 50</span><br><span class="line">Left            E0 4B</span><br><span class="line">Right           E0 4D</span><br><span class="line">Up              E0 48</span><br><span class="line">Calculator      E0 21</span><br><span class="line">E-Mail          E0 6C</span><br><span class="line">Media Select    E0 6D</span><br><span class="line">Messenger       E0 11</span><br><span class="line">My Computer     E0 6B</span><br><span class="line">&#39; &quot;             00 28</span><br><span class="line">- _             00 0C</span><br><span class="line">, &lt;             00 33</span><br><span class="line">. &gt;             00 34</span><br><span class="line">&#x2F; ?             00 35</span><br><span class="line">; :             00 27</span><br><span class="line">[ &#123;             00 1A</span><br><span class="line">\ |             00 2B</span><br><span class="line">] &#125;             00 1B</span><br><span class="line">&#96; ~             00 29</span><br><span class="line">&#x3D; +             00 0D</span><br><span class="line">0 )             00 0B</span><br><span class="line">1 !             00 02</span><br><span class="line">2 @             00 03</span><br><span class="line">3 #             00 04</span><br><span class="line">4 $             00 05</span><br><span class="line">5 %             00 06</span><br><span class="line">6 ^             00 07</span><br><span class="line">7 &amp;             00 08</span><br><span class="line">8 *             00 09</span><br><span class="line">9 (             00 0A</span><br><span class="line">A               00 1E</span><br><span class="line">B               00 30</span><br><span class="line">C               00 2E</span><br><span class="line">D               00 20</span><br><span class="line">E               00 12</span><br><span class="line">F               00 21</span><br><span class="line">G               00 22</span><br><span class="line">H               00 23</span><br><span class="line">I               00 17</span><br><span class="line">J               00 24</span><br><span class="line">K               00 25</span><br><span class="line">L               00 26</span><br><span class="line">M               00 32</span><br><span class="line">N               00 31</span><br><span class="line">O               00 18</span><br><span class="line">P               00 19</span><br><span class="line">Q               00 10</span><br><span class="line">R               00 13</span><br><span class="line">S               00 1F</span><br><span class="line">T               00 14</span><br><span class="line">U               00 16</span><br><span class="line">V               00 2F</span><br><span class="line">W               00 11</span><br><span class="line">X               00 2D</span><br><span class="line">Y               00 15</span><br><span class="line">Z               00 2C</span><br><span class="line">Close           E0 40</span><br><span class="line">Fwd             E0 42</span><br><span class="line">Help            E0 3B</span><br><span class="line">New             E0 3E</span><br><span class="line">Office Home     E0 3C</span><br><span class="line">Open            E0 3F</span><br><span class="line">Print           E0 58</span><br><span class="line">Redo            E0 07</span><br><span class="line">Reply           E0 41</span><br><span class="line">Save            E0 57</span><br><span class="line">Send            E0 43</span><br><span class="line">Spell           E0 23</span><br><span class="line">Task Pane       E0 3D</span><br><span class="line">Undo            E0 08</span><br><span class="line">Mute            E0 20</span><br><span class="line">Next Track      E0 19</span><br><span class="line">Play&#x2F;Pause      E0 22</span><br><span class="line">Prev Track      E0 10</span><br><span class="line">Stop            E0 24</span><br><span class="line">Volume Down     E0 2E</span><br><span class="line">Volume Up       E0 30</span><br><span class="line">? -             00 7D</span><br><span class="line">              E0 45</span><br><span class="line">Next to Enter   E0 2B</span><br><span class="line">Next to L-Shift E0 56</span><br><span class="line">Next to R-Shift E0 73</span><br><span class="line">DBE_KATAKANA    E0 70</span><br><span class="line">DBE_SBCSCHAR    E0 77</span><br><span class="line">CONVERT         E0 79</span><br><span class="line">NONCONVERT      E0 7B</span><br><span class="line">Internet        E0 01</span><br><span class="line">iTouch          E0 13</span><br><span class="line">Shopping        E0 04</span><br><span class="line">Webcam          E0 12</span><br><span class="line">Back            E0 6A</span><br><span class="line">Favorites       E0 66</span><br><span class="line">Forward         E0 69</span><br><span class="line">HOME            E0 32</span><br><span class="line">Refresh         E0 67</span><br><span class="line">Search          E0 65</span><br><span class="line">Stop            E0 68</span><br><span class="line">My Pictures     E0 64</span><br><span class="line">My Music        E0 3C</span><br><span class="line">Mute            E0 20</span><br><span class="line">Play&#x2F;Pause      E0 22</span><br><span class="line">Stop            E0 24</span><br><span class="line">+ (Volume up)   E0 30</span><br><span class="line">- (Volume down) E0 2E</span><br><span class="line">|&lt;&lt; (Previous) E0 10</span><br><span class="line">&gt;&gt;| (Next)      E0 19</span><br><span class="line">Media           E0 6D</span><br><span class="line">Mail            E0 6C</span><br><span class="line">Web&#x2F;Home        E0 32</span><br><span class="line">Messenger       E0 05</span><br><span class="line">Calculator      E0 21</span><br><span class="line">Log Off         E0 16</span><br><span class="line">Sleep           E0 5F</span><br><span class="line">Help(on F1 key) E0 3B</span><br><span class="line">Undo(on F2 key) E0 08</span><br><span class="line">Redo(on F3 key) E0 07</span><br><span class="line">Fwd (on F8 key) E0 42</span><br><span class="line">Send(on F9 key) E0 43</span><br></pre></td></tr></table></figure>
+
+<p>现在使用的是 Fedora 20，将这两句写在了 <code>/etc/rc.d/rc.local</code> 中，保证能够在启动后被加载</p>
+<h2 id="我的"><a href="#我的" class="headerlink" title="我的"></a>我的</h2><p>我把右 ctrl 和 Caps-Lock 键进行了互换, menu 换成 win, 左 alt 和 左 win 进行了互换. reg 文件如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br><span class="line">&quot;Scancode Map&quot;&#x3D;hex:00,00,00,00,00,00,00,00,07,00,00,00,\</span><br><span class="line">1d,00,3a,00,\</span><br><span class="line">3a,00,1d,e0,\</span><br><span class="line">5c,e0,5d,e0,\</span><br><span class="line">5B,E0,38,00,\</span><br><span class="line">38,00,5b,e0,\</span><br><span class="line">00,00,00,00</span><br></pre></td></tr></table></figure>
+
+<p>我又做了修改：， 将 Tab 改成 CapsLk</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Left Ctrl       00 1D</span><br><span class="line">Caps Lock       00 3A</span><br><span class="line">Right Ctrl      E0 1D</span><br><span class="line">Right Windows   E0 5C</span><br><span class="line">Left Alt        00 38</span><br><span class="line">Left Windows    E0 5B</span><br><span class="line">Tab             00 0F</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tap &#x3D;&#x3D;&gt; Cap</span><br><span class="line">0f,00,3a,00</span><br><span class="line">这样的效果是： cap 可以当 tab， tab 还是 tab</span><br><span class="line"></span><br><span class="line">CAP --&gt; TAP</span><br><span class="line">3A,00,0F,00</span><br><span class="line"></span><br><span class="line">Cap &#x3D;&#x3D;&gt; Ctrl</span><br><span class="line">3a,00,1d,e0</span><br><span class="line">左 alt 和 左 win 进行了互换: </span><br><span class="line">Left Alt        00 38</span><br><span class="line">Left Windows    E0 5B</span><br><span class="line">38,00,5b,e0,\</span><br><span class="line">0F,00,00,3a,\</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br><span class="line">&quot;Scancode Map&quot;&#x3D;hex:00,00,00,00,00,00,00,00,07,00,00,00,\</span><br><span class="line">38,00,5b,e0,\</span><br><span class="line">5b,e0,38,00,\</span><br><span class="line">1d,e0,3a,00,\</span><br><span class="line">3a,00,0f,00,\</span><br><span class="line">0f,00,1d,e0,\</span><br><span class="line">00,00,00,00</span><br></pre></td></tr></table></figure>
+
+
+<p>参考:</p>
+<ul>
+<li><a href="https://blog.csdn.net/u010695008/article/details/51752278" target="_blank" rel="noopener">修改windows的注册表以实现修改键盘按键的映射</a></li>
+<li><a href="http://blog.chinaunix.net/uid-174325-id-3912617.html" target="_blank" rel="noopener">通过注册表修改键盘按键的映射</a></li>
+</ul>
+<p>&lt;&lt; EOF &gt;&gt;</p>
+<p>文章主体内容来源于《<a href="https://chengchaos.github.io/2019/06/18/windows-scancode-map.html" target="_blank" rel="noopener">修改键盘键位的布局 - 火の龍果</a>》，本人在学习后，按照自己的理解，进行了二次编辑和重构。</p>
+]]></content>
+      <categories>
+        <category>IT</category>
+        <category>OS</category>
+      </categories>
+      <tags>
+        <tag>keyboard</tag>
+        <tag>键盘</tag>
+        <tag>映射</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VIM笔记</title>
     <url>/2020/06/18/+IT/+Software/VIM%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="三种模式（记忆！）"><a href="#三种模式（记忆！）" class="headerlink" title="三种模式（记忆！）"></a>三种模式（记忆！）</h1><p><strong>三种常见的模式：</strong></p>
@@ -483,135 +611,6 @@
       </categories>
       <tags>
         <tag>VIM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何更改键盘映射</title>
-    <url>/2020/06/23/+IT/+OS/%E6%9B%B4%E6%94%B9%E9%94%AE%E7%9B%98%E6%98%A0%E5%B0%84/</url>
-    <content><![CDATA[<!-- 简介 -->
-<blockquote>
-<p>通过对键盘进行更改按键映射的操作，实现在windows和linux中，按A键输出B，或者屏蔽某个按键的功能。</p>
-</blockquote>
-<a id="more"></a>
-
-
-
-
-
-<hr>
-<hr>
-<h1 id="方法种类"><a href="#方法种类" class="headerlink" title="方法种类"></a>方法种类</h1><ul>
-<li><h2 id="软件法"><a href="#软件法" class="headerlink" title="软件法"></a>软件法</h2></li>
-</ul>
-<blockquote>
-<p>网上搜索有很多，这里不列举，有条件的可以使用autohotkey自行编写（很简单的）</p>
-</blockquote>
-<p>缺点：软件要常驻后台，占用少量内存。</p>
-<p>优点：灵活方便，不用的时候可以关掉。</p>
-<ul>
-<li><h2 id="系统法"><a href="#系统法" class="headerlink" title="系统法"></a>系统法</h2></li>
-</ul>
-<p>通过<code>更改注册表(windows)</code>或使用<code>系统命令(Linux)</code>实现，<mark><strong><em>本文主要讲解这种方法。</em></strong></mark></p>
-<hr>
-<hr>
-<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h2><p>适用系统：Windows XP、Windows 2000、Windows 10</p>
-<p>通过更改系统注册表中的<code>“Scancode Map”</code>值实现。</p>
-<p><code>“Scancode Map”</code>是注册表中</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[HKEY_LOCAL_MacHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br></pre></td></tr></table></figure>
-
-<p>中的一个二进制键值(默认没有，需新建)，并且有固定的格式。Scancode Map 代码的一般格式是：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hex:00,00,00,00,00,00,00,00,02,00,00,00,AA,AA,BB,BB,00,00,00,00”</span><br></pre></td></tr></table></figure>
-
-<p>（ 含义为：          |    版本号和头部字节 | 两组映射 |   第一组 | 第二组 | 结尾终止 | ）</p>
-<p>为了方便讲解，将上面的值重新排版</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">00,00,00,00,00,00,00,00,</span><br><span class="line">02,00,00,00,</span><br><span class="line">AA,AA,BB,BB,</span><br><span class="line">00,00,00,00</span><br></pre></td></tr></table></figure>
-
-<p>第一行（版本号和头部字节）：</p>
-<p>前 8 个 <code>00</code> (DWord两个0)是版本号和头部字节，不用改动</p>
-<blockquote>
-<p>一般不用改，前8个默认全是<code>00</code>即可）</p>
-</blockquote>
-<p>第二行（两组映射）：</p>
-<p><code>02</code> 表示映射数，如果只修改一组映射，则其值为<code>02</code>，因为这个数值是映射数目加上末尾的一组（第四行） <code>00，00，00，00</code> ，因此总是比实际的映射数目多一组（如映射2组其值应为<code>03</code>，3组为<code>04</code>）。</p>
-<p>第三行：</p>
-<p><code>AA,AA,BB,BB</code>，<code>AA,AA</code>是按键A的代码，<code>BB,BB</code>是按键B的代码，连起来就是把按键A的功能放在按键B的位置，即用A替代B，B就没有了。</p>
-<blockquote>
-<p>注意：在注册表中输入时，需要将扫描码的高低字节交换一下。即如果查到的按键扫描码是<code>12,34</code>，需要把它调整为<code>34,12</code></p>
-</blockquote>
-<p>如果要改动多一组映射，则在此后再添加一组数<code>CC,CC,DD,DD</code></p>
-<p>第四行：</p>
-<p>最后固定以 <code>00,00,00,00</code> 结尾。</p>
-<h2 id="替换按键示例"><a href="#替换按键示例" class="headerlink" title="替换按键示例"></a>替换按键示例</h2><p>在桌面新建一个txt文件</p>
-<p>复制以下内容并粘贴在其中</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br><span class="line">&quot;Scancode Map&quot;&#x3D;hex:00,00,00,00,00,00,00,00,02,00,00,00,5c,e0,38,e0,00,00,00,00</span><br></pre></td></tr></table></figure>
-
-<p>第一行：是写入注册表的标准开头，包含系统和版本信息，无需理会</p>
-<p>第二行：写入注册表的路径</p>
-<p>第三行：</p>
-<p><code>Scancode Map</code>代表写入的值的名称</p>
-<p><code>hex</code>代表写入的数据类型是16进制(BINARY类型)</p>
-<p><code>00,00,00,00,00,00,00,00,02,00,00,00,5c,e0,38,e0,00,00,00,00</code>是写入数据的值</p>
-<p>通过查按键代码表，这里的<code>5c,e0</code>是Right Windows键，<code>38,e0</code>是Right Alt键，所以是把键盘中的右Alt键更改成右win键了。</p>
-<p>编辑好内容后，保存为<code>任意文件名.reg</code>，双击运行即可导入</p>
-<br/>
-
-
-
-<h2 id="屏蔽按键示例"><a href="#屏蔽按键示例" class="headerlink" title="屏蔽按键示例"></a>屏蔽按键示例</h2><p>如果想要某个键失效，在更改后的扫描码中填写<code>00,00</code>即可。</p>
-<p><strong>示例</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br><span class="line">&quot;Scancode Map&quot;&#x3D;hex:00,00,00,00,00,00,00,00,02,00,00,00,00,00,38,e0,00,00,00,00</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>（未测试，应该是这样）</p>
-</blockquote>
-<p>主要看的是<code>02,00,00,00</code>后面的<code>00,00,38,e0</code>，意思是用<code>00,00</code>（空键）写入到<code>38,e0</code>的键盘位置中，即<code>38,e0</code>这个按键被屏蔽、无效了。</p>
-<p>操作方法参考上方的“替换按键示例”</p>
-<h2 id="恢复原按键功能"><a href="#恢复原按键功能" class="headerlink" title="恢复原按键功能"></a>恢复原按键功能</h2><p>即撤销修改</p>
-<p>若要恢复键盘键位原来的布局，只需在<code>开始</code> - <code>运行</code> - <code>输入regedit后回车</code>（打开注册表），然后进入<code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</code>路径中，找到并删除<code>Scancode Map</code>键值，然后重启即可。</p>
-<h2 id="特别说明："><a href="#特别说明：" class="headerlink" title="特别说明："></a>特别说明：</h2><ul>
-<li>在目前的Windows版本下面，对键盘映射是全局的，而不是针对某个用户的，如果您修改添加或者删除了某个映射，那么不管哪个用户使用，键盘都发生了变化；</li>
-<li>如果一台电脑有多个键盘，那这些键盘都会产生同样的变化。</li>
-<li>在XP上不能屏闭 POWER SLEEP WAKE UP 这三个键。（没有亲自测试，笔记本上没有这三个键</li>
-<li>ThinkPad 上的 Fn 键是不能被映射的，因为它不能被OS识别，所以不能使用上面的方式进行设置。thinkpad新版的bios里面提供了一个功能，让左侧的“Fn”键和相邻的“Ctrl”键进行功能互换。（如果在笔记本的 bios上找不到这个功能的话，需要刷新版bios）</li>
-<li>导入或设置或修改或删除注册表键值后，重启你的电脑，改变就生效了。</li>
-</ul>
-<hr>
-<hr>
-<p>&lt;++&gt;</p>
-<h1 id="Linux（未实践！！！）"><a href="#Linux（未实践！！！）" class="headerlink" title="Linux（未实践！！！）"></a>Linux（未实践！！！）</h1><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>Linux系统中可以用下面命令:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# setkeycodes e06a 104</span><br><span class="line">[root@localhost ~]# setkeycodes e069 109</span><br></pre></td></tr></table></figure>
-
-<p>在linux环境下可以用 <code>showkey</code> 命令测试按键的键盘码或者扫描码（加 <code>-s</code> 选项），注意按键“按下”和“松开”的扫描码可能不一样，例如大小写切换键，按下是3A，松开是BA</p>
-<p>键盘扫描码对应表</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Backspace       00 0E</span><br><span class="line">Caps Lock       00 3A</span><br><span class="line">Delete          E0 53</span><br><span class="line">End             E0 4F</span><br><span class="line">Enter           00 1C</span><br><span class="line">Escape          00 01</span><br><span class="line">HOME            E0 47</span><br><span class="line">Insert          E0 52</span><br><span class="line">Left Alt        00 38</span><br><span class="line">Left Ctrl       00 1D</span><br><span class="line">Left Shift      00 2A</span><br><span class="line">Left Windows    E0 5B</span><br><span class="line">Num Lock        00 45</span><br><span class="line">Page Down       E0 51</span><br><span class="line">Page Up         E0 49</span><br><span class="line">Power           E0 5E</span><br><span class="line">PrtSc           E0 37</span><br><span class="line">Right Alt       E0 38</span><br><span class="line">Right Ctrl      E0 1D</span><br><span class="line">Right Shift     00 36</span><br><span class="line">Right Windows   E0 5C</span><br><span class="line">Scroll Lock     00 46</span><br><span class="line">Sleep           E0 5F</span><br><span class="line">Space           00 39</span><br><span class="line">Tab             00 0F</span><br><span class="line">Wake            E0 63</span><br><span class="line">0               00 52</span><br><span class="line">1               00 4F</span><br><span class="line">2               00 50</span><br><span class="line">3               00 51</span><br><span class="line">4               00 4B</span><br><span class="line">5               00 4C</span><br><span class="line">6               00 4D</span><br><span class="line">7               00 47</span><br><span class="line">8               00 48</span><br><span class="line">9               00 49</span><br><span class="line">-               00 4A</span><br><span class="line">*               00 37</span><br><span class="line">.               00 53</span><br><span class="line">&#x2F;               00 35</span><br><span class="line">+               00 4E</span><br><span class="line">Enter           E0 1C</span><br><span class="line">F1              00 3B</span><br><span class="line">F2              00 3C</span><br><span class="line">F3              00 3D</span><br><span class="line">F4              00 3E</span><br><span class="line">F5              00 3F</span><br><span class="line">F6              00 40</span><br><span class="line">F7              00 41</span><br><span class="line">F8              00 42</span><br><span class="line">F9              00 43</span><br><span class="line">F10             00 44</span><br><span class="line">F11             00 57</span><br><span class="line">F12             00 58</span><br><span class="line">F13             00 64</span><br><span class="line">F14             00 65</span><br><span class="line">F15             00 66</span><br><span class="line">Down            E0 50</span><br><span class="line">Left            E0 4B</span><br><span class="line">Right           E0 4D</span><br><span class="line">Up              E0 48</span><br><span class="line">Calculator      E0 21</span><br><span class="line">E-Mail          E0 6C</span><br><span class="line">Media Select    E0 6D</span><br><span class="line">Messenger       E0 11</span><br><span class="line">My Computer     E0 6B</span><br><span class="line">&#39; &quot;             00 28</span><br><span class="line">- _             00 0C</span><br><span class="line">, &lt;             00 33</span><br><span class="line">. &gt;             00 34</span><br><span class="line">&#x2F; ?             00 35</span><br><span class="line">; :             00 27</span><br><span class="line">[ &#123;             00 1A</span><br><span class="line">\ |             00 2B</span><br><span class="line">] &#125;             00 1B</span><br><span class="line">&#96; ~             00 29</span><br><span class="line">&#x3D; +             00 0D</span><br><span class="line">0 )             00 0B</span><br><span class="line">1 !             00 02</span><br><span class="line">2 @             00 03</span><br><span class="line">3 #             00 04</span><br><span class="line">4 $             00 05</span><br><span class="line">5 %             00 06</span><br><span class="line">6 ^             00 07</span><br><span class="line">7 &amp;             00 08</span><br><span class="line">8 *             00 09</span><br><span class="line">9 (             00 0A</span><br><span class="line">A               00 1E</span><br><span class="line">B               00 30</span><br><span class="line">C               00 2E</span><br><span class="line">D               00 20</span><br><span class="line">E               00 12</span><br><span class="line">F               00 21</span><br><span class="line">G               00 22</span><br><span class="line">H               00 23</span><br><span class="line">I               00 17</span><br><span class="line">J               00 24</span><br><span class="line">K               00 25</span><br><span class="line">L               00 26</span><br><span class="line">M               00 32</span><br><span class="line">N               00 31</span><br><span class="line">O               00 18</span><br><span class="line">P               00 19</span><br><span class="line">Q               00 10</span><br><span class="line">R               00 13</span><br><span class="line">S               00 1F</span><br><span class="line">T               00 14</span><br><span class="line">U               00 16</span><br><span class="line">V               00 2F</span><br><span class="line">W               00 11</span><br><span class="line">X               00 2D</span><br><span class="line">Y               00 15</span><br><span class="line">Z               00 2C</span><br><span class="line">Close           E0 40</span><br><span class="line">Fwd             E0 42</span><br><span class="line">Help            E0 3B</span><br><span class="line">New             E0 3E</span><br><span class="line">Office Home     E0 3C</span><br><span class="line">Open            E0 3F</span><br><span class="line">Print           E0 58</span><br><span class="line">Redo            E0 07</span><br><span class="line">Reply           E0 41</span><br><span class="line">Save            E0 57</span><br><span class="line">Send            E0 43</span><br><span class="line">Spell           E0 23</span><br><span class="line">Task Pane       E0 3D</span><br><span class="line">Undo            E0 08</span><br><span class="line">Mute            E0 20</span><br><span class="line">Next Track      E0 19</span><br><span class="line">Play&#x2F;Pause      E0 22</span><br><span class="line">Prev Track      E0 10</span><br><span class="line">Stop            E0 24</span><br><span class="line">Volume Down     E0 2E</span><br><span class="line">Volume Up       E0 30</span><br><span class="line">? -             00 7D</span><br><span class="line">              E0 45</span><br><span class="line">Next to Enter   E0 2B</span><br><span class="line">Next to L-Shift E0 56</span><br><span class="line">Next to R-Shift E0 73</span><br><span class="line">DBE_KATAKANA    E0 70</span><br><span class="line">DBE_SBCSCHAR    E0 77</span><br><span class="line">CONVERT         E0 79</span><br><span class="line">NONCONVERT      E0 7B</span><br><span class="line">Internet        E0 01</span><br><span class="line">iTouch          E0 13</span><br><span class="line">Shopping        E0 04</span><br><span class="line">Webcam          E0 12</span><br><span class="line">Back            E0 6A</span><br><span class="line">Favorites       E0 66</span><br><span class="line">Forward         E0 69</span><br><span class="line">HOME            E0 32</span><br><span class="line">Refresh         E0 67</span><br><span class="line">Search          E0 65</span><br><span class="line">Stop            E0 68</span><br><span class="line">My Pictures     E0 64</span><br><span class="line">My Music        E0 3C</span><br><span class="line">Mute            E0 20</span><br><span class="line">Play&#x2F;Pause      E0 22</span><br><span class="line">Stop            E0 24</span><br><span class="line">+ (Volume up)   E0 30</span><br><span class="line">- (Volume down) E0 2E</span><br><span class="line">|&lt;&lt; (Previous) E0 10</span><br><span class="line">&gt;&gt;| (Next)      E0 19</span><br><span class="line">Media           E0 6D</span><br><span class="line">Mail            E0 6C</span><br><span class="line">Web&#x2F;Home        E0 32</span><br><span class="line">Messenger       E0 05</span><br><span class="line">Calculator      E0 21</span><br><span class="line">Log Off         E0 16</span><br><span class="line">Sleep           E0 5F</span><br><span class="line">Help(on F1 key) E0 3B</span><br><span class="line">Undo(on F2 key) E0 08</span><br><span class="line">Redo(on F3 key) E0 07</span><br><span class="line">Fwd (on F8 key) E0 42</span><br><span class="line">Send(on F9 key) E0 43</span><br></pre></td></tr></table></figure>
-
-<p>现在使用的是 Fedora 20，将这两句写在了 <code>/etc/rc.d/rc.local</code> 中，保证能够在启动后被加载</p>
-<h2 id="我的"><a href="#我的" class="headerlink" title="我的"></a>我的</h2><p>我把右 ctrl 和 Caps-Lock 键进行了互换, menu 换成 win, 左 alt 和 左 win 进行了互换. reg 文件如下:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br><span class="line">&quot;Scancode Map&quot;&#x3D;hex:00,00,00,00,00,00,00,00,07,00,00,00,\</span><br><span class="line">1d,00,3a,00,\</span><br><span class="line">3a,00,1d,e0,\</span><br><span class="line">5c,e0,5d,e0,\</span><br><span class="line">5B,E0,38,00,\</span><br><span class="line">38,00,5b,e0,\</span><br><span class="line">00,00,00,00</span><br></pre></td></tr></table></figure>
-
-<p>我又做了修改：， 将 Tab 改成 CapsLk</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Left Ctrl       00 1D</span><br><span class="line">Caps Lock       00 3A</span><br><span class="line">Right Ctrl      E0 1D</span><br><span class="line">Right Windows   E0 5C</span><br><span class="line">Left Alt        00 38</span><br><span class="line">Left Windows    E0 5B</span><br><span class="line">Tab             00 0F</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tap &#x3D;&#x3D;&gt; Cap</span><br><span class="line">0f,00,3a,00</span><br><span class="line">这样的效果是： cap 可以当 tab， tab 还是 tab</span><br><span class="line"></span><br><span class="line">CAP --&gt; TAP</span><br><span class="line">3A,00,0F,00</span><br><span class="line"></span><br><span class="line">Cap &#x3D;&#x3D;&gt; Ctrl</span><br><span class="line">3a,00,1d,e0</span><br><span class="line">左 alt 和 左 win 进行了互换: </span><br><span class="line">Left Alt        00 38</span><br><span class="line">Left Windows    E0 5B</span><br><span class="line">38,00,5b,e0,\</span><br><span class="line">0F,00,00,3a,\</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br><span class="line">&quot;Scancode Map&quot;&#x3D;hex:00,00,00,00,00,00,00,00,07,00,00,00,\</span><br><span class="line">38,00,5b,e0,\</span><br><span class="line">5b,e0,38,00,\</span><br><span class="line">1d,e0,3a,00,\</span><br><span class="line">3a,00,0f,00,\</span><br><span class="line">0f,00,1d,e0,\</span><br><span class="line">00,00,00,00</span><br></pre></td></tr></table></figure>
-
-
-<p>参考:</p>
-<ul>
-<li><a href="https://blog.csdn.net/u010695008/article/details/51752278" target="_blank" rel="noopener">修改windows的注册表以实现修改键盘按键的映射</a></li>
-<li><a href="http://blog.chinaunix.net/uid-174325-id-3912617.html" target="_blank" rel="noopener">通过注册表修改键盘按键的映射</a></li>
-</ul>
-<p>&lt;&lt; EOF &gt;&gt;</p>
-<p>《 EOF 》</p>
-<p>文章主体内容来源于<a href="https://chengchaos.github.io/2019/06/18/windows-scancode-map.html" target="_blank" rel="noopener">修改键盘键位的布局 - 火の龍果</a>，本人在学习后，按照自己的理解，进行了二次编辑和重构。</p>
-]]></content>
-      <categories>
-        <category>IT</category>
-        <category>OS</category>
-      </categories>
-      <tags>
-        <tag>keyboard</tag>
-        <tag>键盘</tag>
-        <tag>映射</tag>
       </tags>
   </entry>
   <entry>
