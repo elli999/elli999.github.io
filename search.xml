@@ -321,64 +321,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Linux - 日常使用</title>
-    <url>/2020/06/23/+IT/+OS/Linux%20-%20%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<!-- 简介 -->
-<blockquote>
-<p>Linux系统的所有日常使用技巧汇总</p>
-</blockquote>
-<a id="more"></a>
-
-
-<hr>
-<hr>
-<h2 id="在终端打开当前目录的GUI文件管理器"><a href="#在终端打开当前目录的GUI文件管理器" class="headerlink" title="在终端打开当前目录的GUI文件管理器"></a>在终端打开当前目录的GUI文件管理器</h2><ul>
-<li>Ubuntu 20.4</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nautilus .</span><br></pre></td></tr></table></figure>
-
-<hr>
-<hr>
-]]></content>
-      <categories>
-        <category>IT</category>
-        <category>OS</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows - 日常使用</title>
-    <url>/2020/06/23/+IT/+OS/Windows%20-%20%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<!-- 简介 -->
-<blockquote>
-<p>Windows系统的所有日常使用技巧汇总</p>
-</blockquote>
-<a id="more"></a>
-
-
-<hr>
-<hr>
-<h2 id="在终端打开当前目录的GUI资源管理器"><a href="#在终端打开当前目录的GUI资源管理器" class="headerlink" title="在终端打开当前目录的GUI资源管理器"></a>在终端打开当前目录的GUI资源管理器</h2><ul>
-<li>Windows10</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">explorer .</span><br></pre></td></tr></table></figure>
-
-<hr>
-<hr>
-]]></content>
-      <categories>
-        <category>IT</category>
-        <category>OS</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>OS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何更改键盘映射</title>
     <url>/2020/06/23/+IT/+OS/%E6%9B%B4%E6%94%B9%E9%94%AE%E7%9B%98%E6%98%A0%E5%B0%84/</url>
     <content><![CDATA[<!-- 简介 -->
@@ -782,6 +724,64 @@
       </categories>
       <tags>
         <tag>VIM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux-日常使用</title>
+    <url>/2020/07/29/+IT/+OS/+Linux/Linux-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<!-- 简介 -->
+<blockquote>
+<p>Linux系统的所有日常使用技巧汇总</p>
+</blockquote>
+<a id="more"></a>
+
+
+<hr>
+<hr>
+<h2 id="在终端打开当前目录的GUI文件管理器"><a href="#在终端打开当前目录的GUI文件管理器" class="headerlink" title="在终端打开当前目录的GUI文件管理器"></a>在终端打开当前目录的GUI文件管理器</h2><ul>
+<li>Ubuntu 20.4</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nautilus .</span><br></pre></td></tr></table></figure>
+
+<hr>
+<hr>
+]]></content>
+      <categories>
+        <category>IT</category>
+        <category>OS</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows-日常使用</title>
+    <url>/2020/07/28/+IT/+OS/+Windows/Windows-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<!-- 简介 -->
+<blockquote>
+<p>Windows系统的所有日常使用技巧汇总</p>
+</blockquote>
+<a id="more"></a>
+
+
+<hr>
+<hr>
+<h2 id="在终端打开当前目录的GUI资源管理器"><a href="#在终端打开当前目录的GUI资源管理器" class="headerlink" title="在终端打开当前目录的GUI资源管理器"></a>在终端打开当前目录的GUI资源管理器</h2><ul>
+<li>Windows10</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">explorer .</span><br></pre></td></tr></table></figure>
+
+<hr>
+<hr>
+]]></content>
+      <categories>
+        <category>IT</category>
+        <category>OS</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>OS</tag>
       </tags>
   </entry>
   <entry>
