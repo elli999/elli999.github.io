@@ -1,6 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo+Markdown+Vim 打造无敌笔记系统</title>
+    <url>/2020/06/10/Hexo+Markdown+Vim%E6%89%93%E9%80%A0%E6%97%A0%E6%95%8C%E7%AC%94%E8%AE%B0%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<blockquote>
+<p>本文是本人呕心沥血之作，望能对大家有所帮助！</p>
+</blockquote>
+<p><font size="6"><strong>简介</strong></font></p>
+<p>使用Hexo + Vim + Markdown打造笔记系统</p>
+<p>Hexo是一个用户量众多的静态博客系统，使用Markdown语法进行博客编写，而Vim是一个经典的编辑器，在熟练掌握三者之后进行笔记（博客）编写会如丝般顺滑，这里把Hexo博客系统来作为笔记系统使用，并将其部署在网上，我们可以随时通过任何联网设备查看笔记。（TODO：有空补一个演示视频）</p>
+<p>本人曾在Windows和Ubuntu均成功搭建此系统。</p>
+<p>由于Vim学习成本过高，如果不想折腾的朋友可使用Hexo + Visual Studio Code（搭配Markdown插件）使用。</p>
+<p>本文只记录搭建笔记系统相关知识，Hexo、Vim、Markdown知识请查阅《Hexo笔记》、《Vim笔记》、《Markdown笔记》</p>
+<p>我也在不断学习和不断摸索这套系统，如果大家有问题欢迎咨询联系我，我愿意共同探讨解决问题，联系方式在首页 -&gt; about页面。</p>
+<a id="more"></a>
+
+<hr>
+<h1 id="主要思路"><a href="#主要思路" class="headerlink" title="主要思路"></a>主要思路</h1><ol>
+<li>安装Hexo博客</li>
+</ol>
+<p>1.1 安装Git</p>
+<p>1.2 安装Nodejs</p>
+<p>1.3 安装npm、cnpm</p>
+<p>1.4 安装Hexo</p>
+<p>1.5 部署</p>
+<ol start="2">
+<li>安装Vim</li>
+</ol>
+<p>2.1 安装插件管理器</p>
+<p>2.2 安装插件与配置插件</p>
+<hr>
+<h1 id="1-安装Hexo博客"><a href="#1-安装Hexo博客" class="headerlink" title="1. 安装Hexo博客"></a>1. 安装Hexo博客</h1><p>由于Hexo博客依赖Git和Nodejs环境，我们需要在安装Hexo之前先安装Git和Nodejs</p>
+<h2 id="1-1-安装Git"><a href="#1-1-安装Git" class="headerlink" title="1.1 安装Git"></a>1.1 安装Git</h2><p>&lt;++&gt;</p>
+<ul>
+<li><p>Windows：下载并安装 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a>。</p>
+</li>
+<li><p>Mac：使用 <a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a> 或者下载 <a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="noopener">安装程序</a>。</p>
+</li>
+<li><p>Linux (Ubuntu, Debian)：sudo apt-get install git-core</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Linux (Fedora, Red Hat, CentOS)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install git-core</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="1-2-安装Nodejs"><a href="#1-2-安装Nodejs" class="headerlink" title="1.2 安装Nodejs"></a>1.2 安装Nodejs</h2><h2 id="1-3-安装npm、cnpm"><a href="#1-3-安装npm、cnpm" class="headerlink" title="1.3 安装npm、cnpm"></a>1.3 安装npm、cnpm</h2><h2 id="1-4-安装Hexo"><a href="#1-4-安装Hexo" class="headerlink" title="1.4 安装Hexo"></a>1.4 安装Hexo</h2><h2 id="1-5-部署"><a href="#1-5-部署" class="headerlink" title="1.5 部署"></a>1.5 部署</h2><hr>
+<p>我们为Windows和Linux分别记录</p>
+<h1 id="Win下，前往Vim官网下载并安装GVim"><a href="#Win下，前往Vim官网下载并安装GVim" class="headerlink" title="Win下，前往Vim官网下载并安装GVim"></a>Win下，前往<a href="https://www.vim.org/" target="_blank" rel="noopener">Vim官网</a>下载并安装GVim</h1><h2 id="1-安装Vim"><a href="#1-安装Vim" class="headerlink" title="1. 安装Vim"></a>1. 安装Vim</h2><p>Win下，前往<a href="https://www.vim.org/" target="_blank" rel="noopener">Vim官网</a>下载并安装GVim</p>
+<h2 id="vimrc文件"><a href="#vimrc文件" class="headerlink" title="vimrc文件"></a>vimrc文件</h2><h2 id="vim-plug插件管理器"><a href="#vim-plug插件管理器" class="headerlink" title="vim-plug插件管理器"></a>vim-plug插件管理器</h2><h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官网</a>（建议看英文版的）</p>
+<p><a href="https://zhuanlan.zhihu.com/p/84773275" target="_blank" rel="noopener">无火老大哥：《高效做笔记:vim + markdown》</a></p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h1 id="未归档"><a href="#未归档" class="headerlink" title="未归档!!!!!!!!!!!!!!!"></a>未归档!!!!!!!!!!!!!!!</h1><blockquote>
+<p>下面内容为散装内容，未整理入文章中</p>
+</blockquote>
+<h1 id="图片路径问题"><a href="#图片路径问题" class="headerlink" title="图片路径问题"></a>图片路径问题</h1><p>如何统一，能够实现既能够在MarkdownPreview显示图片，也能在hexo s中显示图片</p>
+<blockquote>
+<p>有兴趣可以看看 <a href="https://hexo.io/zh-cn/docs/asset-folders.html" target="_blank" rel="noopener">Hexo载入多媒体内容原理</a></p>
+</blockquote>
+<h2 id="hexo-s的路径-Online）"><a href="#hexo-s的路径-Online）" class="headerlink" title="hexo s的路径(Online）"></a>hexo s的路径(Online）</h2><p><strong>默认情况</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用 ![](images&#x2F;test.jpg) 引用</span><br></pre></td></tr></table></figure>
+
+<p>用户编辑的一切文件都应该放在<code>source</code>文件夹中</p>
+<p>所以我们可以把图片放入<code>source</code>文件夹中的任意位置，然后在文章中引用。</p>
+<p>例如把图片（这里举例是<code>test.jpg</code>）放入<code>blog/source/images</code> 下 （“images”可以改为其它名称）</p>
+<p>然后在md文件中，使用<code>![](images/test.jpg)</code> 完成图片引用。</p>
+<hr>
+<p><strong>第二种情况</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用&#96;![](test.jpg)&#96; 引用</span><br></pre></td></tr></table></figure>
+
+<p>Hexo提供了第二种引用方法，就是通过安装一个hexo插件 <a href="https://github.com/xcodebuild/hexo-asset-image" target="_blank" rel="noopener">xcodebuild/hexo-asset-image</a>（现在的版本好像都已经自带安装好了）</p>
+<p>安装命令： <code>npm install hexo-asset-image --save</code></p>
+<p>同时在博客根目录下，把 <code>_config.yml</code> 文件中的 <code>post_asset_folder</code> 属性改为 <code>true</code></p>
+<p>这样就可以把的图片存放到 <code>source/_posts/</code> 目录内，且与文章同名的目录下。同时使用 <code>![](test.jpg)</code> 方式引用了。</p>
+<blockquote>
+<p>例如我要在文章《Hexo笔记》下插入图片“Hexo框架.jpg”，我只需要把图片存放在与《Hexo笔记》同级的文件夹“Hexo笔记”目录下，然后在文章中使用 <code>![](Hexo框架.jpg)</code> 即可成功插入。</p>
+</blockquote>
+<h2 id="vim插件MarkdownPreview路径-Offline"><a href="#vim插件MarkdownPreview路径-Offline" class="headerlink" title="vim插件MarkdownPreview路径(Offline)"></a>vim插件MarkdownPreview路径(Offline)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用绝对路径</span><br><span class="line">![](&#x2F;Home&#x2F;用户名&#x2F;Document&#x2F;Hexo&#x2F;blog&#x2F;source&#x2F;_posts&#x2F;文件夹名&#x2F;test.jpg)</span><br><span class="line">使用相对路径</span><br><span class="line">![](.&#x2F;文件夹名&#x2F;test.jpg)</span><br></pre></td></tr></table></figure>
+
+<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>暂时没有很好的解决办法。不是办法的办法就是用<code>hexo s</code>的格式来做笔记，这样就不能在MarkdownPreview中预览了。</p>
+<p>这样做是因为平时插入图片不算多，用<code>hexo s</code>命令预览，麻烦一点但是也能用。并且要发布的话，也只能用<code>hexo s</code>能识别的格式。如果用MarkdownPreview的格式输入，发布后图片就显示不出来了。</p>
+<h2 id="后续解决思路："><a href="#后续解决思路：" class="headerlink" title="后续解决思路："></a>后续解决思路：</h2><p>找MarkdownPreview负责识别图片路径的设置文件，更改识别格式（或者找Hexo中同样的文件）。目的是将两者统一。（考虑一下改哪个好？）</p>
+]]></content>
+      <categories>
+        <category>Software</category>
+        <category>笔记方法学</category>
+        <category>VIM</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>note</tag>
+        <tag>VIM</tag>
+        <tag>笔记方法学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo笔记</title>
     <url>/2020/05/15/Hexo%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="1-图片插入测试"><a href="#1-图片插入测试" class="headerlink" title="1. 图片插入测试"></a>1. 图片插入测试</h1><p><code>![20180501110502137](/_v_images/20200515005203539_20136.png)</code></p>
@@ -181,11 +280,11 @@
 <p>2、 自定义 site 语法进行跳转</p>
 <p>原理： 相当于在搜索引擎输入 “ site:taobao.com 铅笔“，前提是这个搜索引擎已经收录了你的内容（爬取）</p>
 <h2 id="6-7-插入本地图"><a href="#6-7-插入本地图" class="headerlink" title="6.7. 插入本地图"></a>6.7. 插入本地图</h2><p><strong>方法一：</strong></p>
-<p>1、把图片（这里举例是test.jpg）放入blog/source/images 下 （“images”可以改为其它名称）</p>
+<p>把图片（这里举例是test.jpg）放入blog/source/images 下 （“images”可以改为其它名称）</p>
 <blockquote>
 <p>应该只要放入source文件夹中就行，这里创建文件夹images只是为了方便分类管理（待测试！）</p>
 </blockquote>
-<p>2、在md文件中，使用<code>![](images/test.jpg)</code> 完成插入</p>
+<p>在md文件中，使用<code>![](images/test.jpg)</code> 完成插入</p>
 <p><strong>方法二：</strong></p>
 <p>在 <code>_config.yml</code> 打开 post_asset_folder 功能，将当前文章所用的图片放置到source目录下的文章同名资源目录下，以 <code>![](image.jpg)</code> 方式引用</p>
 <blockquote>
@@ -197,10 +296,10 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>笔记方法学</tag>
         <tag>笔记</tag>
         <tag>note</tag>
+        <tag>笔记方法学</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -222,31 +321,61 @@
 ]]></content>
   </entry>
   <entry>
-    <title>打造Vim笔记系统</title>
-    <url>/2020/06/10/%E6%89%93%E9%80%A0Vim%E7%AC%94%E8%AE%B0%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>本文以搭建笔记系统为主，不记录与笔记系统无关的Vim知识。</p>
-<p>相关Vim知识请查阅《Vim笔记》</p>
-<h1 id="主要思路"><a href="#主要思路" class="headerlink" title="主要思路"></a>主要思路</h1><ol>
-<li>安装Vim</li>
-<li>vimrc文件基本配置?</li>
-<li>安装插件管理器</li>
-<li>安装插件与配置插件</li>
-</ol>
+    <title>Linux - 日常使用</title>
+    <url>/2020/06/23/+IT/+OS/Linux%20-%20%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<!-- 简介 -->
+<blockquote>
+<p>Linux系统的所有日常使用技巧汇总</p>
+</blockquote>
 <a id="more"></a>
 
-<h1 id="安装Vim"><a href="#安装Vim" class="headerlink" title="安装Vim"></a>安装Vim</h1><p>要使用</p>
-<h2 id="vimrc文件"><a href="#vimrc文件" class="headerlink" title="vimrc文件"></a>vimrc文件</h2><h2 id="vim-plug插件管理器"><a href="#vim-plug插件管理器" class="headerlink" title="vim-plug插件管理器"></a>vim-plug插件管理器</h2><h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://zhuanlan.zhihu.com/p/84773275" target="_blank" rel="noopener">无火老大哥：《高效做笔记:vim + markdown》</a></p>
+
+<hr>
+<hr>
+<h2 id="在终端打开当前目录的GUI文件管理器"><a href="#在终端打开当前目录的GUI文件管理器" class="headerlink" title="在终端打开当前目录的GUI文件管理器"></a>在终端打开当前目录的GUI文件管理器</h2><ul>
+<li>Ubuntu 20.4</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nautilus .</span><br></pre></td></tr></table></figure>
+
+<hr>
+<hr>
 ]]></content>
       <categories>
-        <category>笔记方法学</category>
-        <category>Software</category>
-        <category>VIM</category>
+        <category>IT</category>
+        <category>OS</category>
       </categories>
       <tags>
-        <tag>笔记方法学</tag>
-        <tag>笔记</tag>
-        <tag>note</tag>
-        <tag>VIM</tag>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows - 日常使用</title>
+    <url>/2020/06/23/+IT/+OS/Windows%20-%20%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<!-- 简介 -->
+<blockquote>
+<p>Windows系统的所有日常使用技巧汇总</p>
+</blockquote>
+<a id="more"></a>
+
+
+<hr>
+<hr>
+<h2 id="在终端打开当前目录的GUI资源管理器"><a href="#在终端打开当前目录的GUI资源管理器" class="headerlink" title="在终端打开当前目录的GUI资源管理器"></a>在终端打开当前目录的GUI资源管理器</h2><ul>
+<li>Windows10</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">explorer .</span><br></pre></td></tr></table></figure>
+
+<hr>
+<hr>
+]]></content>
+      <categories>
+        <category>IT</category>
+        <category>OS</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>OS</tag>
       </tags>
   </entry>
   <entry>
@@ -278,7 +407,7 @@
 <p>通过<code>更改注册表(windows)</code>或使用<code>系统命令(Linux)</code>实现，<mark><strong><em>本文主要讲解这种方法。</em></strong></mark></p>
 <hr>
 <hr>
-<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h2><p>适用系统：Windows XP、Windows 2000、Windows 10</p>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>适用系统：Windows XP、Windows 2000、Windows 10</p>
 <p>通过更改系统注册表中的<code>“Scancode Map”</code>值实现。</p>
 <p><code>“Scancode Map”</code>是注册表中</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[HKEY_LOCAL_MacHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br></pre></td></tr></table></figure>
@@ -331,7 +460,7 @@
 <p>主要看的是<code>02,00,00,00</code>后面的<code>00,00,38,e0</code>，意思是用<code>00,00</code>（空键）写入到<code>38,e0</code>的键盘位置中，即<code>38,e0</code>这个按键被屏蔽、无效了。</p>
 <p>操作方法参考上方的“替换按键示例”</p>
 <h2 id="恢复原按键功能"><a href="#恢复原按键功能" class="headerlink" title="恢复原按键功能"></a>恢复原按键功能</h2><p>即撤销修改</p>
-<p>若要恢复键盘键位原来的布局，只需在<code>开始</code> - <code>运行</code> - <code>输入regedit后回车</code>（打开注册表），然后进入<code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</code>路径中，找到并删除<code>Scancode Map</code>键值，然后重启即可。</p>
+<p>若要恢复键盘键位原来的布局，只需在<code>开始</code>-<code>运行</code>-<code>输入regedit后回车</code>（打开注册表），然后进入<code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</code>路径中，找到并删除<code>Scancode Map</code>键值，然后重启即可。</p>
 <h2 id="特别说明："><a href="#特别说明：" class="headerlink" title="特别说明："></a>特别说明：</h2><ul>
 <li>在目前的Windows版本下面，对键盘映射是全局的，而不是针对某个用户的，如果您修改添加或者删除了某个映射，那么不管哪个用户使用，键盘都发生了变化；</li>
 <li>如果一台电脑有多个键盘，那这些键盘都会产生同样的变化。</li>
@@ -365,7 +494,9 @@
 <li><a href="http://blog.chinaunix.net/uid-174325-id-3912617.html" target="_blank" rel="noopener">通过注册表修改键盘按键的映射</a></li>
 </ul>
 <p>&lt;&lt; EOF &gt;&gt;</p>
+<blockquote>
 <p>文章主体内容来源于《<a href="https://chengchaos.github.io/2019/06/18/windows-scancode-map.html" target="_blank" rel="noopener">修改键盘键位的布局 - 火の龍果</a>》，本人在学习后，按照自己的理解，进行了二次编辑和重构。</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>IT</category>
@@ -439,8 +570,48 @@
 <p><strong>找到整个文件中的每个匹配串，并提示是否替换</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:%s&#x2F;old&#x2F;new&#x2F;gc</span><br></pre></td></tr></table></figure>
 
+<h1 id="复杂功能"><a href="#复杂功能" class="headerlink" title="复杂功能"></a>复杂功能</h1><h2 id="Vim内容复制不到其它程序"><a href="#Vim内容复制不到其它程序" class="headerlink" title="Vim内容复制不到其它程序"></a>Vim内容复制不到其它程序</h2><p><a href="https://www.zhihu.com/question/19863631" target="_blank" rel="noopener">参考资料：知乎《如何将 Vim 剪贴板里面的东西粘贴到 Vim 之外的地方？》</a></p>
+<p>根据平台不同，要分两种情况。先用下面命令确定你属于哪一种，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim --version | grep clipboard</span><br></pre></td></tr></table></figure>
 
+<p><strong>情况一</strong></p>
+<p><img src="+clipboard.png" alt="+clipboard"></p>
+<p>如果结果里你找到加号开头的+clipboard， 恭喜你，你的vim没问题</p>
+<ul>
+<li>用 <code>&quot;+y</code> 将选中的内容复制到系统剪贴板，效果和ctrl-c一致。</li>
+<li>用 <code>&quot;+p</code> 将剪贴板内容复制到指定位置，也可以用ctrl-v。</li>
+</ul>
+<p><strong>情况二</strong></p>
+<p>如果找到的是负号开头的<code>-clipboard</code>，说明你的vim不支持系统剪切板。需要先重新安装vim。</p>
+<p>Linux系统</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install vim-gtk</span><br></pre></td></tr></table></figure>
 
+<p>MacOS</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
+
+<p>安装好之后，输入 <code>vim --version | grep clipboard</code> 命令应该已经变成<code>+clipboard</code> 了。</p>
+<p>现在可以回到情况一进行复制了。</p>
+<hr>
+<h2 id="在当前位置输入文件名"><a href="#在当前位置输入文件名" class="headerlink" title="在当前位置输入文件名"></a>在当前位置输入文件名</h2><p>方法一：</p>
+<ol>
+<li>在需要插入位置进入Insert模式</li>
+<li>按 <code>CTRL</code> + <code>R</code> ，此时光标处变成双引号 <code>&quot;</code> </li>
+<li>按 <code>%</code> 键，即可直接插入当前文件名</li>
+</ol>
+<p>方法二：</p>
+<ol>
+<li>在需要插入位置进入Insert模式</li>
+<li>按 <code>CTRL</code> + <code>R</code> ，此时光标处变成双引号 <code>&quot;</code> </li>
+<li>按 <code>=</code> 键，然后输入表达式 <code>expand(&quot;%:t&quot;)</code> <blockquote>
+<p>如果不需要后缀名，则输入 <code>expand(&quot;%:t:r&quot;)</code></p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
 <table>
 <thead>
 <tr>
@@ -614,6 +785,11 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux笔记</title>
+    <url>/2020/07/22/+IT/+OS/+Linux/Linux%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>HTML笔记</title>
     <url>/2020/06/18/+IT/+Coding/+HTML/HTML%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="标签查询"><a href="#标签查询" class="headerlink" title="标签查询"></a>标签查询</h1><h2 id="img"><a href="#img" class="headerlink" title="img"></a>img</h2><p><code>img</code> means image</p>
@@ -628,6 +804,14 @@
 <p><strong>按比例</strong></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"zoom:70%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:80%;height:80%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pangeru.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"transform:scale(0.9)"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <p>第一行的方法好像不行？（待测试！）<br>第三行的0.9即90%的意思。</p>
+<hr>
+<h2 id="mark"><a href="#mark" class="headerlink" title="mark"></a>mark</h2><p>mark标签，作用是高亮标签中的内容</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mark</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Do not forget to buy <span class="tag">&lt;<span class="name">mark</span>&gt;</span>milk<span class="tag">&lt;/<span class="name">mark</span>&gt;</span> today.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<p><img src="HTML%E7%AC%94%E8%AE%B0/mark.png" alt="mark"></p>
 <hr>
 <h1 id="名词-属性-查询"><a href="#名词-属性-查询" class="headerlink" title="名词(属性?)查询"></a>名词(属性?)查询</h1><h2 id="alt"><a href="#alt" class="headerlink" title="alt"></a>alt</h2><p><code>alt</code> means alternate，“替代（文本）”</p>
 <p>当设置了alt属性的元素无法加载显示时，会在html页面留下一个对应大小的空间，里面显示着alt的内容。</p>

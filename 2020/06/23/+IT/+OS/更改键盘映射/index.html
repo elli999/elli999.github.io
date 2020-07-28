@@ -30,7 +30,7 @@
 <meta property="og:description" content="通过对键盘进行更改按键映射的操作，实现在windows和linux中，按A键输出B，或者屏蔽某个按键的功能。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-23T11:15:38.000Z">
-<meta property="article:modified_time" content="2020-06-25T15:00:23.092Z">
+<meta property="article:modified_time" content="2020-07-27T15:44:37.523Z">
 <meta property="article:author" content="EK阿墙">
 <meta property="article:tag" content="keyboard">
 <meta property="article:tag" content="键盘">
@@ -130,7 +130,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">10</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">14</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">6</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -241,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-25 23:00:23" itemprop="dateModified" datetime="2020-06-25T23:00:23+08:00">2020-06-25</time>
+                <time title="Modified: 2020-07-27 23:44:37" itemprop="dateModified" datetime="2020-07-27T23:44:37+08:00">2020-07-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -294,7 +294,7 @@
 <p>通过<code>更改注册表(windows)</code>或使用<code>系统命令(Linux)</code>实现，<mark><strong><em>本文主要讲解这种方法。</em></strong></mark></p>
 <hr>
 <hr>
-<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h2><p>适用系统：Windows XP、Windows 2000、Windows 10</p>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>适用系统：Windows XP、Windows 2000、Windows 10</p>
 <p>通过更改系统注册表中的<code>“Scancode Map”</code>值实现。</p>
 <p><code>“Scancode Map”</code>是注册表中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[HKEY_LOCAL_MacHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br></pre></td></tr></table></figure>
@@ -347,7 +347,7 @@
 <p>主要看的是<code>02,00,00,00</code>后面的<code>00,00,38,e0</code>，意思是用<code>00,00</code>（空键）写入到<code>38,e0</code>的键盘位置中，即<code>38,e0</code>这个按键被屏蔽、无效了。</p>
 <p>操作方法参考上方的“替换按键示例”</p>
 <h2 id="恢复原按键功能"><a href="#恢复原按键功能" class="headerlink" title="恢复原按键功能"></a>恢复原按键功能</h2><p>即撤销修改</p>
-<p>若要恢复键盘键位原来的布局，只需在<code>开始</code> - <code>运行</code> - <code>输入regedit后回车</code>（打开注册表），然后进入<code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</code>路径中，找到并删除<code>Scancode Map</code>键值，然后重启即可。</p>
+<p>若要恢复键盘键位原来的布局，只需在<code>开始</code>-<code>运行</code>-<code>输入regedit后回车</code>（打开注册表），然后进入<code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</code>路径中，找到并删除<code>Scancode Map</code>键值，然后重启即可。</p>
 <h2 id="特别说明："><a href="#特别说明：" class="headerlink" title="特别说明："></a>特别说明：</h2><ul>
 <li>在目前的Windows版本下面，对键盘映射是全局的，而不是针对某个用户的，如果您修改添加或者删除了某个映射，那么不管哪个用户使用，键盘都发生了变化；</li>
 <li>如果一台电脑有多个键盘，那这些键盘都会产生同样的变化。</li>
@@ -381,7 +381,9 @@
 <li><a href="http://blog.chinaunix.net/uid-174325-id-3912617.html" target="_blank" rel="noopener">通过注册表修改键盘按键的映射</a></li>
 </ul>
 <p>&lt;&lt; EOF &gt;&gt;</p>
+<blockquote>
 <p>文章主体内容来源于《<a href="https://chengchaos.github.io/2019/06/18/windows-scancode-map.html" target="_blank" rel="noopener">修改键盘键位的布局 - 火の龍果</a>》，本人在学习后，按照自己的理解，进行了二次编辑和重构。</p>
+</blockquote>
 
     </div>
 
@@ -425,7 +427,10 @@
     <a href="/2020/06/18/+IT/+Coding/+HTML/HTML%E7%AC%94%E8%AE%B0/" rel="prev" title="HTML笔记">
       <i class="fa fa-chevron-left"></i> HTML笔记
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/23/+IT/+OS/Windows%20-%20%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/" rel="next" title="Windows - 日常使用">
+      Windows - 日常使用 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -484,7 +489,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方法种类"><span class="nav-text">方法种类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件法"><span class="nav-text">软件法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统法"><span class="nav-text">系统法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows"><span class="nav-text">Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#讲解"><span class="nav-text">讲解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#替换按键示例"><span class="nav-text">替换按键示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#屏蔽按键示例"><span class="nav-text">屏蔽按键示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恢复原按键功能"><span class="nav-text">恢复原按键功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特别说明："><span class="nav-text">特别说明：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux（未实践！！！）"><span class="nav-text">Linux（未实践！！！）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的"><span class="nav-text">我的</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方法种类"><span class="nav-text">方法种类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件法"><span class="nav-text">软件法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统法"><span class="nav-text">系统法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows"><span class="nav-text">Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#替换按键示例"><span class="nav-text">替换按键示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#屏蔽按键示例"><span class="nav-text">屏蔽按键示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恢复原按键功能"><span class="nav-text">恢复原按键功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特别说明："><span class="nav-text">特别说明：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux（未实践！！！）"><span class="nav-text">Linux（未实践！！！）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的"><span class="nav-text">我的</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -500,7 +505,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -513,7 +518,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
