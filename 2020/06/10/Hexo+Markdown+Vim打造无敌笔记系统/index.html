@@ -30,12 +30,12 @@
 <meta property="og:description" content="本文是本人呕心沥血之作，望能对大家有所帮助！  简介 使用Hexo + Vim + Markdown打造笔记系统 Hexo是一个用户量众多的静态博客框架，使用Markdown语法进行博客编写，而Vim是一个经典的编辑器，在熟练掌握三者之后进行笔记（博客）编写会如丝般顺滑，这里把Hexo博客系统来作为笔记系统使用，并将其部署在网上，我们可以随时通过任何联网设备查看笔记。（TODO：有空补一个演示视">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-10T15:39:45.000Z">
-<meta property="article:modified_time" content="2020-07-29T15:46:48.733Z">
+<meta property="article:modified_time" content="2020-07-30T17:10:47.079Z">
 <meta property="article:author" content="EK阿墙">
+<meta property="article:tag" content="笔记方法学">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="note">
 <meta property="article:tag" content="VIM">
-<meta property="article:tag" content="笔记方法学">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://elli999.gitee.io/2020/06/10/Hexo+Markdown+Vim%E6%89%93%E9%80%A0%E6%97%A0%E6%95%8C%E7%AC%94%E8%AE%B0%E7%B3%BB%E7%BB%9F/">
@@ -141,7 +141,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">8</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -242,7 +242,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-29 23:46:48" itemprop="dateModified" datetime="2020-07-29T23:46:48+08:00">2020-07-29</time>
+                <time title="Modified: 2020-07-31 01:10:47" itemprop="dateModified" datetime="2020-07-31T01:10:47+08:00">2020-07-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,11 +250,11 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software/" itemprop="url" rel="index"><span itemprop="name">Software</span></a>
+                  <a href="/categories/%E7%AC%94%E8%AE%B0%E6%96%B9%E6%B3%95%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">笔记方法学</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AC%94%E8%AE%B0%E6%96%B9%E6%B3%95%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">笔记方法学</span></a>
+                  <a href="/categories/Software/" itemprop="url" rel="index"><span itemprop="name">Software</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -337,7 +337,10 @@
 
 <p>然后便可以使用编辑器进行内容编辑，完成后保存退出即可。</p>
 <h2 id="2-2-生成页面"><a href="#2-2-生成页面" class="headerlink" title="2.2 生成页面"></a>2.2 生成页面</h2><p>文章发布前，需要先进行格式转换，Hexo能通过 <code>md</code> 文件生成为 html 页面。</p>
-<p><strong>清理缓存</strong>（其实是清理曾经生成过的Html页面）</p>
+<p><strong>清理缓存</strong></p>
+<blockquote>
+<p>其实是清理曾经生成过的Html页面</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
 
 <p><strong>生成页面</strong></p>
@@ -361,7 +364,29 @@
 <p>服务启动后，会自动检测文件变动，可在此时进行文章编辑，及网站设置改动。改动后保存，并刷新网站可即时查看更新效果。通过这样，可以作为本地调试使用。</p>
 <p>&lt;++&gt;</p>
 <hr>
-<h1 id="3-安装Vim"><a href="#3-安装Vim" class="headerlink" title="3. 安装Vim"></a>3. 安装Vim</h1><h2 id="3-1-安装插件管理器"><a href="#3-1-安装插件管理器" class="headerlink" title="3.1 安装插件管理器"></a>3.1 安装插件管理器</h2><h2 id="3-2-插件的安装与配置"><a href="#3-2-插件的安装与配置" class="headerlink" title="3.2 插件的安装与配置"></a>3.2 插件的安装与配置</h2><hr>
+<h1 id="3-安装Vim"><a href="#3-安装Vim" class="headerlink" title="3. 安装Vim"></a>3. 安装Vim</h1><h2 id="3-1-安装插件管理器"><a href="#3-1-安装插件管理器" class="headerlink" title="3.1 安装插件管理器"></a>3.1 安装插件管理器</h2><h2 id="3-2-插件的安装与配置"><a href="#3-2-插件的安装与配置" class="headerlink" title="3.2 插件的安装与配置"></a>3.2 插件的安装与配置</h2><p>TODO: 加插件的安装教程</p>
+<p>插件列表如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot; vimwiki，一个笔记管理和跳转插件</span><br><span class="line">Plug &#39;vimwiki&#x2F;vimwiki&#39;</span><br></pre></td></tr></table></figure>
+
+<p>下面逐个插件进行简单讲解</p>
+<h3 id="vimwiki"><a href="#vimwiki" class="headerlink" title="vimwiki"></a>vimwiki</h3><p><a href="https://github.com/vimwiki/vimwiki/blob/master/README-cn.md" target="_blank" rel="noopener">vimwiki中文网址</a></p>
+<p>一个提供笔记统一管理和跳转功能的插件</p>
+<p>第一次使用要在vimrc文件中添加设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&quot;</span><br><span class="line">&quot; vimwiki plug setting &#123;&#123;&#123;</span><br><span class="line">&quot;</span><br><span class="line"></span><br><span class="line">&quot; 设定默认初始路径，同时改变vimwiki默认的格式（从wiki后缀名改为md）</span><br><span class="line">let g:vimwiki_list &#x3D; [&#123;&#39;path&#39;: &#39;D:\WorkSpace\Hexo\blog\source\_posts&#39;,</span><br><span class="line">                      \ &#39;syntax&#39;: &#39;markdown&#39;, &#39;ext&#39;: &#39;.md&#39;&#125;]</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里的<code>D:\WorkSpace\Hexo\blog\source\_posts</code>应改为实际在本地部署Hexo网站文件夹下的_posts路径</p>
+<p>设置完成后，我们只需要在vim中输入<code>&lt;Leader&gt;ww</code>（&lt;Leader&gt;默认是<code>\</code>键），即可打开_posts路径下的index.md文件</p>
+<p>此文件可以理解为类似Linux根目录的根文件</p>
+<p>下面做个例子就能明白了</p>
+<p>在此文件中输入以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#x3D; 我的vimwiki笔记系统 &#x3D;</span><br><span class="line"></span><br><span class="line"># IT</span><br><span class="line"></span><br><span class="line">	## Coding</span><br><span class="line">	Python笔记</span><br><span class="line">	C++笔记</span><br><span class="line">	Java笔记</span><br><span class="line">	</span><br><span class="line">	## 操作系统</span><br><span class="line">	</span><br><span class="line">		### Linux</span><br><span class="line">		Linux笔记</span><br><span class="line"></span><br><span class="line"># Math</span><br><span class="line"></span><br><span class="line">	## 代数</span><br><span class="line">	高一代数</span><br><span class="line">	高二代数</span><br><span class="line">	高三代数</span><br><span class="line">	</span><br><span class="line">	## 几何</span><br><span class="line">	初一几何</span><br><span class="line">	初二几何</span><br><span class="line">	初三几何</span><br><span class="line"></span><br><span class="line"># English</span><br><span class="line">雅思笔记</span><br><span class="line">托福笔记</span><br></pre></td></tr></table></figure>
+
+<p>假如我们一开始要做的笔记是这些（实际是可以逐渐增加的，这里为是演示所以构建了这样一个框架）</p>
+<p>现在我们要编辑<code>Python笔记</code>，我们要先选中“Python笔记”的所有字体，然后按Enter键</p>
+<p>这样，vimwiki就会自动生成一个<code>Python笔记.md</code>的文件，并进入其中，可以马上编辑并自动保存</p>
+<p>在编辑完成后，我们可以按退格键回到<code>index.md</code>。</p>
+<p>下次需要进行编辑时，只需要将光标移动到<code>Python笔记</code>中的其中一个字上面，按回车就可以进入。</p>
+<hr>
 <p>我们为Windows和Linux分别记录</p>
 <h1 id="Win下，前往Vim官网下载并安装GVim"><a href="#Win下，前往Vim官网下载并安装GVim" class="headerlink" title="Win下，前往Vim官网下载并安装GVim"></a>Win下，前往<a href="https://www.vim.org/" target="_blank" rel="noopener">Vim官网</a>下载并安装GVim</h1><h2 id="1-安装Vim"><a href="#1-安装Vim" class="headerlink" title="1. 安装Vim"></a>1. 安装Vim</h2><p>Win下，前往<a href="https://www.vim.org/" target="_blank" rel="noopener">Vim官网</a>下载并安装GVim</p>
 <h2 id="vimrc文件"><a href="#vimrc文件" class="headerlink" title="vimrc文件"></a>vimrc文件</h2><h2 id="vim-plug插件管理器"><a href="#vim-plug插件管理器" class="headerlink" title="vim-plug插件管理器"></a>vim-plug插件管理器</h2><h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官网</a>（建议看英文版的，中文版不如英文版的资料新）</p>
@@ -398,9 +423,9 @@
 </blockquote>
 <h2 id="vim插件MarkdownPreview路径-Offline"><a href="#vim插件MarkdownPreview路径-Offline" class="headerlink" title="vim插件MarkdownPreview路径(Offline)"></a>vim插件MarkdownPreview路径(Offline)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">使用绝对路径</span><br><span class="line">![](&#x2F;Home&#x2F;用户名&#x2F;Document&#x2F;Hexo&#x2F;blog&#x2F;source&#x2F;_posts&#x2F;文件夹名&#x2F;test.jpg)</span><br><span class="line">使用相对路径</span><br><span class="line">![](.&#x2F;文件夹名&#x2F;test.jpg)</span><br></pre></td></tr></table></figure>
 
-<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>暂时没有很好的解决办法。不是办法的办法就是用<code>hexo s</code>的格式来做笔记，这样就不能在MarkdownPreview中预览了。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>暂时没有很好的解决办法。不是办法的办法就是用<code>hexo s</code>的格式来做笔记，这样就不能在MarkdownPreview中预览了。</p>
 <p>这样做是因为平时插入图片不算多，用<code>hexo s</code>命令预览，麻烦一点但是也能用。并且要发布的话，也只能用<code>hexo s</code>能识别的格式。如果用MarkdownPreview的格式输入，发布后图片就显示不出来了。</p>
-<h2 id="后续解决思路："><a href="#后续解决思路：" class="headerlink" title="后续解决思路："></a>后续解决思路：</h2><p>找MarkdownPreview负责识别图片路径的设置文件，更改识别格式（或者找Hexo中同样的文件）。目的是将两者统一。（考虑一下改哪个好？）</p>
+<h2 id="后续解决思路"><a href="#后续解决思路" class="headerlink" title="后续解决思路"></a>后续解决思路</h2><p>找MarkdownPreview负责识别图片路径的设置文件，更改识别格式（或者找Hexo中同样的文件）。目的是将两者统一。（考虑一下改哪个好？）</p>
 
     </div>
 
@@ -430,10 +455,10 @@
 
       <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/%E7%AC%94%E8%AE%B0%E6%96%B9%E6%B3%95%E5%AD%A6/" rel="tag"># 笔记方法学</a>
               <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
               <a href="/tags/note/" rel="tag"># note</a>
               <a href="/tags/VIM/" rel="tag"># VIM</a>
-              <a href="/tags/%E7%AC%94%E8%AE%B0%E6%96%B9%E6%B3%95%E5%AD%A6/" rel="tag"># 笔记方法学</a>
           </div>
 
         
@@ -446,7 +471,7 @@
       <i class="fa fa-chevron-left"></i> Hexo笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/06/18/+IT/+Software/VIM%E7%AC%94%E8%AE%B0/" rel="next" title="VIM笔记">
+    <a href="/2020/06/18/VIM%E7%AC%94%E8%AE%B0/" rel="next" title="VIM笔记">
       VIM笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -507,7 +532,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建思路"><span class="nav-text">搭建思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-安装Hexo博客"><span class="nav-text">1. 安装Hexo博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-安装Git"><span class="nav-text">1.1 安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-安装Nodejs"><span class="nav-text">1.2 安装Nodejs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-安装npm、cnpm"><span class="nav-text">1.3 安装npm、cnpm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-安装Hexo"><span class="nav-text">1.4 安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Hexo建站"><span class="nav-text">1.5 Hexo建站</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Hexo日常使用"><span class="nav-text">2. Hexo日常使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-新建及编辑文章"><span class="nav-text">2.1 新建及编辑文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-生成页面"><span class="nav-text">2.2 生成页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-部署"><span class="nav-text">2.3 部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-本地发布（调试）"><span class="nav-text">2.4 本地发布（调试）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-安装Vim"><span class="nav-text">3. 安装Vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-安装插件管理器"><span class="nav-text">3.1 安装插件管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-插件的安装与配置"><span class="nav-text">3.2 插件的安装与配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Win下，前往Vim官网下载并安装GVim"><span class="nav-text">Win下，前往Vim官网下载并安装GVim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装Vim"><span class="nav-text">1. 安装Vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vimrc文件"><span class="nav-text">vimrc文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-plug插件管理器"><span class="nav-text">vim-plug插件管理器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-text">参考文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#未归档"><span class="nav-text">未归档!!!!!!!!!!!!!!!</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片路径问题"><span class="nav-text">图片路径问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-s的路径-Online）"><span class="nav-text">hexo s的路径(Online）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim插件MarkdownPreview路径-Offline"><span class="nav-text">vim插件MarkdownPreview路径(Offline)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法："><span class="nav-text">解决办法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续解决思路："><span class="nav-text">后续解决思路：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建思路"><span class="nav-text">搭建思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-安装Hexo博客"><span class="nav-text">1. 安装Hexo博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-安装Git"><span class="nav-text">1.1 安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-安装Nodejs"><span class="nav-text">1.2 安装Nodejs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-安装npm、cnpm"><span class="nav-text">1.3 安装npm、cnpm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-安装Hexo"><span class="nav-text">1.4 安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Hexo建站"><span class="nav-text">1.5 Hexo建站</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Hexo日常使用"><span class="nav-text">2. Hexo日常使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-新建及编辑文章"><span class="nav-text">2.1 新建及编辑文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-生成页面"><span class="nav-text">2.2 生成页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-部署"><span class="nav-text">2.3 部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-本地发布（调试）"><span class="nav-text">2.4 本地发布（调试）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-安装Vim"><span class="nav-text">3. 安装Vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-安装插件管理器"><span class="nav-text">3.1 安装插件管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-插件的安装与配置"><span class="nav-text">3.2 插件的安装与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vimwiki"><span class="nav-text">vimwiki</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Win下，前往Vim官网下载并安装GVim"><span class="nav-text">Win下，前往Vim官网下载并安装GVim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装Vim"><span class="nav-text">1. 安装Vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vimrc文件"><span class="nav-text">vimrc文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-plug插件管理器"><span class="nav-text">vim-plug插件管理器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-text">参考文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#未归档"><span class="nav-text">未归档!!!!!!!!!!!!!!!</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片路径问题"><span class="nav-text">图片路径问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-s的路径-Online）"><span class="nav-text">hexo s的路径(Online）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim插件MarkdownPreview路径-Offline"><span class="nav-text">vim插件MarkdownPreview路径(Offline)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法"><span class="nav-text">解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续解决思路"><span class="nav-text">后续解决思路</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -523,7 +548,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
