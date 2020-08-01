@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HTML笔记</title>
-    <url>/2020/06/18/HTML%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="标签查询"><a href="#标签查询" class="headerlink" title="标签查询"></a>标签查询</h1><h2 id="img"><a href="#img" class="headerlink" title="img"></a>img</h2><p><code>img</code> means image</p>
-<p>一般格式</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;Image&quot; width:100% height:100%&gt;</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<h3 id="改变图像大小"><a href="#改变图像大小" class="headerlink" title="改变图像大小"></a>改变图像大小</h3><p><strong>按像素</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">width:100px</span> <span class="attr">height:100px</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:50px;height:50px;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>按比例</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"zoom:70%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:80%;height:80%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pangeru.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"transform:scale(0.9)"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>第一行的方法好像不行？（待测试！）<br>第三行的0.9即90%的意思。</p>
-<hr>
-<h2 id="mark"><a href="#mark" class="headerlink" title="mark"></a>mark</h2><p>mark标签，作用是高亮标签中的内容</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mark</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Do not forget to buy <span class="tag">&lt;<span class="name">mark</span>&gt;</span>milk<span class="tag">&lt;/<span class="name">mark</span>&gt;</span> today.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<p><img src="HTML%E7%AC%94%E8%AE%B0/mark.png" alt="mark"></p>
-<hr>
-<h1 id="名词-属性-查询"><a href="#名词-属性-查询" class="headerlink" title="名词(属性?)查询"></a>名词(属性?)查询</h1><h2 id="alt"><a href="#alt" class="headerlink" title="alt"></a>alt</h2><p><code>alt</code> means alternate，“替代（文本）”</p>
-<p>当设置了alt属性的元素无法加载显示时，会在html页面留下一个对应大小的空间，里面显示着alt的内容。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;上海鲜花港 - 郁金香&quot;  &#x2F;&gt;</span><br></pre></td></tr></table></figure>
-
-<div align="center"><img src="test.png" alt="上海鲜花港 - 郁金香"  /></div>
-]]></content>
-      <categories>
-        <category>Coding</category>
-        <category>HTML</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Github笔记</title>
     <url>/2020/07/31/Github%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<blockquote>
@@ -64,69 +24,78 @@
 ]]></content>
       <categories>
         <category>Software</category>
-        <category>VIM</category>
+        <category>Github</category>
       </categories>
       <tags>
         <tag>Github</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hexo笔记</title>
-    <url>/2020/05/15/Hexo%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="1-图片插入测试"><a href="#1-图片插入测试" class="headerlink" title="1. 图片插入测试"></a>1. 图片插入测试</h1><p><code>![20180501110502137](/_v_images/20200515005203539_20136.png)</code></p>
-<p><code>![](_v_images/20200515005242119_15822.png)</code></p>
-<h1 id=""><a href="#" class="headerlink" title=""></a><img src="https://img-blog.csdn.net/20180501110502137" alt=""></h1><h1 id="2-Hexo安装"><a href="#2-Hexo安装" class="headerlink" title="2. Hexo安装"></a>2. Hexo安装</h1><p>Hexo运行需要有node.js环境，如果需要部署在github，则还需要安装git。以下省略一千字！！！</p>
+    <title>HTML笔记</title>
+    <url>/2020/06/18/HTML%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="标签查询"><a href="#标签查询" class="headerlink" title="标签查询"></a>标签查询</h1><h2 id="img"><a href="#img" class="headerlink" title="img"></a>img</h2><p><code>img</code> means image</p>
+<p>一般格式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;Image&quot; width:100% height:100%&gt;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 
-<p>1、 安装node.js<br>2、 通过npm或者cnpm安装hexo（命令： <code>npm install hexo-cli -g</code>）（试过改变node.js插件安装目录，导致Hexo使用失败，可能不能改）<br>3、 创建自己的网站目录，然后在目录内执行 <code>hexo init 目录名</code> 命令初始化目录（会有内容下载）<br>4、 ……………………….  …….   …..    </p>
-<h1 id="3-Hexo部署设置"><a href="#3-Hexo部署设置" class="headerlink" title="3. Hexo部署设置"></a>3. Hexo部署设置</h1><p>补内容！！！！！！！！！！！</p>
-<h1 id="4-Hexo使用流程"><a href="#4-Hexo使用流程" class="headerlink" title="4. Hexo使用流程"></a>4. Hexo使用流程</h1><h2 id="4-1-新建文章（-post-）"><a href="#4-1-新建文章（-post-）" class="headerlink" title="4.1. 新建文章（ post ）"></a>4.1. 新建文章（ post ）</h2><p>使用命令行，进入blog目录后， 执行 <code>hexo new ABC</code> 命令，Hexo便会在 source_post 目录下生成一个名为“ABC.md”的文件（“ABC”可改为实际需要的名字）</p>
-<p>之后就可以打开该md文件完成内容编写</p>
-<h3 id="4-1-1-文章属性"><a href="#4-1-1-文章属性" class="headerlink" title="4.1.1. 文章属性"></a>4.1.1. 文章属性</h3><p>文章属性在 <code>hexo new xxx</code> 生成 md 文件时自动创建，在文章头部，包含layout、title、date、updated、comments、tags、categories、permalink属性，其中有部分属性是有default值的，即默认初始属性，如果不改动则以default值为准。</p>
-<p>一般格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo部署笔记</span><br><span class="line">date: 2020-05-15 00:47:04</span><br><span class="line">categories:</span><br><span class="line">    - Hexo</span><br><span class="line">tags:</span><br><span class="line">    - hexo</span><br><span class="line">    - 笔记方法学</span><br><span class="line">    - 笔记</span><br><span class="line">    - note</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="改变图像大小"><a href="#改变图像大小" class="headerlink" title="改变图像大小"></a>改变图像大小</h3><p><strong>按像素</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">width:100px</span> <span class="attr">height:100px</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:50px;height:50px;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>部分属性如有需要可自行添加</p>
-<h4 id="4-1-1-1-layout"><a href="#4-1-1-1-layout" class="headerlink" title="4.1.1.1. layout"></a>4.1.1.1. layout</h4><h4 id="4-1-1-2-title"><a href="#4-1-1-2-title" class="headerlink" title="4.1.1.2. title"></a>4.1.1.2. title</h4><h4 id="4-1-1-3-date"><a href="#4-1-1-3-date" class="headerlink" title="4.1.1.3. date"></a>4.1.1.3. date</h4><p>Published date</p>
-<blockquote>
-<p><strong>Default</strong>： File created date</p>
-</blockquote>
-<h4 id="4-1-1-4-updated"><a href="#4-1-1-4-updated" class="headerlink" title="4.1.1.4. updated"></a>4.1.1.4. updated</h4><p>Updated date</p>
-<blockquote>
-<p><strong>Default</strong>: File updated date</p>
-</blockquote>
-<h4 id="4-1-1-5-comments"><a href="#4-1-1-5-comments" class="headerlink" title="4.1.1.5. comments"></a>4.1.1.5. comments</h4><p>Enables comment feature for the post</p>
-<blockquote>
-<p><strong>Default</strong>: true</p>
-</blockquote>
-<h4 id="4-1-1-6-tags"><a href="#4-1-1-6-tags" class="headerlink" title="4.1.1.6. tags"></a>4.1.1.6. tags</h4><p>定义文章的标签属性 ( Not available for pages )</p>
-<p>按如下格式填写即可</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tags:</span><br><span class="line">    - tag1</span><br><span class="line">    - tag2</span><br><span class="line">    - ...</span><br></pre></td></tr></table></figure>
-
-<p>或</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tags: [标签1,标签2,标签3]</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-1-1-7-categories"><a href="#4-1-1-7-categories" class="headerlink" title="4.1.1.7. categories"></a>4.1.1.7. categories</h4><p>定义文章的标签属性 ( Not available for pages )</p>
-<p>按如下格式填写即可</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">    - 分类名</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-1-1-8-permalink"><a href="#4-1-1-8-permalink" class="headerlink" title="4.1.1.8. permalink"></a>4.1.1.8. permalink</h4><p>Overrides the default permalink of the post</p>
-<h4 id="4-1-1-9-description"><a href="#4-1-1-9-description" class="headerlink" title="4.1.1.9. description?"></a>4.1.1.9. description?</h4><p>应该还有一个 <code>description?</code> 属性，用于写入当前文章的 excerpt（摘要），放在首页，能令首页不显示全文，只显示文章的 description（描述）</p>
-<p>注意：要在<a title="\blog\theme\主题名\">主题目录</a>下的<code>_config.yml</code>文件，把下方的命令改为“true”，这个功能才能生效。（应该是这样，待测试！）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">excerpt_description: true</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-2-生成静态页面"><a href="#4-2-生成静态页面" class="headerlink" title="4.2. 生成静态页面"></a>4.2. 生成静态页面</h2><blockquote>
-<p>进行这一步操作前建议先使用 <code>hexo clean</code> 命令</p>
-</blockquote>
-<p>当文章内容完成编辑以后，同样的回到blog目录下的命令行，执行 <code>hexo generate</code> 命令，Hexo便会把source中的内容生成为静态网页内容，存放在public目录下。（此目录就是网站目录）</p>
-<h2 id="4-3-在本地建立服务（预览）"><a href="#4-3-在本地建立服务（预览）" class="headerlink" title="4.3. 在本地建立服务（预览）"></a>4.3. 在本地建立服务（预览）</h2><p>只要 public 目录有内容，便可以使用 <code>hexo server</code> 命令在本机创建端口号为4000的http访问服务，然后就可以在浏览器通过 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 访问网站，预览效果。</p>
-<p>（一般用于预览成果，没有问题后便可进行后续的部署到远程服务器）</p>
-<h2 id="4-4-部署到服务器"><a href="#4-4-部署到服务器" class="headerlink" title="4.4. 部署到服务器"></a>4.4. 部署到服务器</h2><blockquote>
-<p>第一次进行这一步操作前要先在 _config.yml 文件内填写好部署的目标地址信息</p>
-</blockquote>
-<p>当静态网页生成好以后，便可以执行 <code>hexo deploy</code> 命令，把public目录下的内容部署到目标地址（可以是私有服务器，或者是Github之类的网站）</p>
+<p><strong>按比例</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"zoom:70%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:80%;height:80%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pangeru.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"transform:scale(0.9)"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>第一行的方法好像不行？（待测试！）<br>第三行的0.9即90%的意思。</p>
 <hr>
-<h1 id="5-Hexo目录结构"><a href="#5-Hexo目录结构" class="headerlink" title="5. Hexo目录结构"></a>5. Hexo目录结构</h1><p>补图</p>
+<h2 id="mark"><a href="#mark" class="headerlink" title="mark"></a>mark</h2><p>mark标签，作用是高亮标签中的内容</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mark</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Do not forget to buy <span class="tag">&lt;<span class="name">mark</span>&gt;</span>milk<span class="tag">&lt;/<span class="name">mark</span>&gt;</span> today.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<p><img src="mark.png" alt="mark"></p>
+<hr>
+<h1 id="名词-属性-查询"><a href="#名词-属性-查询" class="headerlink" title="名词(属性?)查询"></a>名词(属性?)查询</h1><h2 id="alt"><a href="#alt" class="headerlink" title="alt"></a>alt</h2><p><code>alt</code> means alternate，“替代（文本）”</p>
+<p>当设置了alt属性的元素无法加载显示时，会在html页面留下一个对应大小的空间，里面显示着alt的内容。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;上海鲜花港 - 郁金香&quot;  &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<div align="center"><img src="test.png" alt="上海鲜花港 - 郁金香"  /></div>
+]]></content>
+      <categories>
+        <category>Coding</category>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo基础</title>
+    <url>/2020/08/01/Hexo%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p>Hexo基础</p>
+<a id="more"></a>
+
+<hr>
+<h1 id="Hexo官方插件"><a href="#Hexo官方插件" class="headerlink" title="Hexo官方插件"></a>Hexo官方插件</h1><p>Hexo官方网站内有很多插件，可以自行查看，根据需要进行添加。</p>
+]]></content>
+      <categories>
+        <category>+Software</category>
+        <category>笔记方法学</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo笔记</title>
+    <url>/2020/05/15/Hexo%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>My Hexo wiki.</p>
+<a id="more"></a>
+
+<hr>
+<h1 id="Hexo目录结构"><a href="#Hexo目录结构" class="headerlink" title="Hexo目录结构"></a>Hexo目录结构</h1><p>补图</p>
 <h2 id="deploy"><a href="#deploy" class="headerlink" title=".deploy"></a>.deploy</h2><p>需要部署的文件</p>
 <h2 id="node-modules"><a href="#node-modules" class="headerlink" title="node_modules"></a>node_modules</h2><p>hexo插件</p>
 <h2 id="public"><a href="#public" class="headerlink" title="public"></a>public</h2><p><strong>生成的静态网页文件</strong>：当使用hexo generate命令时，hexo会从source中把所有内容生成为静态网页文件并存放在此文件夹。即此文件夹便是完整的网站内容，后续使用hexo deploy部署时，也是只上传这个文件夹。</p>
@@ -237,41 +206,94 @@
 <li>package.json</li>
 </ul>
 <hr>
-<h1 id="6-按需求分类"><a href="#6-按需求分类" class="headerlink" title="6. 按需求分类"></a>6. 按需求分类</h1><h2 id="6-1-更换主题"><a href="#6-1-更换主题" class="headerlink" title="6.1. 更换主题"></a>6.1. 更换主题</h2><p>见上方目录结构章节中的 theme 文件夹讲解</p>
-<h2 id="6-2-更改网站整体结构"><a href="#6-2-更改网站整体结构" class="headerlink" title="6.2. 更改网站整体结构"></a>6.2. 更改网站整体结构</h2><p>在 theme 内对应的主题下更改代码（需要网页开发技能，可看主题的官方文档，跟着指导去进行修改）</p>
-<h2 id="6-3-增加网站访问量统计功能"><a href="#6-3-增加网站访问量统计功能" class="headerlink" title="6.3. 增加网站访问量统计功能"></a>6.3. 增加网站访问量统计功能</h2><p>利用“不蒜子”提供的服务： ibruce.info/2015/04/04/busuanzi/</p>
+<h1 id="按需求分类"><a href="#按需求分类" class="headerlink" title="按需求分类"></a>按需求分类</h1><h2 id="1-更换主题"><a href="#1-更换主题" class="headerlink" title="1. 更换主题"></a>1. 更换主题</h2><p>见上方目录结构章节中的 theme 文件夹讲解</p>
+<h2 id="2-更改网站整体结构"><a href="#2-更改网站整体结构" class="headerlink" title="2. 更改网站整体结构"></a>2. 更改网站整体结构</h2><p>在 theme 内对应的主题下更改代码（需要网页开发技能，可看主题的官方文档，跟着指导去进行修改）</p>
+<h2 id="3-增加网站访问量统计功能"><a href="#3-增加网站访问量统计功能" class="headerlink" title="3. 增加网站访问量统计功能"></a>3. 增加网站访问量统计功能</h2><p>利用“不蒜子”提供的服务： ibruce.info/2015/04/04/busuanzi/</p>
 <p>注：其它也可以，可以找同类的替代品。但是静态网站本身无法完成动态内容，必须要借助类似这种外来服务才能增加诸如统计计数、评论等功能。</p>
-<h2 id="6-4-Hexo官方插件"><a href="#6-4-Hexo官方插件" class="headerlink" title="6.4. Hexo官方插件"></a>6.4. Hexo官方插件</h2><p>Hexo官方网站内有很多插件，可以自行查看，根据需要进行添加。</p>
-<h2 id="6-5-增加评论区"><a href="#6-5-增加评论区" class="headerlink" title="6.5. 增加评论区"></a>6.5. 增加评论区</h2><blockquote>
+<h2 id="3-增加评论区"><a href="#3-增加评论区" class="headerlink" title="3. 增加评论区"></a>3. 增加评论区</h2><blockquote>
 <p>好像需要备案，不然有人发布不良言论会影响网站。</p>
 </blockquote>
 <p>1、 Disqus（被墙）<br>2、 来必力 livere.com<br>3、 多说（好像没了）<br>4、 畅言 changyan.kuaizhan.com</p>
-<h2 id="6-6-增加搜索功能-（重要！！！）"><a href="#6-6-增加搜索功能-（重要！！！）" class="headerlink" title="6.6. 增加搜索功能 （重要！！！）"></a>6.6. 增加搜索功能 （重要！！！）</h2><p>1、 swiftype.com （好像收费了）</p>
+<h2 id="4-增加搜索功能-（重要！！！）"><a href="#4-增加搜索功能-（重要！！！）" class="headerlink" title="4. 增加搜索功能 （重要！！！）"></a>4. 增加搜索功能 （重要！！！）</h2><p>1、 swiftype.com （好像收费了）</p>
 <p>原理：在你注册后，它就爬虫你的网站所有内容，建立索引在自己的服务器</p>
 <p>2、 自定义 site 语法进行跳转</p>
 <p>原理： 相当于在搜索引擎输入 “ site:taobao.com 铅笔“，前提是这个搜索引擎已经收录了你的内容（爬取）</p>
-<h2 id="6-7-插入本地图"><a href="#6-7-插入本地图" class="headerlink" title="6.7. 插入本地图"></a>6.7. 插入本地图</h2><p><strong>方法一：</strong></p>
+<h2 id="5-插入本地图"><a href="#5-插入本地图" class="headerlink" title="5. 插入本地图"></a>5. 插入本地图</h2><p><strong>方法一：</strong></p>
 <p>把图片（这里举例是test.jpg）放入blog/source/images 下 （“images”可以改为其它名称）</p>
 <blockquote>
-<p>应该只要放入source文件夹中就行，这里创建文件夹images只是为了方便分类管理（待测试！）</p>
+<p>应该只要放入source文件夹下任意位置都可以，这里放入<code>source\images</code>只是为了方便统一管理</p>
 </blockquote>
 <p>在md文件中，使用<code>![](images/test.jpg)</code> 完成插入</p>
 <p><strong>方法二：</strong></p>
-<p>在 <code>_config.yml</code> 打开 post_asset_folder 功能，将当前文章所用的图片放置到source目录下的文章同名资源目录下，以 <code>![](image.jpg)</code> 方式引用</p>
+<p>在 <code>_config.yml</code> 把<code>post_asset_folder</code>设为<code>true</code>，然后把当前文章所用的图片，保存到文章所在目录下的同名文件夹下，最后用 <code>![](图片文件名.jpg)</code> 方式引用即可。</p>
 <blockquote>
-<p>EK：待补充实际操作！！</p>
+<p><code>_config.yml</code>在网站的根目录下，是Hexo的主配置文件，一般不要随便改动。</p>
 </blockquote>
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>
-<h1 id="未归类"><a href="#未归类" class="headerlink" title="未归类"></a>未归类</h1><h2 id="Hexo新建文章"><a href="#Hexo新建文章" class="headerlink" title="Hexo新建文章"></a>Hexo新建文章</h2><ul>
+<h2 id="Hexo新建文章"><a href="#Hexo新建文章" class="headerlink" title="Hexo新建文章"></a>Hexo新建文章</h2><ul>
 <li>可以直接复制或者新建md文件放入 <code>_posts</code> 文件夹内</li>
 <li>Windows貌似不能识别带有空格的md文件名（例如：《Linux - 日常使用》，现在已全部统一不用空格，变成《Linux-日常使用》）。使用文件名带空格的md文件，在生成文章后在首页不显示文章（但是貌似在分类中可以找到）</li>
 </ul>
+<h1 id="Bug记录"><a href="#Bug记录" class="headerlink" title="Bug记录"></a>Bug记录</h1><h2 id="显性Bug"><a href="#显性Bug" class="headerlink" title="显性Bug"></a>显性Bug</h2><blockquote>
+<p>显性Bug即不可以使用，使用前就报错。</p>
+</blockquote>
+<h3 id="在-做的标题里，不要用-、"><a href="#在-做的标题里，不要用-、" class="headerlink" title="在#做的标题里，不要用{、}"></a>在#做的标题里，不要用<code>{</code>、<code>}</code></h3><p>在#做的标题里，不要用<code>{</code>、<code>}</code>，会导致<code>hexo g</code>失败。</p>
+<blockquote>
+<p>看报错代码，应该是生成HTML页面时，<code>{</code>、<code>}</code>会混入HTML代码中。</p>
+</blockquote>
+<h2 id="隐性Bug"><a href="#隐性Bug" class="headerlink" title="隐性Bug"></a>隐性Bug</h2><blockquote>
+<p>隐性Bug即可以使用，不报错，但是用的时候发现问题。</p>
+</blockquote>
+<h3 id="首页不显示文章"><a href="#首页不显示文章" class="headerlink" title="首页不显示文章"></a>首页不显示文章</h3><ul>
+<li>文章命名</li>
+</ul>
+<p>Windows貌似不能识别带有空格的md文件名（例如：《Linux - 日常使用》，现在已全部统一不用空格，变成《Linux-日常使用》）。使用文件名带空格的md文件，在生成文章后在首页不显示文章（但是貌似在分类中可以找到）</p>
+<h1 id="—"><a href="#—" class="headerlink" title="—"></a>—</h1><h1 id="—-1"><a href="#—-1" class="headerlink" title="—"></a>—</h1><h1 id="—-2"><a href="#—-2" class="headerlink" title="—"></a>—</h1><h1 id="—-3"><a href="#—-3" class="headerlink" title="—"></a>—</h1><h1 id="—-4"><a href="#—-4" class="headerlink" title="—"></a>—</h1><h1 id="弃？"><a href="#弃？" class="headerlink" title="弃？((("></a>弃？(((</h1><h1 id="文章属性"><a href="#文章属性" class="headerlink" title="文章属性"></a>文章属性</h1><p>文章属性在 <code>hexo new xxx</code> 生成 md 文件时自动创建，在文章头部，包含layout、title、date、updated、comments、tags、categories、permalink属性，其中有部分属性是有default值的，即默认初始属性，如果不改动则以default值为准。</p>
+<p>一般格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo部署笔记</span><br><span class="line">date: 2020-05-15 00:47:04</span><br><span class="line">categories:</span><br><span class="line">    - Hexo</span><br><span class="line">tags:</span><br><span class="line">    - hexo</span><br><span class="line">    - 笔记方法学</span><br><span class="line">    - 笔记</span><br><span class="line">    - note</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>部分属性如有需要可自行添加</p>
+<h2 id="4-1-1-1-layout"><a href="#4-1-1-1-layout" class="headerlink" title="4.1.1.1. layout"></a>4.1.1.1. layout</h2><h2 id="4-1-1-2-title"><a href="#4-1-1-2-title" class="headerlink" title="4.1.1.2. title"></a>4.1.1.2. title</h2><h2 id="4-1-1-3-date"><a href="#4-1-1-3-date" class="headerlink" title="4.1.1.3. date"></a>4.1.1.3. date</h2><p>Published date</p>
+<blockquote>
+<p><strong>Default</strong>： File created date</p>
+</blockquote>
+<h2 id="4-1-1-4-updated"><a href="#4-1-1-4-updated" class="headerlink" title="4.1.1.4. updated"></a>4.1.1.4. updated</h2><p>Updated date</p>
+<blockquote>
+<p><strong>Default</strong>: File updated date</p>
+</blockquote>
+<h2 id="4-1-1-5-comments"><a href="#4-1-1-5-comments" class="headerlink" title="4.1.1.5. comments"></a>4.1.1.5. comments</h2><p>Enables comment feature for the post</p>
+<blockquote>
+<p><strong>Default</strong>: true</p>
+</blockquote>
+<h2 id="4-1-1-6-tags"><a href="#4-1-1-6-tags" class="headerlink" title="4.1.1.6. tags"></a>4.1.1.6. tags</h2><p>定义文章的标签属性 ( Not available for pages )</p>
+<p>按如下格式填写即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tags:</span><br><span class="line">    - tag1</span><br><span class="line">    - tag2</span><br><span class="line">    - ...</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tags: [标签1,标签2,标签3]</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-1-1-7-categories"><a href="#4-1-1-7-categories" class="headerlink" title="4.1.1.7. categories"></a>4.1.1.7. categories</h2><p>定义文章的标签属性 ( Not available for pages )</p>
+<p>按如下格式填写即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">    - 分类名</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-1-1-8-permalink"><a href="#4-1-1-8-permalink" class="headerlink" title="4.1.1.8. permalink"></a>4.1.1.8. permalink</h2><p>Overrides the default permalink of the post</p>
+<h2 id="4-1-1-9-description"><a href="#4-1-1-9-description" class="headerlink" title="4.1.1.9. description?"></a>4.1.1.9. description?</h2><p>应该还有一个 <code>description?</code> 属性，用于写入当前文章的 excerpt（摘要），放在首页，能令首页不显示全文，只显示文章的 description（描述）</p>
+<p>注意：要在<a title="\blog\theme\主题名\">主题目录</a>下的<code>_config.yml</code>文件，把下方的命令改为“true”，这个功能才能生效。（应该是这样，待测试！）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">excerpt_description: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-2-生成静态页面"><a href="#4-2-生成静态页面" class="headerlink" title="4.2. 生成静态页面"></a>4.2. 生成静态页面</h2><blockquote>
+<p>进行这一步操作前建议先使用 <code>hexo clean</code> 命令</p>
+</blockquote>
+<p>当文章内容完成编辑以后，同样的回到blog目录下的命令行，执行 <code>hexo generate</code> 命令，Hexo便会把source中的内容生成为静态网页内容，存放在public目录下。（此目录就是网站目录）</p>
+<h2 id="4-3-在本地建立服务（预览）"><a href="#4-3-在本地建立服务（预览）" class="headerlink" title="4.3. 在本地建立服务（预览）"></a>4.3. 在本地建立服务（预览）</h2><p>只要 public 目录有内容，便可以使用 <code>hexo server</code> 命令在本机创建端口号为4000的http访问服务，然后就可以在浏览器通过 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 访问网站，预览效果。</p>
+<p>（一般用于预览成果，没有问题后便可进行后续的部署到远程服务器）</p>
+<h2 id="4-4-部署到服务器"><a href="#4-4-部署到服务器" class="headerlink" title="4.4. 部署到服务器"></a>4.4. 部署到服务器</h2><blockquote>
+<p>第一次进行这一步操作前要先在 _config.yml 文件内填写好部署的目标地址信息</p>
+</blockquote>
+<p>当静态网页生成好以后，便可以执行 <code>hexo deploy</code> 命令，把public目录下的内容部署到目标地址（可以是私有服务器，或者是Github之类的网站）</p>
+<h1 id="弃？-1"><a href="#弃？-1" class="headerlink" title="弃？)))"></a>弃？)))</h1><hr>
 ]]></content>
       <categories>
+        <category>+Software</category>
         <category>笔记方法学</category>
         <category>Hexo</category>
       </categories>
@@ -533,7 +555,8 @@
       <categories>
         <category>Software</category>
         <category>笔记方法学</category>
-        <category>VIM</category>
+        <category>Vim</category>
+        <category>Hexo</category>
       </categories>
       <tags>
         <tag>笔记方法学</tag>
@@ -572,133 +595,12 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux笔记</title>
-    <url>/2020/07/22/Linux%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/05/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+    <title>Vim笔记-基础</title>
+    <url>/2020/08/01/Vim%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<a id="more"></a>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>index</title>
-    <url>/2020/05/14/index/</url>
-    <content><![CDATA[<hr>
-<h1 id="未分类"><a href="#未分类" class="headerlink" title="未分类"></a>未分类</h1><p><a href="hello-world">hello world</a></p>
 <hr>
-<p>== 缩进法 ==</p>
-<h1 id="笔记方法学"><a href="#笔记方法学" class="headerlink" title="笔记方法学"></a>笔记方法学</h1><p><a href="Hexo+Markdown+Vim打造无敌笔记系统">Hexo+Markdown+Vim打造无敌笔记系统</a><br><a href="Hexo笔记">Hexo笔记</a></p>
-<hr>
-<h1 id="IT"><a href="#IT" class="headerlink" title="IT"></a>IT</h1><pre><code>## Coding
-
-    ### HTML
-    [HTML笔记](HTML笔记)
-
-## OS
-
-    ### Linux
-    [Linux-日常使用](Linux-日常使用)
-    [Linux笔记](Linux笔记)
-
-        #### Ubuntu
-
-
-    ### Windows
-    [Windows-日常使用](Windows-日常使用)
-
-## Software
-[VIM笔记](VIM笔记)
-[Github笔记](Github笔记)</code></pre><hr>
-<p>== 表格法1 ==</p>
-<blockquote>
-<p>初步：不好看，不直观。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">笔记方法学</td>
-<td align="center"><a href="Hexo+Markdown+Vim打造无敌笔记系统">Hexo+Markdown+Vim打造无敌笔记系统</a></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">笔记方法学</td>
-<td align="center"><a href="Hexo笔记">Hexo笔记</a></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">Coding</td>
-<td align="center">HTML</td>
-<td align="center"><a href="HTML笔记">HTML笔记</a></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">OS</td>
-<td align="center">Linux</td>
-<td align="center"><a href="Linux-日常使用">Linux-日常使用</a></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">OS</td>
-<td align="center">Linux</td>
-<td align="center"><a href="Linux笔记">Linux笔记</a></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">OS</td>
-<td align="center">Linux</td>
-<td align="center">Ubuntu</td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">OS</td>
-<td align="center">Windows</td>
-<td align="center"><a href="Windows-日常使用">Windows-日常使用</a></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">Software</td>
-<td align="center"><a href="VIM笔记">VIM笔记</a></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">Software</td>
-<td align="center"><a href="Github笔记">Github笔记</a></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p>==你好吗aaa==</p>
-<p><strong>hello</strong> </p>
-]]></content>
-  </entry>
-  <entry>
-    <title>VIM笔记</title>
-    <url>/2020/06/18/VIM%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="三种模式（记忆！）"><a href="#三种模式（记忆！）" class="headerlink" title="三种模式（记忆！）"></a>三种模式（记忆！）</h1><p><strong>三种常见的模式：</strong></p>
+<h1 id="三种模式（记忆！）"><a href="#三种模式（记忆！）" class="headerlink" title="三种模式（记忆！）"></a>三种模式（记忆！）</h1><p><strong>三种常见的模式：</strong></p>
 <ul>
 <li><strong>Normal Mode</strong></li>
 <li><strong>Insert Mode</strong></li>
@@ -707,107 +609,9 @@
 <p>Normal mode和Insert Mode的切换有Append，Insert，Replace，Subsitute 记作AIRS，这种记忆方法特别方便，英文单词的意思是空气。</p>
 <p>vim在命令模式和输入模式的切换可以通过光标位置和形状的变化观察，以及部分编辑器下方的状态栏会显示。</p>
 <p><img src="ThreeMode.png" alt="ThreeMode"></p>
-<a id="more"></a>
+<!-- more -->
 
 <p><img src="example01.png" alt="example01"></p>
-<hr>
-<h1 id="简单功能"><a href="#简单功能" class="headerlink" title="简单功能"></a>简单功能</h1><h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><p><strong>撤销上一个命令</strong></p>
-<p>按键： u（小写）</p>
-<p>模式： Normal</p>
-<p><strong>撤销最后编辑的一行的所有修改</strong></p>
-<p>按键： U（大写）</p>
-<p>模式： Normal</p>
-<hr>
-<h2 id="光标移动：上下左右"><a href="#光标移动：上下左右" class="headerlink" title="光标移动：上下左右"></a>光标移动：上下左右</h2><p>按键： h、j、k、l（小写）</p>
-<p>模式： Normal</p>
-<p>将光标向对应方向移动一格，h左、j下、k上、l右</p>
-<h2 id="光标移动：行首"><a href="#光标移动：行首" class="headerlink" title="光标移动：行首"></a>光标移动：行首</h2><p>按键： 0（数字）</p>
-<p>模式： Normal</p>
-<p>光标移到行首</p>
-<br>
-
-<p><strong>按键： ^（shift 6）</strong></p>
-<p>模式： Normal</p>
-<p>光标移到行首的第一个非空白字符的位置</p>
-<h2 id="光标移动：行末"><a href="#光标移动：行末" class="headerlink" title="光标移动：行末"></a>光标移动：行末</h2><p><strong>按键： 0（数字）</strong></p>
-<p>模式： Normal</p>
-<p>光标移到行首</p>
-<br>
-
-<p><strong>按键： $（shift 4）</strong></p>
-<p>模式： Normal</p>
-<p>将光标移到当前行的行尾</p>
-<h2 id="行内移动"><a href="#行内移动" class="headerlink" title="行内移动"></a>行内移动</h2><p><strong>按键： f</strong></p>
-<p>模式： Normal</p>
-<p><code>f字符</code>，光标移到当前行的下一个匹配的“字符”上</p>
-<blockquote>
-<p>例如输入<code>fa</code>，则跳转到当前光标所在行的下一个”a”上，如果没有则不进行任何操作</p>
-</blockquote>
-<br>
-
-<p><strong>按键： F</strong></p>
-<p>模式： Normal</p>
-<p><code>F字符</code>，光标移到当前行的下一个匹配的“字符”上</p>
-<blockquote>
-<p>例如输入<code>Fb</code>，则跳转到当前光标所在行的下一个”b”上，如果没有则不进行任何操作</p>
-</blockquote>
-<hr>
-<h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><p><strong>替换当前行的第一个匹配</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:s&#x2F;old&#x2F;new</span><br></pre></td></tr></table></figure>
-
-<p>替换 old 为 new（以下相同）</p>
-<br>
-
-<p><strong>替换当前行的所有匹配</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:s&#x2F;old&#x2F;new&#x2F;g</span><br></pre></td></tr></table></figure>
-
-<p><strong>替换两个指定行之间出现的每个匹配串</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:#,#s&#x2F;old&#x2F;new&#x2F;g</span><br></pre></td></tr></table></figure>
-
-<p>其中 #,# 代表的是替换操作的若干行中首尾两行的行号。</p>
-<p><strong>替换整个文件中的每个匹配串</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">%s&#x2F;old&#x2F;new&#x2F;g</span><br></pre></td></tr></table></figure>
-
-<p><strong>找到整个文件中的每个匹配串，并提示是否替换</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:%s&#x2F;old&#x2F;new&#x2F;gc</span><br></pre></td></tr></table></figure>
-
-<h1 id="复杂功能"><a href="#复杂功能" class="headerlink" title="复杂功能"></a>复杂功能</h1><h2 id="Vim内容复制不到其它程序"><a href="#Vim内容复制不到其它程序" class="headerlink" title="Vim内容复制不到其它程序"></a>Vim内容复制不到其它程序</h2><p><a href="https://www.zhihu.com/question/19863631" target="_blank" rel="noopener">参考资料：知乎《如何将 Vim 剪贴板里面的东西粘贴到 Vim 之外的地方？》</a></p>
-<p>根据平台不同，要分两种情况。先用下面命令确定你属于哪一种，</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim --version | grep clipboard</span><br></pre></td></tr></table></figure>
-
-<p><strong>情况一</strong></p>
-<p><img src="+clipboard.png" alt="+clipboard"></p>
-<p>如果结果里你找到加号开头的+clipboard， 恭喜你，你的vim没问题</p>
-<ul>
-<li>用 <code>&quot;+y</code> 将选中的内容复制到系统剪贴板，效果和ctrl-c一致。</li>
-<li>用 <code>&quot;+p</code> 将剪贴板内容复制到指定位置，也可以用ctrl-v。</li>
-</ul>
-<p><strong>情况二</strong></p>
-<p>如果找到的是负号开头的<code>-clipboard</code>，说明你的vim不支持系统剪切板。需要先重新安装vim。</p>
-<p>Linux系统</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install vim-gtk</span><br></pre></td></tr></table></figure>
-
-<p>MacOS</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
-
-<p>安装好之后，输入 <code>vim --version | grep clipboard</code> 命令应该已经变成<code>+clipboard</code> 了。</p>
-<p>现在可以回到情况一进行复制了。</p>
-<hr>
-<h2 id="在当前位置输入文件名"><a href="#在当前位置输入文件名" class="headerlink" title="在当前位置输入文件名"></a>在当前位置输入文件名</h2><p>方法一：</p>
-<ol>
-<li>在需要插入位置进入Insert模式</li>
-<li>按 <code>CTRL</code> + <code>R</code> ，此时光标处变成双引号 <code>&quot;</code> </li>
-<li>按 <code>%</code> 键，即可直接插入当前文件名</li>
-</ol>
-<p>方法二：</p>
-<ol>
-<li>在需要插入位置进入Insert模式</li>
-<li>按 <code>CTRL</code> + <code>R</code> ，此时光标处变成双引号 <code>&quot;</code> </li>
-<li>按 <code>=</code> 键，然后输入表达式 <code>expand(&quot;%:t&quot;)</code> <blockquote>
-<p>如果不需要后缀名，则输入 <code>expand(&quot;%:t:r&quot;)</code></p>
-</blockquote>
-</li>
-</ol>
 <hr>
 <h1 id="插件管理器"><a href="#插件管理器" class="headerlink" title="插件管理器"></a>插件管理器</h1><h2 id="vim-plug"><a href="#vim-plug" class="headerlink" title="vim-plug"></a>vim-plug</h2><p><a href="https://github.com/junegunn/vim-plug" target="_blank" rel="noopener">Github vim-plug</a></p>
 <ul>
@@ -881,12 +685,9 @@
 <p>有时不小心关闭了预览页面，不能再次打开。是因为上次退出没有使用<code>MarkdownPreviewStop</code>命令关闭，执行一次此命令即可恢复。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; “运行”不同格格式的文件</span><br><span class="line">&quot;	https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1ox411R7bo</span><br><span class="line">&quot;	https:&#x2F;&#x2F;github.com&#x2F;theniceboy&#x2F;.vim&#x2F;blob&#x2F;master&#x2F;vimrc</span><br><span class="line">&quot; 按&lt;leader&gt;r 运行</span><br><span class="line">map &lt;leader&gt;r :call CompileRunGcc()&lt;CR&gt;</span><br><span class="line">func! CompileRunGcc()</span><br><span class="line">  exec &quot;w&quot;</span><br><span class="line">  if &amp;filetype &#x3D;&#x3D; &#39;c&#39;</span><br><span class="line">    exec &quot;!g++ % -o %&lt;&quot;</span><br><span class="line">    exec &quot;!time .&#x2F;%&lt;&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;cpp&#39;</span><br><span class="line">    exec &quot;!g++ % -o %&lt;&quot;</span><br><span class="line">    exec &quot;!time .&#x2F;%&lt;&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;java&#39;</span><br><span class="line">    exec &quot;!javac %&quot;</span><br><span class="line">    exec &quot;!time java %&lt;&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;sh&#39;</span><br><span class="line">    :!time bash %</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;python&#39;</span><br><span class="line">    silent! exec &quot;!clear&quot;</span><br><span class="line">    exec &quot;!time python3 %&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;html&#39;</span><br><span class="line">    exec &quot;!firefox % &amp;&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;markdown&#39;</span><br><span class="line">    exec &quot;MarkdownPreview&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;vimwiki&#39;</span><br><span class="line">    exec &quot;MarkdownPreview&quot;</span><br><span class="line">  endif</span><br><span class="line">endfunc</span><br><span class="line"></span><br><span class="line">&quot; 按&lt;leader&gt;rr停止</span><br><span class="line">map &lt;leader&gt;rr :call CompileRunGcc2()&lt;CR&gt;</span><br><span class="line">func! CompileRunGcc2()</span><br><span class="line">  exec &quot;w&quot;</span><br><span class="line">  if &amp;filetype &#x3D;&#x3D; &#39;markdown&#39;</span><br><span class="line">    exec &quot;MarkdownPreviewStop&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;vimwiki&#39;</span><br><span class="line">    exec &quot;MarkdownPreviewStop&quot;</span><br><span class="line">  endif</span><br><span class="line">endfunc</span><br></pre></td></tr></table></figure>
 
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>
-<table>
+<h2 id="easymotion插件"><a href="#easymotion插件" class="headerlink" title="easymotion插件"></a>easymotion插件</h2><p>快速把光标跳转、定位到指定位置</p>
+<p><a href="https://www.bilibili.com/video/BV1mE411t76N" target="_blank" rel="noopener">PegasusWang视频《vim easymotion 瞬间移动大法》</a></p>
+<h1 id="—"><a href="#—" class="headerlink" title="—"></a>—</h1><h1 id="—-1"><a href="#—-1" class="headerlink" title="—"></a>—</h1><h1 id="—-2"><a href="#—-2" class="headerlink" title="—"></a>—</h1><h1 id="—-3"><a href="#—-3" class="headerlink" title="—"></a>—</h1><h1 id="—-4"><a href="#—-4" class="headerlink" title="—"></a>—</h1><h1 id="未整理"><a href="#未整理" class="headerlink" title="未整理"></a>未整理</h1><table>
 <thead>
 <tr>
 <th>所在模式</th>
@@ -1052,10 +853,158 @@
 ]]></content>
       <categories>
         <category>Software</category>
-        <category>VIM</category>
+        <category>Vim</category>
       </categories>
       <tags>
-        <tag>VIM</tag>
+        <tag>Vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux笔记</title>
+    <url>/2020/07/22/Linux%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Vim笔记</title>
+    <url>/2020/06/18/Vim%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>My Vim wiki.</p>
+<a id="more"></a>
+
+<hr>
+<h1 id="简单功能"><a href="#简单功能" class="headerlink" title="简单功能"></a>简单功能</h1><h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><p><strong>撤销上一个命令</strong></p>
+<p>按键： u（小写）</p>
+<p>模式： Normal</p>
+<p><strong>撤销最后编辑的一行的所有修改</strong></p>
+<p>按键： U（大写）</p>
+<p>模式： Normal</p>
+<hr>
+<h2 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h2><ul>
+<li><h3 id="光标移动：上下左右"><a href="#光标移动：上下左右" class="headerlink" title="光标移动：上下左右"></a>光标移动：上下左右</h3></li>
+</ul>
+<p>按键： h、j、k、l（小写）</p>
+<p>模式： Normal</p>
+<p>将光标向对应方向移动一格，h左、j下、k上、l右</p>
+<ul>
+<li><h3 id="光标移动：行首"><a href="#光标移动：行首" class="headerlink" title="光标移动：行首"></a>光标移动：行首</h3></li>
+</ul>
+<p>按键： 0（数字）</p>
+<p>模式： Normal</p>
+<p>光标移到行首</p>
+<br>
+
+<p><strong>按键： ^（shift 6）</strong></p>
+<p>模式： Normal</p>
+<p>光标移到行首的第一个非空白字符的位置</p>
+<ul>
+<li><h3 id="光标移动：行末"><a href="#光标移动：行末" class="headerlink" title="光标移动：行末"></a>光标移动：行末</h3></li>
+</ul>
+<p><strong>按键： 0（数字）</strong></p>
+<p>模式： Normal</p>
+<p>光标移到行首</p>
+<br>
+
+<p><strong>按键： $（shift 4）</strong></p>
+<p>模式： Normal</p>
+<p>将光标移到当前行的行尾</p>
+<ul>
+<li><h3 id="光标移动：在当前行内找字符"><a href="#光标移动：在当前行内找字符" class="headerlink" title="光标移动：在当前行内找字符"></a>光标移动：在当前行内找字符</h3></li>
+</ul>
+<p><strong>按键： f</strong></p>
+<p>模式： Normal</p>
+<p><code>f字符</code>，光标移到当前行的下一个匹配的“字符”上</p>
+<blockquote>
+<p>例如输入<code>fa</code>，则跳转到当前光标所在行的下一个”a”上，如果没有则不进行任何操作</p>
+</blockquote>
+<br>
+
+<p><strong>按键： F</strong></p>
+<p>模式： Normal</p>
+<p><code>F字符</code>，光标移到当前行的下一个匹配的“字符”上</p>
+<blockquote>
+<p>例如输入<code>Fb</code>，则跳转到当前光标所在行的下一个”b”上，如果没有则不进行任何操作</p>
+</blockquote>
+<ul>
+<li><h3 id="光标移动：跳转至-上-下一个-与当前光标所在的word相同的位置"><a href="#光标移动：跳转至-上-下一个-与当前光标所在的word相同的位置" class="headerlink" title="光标移动：跳转至 上/下一个 与当前光标所在的word相同的位置"></a>光标移动：跳转至 上/下一个 与当前光标所在的word相同的位置</h3></li>
+</ul>
+<p><strong>按键： #</strong></p>
+<p>模式： Normal</p>
+<p>光标移到上一个匹配的word上</p>
+<br>
+
+<p><strong>按键： *</strong></p>
+<p>模式： Normal</p>
+<p>光标移到下一个匹配的word上</p>
+<hr>
+<h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><p><strong>替换当前行的第一个匹配</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:s&#x2F;old&#x2F;new</span><br></pre></td></tr></table></figure>
+
+<p>替换 old 为 new（以下相同）</p>
+<br>
+
+<p><strong>替换当前行的所有匹配</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:s&#x2F;old&#x2F;new&#x2F;g</span><br></pre></td></tr></table></figure>
+
+<p><strong>替换两个指定行之间出现的每个匹配串</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:#,#s&#x2F;old&#x2F;new&#x2F;g</span><br></pre></td></tr></table></figure>
+
+<p>其中 #,# 代表的是替换操作的若干行中首尾两行的行号。</p>
+<p><strong>替换整个文件中的每个匹配串</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">%s&#x2F;old&#x2F;new&#x2F;g</span><br></pre></td></tr></table></figure>
+
+<p><strong>找到整个文件中的每个匹配串，并提示是否替换</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:%s&#x2F;old&#x2F;new&#x2F;gc</span><br></pre></td></tr></table></figure>
+
+<h1 id="复杂功能"><a href="#复杂功能" class="headerlink" title="复杂功能"></a>复杂功能</h1><h2 id="Open-Recent"><a href="#Open-Recent" class="headerlink" title="Open Recent"></a>Open Recent</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:bro old</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>完整命令： <code>:browse oldfiles</code></p>
+</blockquote>
+<p>TODO: 怎么清空这个列表，还没找到解决办法。</p>
+<h2 id="Vim内容复制不到其它程序"><a href="#Vim内容复制不到其它程序" class="headerlink" title="Vim内容复制不到其它程序"></a>Vim内容复制不到其它程序</h2><p><a href="https://www.zhihu.com/question/19863631" target="_blank" rel="noopener">参考资料：知乎《如何将 Vim 剪贴板里面的东西粘贴到 Vim 之外的地方？》</a></p>
+<p>根据平台不同，要分两种情况。先用下面命令确定你属于哪一种，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim --version | grep clipboard</span><br></pre></td></tr></table></figure>
+
+<p><strong>情况一</strong></p>
+<p><img src="+clipboard.png" alt="+clipboard"></p>
+<p>如果结果里你找到加号开头的+clipboard， 恭喜你，你的vim没问题</p>
+<ul>
+<li>用 <code>&quot;+y</code> 将选中的内容复制到系统剪贴板，效果和ctrl-c一致。</li>
+<li>用 <code>&quot;+p</code> 将剪贴板内容复制到指定位置，也可以用ctrl-v。</li>
+</ul>
+<p><strong>情况二</strong></p>
+<p>如果找到的是负号开头的<code>-clipboard</code>，说明你的vim不支持系统剪切板。需要先重新安装vim。</p>
+<p>Linux系统</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install vim-gtk</span><br></pre></td></tr></table></figure>
+
+<p>MacOS</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
+
+<p>安装好之后，输入 <code>vim --version | grep clipboard</code> 命令应该已经变成<code>+clipboard</code> 了。</p>
+<p>现在可以回到情况一进行复制了。</p>
+<hr>
+<h2 id="在当前位置输入文件名"><a href="#在当前位置输入文件名" class="headerlink" title="在当前位置输入文件名"></a>在当前位置输入文件名</h2><p>方法一：</p>
+<ol>
+<li>在需要插入位置进入Insert模式</li>
+<li>按 <code>CTRL</code> + <code>R</code> ，此时光标处变成双引号 <code>&quot;</code> </li>
+<li>按 <code>%</code> 键，即可直接插入当前文件名</li>
+</ol>
+<p>方法二：</p>
+<ol>
+<li>在需要插入位置进入Insert模式</li>
+<li>按 <code>CTRL</code> + <code>R</code> ，此时光标处变成双引号 <code>&quot;</code> </li>
+<li>按 <code>=</code> 键，然后输入表达式 <code>expand(&quot;%:t&quot;)</code> <blockquote>
+<p>如果不需要后缀名，则输入 <code>expand(&quot;%:t:r&quot;)</code></p>
+</blockquote>
+</li>
+</ol>
+<hr>
+]]></content>
+      <categories>
+        <category>Software</category>
+        <category>Vim</category>
+      </categories>
+      <tags>
+        <tag>Vim</tag>
       </tags>
   </entry>
   <entry>
@@ -1185,5 +1134,135 @@
         <tag>Windows</tag>
         <tag>OS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/05/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>index</title>
+    <url>/2020/05/14/index/</url>
+    <content><![CDATA[<p>vimwiki本地目录（索引），仅用于本地。</p>
+<a id="more"></a>
+
+<hr>
+<h1 id="未分类"><a href="#未分类" class="headerlink" title="未分类"></a>未分类</h1><p><a href="hello-world">hello world</a></p>
+<hr>
+<p>== 缩进法 ==</p>
+<hr>
+<h1 id="IT"><a href="#IT" class="headerlink" title="IT"></a>IT</h1><pre><code>## Coding
+
+    ### HTML
+    [HTML笔记](HTML笔记)
+
+## OS
+
+    ### Linux
+    [Linux-日常使用](Linux-日常使用)
+    [Linux笔记](Linux笔记)
+
+        #### Ubuntu
+
+
+    ### Windows
+    [Windows-日常使用](Windows-日常使用)
+
+## Software
+[Github笔记](Github笔记)
+
+    ### Hexo
+    [Hexo笔记](Hexo笔记)
+    [Hexo基础](Hexo基础)
+    [Hexo+Markdown+Vim打造无敌笔记系统](Hexo+Markdown+Vim打造无敌笔记系统)
+
+    ### Vim
+    [Vim笔记](Vim笔记)
+    [Vim基础](Vim基础)</code></pre><hr>
+<h1 id="笔记方法学"><a href="#笔记方法学" class="headerlink" title="笔记方法学"></a>笔记方法学</h1><p><a href="Hexo笔记">Hexo笔记</a><br><a href="Hexo基础">Hexo基础</a><br><a href="Hexo+Markdown+Vim打造无敌笔记系统">Hexo+Markdown+Vim打造无敌笔记系统</a></p>
+<p>== 表格法1 ==</p>
+<blockquote>
+<p>初步：不好看，不直观。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">笔记方法学</td>
+<td align="center"><a href="Hexo+Markdown+Vim打造无敌笔记系统">Hexo+Markdown+Vim打造无敌笔记系统</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">笔记方法学</td>
+<td align="center"><a href="Hexo笔记">Hexo笔记</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">Coding</td>
+<td align="center">HTML</td>
+<td align="center"><a href="HTML笔记">HTML笔记</a></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">OS</td>
+<td align="center">Linux</td>
+<td align="center"><a href="Linux-日常使用">Linux-日常使用</a></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">OS</td>
+<td align="center">Linux</td>
+<td align="center"><a href="Linux笔记">Linux笔记</a></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">OS</td>
+<td align="center">Linux</td>
+<td align="center">Ubuntu</td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">OS</td>
+<td align="center">Windows</td>
+<td align="center"><a href="Windows-日常使用">Windows-日常使用</a></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">Software</td>
+<td align="center"><a href="VIM笔记">VIM笔记</a></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">Software</td>
+<td align="center"><a href="Github笔记">Github笔记</a></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>==你好吗aaa==</p>
+<p><strong>hello</strong> </p>
+]]></content>
   </entry>
 </search>
