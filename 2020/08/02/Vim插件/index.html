@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"elli999.gitee.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Table of Content   插件管理器 vim-plug   插件推荐 vimwiki插件 Commands   Vim-markdown插件 Markdown-preview插件 easymotion插件 vim-markdown-toc插件 Commands Options">
+  <meta name="description" content="Table of Content   插件管理器 vim-plug   插件推荐 vimwiki插件 Commands   vim-markdown插件 Markdown-preview插件 easymotion插件 vim-markdown-toc插件 Commands Options">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vim插件">
 <meta property="og:url" content="https://elli999.gitee.io/2020/08/02/Vim%E6%8F%92%E4%BB%B6/index.html">
 <meta property="og:site_name" content="Eason Kong&#39;s Blog">
-<meta property="og:description" content="Table of Content   插件管理器 vim-plug   插件推荐 vimwiki插件 Commands   Vim-markdown插件 Markdown-preview插件 easymotion插件 vim-markdown-toc插件 Commands Options">
+<meta property="og:description" content="Table of Content   插件管理器 vim-plug   插件推荐 vimwiki插件 Commands   vim-markdown插件 Markdown-preview插件 easymotion插件 vim-markdown-toc插件 Commands Options">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-02T10:08:26.000Z">
-<meta property="article:modified_time" content="2020-08-02T17:23:41.382Z">
+<meta property="article:modified_time" content="2020-08-03T06:39:41.768Z">
 <meta property="article:author" content="EK阿墙">
 <meta property="article:tag" content="Vim">
 <meta property="article:tag" content="Plug">
@@ -130,7 +130,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">17</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">14</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -241,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-03 01:23:41" itemprop="dateModified" datetime="2020-08-03T01:23:41+08:00">2020-08-03</time>
+                <time title="Modified: 2020-08-03 14:39:41" itemprop="dateModified" datetime="2020-08-03T14:39:41+08:00">2020-08-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,7 +284,7 @@
 <li><a href="#commands">Commands</a></li>
 </ul>
 </li>
-<li><a href="#vim-markdown插件">Vim-markdown插件</a></li>
+<li><a href="#vim-markdown插件">vim-markdown插件</a></li>
 <li><a href="#markdown-preview插件">Markdown-preview插件</a></li>
 <li><a href="#easymotion插件">easymotion插件</a></li>
 <li><a href="#vim-markdown-toc插件">vim-markdown-toc插件</a><ul>
@@ -359,7 +359,7 @@
 <blockquote>
 <p>EK：不好用。只能在Vim和vimwiki下跳转，Hexo生成的网页无效。</p>
 </blockquote>
-<h2 id="Vim-markdown插件"><a href="#Vim-markdown插件" class="headerlink" title="Vim-markdown插件"></a>Vim-markdown插件</h2><p><a href="">Github地址</a></p>
+<h2 id="vim-markdown插件"><a href="#vim-markdown插件" class="headerlink" title="vim-markdown插件"></a>vim-markdown插件</h2><p><a href="">Github地址</a></p>
 <blockquote>
 <p>这个插件好像没什么用？</p>
 </blockquote>
@@ -368,9 +368,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&quot; 插件安装</span><br><span class="line">call plug#begin(&#39;~&#x2F;.vim&#x2F;plugged&#39;)</span><br><span class="line">Plug &#39;godlygeek&#x2F;tabular&#39;</span><br><span class="line">Plug &#39;plasticboy&#x2F;vim-markdown&#39;</span><br><span class="line">call plug#end()</span><br><span class="line"></span><br><span class="line">&quot;</span><br><span class="line">&quot; Vim-markdown 插件设置 &#123;&#123;&#123;</span><br><span class="line">&quot;</span><br><span class="line">let g:vim_markdown_folding_disabled &#x3D; 1 &quot;&quot;&quot;&quot;设置不做代码折叠</span><br><span class="line">let g:vim_markdown_frontmatter&#x3D;1 &quot;&quot; 设置支持yaml语法</span><br><span class="line">let g:vim_markdown_math &#x3D; 1    &quot; 打开latex支持</span><br><span class="line">&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>命令详解</li>
+<li>Commands</li>
 </ul>
-<p>对齐和补全已存在的r<em>表格*</em></p>
+<p>对齐和补全已存在的<strong>表格</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:TableFormat</span><br></pre></td></tr></table></figure>
 
 <h2 id="Markdown-preview插件"><a href="#Markdown-preview插件" class="headerlink" title="Markdown-preview插件"></a>Markdown-preview插件</h2><p><a href="https://github.com/iamcco/markdown-preview.nvim" target="_blank" rel="noopener">Github主页</a></p>
@@ -529,7 +529,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Table-of-Content"><span class="nav-text">Table of Content</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件管理器"><span class="nav-text">插件管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-plug"><span class="nav-text">vim-plug</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件推荐"><span class="nav-text">插件推荐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vimwiki插件"><span class="nav-text">vimwiki插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Commands"><span class="nav-text">Commands</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim-markdown插件"><span class="nav-text">Vim-markdown插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-preview插件"><span class="nav-text">Markdown-preview插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#easymotion插件"><span class="nav-text">easymotion插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-markdown-toc插件"><span class="nav-text">vim-markdown-toc插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Commands-1"><span class="nav-text">Commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Options"><span class="nav-text">Options</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Table-of-Content"><span class="nav-text">Table of Content</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件管理器"><span class="nav-text">插件管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-plug"><span class="nav-text">vim-plug</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件推荐"><span class="nav-text">插件推荐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vimwiki插件"><span class="nav-text">vimwiki插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Commands"><span class="nav-text">Commands</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-markdown插件"><span class="nav-text">vim-markdown插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-preview插件"><span class="nav-text">Markdown-preview插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#easymotion插件"><span class="nav-text">easymotion插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-markdown-toc插件"><span class="nav-text">vim-markdown-toc插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Commands-1"><span class="nav-text">Commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Options"><span class="nav-text">Options</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -545,7 +545,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -558,7 +558,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
