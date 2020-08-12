@@ -22,20 +22,21 @@
     var CONFIG = {"hostname":"elli999.gitee.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="My Vim wiki. Table of Content   简单功能 撤销 光标移动 替换   复杂功能 Open Recent Vim内容复制不到其它程序 在当前位置输入文件名 分屏">
+  <meta name="description" content="My Vim wiki. Table of Content   Vim基础 Vim的模式 Vim的默认变量 Vim中的按键对照表 Vim设置(set) 与选中有关的操作 1.先选中后操作 2. 不选中的情况下操作 in and? find     标签页 分屏 录制功能   Vim应用 简单功能 撤销 光标移动 替换   复杂功能 Open Recent 保存Vim当前打开的所有页面 在当前位置输">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vim笔记">
 <meta property="og:url" content="https://elli999.gitee.io/2020/06/18/Vim%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Eason Kong&#39;s Blog">
-<meta property="og:description" content="My Vim wiki. Table of Content   简单功能 撤销 光标移动 替换   复杂功能 Open Recent Vim内容复制不到其它程序 在当前位置输入文件名 分屏">
+<meta property="og:description" content="My Vim wiki. Table of Content   Vim基础 Vim的模式 Vim的默认变量 Vim中的按键对照表 Vim设置(set) 与选中有关的操作 1.先选中后操作 2. 不选中的情况下操作 in and? find     标签页 分屏 录制功能   Vim应用 简单功能 撤销 光标移动 替换   复杂功能 Open Recent 保存Vim当前打开的所有页面 在当前位置输">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://elli999.gitee.io/2020/06/18/Vim%E7%AC%94%E8%AE%B0/+clipboard.png">
+<meta property="og:image" content="https://elli999.gitee.io/2020/06/18/Vim%E7%AC%94%E8%AE%B0/ThreeMode.png">
+<meta property="og:image" content="https://elli999.gitee.io/2020/06/18/Vim%E7%AC%94%E8%AE%B0/example01.png">
 <meta property="article:published_time" content="2020-06-18T11:51:55.000Z">
-<meta property="article:modified_time" content="2020-08-11T09:23:11.892Z">
+<meta property="article:modified_time" content="2020-08-12T15:26:44.558Z">
 <meta property="article:author" content="EK阿墙">
 <meta property="article:tag" content="Vim">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://elli999.gitee.io/2020/06/18/Vim%E7%AC%94%E8%AE%B0/+clipboard.png">
+<meta name="twitter:image" content="https://elli999.gitee.io/2020/06/18/Vim%E7%AC%94%E8%AE%B0/ThreeMode.png">
 
 <link rel="canonical" href="https://elli999.gitee.io/2020/06/18/Vim%E7%AC%94%E8%AE%B0/">
 
@@ -140,7 +141,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">15</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">14</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -241,7 +242,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-11 17:23:11" itemprop="dateModified" datetime="2020-08-11T17:23:11+08:00">2020-08-11</time>
+                <time title="Modified: 2020-08-12 23:26:44" itemprop="dateModified" datetime="2020-08-12T23:26:44+08:00">2020-08-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,6 +277,27 @@
 <h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><!-- vim-markdown-toc Redcarpet -->
 
 <ul>
+<li><a href="#vim基础">Vim基础</a><ul>
+<li><a href="#vim的模式">Vim的模式</a></li>
+<li><a href="#vim的默认变量">Vim的默认变量</a></li>
+<li><a href="#vim中的按键对照表">Vim中的按键对照表</a></li>
+<li><a href="#vim设置-set">Vim设置(set)</a></li>
+<li><a href="#与选中有关的操作">与选中有关的操作</a><ul>
+<li><a href="#1-先选中后操作">1.先选中后操作</a></li>
+<li><a href="#2-不选中的情况下操作">2. 不选中的情况下操作</a><ul>
+<li><a href="#in">in</a></li>
+<li><a href="#and">and?</a></li>
+<li><a href="#find">find</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#标签页">标签页</a></li>
+<li><a href="#分屏">分屏</a></li>
+<li><a href="#录制功能">录制功能</a></li>
+</ul>
+</li>
+<li><a href="#vim应用">Vim应用</a><ul>
 <li><a href="#简单功能">简单功能</a><ul>
 <li><a href="#撤销">撤销</a></li>
 <li><a href="#光标移动">光标移动</a></li>
@@ -284,144 +306,225 @@
 </li>
 <li><a href="#复杂功能">复杂功能</a><ul>
 <li><a href="#open-recent">Open Recent</a></li>
-<li><a href="#vim内容复制不到其它程序">Vim内容复制不到其它程序</a></li>
+<li><a href="#保存vim当前打开的所有页面">保存Vim当前打开的所有页面</a></li>
 <li><a href="#在当前位置输入文件名">在当前位置输入文件名</a></li>
-<li><a href="#分屏">分屏</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#未整理">未整理</a></li>
 </ul>
 <!-- vim-markdown-toc -->
 
 <a id="more"></a>
 
 <hr>
-<h1 id="简单功能"><a href="#简单功能" class="headerlink" title="简单功能"></a>简单功能</h1><h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><p><strong>撤销上一个命令</strong></p>
-<p>按键： u（小写）</p>
-<p>模式： Normal</p>
-<p><strong>撤销最后编辑的一行的所有修改</strong></p>
-<p>按键： U（大写）</p>
-<p>模式： Normal</p>
 <hr>
-<h2 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h2><ul>
-<li><h3 id="光标移动：上下左右"><a href="#光标移动：上下左右" class="headerlink" title="光标移动：上下左右"></a>光标移动：上下左右</h3></li>
-</ul>
-<p>按键： h、j、k、l（小写）</p>
-<p>模式： Normal</p>
-<p>将光标向对应方向移动一格，h左、j下、k上、l右</p>
+<h1 id="Vim基础"><a href="#Vim基础" class="headerlink" title="Vim基础"></a>Vim基础</h1><h2 id="Vim的模式"><a href="#Vim的模式" class="headerlink" title="Vim的模式"></a>Vim的模式</h2><p>TODO: Vim总共有5种模式？分别是 Normal Mode、Insert Mode、Visual Mode、</p>
+<p><strong>三种常见的模式：</strong></p>
 <ul>
-<li><h3 id="光标移动：行首"><a href="#光标移动：行首" class="headerlink" title="光标移动：行首"></a>光标移动：行首</h3></li>
+<li><strong>Normal Mode</strong></li>
+<li><strong>Insert Mode</strong></li>
+<li><strong>Visual Mode</strong></li>
 </ul>
-<p>按键： 0（数字）</p>
-<p>模式： Normal</p>
-<p>光标移到行首</p>
-<br>
-
-<p><strong>按键： ^（shift 6）</strong></p>
-<p>模式： Normal</p>
-<p>光标移到行首的第一个非空白字符的位置</p>
-<ul>
-<li><h3 id="光标移动：行末"><a href="#光标移动：行末" class="headerlink" title="光标移动：行末"></a>光标移动：行末</h3></li>
-</ul>
-<p><strong>按键： 0（数字）</strong></p>
-<p>模式： Normal</p>
-<p>光标移到行首</p>
-<br>
-
-<p><strong>按键： $（shift 4）</strong></p>
-<p>模式： Normal</p>
-<p>将光标移到当前行的行尾</p>
-<ul>
-<li><h3 id="光标移动：在当前行内找字符"><a href="#光标移动：在当前行内找字符" class="headerlink" title="光标移动：在当前行内找字符"></a>光标移动：在当前行内找字符</h3></li>
-</ul>
-<p><strong>按键： f</strong></p>
-<p>模式： Normal</p>
-<p><code>f字符</code>，光标移到当前行的下一个匹配的“字符”上</p>
-<blockquote>
-<p>例如输入<code>fa</code>，则跳转到当前光标所在行的下一个”a”上，如果没有则不进行任何操作</p>
-</blockquote>
-<br>
-
-<p><strong>按键： F</strong></p>
-<p>模式： Normal</p>
-<p><code>F字符</code>，光标移到当前行的下一个匹配的“字符”上</p>
-<blockquote>
-<p>例如输入<code>Fb</code>，则跳转到当前光标所在行的下一个”b”上，如果没有则不进行任何操作</p>
-</blockquote>
-<ul>
-<li><h3 id="光标移动：跳转至-上-下一个-与当前光标所在的word相同的位置"><a href="#光标移动：跳转至-上-下一个-与当前光标所在的word相同的位置" class="headerlink" title="光标移动：跳转至 上/下一个 与当前光标所在的word相同的位置"></a>光标移动：跳转至 上/下一个 与当前光标所在的word相同的位置</h3></li>
-</ul>
-<p><strong>按键： #</strong></p>
-<p>模式： Normal</p>
-<p>光标移到上一个匹配的word上</p>
-<br>
-
-<p><strong>按键： *</strong></p>
-<p>模式： Normal</p>
-<p>光标移到下一个匹配的word上</p>
+<p>Normal mode和Insert Mode的切换有Append，Insert，Replace，Subsitute 记作AIRS，这种记忆方法特别方便，英文单词的意思是空气。</p>
+<p>vim在命令模式和输入模式的切换可以通过光标位置和形状的变化观察，以及部分编辑器下方的状态栏会显示。</p>
+<p><img src="ThreeMode.png" alt="ThreeMode"></p>
+<p><img src="example01.png" alt="example01"></p>
 <hr>
-<h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><p><strong>替换当前行的第一个匹配</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s&#x2F;old&#x2F;new</span><br></pre></td></tr></table></figure>
-
-<p>替换 old 为 new（以下相同）</p>
 <br>
 
-<p><strong>替换当前行的所有匹配</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s&#x2F;old&#x2F;new&#x2F;g</span><br></pre></td></tr></table></figure>
-
-<p><strong>替换两个指定行之间出现的每个匹配串</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:#,#s&#x2F;old&#x2F;new&#x2F;g</span><br></pre></td></tr></table></figure>
-
-<p>其中 #,# 代表的是替换操作的若干行中首尾两行的行号。</p>
-<p><strong>替换整个文件中的每个匹配串</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%s&#x2F;old&#x2F;new&#x2F;g</span><br></pre></td></tr></table></figure>
-
-<p><strong>找到整个文件中的每个匹配串，并提示是否替换</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s&#x2F;old&#x2F;new&#x2F;gc</span><br></pre></td></tr></table></figure>
-
-<h1 id="复杂功能"><a href="#复杂功能" class="headerlink" title="复杂功能"></a>复杂功能</h1><h2 id="Open-Recent"><a href="#Open-Recent" class="headerlink" title="Open Recent"></a>Open Recent</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:bro old</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>完整命令： <code>:browse oldfiles</code></p>
+<h2 id="Vim的默认变量"><a href="#Vim的默认变量" class="headerlink" title="Vim的默认变量"></a>Vim的默认变量</h2><blockquote>
+<p>常量？</p>
 </blockquote>
-<p>TODO: 怎么清空这个列表，还没找到解决办法。</p>
-<h2 id="Vim内容复制不到其它程序"><a href="#Vim内容复制不到其它程序" class="headerlink" title="Vim内容复制不到其它程序"></a>Vim内容复制不到其它程序</h2><p><a href="https://www.zhihu.com/question/19863631" target="_blank" rel="noopener">参考资料：知乎《如何将 Vim 剪贴板里面的东西粘贴到 Vim 之外的地方？》</a></p>
-<p>根据平台不同，要分两种情况。先用下面命令确定你属于哪一种，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim --version | grep clipboard</span><br></pre></td></tr></table></figure>
-
-<p><strong>情况一</strong></p>
-<p><img src="+clipboard.png" alt="+clipboard"></p>
-<p>如果结果里你找到加号开头的+clipboard， 恭喜你，你的vim没问题</p>
-<ul>
-<li>用 <code>&quot;+y</code> 将选中的内容复制到系统剪贴板，效果和ctrl-c一致。</li>
-<li>用 <code>&quot;+p</code> 将剪贴板内容复制到指定位置，也可以用ctrl-v。</li>
-</ul>
-<p><strong>情况二</strong></p>
-<p>如果找到的是负号开头的<code>-clipboard</code>，说明你的vim不支持系统剪切板。需要先重新安装vim。</p>
-<p>Linux系统</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install vim-gtk</span><br></pre></td></tr></table></figure>
-
-<p>MacOS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
-
-<p>安装好之后，输入 <code>vim --version | grep clipboard</code> 命令应该已经变成<code>+clipboard</code> 了。</p>
-<p>现在可以回到情况一进行复制了。</p>
+<table>
+<thead>
+<tr>
+<th align="center">X量</th>
+<th align="center">Meaning</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$MYVIMRC</td>
+<td align="center">默认路径下的vimrc文件</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
 <hr>
-<h2 id="在当前位置输入文件名"><a href="#在当前位置输入文件名" class="headerlink" title="在当前位置输入文件名"></a>在当前位置输入文件名</h2><p>方法一：</p>
+<br>
+
+<h2 id="Vim中的按键对照表"><a href="#Vim中的按键对照表" class="headerlink" title="Vim中的按键对照表"></a>Vim中的按键对照表</h2><table>
+<thead>
+<tr>
+<th align="center">Key</th>
+<th align="center">在Vim中的表达</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Enter</td>
+<td align="center"><CR></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">no operation</td>
+<td align="center"><nop></td>
+<td align="center">即无操作</td>
+</tr>
+</tbody></table>
+<hr>
+<br>
+
+<h2 id="Vim设置-set"><a href="#Vim设置-set" class="headerlink" title="Vim设置(set)"></a>Vim设置(set)</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">effect</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">set cursorline</td>
+<td align="center">高亮当前行</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">set wrap</td>
+<td align="center">自动换行(文字不出界)</td>
+<td align="center">（貌似vim8已经是默认打开的了）</td>
+</tr>
+<tr>
+<td align="center">set showcmd</td>
+<td align="center">显示按键命令</td>
+<td align="center">（貌似vim8已经是默认打开的了）</td>
+</tr>
+<tr>
+<td align="center">set wildmenu</td>
+<td align="center">显示命令补全菜单</td>
+<td align="center">（貌似vim8已经是默认打开的了）</td>
+</tr>
+<tr>
+<td align="center">set hlsearch</td>
+<td align="center">搜索结果高亮显示</td>
+<td align="center">（貌似vim8已经是默认打开的了）</td>
+</tr>
+<tr>
+<td align="center">set incsearch</td>
+<td align="center">边输边高亮</td>
+<td align="center">（貌似vim8已经是默认打开的了）</td>
+</tr>
+<tr>
+<td align="center">set ignorecase</td>
+<td align="center">搜索时，忽略大小写</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">set smartcase</td>
+<td align="center">搜索时，智能大小写</td>
+<td align="center">即当搜索内容含有大写时，则以区分大小写的模式搜索。</td>
+</tr>
+</tbody></table>
+<hr>
+<br>
+
+<h2 id="与选中有关的操作"><a href="#与选中有关的操作" class="headerlink" title="与选中有关的操作"></a>与选中有关的操作</h2><p>Vim需要操作选中内容，有以下几种办法。</p>
 <ol>
-<li>在需要插入位置进入Insert模式</li>
-<li>按 <code>CTRL</code> + <code>R</code> ，此时光标处变成双引号 <code>&quot;</code> </li>
-<li>按 <code>%</code> 键，即可直接插入当前文件名</li>
+<li>先选中后操作</li>
+<li>不选中的情况下操作</li>
 </ol>
-<p>方法二：</p>
-<ol>
-<li>在需要插入位置进入Insert模式</li>
-<li>按 <code>CTRL</code> + <code>R</code> ，此时光标处变成双引号 <code>&quot;</code> </li>
-<li>按 <code>=</code> 键，然后输入表达式 <code>expand(&quot;%:t&quot;)</code> <blockquote>
-<p>如果不需要后缀名，则输入 <code>expand(&quot;%:t:r&quot;)</code></p>
+<blockquote>
+<p>涉及了在Normal模式下的v、y、x、c、d等的操作。</p>
 </blockquote>
-</li>
-</ol>
+<h3 id="1-先选中后操作"><a href="#1-先选中后操作" class="headerlink" title="1.先选中后操作"></a>1.先选中后操作</h3><p>通过Visual Mode可以选中内容。选中后可以使用以下操作：</p>
+<ul>
+<li><code>y</code> 复制</li>
+<li><code>d</code> 剪切</li>
+<li><code>x</code> 剪切一个字（如果多选则剪切多个，和<code>d</code>相同）</li>
+<li><code>c</code> 剪切，并进入Insert Mode</li>
+</ul>
+<h3 id="2-不选中的情况下操作"><a href="#2-不选中的情况下操作" class="headerlink" title="2. 不选中的情况下操作"></a>2. 不选中的情况下操作</h3><p>不选中，但是光标要在需要编辑的行或者单词上。</p>
+<ul>
+<li><code>yy</code> 复制当前行</li>
+<li><code>dd</code> 剪切当前行</li>
+<li><code>cc</code> 剪切当前行，并进入Insert Mode</li>
+</ul>
+<h4 id="in"><a href="#in" class="headerlink" title="in"></a>in</h4><blockquote>
+<p>下面开始是重点，这里的<code>i</code>是”in”的意思。</p>
+</blockquote>
+<ul>
+<li><code>yiw</code> 复制当前单词</li>
+<li><code>diw</code> 剪切当前单词</li>
+<li><code>ciw</code> 剪切当前单词，并进入Insert Mode</li>
+<li><code>yi&quot;</code> 复制光标所在（或光标后面）的第一对<code>双引号</code>内的内容</li>
+<li><code>di&quot;</code> 剪切光标所在（或光标后面）的第一对<code>双引号</code>内的内容</li>
+<li><code>ci&quot;</code> 剪切光标所在（或光标后面）的第一对<code>双引号</code>内的内容，并进入Insert Mode</li>
+</ul>
+<p>同理可把<code>&quot;</code>，替换为<code>&#39;</code></p>
+<ul>
+<li><code>yi{</code> 复制光标所在<code>大括号</code>内的内容</li>
+<li><code>di{</code> 复制光标所在<code>大括号</code>内的内容</li>
+<li><code>ci{</code> 复制光标所在<code>大括号</code>内的内容，并进入Insert Mode</li>
+</ul>
+<p>同理可把<code>{</code>，替换为<code>}</code> <code>[</code> <code>]</code> <code>(</code> <code>)</code> <code>&lt;</code> <code>&gt;</code></p>
+<h4 id="and"><a href="#and" class="headerlink" title="and?"></a>and?</h4><p><code>a</code> for “and”</p>
+<p>把上面”in”的所有内容中的<code>i</code>改为<code>a</code>，则可连同符号一同操作</p>
+<p>例如 <code>hello &quot;how are you&quot;</code> 中使用 <code>di&quot;</code> 会变成 <code>hello &quot;&quot;</code></p>
+<p>如果改成 <code>hello &quot;how are you&quot;</code> 中使用 <code>da&quot;</code> 会变成 <code>hello</code>，连同双引号一同删除了。</p>
+<h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><p><code>f</code> for “find”</p>
+<p>平时我们使用<code>f</code>或者<code>F</code>，是在当前行向后/向前搜索字符。</p>
+<p>例如： 在<code>hello &quot;how are you&quot;</code>中，如果我们的光标在行首，使用<code>fr</code>，光标会移动到中间的字母”r”上。</p>
+<p>我们可以使用<code>yf</code> <code>df</code> <code>cf</code> 后面接字符来进行快速修改。</p>
+<p>还是上面的例子，在<code>hello &quot;how are you&quot;</code>中按<code>dfo</code>可快速删除由光标开始到”o”的内容，结果是<code>&quot;how are you&quot;</code>。</p>
 <hr>
+<br>
+
+<h2 id="标签页"><a href="#标签页" class="headerlink" title="标签页"></a>标签页</h2><table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">effect</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:tabe</td>
+<td align="center">新建空标签页</td>
+<td align="center">等同<code>:tabnew</code></td>
+</tr>
+<tr>
+<td align="center">:tabe 文件名</td>
+<td align="center">在新标签页打开文档</td>
+<td align="center">等同<code>:tabnew</code></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">Key</th>
+<th align="center">effect</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">gt</td>
+<td align="center">切换到下一个标签页</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">gT</td>
+<td align="center">切换到上一个标签页</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<hr>
+<br>
+
 <h2 id="分屏"><a href="#分屏" class="headerlink" title="分屏"></a>分屏</h2><p>分屏命令，可以把一个窗口分成两个部分，使Vim可以同时编辑多个文件。</p>
 <ul>
 <li>分屏命令</li>
@@ -527,6 +630,319 @@
 <blockquote>
 <p>调整窗口宽高的命令可以和数字连用，例如按：<code>5</code> <code>CTRL W</code> <code>+</code> 等于连续 5 次增加高度。</p>
 </blockquote>
+<hr>
+<br>
+
+<h2 id="录制功能"><a href="#录制功能" class="headerlink" title="录制功能"></a>录制功能</h2><p><strong>录制：</strong> <code>q</code> + 自定义的宏名字（由数字和字母组成）</p>
+<p><strong>调用：</strong> <code>@</code> + 完成录制的宏名字</p>
+<blockquote>
+<p>这里我将此功能录制的成品称为“宏”，方便理解，后续找到官方叫法再纠正。</p>
+</blockquote>
+<p>Vim提供录制功能，可把一段操作录入到一个自定名字的宏内。宏可被反复调用，提供重复性工作的效率。</p>
+<p><strong>举例说明：</strong></p>
+<p>下面有5行网站名，现在要批量编辑成 <code>www.网站名.com</code> 的格式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sina</span><br><span class="line">baidu</span><br><span class="line">163</span><br><span class="line">sogou</span><br><span class="line">github</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>光标移动到第一行的第一个字母s</li>
+<li>按<code>qa</code>开始录制，这里把录制内容寄存在名为<code>a</code>的宏内。此时可见到左下角显示“记录中”。</li>
+<li>开始输入需要录入的内容，这里的思路是完成一行的修改操作，并移动到下一行。<ul>
+<li>大写<code>I</code>在行首插入，然后输入<code>www.</code>，按<code>&lt;ESC&gt;</code>回到Normal Mode。</li>
+<li>大写<code>A</code>在行尾插入，输入<code>.com</code>，按<code>&lt;ESC&gt;</code>回到Normal Mode。</li>
+<li><code>j</code>下移一行，然后按<code>0</code>到达行首。<blockquote>
+<p>所以这里总输入是： <code>Iwww.&lt;ESC&gt;A.com&lt;ESC&gt;j0</code> </p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>再按一次<code>q</code>，表示录入完成，可随时调用宏<code>a</code>了。</li>
+<li>由于此时第一行已由我们手动修改完毕，光标位于第二行baidu的行首。使用<code>@a</code>调用刚录好的宏，Vim就会自动帮我们修改好第二行，并把光标移动到第三行行首。</li>
+<li>使用<code>3@a</code>，调用宏<code>a</code>三次，完成剩下三行的修改。</li>
+</ol>
+<hr>
+<hr>
+<h1 id="Vim应用"><a href="#Vim应用" class="headerlink" title="Vim应用"></a>Vim应用</h1><h2 id="简单功能"><a href="#简单功能" class="headerlink" title="简单功能"></a>简单功能</h2><h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><p><strong>撤销上一个命令</strong></p>
+<p>按键： u（小写）</p>
+<p>模式： Normal</p>
+<p><strong>撤销最后编辑的一行的所有修改</strong></p>
+<p>按键： U（大写）</p>
+<p>模式： Normal</p>
+<hr>
+<h3 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h3><ul>
+<li><h4 id="光标移动：上下左右"><a href="#光标移动：上下左右" class="headerlink" title="光标移动：上下左右"></a>光标移动：上下左右</h4></li>
+</ul>
+<p>按键： h、j、k、l（小写）</p>
+<p>模式： Normal</p>
+<p>将光标向对应方向移动一格，h左、j下、k上、l右</p>
+<ul>
+<li><h4 id="光标移动：行首"><a href="#光标移动：行首" class="headerlink" title="光标移动：行首"></a>光标移动：行首</h4></li>
+</ul>
+<p>按键： 0（数字）</p>
+<p>模式： Normal</p>
+<p>光标移到行首</p>
+<br>
+
+<p><strong>按键： ^（shift 6）</strong></p>
+<p>模式： Normal</p>
+<p>光标移到行首的第一个非空白字符的位置</p>
+<ul>
+<li><h4 id="光标移动：行末"><a href="#光标移动：行末" class="headerlink" title="光标移动：行末"></a>光标移动：行末</h4></li>
+</ul>
+<p><strong>按键： 0（数字）</strong></p>
+<p>模式： Normal</p>
+<p>光标移到行首</p>
+<br>
+
+<p><strong>按键： $（shift 4）</strong></p>
+<p>模式： Normal</p>
+<p>将光标移到当前行的行尾</p>
+<ul>
+<li><h4 id="光标移动：在当前行内找字符"><a href="#光标移动：在当前行内找字符" class="headerlink" title="光标移动：在当前行内找字符"></a>光标移动：在当前行内找字符</h4></li>
+</ul>
+<p><strong>按键： f</strong></p>
+<p>模式： Normal</p>
+<p><code>f字符</code>，光标移到当前行的下一个匹配的“字符”上</p>
+<blockquote>
+<p>例如输入<code>fa</code>，则跳转到当前光标所在行的下一个”a”上，如果没有则不进行任何操作</p>
+</blockquote>
+<br>
+
+<p><strong>按键： F</strong></p>
+<p>模式： Normal</p>
+<p><code>F字符</code>，光标移到当前行的下一个匹配的“字符”上</p>
+<blockquote>
+<p>例如输入<code>Fb</code>，则跳转到当前光标所在行的下一个”b”上，如果没有则不进行任何操作</p>
+</blockquote>
+<ul>
+<li><h4 id="光标移动：跳转至-上-下一个-与当前光标所在的word相同的位置"><a href="#光标移动：跳转至-上-下一个-与当前光标所在的word相同的位置" class="headerlink" title="光标移动：跳转至 上/下一个 与当前光标所在的word相同的位置"></a>光标移动：跳转至 上/下一个 与当前光标所在的word相同的位置</h4></li>
+</ul>
+<p><strong>按键： #</strong></p>
+<p>模式： Normal</p>
+<p>光标移到上一个匹配的word上</p>
+<br>
+
+<p><strong>按键： *</strong></p>
+<p>模式： Normal</p>
+<p>光标移到下一个匹配的word上</p>
+<hr>
+<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><p><strong>替换当前行的第一个匹配</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s&#x2F;old&#x2F;new</span><br></pre></td></tr></table></figure>
+
+<p>替换 old 为 new（以下相同）</p>
+<br>
+
+<p><strong>替换当前行的所有匹配</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s&#x2F;old&#x2F;new&#x2F;g</span><br></pre></td></tr></table></figure>
+
+<p><strong>替换两个指定行之间出现的每个匹配串</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:#,#s&#x2F;old&#x2F;new&#x2F;g</span><br></pre></td></tr></table></figure>
+
+<p>其中 #,# 代表的是替换操作的若干行中首尾两行的行号。</p>
+<p><strong>替换整个文件中的每个匹配串</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%s&#x2F;old&#x2F;new&#x2F;g</span><br></pre></td></tr></table></figure>
+
+<p><strong>找到整个文件中的每个匹配串，并提示是否替换</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s&#x2F;old&#x2F;new&#x2F;gc</span><br></pre></td></tr></table></figure>
+
+<h2 id="复杂功能"><a href="#复杂功能" class="headerlink" title="复杂功能"></a>复杂功能</h2><h3 id="Open-Recent"><a href="#Open-Recent" class="headerlink" title="Open Recent"></a>Open Recent</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:bro old</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>完整命令： <code>:browse oldfiles</code></p>
+</blockquote>
+<p>TODO: 怎么清空这个列表，还没找到解决办法。</p>
+<hr>
+<br>
+
+<h3 id="保存Vim当前打开的所有页面"><a href="#保存Vim当前打开的所有页面" class="headerlink" title="保存Vim当前打开的所有页面"></a>保存Vim当前打开的所有页面</h3><blockquote>
+<p>有时我们需要休息关闭Vim或者电脑，同时编辑好几个文档在下次打开Vim时要逐一打开。为了方便下次打开Vim时，可以恢复上一次关闭Vim时的编辑状态，我们可以使用session功能。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot; 保存当前界面为一个session</span><br><span class="line">:mksession</span><br><span class="line"></span><br><span class="line">&quot; 使用source命令加载session</span><br><span class="line">:source Session.vim</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>:mksession</code>命令，会默认在<code>~</code>目录保存一个<code>Session.vim</code>文件，用于存放Vim当前打开的窗口和文件信息。</p>
+<p>可以使用<code>:mksession 文件名</code> 自定义保存。</p>
+<p>下次打开Vim时，使用<code>:source 文件名</code>进行恢复，使用默认保存的话则是<code>:source Session.vim</code>。</p>
+<hr>
+<br>
+
+<h3 id="在当前位置输入文件名"><a href="#在当前位置输入文件名" class="headerlink" title="在当前位置输入文件名"></a>在当前位置输入文件名</h3><p>方法一：</p>
+<ol>
+<li>在需要插入位置进入Insert模式</li>
+<li>按 <code>CTRL</code> + <code>R</code> ，此时光标处变成双引号 <code>&quot;</code> </li>
+<li>按 <code>%</code> 键，即可直接插入当前文件名</li>
+</ol>
+<p>方法二：</p>
+<ol>
+<li>在需要插入位置进入Insert模式</li>
+<li>按 <code>CTRL</code> + <code>R</code> ，此时光标处变成双引号 <code>&quot;</code> </li>
+<li>按 <code>=</code> 键，然后输入表达式 <code>expand(&quot;%:t&quot;)</code> <blockquote>
+<p>如果不需要后缀名，则输入 <code>expand(&quot;%:t:r&quot;)</code></p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<h1 id="—"><a href="#—" class="headerlink" title="—"></a>—</h1><h1 id="—-1"><a href="#—-1" class="headerlink" title="—"></a>—</h1><h1 id="—-2"><a href="#—-2" class="headerlink" title="—"></a>—</h1><h1 id="—-3"><a href="#—-3" class="headerlink" title="—"></a>—</h1><h1 id="—-4"><a href="#—-4" class="headerlink" title="—"></a>—</h1><h1 id="未整理"><a href="#未整理" class="headerlink" title="未整理"></a>未整理</h1><table>
+<thead>
+<tr>
+<th>所在模式</th>
+<th>键</th>
+<th>英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>w</td>
+<td>word</td>
+<td>将光标向右移一个单词</td>
+</tr>
+<tr>
+<td></td>
+<td>b</td>
+<td>back</td>
+<td>将光标向左移一个单词</td>
+</tr>
+<tr>
+<td></td>
+<td>e</td>
+<td>end</td>
+<td>将光标移到单词尾部</td>
+</tr>
+<tr>
+<td></td>
+<td>[Return]</td>
+<td></td>
+<td>将光标移到下一行的行首</td>
+</tr>
+<tr>
+<td></td>
+<td>[Spacebar]</td>
+<td></td>
+<td>将光标向右移动一位</td>
+</tr>
+<tr>
+<td></td>
+<td>[Backspace]</td>
+<td></td>
+<td>将光标向左移动一位</td>
+</tr>
+<tr>
+<td></td>
+<td>gg</td>
+<td>go</td>
+<td>文件顶部</td>
+</tr>
+<tr>
+<td></td>
+<td>G</td>
+<td>go</td>
+<td>文件末尾</td>
+</tr>
+<tr>
+<td></td>
+<td>数字gg（或 数字G）</td>
+<td>go</td>
+<td>移动到第 “数字” 行</td>
+</tr>
+<tr>
+<td></td>
+<td>zz</td>
+<td></td>
+<td>滚动全文，令光标所在行处于屏幕中央</td>
+</tr>
+<tr>
+<td></td>
+<td>zt</td>
+<td>z top</td>
+<td>滚动全文，令光标所在行处于屏幕最上一行</td>
+</tr>
+<tr>
+<td></td>
+<td>zb</td>
+<td>z bottom</td>
+<td>滚动全文，令光标所在行处于屏幕最下一行</td>
+</tr>
+<tr>
+<td></td>
+<td>:数字</td>
+<td>移动到 数字 对应行数</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>H</td>
+<td>Head</td>
+<td>屏幕顶部</td>
+</tr>
+<tr>
+<td></td>
+<td>M</td>
+<td>Middle</td>
+<td>屏幕中间</td>
+</tr>
+<tr>
+<td></td>
+<td>L</td>
+<td>Low</td>
+<td>屏幕底部</td>
+</tr>
+<tr>
+<td></td>
+<td>%</td>
+<td></td>
+<td>各种括号的匹配及切换     包括： ( ) 、 [ ] 、 { }</td>
+</tr>
+<tr>
+<td></td>
+<td>{</td>
+<td></td>
+<td>上一段</td>
+</tr>
+<tr>
+<td></td>
+<td>}</td>
+<td></td>
+<td>下一段</td>
+</tr>
+<tr>
+<td></td>
+<td>[Ctrl-e]</td>
+<td></td>
+<td>向下滚动一行（光标不动？）</td>
+</tr>
+<tr>
+<td></td>
+<td>[Ctrl-y]</td>
+<td></td>
+<td>向上滚动一行（光标不动？）</td>
+</tr>
+<tr>
+<td></td>
+<td>[Ctrl-d]</td>
+<td>down</td>
+<td>将光标向下移到文件尾，通常每次移动12行</td>
+</tr>
+<tr>
+<td></td>
+<td>[Ctrl-u]</td>
+<td>up</td>
+<td>将光标向上移到文件头，通常每次移动12行</td>
+</tr>
+<tr>
+<td></td>
+<td>[Ctrl-f]</td>
+<td>forward</td>
+<td>向下翻页（将光标向下移到文件尾，通常每次移动24行）</td>
+</tr>
+<tr>
+<td></td>
+<td>[Ctrl-b]</td>
+<td>back</td>
+<td>向上翻页（将光标向上移到文件头，通常每次移动24行）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：在Insert Mode下避免使用光标键（箭头键）。因为在某些系统中，光标键被解释为普通的ASCII 字符。如果在文本输入模式下使用光标键，那么对应的ASCII字符将被插入文件中。</p>
+</blockquote>
 
     </div>
 
@@ -630,7 +1046,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Table-of-Content"><span class="nav-text">Table of Content</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单功能"><span class="nav-text">简单功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销"><span class="nav-text">撤销</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光标移动"><span class="nav-text">光标移动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动：上下左右"><span class="nav-text">光标移动：上下左右</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动：行首"><span class="nav-text">光标移动：行首</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动：行末"><span class="nav-text">光标移动：行末</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动：在当前行内找字符"><span class="nav-text">光标移动：在当前行内找字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动：跳转至-上-下一个-与当前光标所在的word相同的位置"><span class="nav-text">光标移动：跳转至 上&#x2F;下一个 与当前光标所在的word相同的位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#替换"><span class="nav-text">替换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复杂功能"><span class="nav-text">复杂功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Open-Recent"><span class="nav-text">Open Recent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim内容复制不到其它程序"><span class="nav-text">Vim内容复制不到其它程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在当前位置输入文件名"><span class="nav-text">在当前位置输入文件名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分屏"><span class="nav-text">分屏</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Table-of-Content"><span class="nav-text">Table of Content</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim基础"><span class="nav-text">Vim基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim的模式"><span class="nav-text">Vim的模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim的默认变量"><span class="nav-text">Vim的默认变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim中的按键对照表"><span class="nav-text">Vim中的按键对照表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim设置-set"><span class="nav-text">Vim设置(set)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与选中有关的操作"><span class="nav-text">与选中有关的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-先选中后操作"><span class="nav-text">1.先选中后操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-不选中的情况下操作"><span class="nav-text">2. 不选中的情况下操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签页"><span class="nav-text">标签页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分屏"><span class="nav-text">分屏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#录制功能"><span class="nav-text">录制功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim应用"><span class="nav-text">Vim应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单功能"><span class="nav-text">简单功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销"><span class="nav-text">撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动"><span class="nav-text">光标移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换"><span class="nav-text">替换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复杂功能"><span class="nav-text">复杂功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Open-Recent"><span class="nav-text">Open Recent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存Vim当前打开的所有页面"><span class="nav-text">保存Vim当前打开的所有页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在当前位置输入文件名"><span class="nav-text">在当前位置输入文件名</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-1"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-2"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-3"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-4"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#未整理"><span class="nav-text">未整理</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -646,7 +1062,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

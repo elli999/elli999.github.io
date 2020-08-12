@@ -22,19 +22,19 @@
     var CONFIG = {"hostname":"elli999.gitee.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Vim commands    显示行号 按行号跳转 拼写检查（英语） 当前文件转换为html格式输出">
+  <meta name="description" content="Vim commands    加载设置文件 语法高亮 显示行号 按行号跳转 拼写检查（英语）+ [Operations in Normal Mode](#operations-in-normal-mode) + [Fix Spelling Errors from Insert Mode](#fix-spelling-errors-from-insert-mode) 当前文件转换为html格式输出">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vim命令">
 <meta property="og:url" content="https://elli999.gitee.io/2020/08/03/Vim%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Eason Kong&#39;s Blog">
-<meta property="og:description" content="Vim commands    显示行号 按行号跳转 拼写检查（英语） 当前文件转换为html格式输出">
+<meta property="og:description" content="Vim commands    加载设置文件 语法高亮 显示行号 按行号跳转 拼写检查（英语）+ [Operations in Normal Mode](#operations-in-normal-mode) + [Fix Spelling Errors from Insert Mode](#fix-spelling-errors-from-insert-mode) 当前文件转换为html格式输出">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://elli999.gitee.io/2020/08/03/Vim%E5%91%BD%E4%BB%A4/absolute.png">
 <meta property="og:image" content="https://elli999.gitee.io/2020/08/03/Vim%E5%91%BD%E4%BB%A4/relative.png">
 <meta property="og:image" content="https://elli999.gitee.io/2020/08/03/Vim%E5%91%BD%E4%BB%A4/hybrid.png">
 <meta property="og:image" content="https://elli999.gitee.io/2020/08/03/Vim%E5%91%BD%E4%BB%A4/toggle.png">
 <meta property="article:published_time" content="2020-08-03T09:29:12.000Z">
-<meta property="article:modified_time" content="2020-08-11T15:07:29.670Z">
+<meta property="article:modified_time" content="2020-08-12T11:17:44.860Z">
 <meta property="article:author" content="EK阿墙">
 <meta property="article:tag" content="Vim">
 <meta property="article:tag" content="vimrc">
@@ -144,7 +144,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">15</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">14</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -245,7 +245,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-11 23:07:29" itemprop="dateModified" datetime="2020-08-11T23:07:29+08:00">2020-08-11</time>
+                <time title="Modified: 2020-08-12 19:17:44" itemprop="dateModified" datetime="2020-08-12T19:17:44+08:00">2020-08-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,9 +280,12 @@
 <!-- vim-markdown-toc Redcarpet -->
 
 <ul>
+<li><a href="#加载设置文件">加载设置文件</a></li>
+<li><a href="#语法高亮">语法高亮</a></li>
 <li><a href="#显示行号">显示行号</a></li>
 <li><a href="#按行号跳转">按行号跳转</a></li>
-<li><a href="#拼写检查（英语）">拼写检查（英语）</a></li>
+<li><a href="#拼写检查（英语）">拼写检查（英语）</a><pre><code>+ [Operations in Normal Mode](#operations-in-normal-mode)
++ [Fix Spelling Errors from Insert Mode](#fix-spelling-errors-from-insert-mode)</code></pre></li>
 <li><a href="#当前文件转换为html格式输出">当前文件转换为html格式输出</a></li>
 </ul>
 <!-- vim-markdown-toc -->
@@ -292,6 +295,17 @@
 <a id="more"></a>
 
 <hr>
+<h2 id="加载设置文件"><a href="#加载设置文件" class="headerlink" title="加载设置文件"></a>加载设置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:source 文件名</span><br></pre></td></tr></table></figure>
+<p>例如加载默认路径下的vimrc文件 <code>:source $MYVIMRC</code> 。</p>
+<hr>
+<br>
+
+<h2 id="语法高亮"><a href="#语法高亮" class="headerlink" title="语法高亮"></a>语法高亮</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:syntax on</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+
+
 <h2 id="显示行号"><a href="#显示行号" class="headerlink" title="显示行号"></a>显示行号</h2><p>使Vim在每一行前面显示行号。</p>
 <p><a href="https://jeffkreeftmeijer.com/vim-number/" target="_blank" rel="noopener">参考链接</a></p>
 <p><strong>注：下方的每行命令中的第二行均为第一行的缩写！效用相同。</strong> &lt;++&gt;</p>
@@ -342,10 +356,46 @@
 </ul>
 <br>
 
-<ul>
-<li>Operations in Normal Mode</li>
-</ul>
-<p>开启功能后，可以使用以下快捷键：<br>| Command | effect                                       | 备注    |<br>| :—:   | :—:                                        | :—:   |<br>| ]s      | 跳转到下个拼写错误                           |         |<br>| [s      | 跳转到上个拼写错误                           |         |<br>| z=      | 当前单词的推荐集合（需光标移至错误单词上方） |         |<br>| zg      | 添加单词到拼写文件                           | <code>:h zg</code> |<br>| zw      | 从拼写文件删除当前单词                       |         |<br>| zug     | 撤销对当前单词的 zg 或 zw修改                |         |</p>
+<h4 id="Operations-in-Normal-Mode"><a href="#Operations-in-Normal-Mode" class="headerlink" title="Operations in Normal Mode"></a>Operations in Normal Mode</h4><p>开启功能后，可以使用以下快捷键：</p>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">effect</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">]s</td>
+<td align="center">跳转到下个拼写错误</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">[s</td>
+<td align="center">跳转到上个拼写错误</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">z=</td>
+<td align="center">当前单词的推荐集合（需光标移至错误单词上方）</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">zg</td>
+<td align="center">添加单词到拼写文件</td>
+<td align="center"><code>:h zg</code></td>
+</tr>
+<tr>
+<td align="center">zw</td>
+<td align="center">从拼写文件删除当前单词</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">zug</td>
+<td align="center">撤销对当前单词的 zg 或 zw修改</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
 <p><code>z=</code>： Vim的拼写检查提供修改建议功能，把光标移动到标记为拼写错误的词上方，按<code>z=</code>会出现修改建议，按数字选择需要的建议即可完成自动修改。</p>
 <p><code>zg</code>： Vim 有时会错误的把一些词标记为拼写错误, 是因为该词未收录在词典中。把光标移动到需要添加的词上方，使用 <code>zg</code> 命令(参考 :h zg)把光标处的词添加到拼写文件来教 Vim 识别该词。</p>
 <p><code>zw</code>： Vim 还提供了一个互补的 <code>zw</code> 命令, 可以把光标处的单词标记为拼写错误。 </p>
@@ -356,12 +406,49 @@
 <blockquote>
 <p>例如, 如果我们正在使用UTF-8编码的文件, 并且拼写检查器使用英语词典, 则使用 zg 命令添加的单词将会记录在名为 ~/.vim/spell/en.utf-8.add 的文件中</p>
 </blockquote>
-<ul>
-<li><p>Fix Spelling Errors from Insert Mode</p>
-<p>我们可以在插入模式使用 <code>&lt;C-x&gt;s</code>(参考 <code>:h compl-spelling</code>) 命令来修复此错误, 它会触发一个弹出的自动补菜单可供选择。</p>
-</li>
-</ul>
-<p>可供弹出式菜单使用的命令<br>| Command   | effect                     | 备注          |<br>| :—:     | :—:                      | :—:         |<br>| <C-n>     | 下一个项(next)             |               |<br>| <C-p>     | 上一个项(previous)         |               |<br>| <C-y>     | 确认使用当前选中的项(yes)  |               |<br>| <C-e>     | 还原最早输入的文本(exit)   |               |<br>| <C-h>     | 从当前匹配项中删除一个字符 |               |<br>| <C-l>     | 从当前匹配项中增加一个字符 |               |</p>
+<br>
+
+<h4 id="Fix-Spelling-Errors-from-Insert-Mode"><a href="#Fix-Spelling-Errors-from-Insert-Mode" class="headerlink" title="Fix Spelling Errors from Insert Mode"></a>Fix Spelling Errors from Insert Mode</h4><p> 我们可以在插入模式使用 <code>&lt;C-x&gt;s</code>(参考 <code>:h compl-spelling</code>) 命令来修复此错误, 它会触发一个弹出的自动补菜单可供选择。</p>
+<p>可供弹出式菜单使用的命令</p>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">effect</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><C-n></td>
+<td align="center">下一个项(next)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-p></td>
+<td align="center">上一个项(previous)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-y></td>
+<td align="center">确认使用当前选中的项(yes)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-e></td>
+<td align="center">还原最早输入的文本(exit)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-h></td>
+<td align="center">从当前匹配项中删除一个字符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-l></td>
+<td align="center">从当前匹配项中增加一个字符</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
 <h2 id="当前文件转换为html格式输出"><a href="#当前文件转换为html格式输出" class="headerlink" title="当前文件转换为html格式输出"></a>当前文件转换为html格式输出</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%TOhtml</span><br></pre></td></tr></table></figure>
 
 
@@ -466,7 +553,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#显示行号"><span class="nav-text">显示行号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按行号跳转"><span class="nav-text">按行号跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拼写检查（英语）"><span class="nav-text">拼写检查（英语）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当前文件转换为html格式输出"><span class="nav-text">当前文件转换为html格式输出</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#加载设置文件"><span class="nav-text">加载设置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法高亮"><span class="nav-text">语法高亮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示行号"><span class="nav-text">显示行号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按行号跳转"><span class="nav-text">按行号跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拼写检查（英语）"><span class="nav-text">拼写检查（英语）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当前文件转换为html格式输出"><span class="nav-text">当前文件转换为html格式输出</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -482,7 +569,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
