@@ -371,16 +371,35 @@
 ]]></content>
       <categories>
         <category>+IT</category>
-        <category>笔记方法学</category>
         <category>Software</category>
-        <category>Hexo</category>
+        <category>笔记方法学</category>
         <category>Vim</category>
+        <category>Hexo</category>
       </categories>
       <tags>
         <tag>笔记</tag>
         <tag>note</tag>
         <tag>VIM</tag>
         <tag>笔记方法学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo基础</title>
+    <url>/2020/08/01/Hexo%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p>Hexo基础</p>
+<a id="more"></a>
+
+<hr>
+<h1 id="Hexo官方插件"><a href="#Hexo官方插件" class="headerlink" title="Hexo官方插件"></a>Hexo官方插件</h1><p>Hexo官方网站内有很多插件，可以自行查看，根据需要进行添加。</p>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Software</category>
+        <category>笔记方法学</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -589,8 +608,8 @@
 ]]></content>
       <categories>
         <category>+IT</category>
-        <category>笔记方法学</category>
         <category>Software</category>
+        <category>笔记方法学</category>
         <category>Hexo</category>
       </categories>
       <tags>
@@ -598,25 +617,6 @@
         <tag>note</tag>
         <tag>笔记方法学</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo基础</title>
-    <url>/2020/08/01/Hexo%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<p>Hexo基础</p>
-<a id="more"></a>
-
-<hr>
-<h1 id="Hexo官方插件"><a href="#Hexo官方插件" class="headerlink" title="Hexo官方插件"></a>Hexo官方插件</h1><p>Hexo官方网站内有很多插件，可以自行查看，根据需要进行添加。</p>
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>笔记方法学</category>
-        <category>Software</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -647,20 +647,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux笔记</title>
-    <url>/2020/07/22/Linux%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>OS</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>OS</tag>
       </tags>
   </entry>
   <entry>
@@ -854,6 +840,20 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux笔记</title>
+    <url>/2020/07/22/Linux%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>OS</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>OS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vim插件</title>
     <url>/2020/08/02/Vim%E6%8F%92%E4%BB%B6/</url>
     <content><![CDATA[<h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><!-- vim-markdown-toc Redcarpet -->
@@ -1041,8 +1041,63 @@
       </tags>
   </entry>
   <entry>
+    <title>Vim遇到的问题</title>
+    <url>/2020/08/02/Vim%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#字符显示不全-重叠">字符显示不全/重叠</a></li>
+<li><a href="#vim内容复制不到其它程序">Vim内容复制不到其它程序</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+
+<a id="more"></a>
+
+<hr>
+<h2 id="字符显示不全-重叠"><a href="#字符显示不全-重叠" class="headerlink" title="字符显示不全/重叠"></a>字符显示不全/重叠</h2><p>【问题】</p>
+<p>一些中文符号（如<code>“”①②→</code>），在Vim中输入时会出现显示不全，或者和旁边的字符重叠的情况。</p>
+<p>【解决】</p>
+<p><a href="http://blog.sina.com.cn/s/blog_46dac66f010006db.html" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set ambiwidth&#x3D;double</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Vim内容复制不到其它程序"><a href="#Vim内容复制不到其它程序" class="headerlink" title="Vim内容复制不到其它程序"></a>Vim内容复制不到其它程序</h2><p><a href="https://www.zhihu.com/question/19863631" target="_blank" rel="noopener">参考资料：知乎《如何将 Vim 剪贴板里面的东西粘贴到 Vim 之外的地方？》</a></p>
+<p>根据平台不同，要分两种情况。先用下面命令确定你属于哪一种，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim --version | grep clipboard</span><br></pre></td></tr></table></figure>
+
+<p><strong>情况一</strong></p>
+<p><img src="+clipboard.png" alt="+clipboard"></p>
+<p>如果结果里你找到加号开头的+clipboard， 恭喜你，你的vim没问题</p>
+<ul>
+<li>用 <code>&quot;+y</code> 将选中的内容复制到系统剪贴板，效果和ctrl-c一致。</li>
+<li>用 <code>&quot;+p</code> 将剪贴板内容复制到指定位置，也可以用ctrl-v。</li>
+</ul>
+<p><strong>情况二</strong></p>
+<p>如果找到的是负号开头的<code>-clipboard</code>，说明你的vim不支持系统剪切板。需要先重新安装vim。</p>
+<p>Linux系统</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install vim-gtk</span><br></pre></td></tr></table></figure>
+
+<p>MacOS</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
+
+<p>安装好之后，输入 <code>vim --version | grep clipboard</code> 命令应该已经变成<code>+clipboard</code> 了。</p>
+<p>现在可以回到情况一进行复制了。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Software</category>
+        <category>Vim</category>
+      </categories>
+      <tags>
+        <tag>Vim</tag>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vim笔记</title>
-    <url>/2020/06/18/Vim%E7%AC%94%E8%AE%B0/</url>
+    <url>/2020/06/19/Vim%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>My Vim wiki.</p>
 <h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><!-- vim-markdown-toc Redcarpet -->
 
@@ -1093,7 +1148,7 @@
 
 <a id="more"></a>
 
-<hr>
+
 <hr>
 <h1 id="Vim基础"><a href="#Vim基础" class="headerlink" title="Vim基础"></a>Vim基础</h1><h2 id="Vim的模式"><a href="#Vim的模式" class="headerlink" title="Vim的模式"></a>Vim的模式</h2><p>TODO: Vim总共有5种模式？分别是 Normal Mode、Insert Mode、Visual Mode、</p>
 <p><strong>三种常见的模式：</strong></p>
@@ -1724,61 +1779,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vim遇到的问题</title>
-    <url>/2020/08/02/Vim%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><!-- vim-markdown-toc Redcarpet -->
-
-<ul>
-<li><a href="#字符显示不全-重叠">字符显示不全/重叠</a></li>
-<li><a href="#vim内容复制不到其它程序">Vim内容复制不到其它程序</a></li>
-</ul>
-<!-- vim-markdown-toc -->
-
-
-<a id="more"></a>
-
-<hr>
-<h2 id="字符显示不全-重叠"><a href="#字符显示不全-重叠" class="headerlink" title="字符显示不全/重叠"></a>字符显示不全/重叠</h2><p>【问题】</p>
-<p>一些中文符号（如<code>“”①②→</code>），在Vim中输入时会出现显示不全，或者和旁边的字符重叠的情况。</p>
-<p>【解决】</p>
-<p><a href="http://blog.sina.com.cn/s/blog_46dac66f010006db.html" target="_blank" rel="noopener">参考</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set ambiwidth&#x3D;double</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Vim内容复制不到其它程序"><a href="#Vim内容复制不到其它程序" class="headerlink" title="Vim内容复制不到其它程序"></a>Vim内容复制不到其它程序</h2><p><a href="https://www.zhihu.com/question/19863631" target="_blank" rel="noopener">参考资料：知乎《如何将 Vim 剪贴板里面的东西粘贴到 Vim 之外的地方？》</a></p>
-<p>根据平台不同，要分两种情况。先用下面命令确定你属于哪一种，</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim --version | grep clipboard</span><br></pre></td></tr></table></figure>
-
-<p><strong>情况一</strong></p>
-<p><img src="+clipboard.png" alt="+clipboard"></p>
-<p>如果结果里你找到加号开头的+clipboard， 恭喜你，你的vim没问题</p>
-<ul>
-<li>用 <code>&quot;+y</code> 将选中的内容复制到系统剪贴板，效果和ctrl-c一致。</li>
-<li>用 <code>&quot;+p</code> 将剪贴板内容复制到指定位置，也可以用ctrl-v。</li>
-</ul>
-<p><strong>情况二</strong></p>
-<p>如果找到的是负号开头的<code>-clipboard</code>，说明你的vim不支持系统剪切板。需要先重新安装vim。</p>
-<p>Linux系统</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install vim-gtk</span><br></pre></td></tr></table></figure>
-
-<p>MacOS</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
-
-<p>安装好之后，输入 <code>vim --version | grep clipboard</code> 命令应该已经变成<code>+clipboard</code> 了。</p>
-<p>现在可以回到情况一进行复制了。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>Software</category>
-        <category>Vim</category>
-      </categories>
-      <tags>
-        <tag>Vim</tag>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows-日常使用</title>
     <url>/2020/07/28/Windows-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<blockquote>
@@ -1954,24 +1954,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/05/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>index</title>
     <url>/2020/05/14/index/</url>
     <content><![CDATA[<p>vimwiki本地目录（索引），仅用于本地。</p>
@@ -2081,6 +2063,24 @@
 <td align="center"></td>
 </tr>
 </tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/05/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
   </entry>
 </search>
