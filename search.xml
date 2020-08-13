@@ -403,9 +403,118 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux-日常使用</title>
+    <url>/2020/07/29/Linux-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<!-- 简介 -->
+<blockquote>
+<p>Linux系统的所有日常使用技巧汇总</p>
+</blockquote>
+<a id="more"></a>
+
+
+<hr>
+<hr>
+<h2 id="在终端打开当前目录的GUI文件管理器"><a href="#在终端打开当前目录的GUI文件管理器" class="headerlink" title="在终端打开当前目录的GUI文件管理器"></a>在终端打开当前目录的GUI文件管理器</h2><ul>
+<li>Ubuntu 20.4</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nautilus .</span><br></pre></td></tr></table></figure>
+
+<hr>
+<hr>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>OS</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux笔记</title>
+    <url>/2020/07/22/Linux%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>OS</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>OS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo笔记</title>
     <url>/2020/05/15/Hexo%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>My Hexo wiki.</p>
+<h1 id="Table-Of-Content"><a href="#Table-Of-Content" class="headerlink" title="Table Of Content"></a>Table Of Content</h1><!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#hexo目录结构">Hexo目录结构</a><ul>
+<li><a href="#deploy">.deploy</a></li>
+<li><a href="#node_modules">node_modules</a></li>
+<li><a href="#public">public</a></li>
+<li><a href="#scaffolds">scaffolds</a></li>
+<li><a href="#source">source</a><ul>
+<li><a href="#drafts">_drafts</a></li>
+<li><a href="#posts">_posts</a></li>
+</ul>
+</li>
+<li><a href="#themes">themes</a></li>
+<li><a href="#config-yml">_config.yml</a></li>
+<li><a href="#package-json">package.json</a></li>
+</ul>
+</li>
+<li><a href="#按需求分类">按需求分类</a><ul>
+<li><a href="#1-更换主题">1. 更换主题</a></li>
+<li><a href="#2-更改网站整体结构">2. 更改网站整体结构</a></li>
+<li><a href="#3-增加网站访问量统计功能">3. 增加网站访问量统计功能</a></li>
+<li><a href="#3-增加评论区">3. 增加评论区</a></li>
+<li><a href="#4-增加搜索功能-（重要！！！）">4. 增加搜索功能 （重要！！！）</a></li>
+<li><a href="#5-插入本地图">5. 插入本地图</a></li>
+<li><a href="#hexo新建文章">Hexo新建文章</a></li>
+</ul>
+</li>
+<li><a href="#bug记录">Bug记录</a><ul>
+<li><a href="#显性bug">显性Bug</a><ul>
+<li><a href="#在-做的标题里，不要用-、">在#做的标题里，不要用<code>{</code>、<code>}</code></a></li>
+</ul>
+</li>
+<li><a href="#隐性bug">隐性Bug</a><ul>
+<li><a href="#首页不显示文章">首页不显示文章</a></li>
+<li><a href="#文章404">文章404</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#弃？">弃？(((</a></li>
+<li><a href="#文章属性">文章属性</a><ul>
+<li><a href="#4-1-1-1-layout">4.1.1.1. layout</a></li>
+<li><a href="#4-1-1-2-title">4.1.1.2. title</a></li>
+<li><a href="#4-1-1-3-date">4.1.1.3. date</a></li>
+<li><a href="#4-1-1-4-updated">4.1.1.4. updated</a></li>
+<li><a href="#4-1-1-5-comments">4.1.1.5. comments</a></li>
+<li><a href="#4-1-1-6-tags">4.1.1.6. tags</a></li>
+<li><a href="#4-1-1-7-categories">4.1.1.7. categories</a></li>
+<li><a href="#4-1-1-8-permalink">4.1.1.8. permalink</a></li>
+<li><a href="#4-1-1-9-description">4.1.1.9. description?</a></li>
+<li><a href="#4-2-生成静态页面">4.2. 生成静态页面</a></li>
+<li><a href="#4-3-在本地建立服务（预览）">4.3. 在本地建立服务（预览）</a></li>
+<li><a href="#4-4-部署到服务器">4.4. 部署到服务器</a></li>
+</ul>
+</li>
+<li><a href="#弃？">弃？)))</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
 <a id="more"></a>
 
 <hr>
@@ -561,6 +670,12 @@
 <li>文章命名</li>
 </ul>
 <p>Windows貌似不能识别带有空格的md文件名（例如：《Linux - 日常使用》，现在已全部统一不用空格，变成《Linux-日常使用》）。使用文件名带空格的md文件，在生成文章后在首页不显示文章（但是貌似在分类中可以找到）</p>
+<hr>
+<br>
+
+<h3 id="文章404"><a href="#文章404" class="headerlink" title="文章404"></a>文章404</h3><p>在本地<code>hexo s</code>可以正常显示，但是deploy之后打开对应文章404，检查本地和服务器均存在该文章的index.html文件，但就是404显示不了。重新hexo clean 、 hexo g也不行。</p>
+<p><strong>解决办法：</strong>把文章日期改了一下，再重新<code>hexo clean &amp;&amp; hexo g -d</code>就可以了。（因为生成的网站里面的文章是按日期分的文件夹路径，所以我的思路是改变日期，相当于改了该文章的路径再重新上传）</p>
+<p><mark>找不到原因。</mark></p>
 <h1 id="—"><a href="#—" class="headerlink" title="—"></a>—</h1><h1 id="—-1"><a href="#—-1" class="headerlink" title="—"></a>—</h1><h1 id="—-2"><a href="#—-2" class="headerlink" title="—"></a>—</h1><h1 id="—-3"><a href="#—-3" class="headerlink" title="—"></a>—</h1><h1 id="—-4"><a href="#—-4" class="headerlink" title="—"></a>—</h1><h1 id="弃？"><a href="#弃？" class="headerlink" title="弃？((("></a>弃？(((</h1><h1 id="文章属性"><a href="#文章属性" class="headerlink" title="文章属性"></a>文章属性</h1><p>文章属性在 <code>hexo new xxx</code> 生成 md 文件时自动创建，在文章头部，包含layout、title、date、updated、comments、tags、categories、permalink属性，其中有部分属性是有default值的，即默认初始属性，如果不改动则以default值为准。</p>
 <p>一般格式如下：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo部署笔记</span><br><span class="line">date: 2020-05-15 00:47:04</span><br><span class="line">categories:</span><br><span class="line">    - Hexo</span><br><span class="line">tags:</span><br><span class="line">    - hexo</span><br><span class="line">    - 笔记方法学</span><br><span class="line">    - 笔记</span><br><span class="line">    - note</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
@@ -617,36 +732,6 @@
         <tag>note</tag>
         <tag>笔记方法学</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux-日常使用</title>
-    <url>/2020/07/29/Linux-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<!-- 简介 -->
-<blockquote>
-<p>Linux系统的所有日常使用技巧汇总</p>
-</blockquote>
-<a id="more"></a>
-
-
-<hr>
-<hr>
-<h2 id="在终端打开当前目录的GUI文件管理器"><a href="#在终端打开当前目录的GUI文件管理器" class="headerlink" title="在终端打开当前目录的GUI文件管理器"></a>在终端打开当前目录的GUI文件管理器</h2><ul>
-<li>Ubuntu 20.4</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nautilus .</span><br></pre></td></tr></table></figure>
-
-<hr>
-<hr>
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>OS</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -840,20 +925,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux笔记</title>
-    <url>/2020/07/22/Linux%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>OS</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>OS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vim插件</title>
     <url>/2020/08/02/Vim%E6%8F%92%E4%BB%B6/</url>
     <content><![CDATA[<h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><!-- vim-markdown-toc Redcarpet -->
@@ -863,7 +934,14 @@
 <li><a href="#vim-plug">vim-plug</a></li>
 </ul>
 </li>
-<li><a href="#插件推荐">插件推荐</a><ul>
+<li><a href="#插件">插件</a><ul>
+<li><a href="#外观类">外观类</a><ul>
+<li><a href="#lightline-vim状态栏插件">lightline.vim状态栏插件</a></li>
+<li><a href="#vim-airline状态栏插件">vim-airline状态栏插件</a></li>
+<li><a href="#vim-snazzy配色插件">vim-snazzy配色插件</a></li>
+</ul>
+</li>
+<li><a href="#未分类">未分类</a><ul>
 <li><a href="#vimwiki插件">vimwiki插件</a><ul>
 <li><a href="#key-shortcuts">Key Shortcuts</a></li>
 <li><a href="#commands">Commands</a></li>
@@ -875,6 +953,8 @@
 <li><a href="#vim-markdown-toc插件">vim-markdown-toc插件</a><ul>
 <li><a href="#commands">Commands</a></li>
 <li><a href="#options">Options</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -921,7 +1001,56 @@
 </ul>
 <p>进入vimrc文件，把不需要的插件所在行删除。</p>
 <p>然后打开vim，输入<code>:PlugClean</code>会自动删除不在<code>vimrc</code>列表的插件。</p>
-<h1 id="插件推荐"><a href="#插件推荐" class="headerlink" title="插件推荐"></a>插件推荐</h1><h2 id="vimwiki插件"><a href="#vimwiki插件" class="headerlink" title="vimwiki插件"></a>vimwiki插件</h2><p><a href="https://github.com/vimwiki/vimwiki/blob/master/README-cn.md" target="_blank" rel="noopener">vimwiki中文网址</a></p>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p><font size=5>以下内容为本人用过的插件的使用记录。</font></p>
+<h2 id="外观类"><a href="#外观类" class="headerlink" title="外观类"></a>外观类</h2><h3 id="lightline-vim状态栏插件"><a href="#lightline-vim状态栏插件" class="headerlink" title="lightline.vim状态栏插件"></a>lightline.vim状态栏插件</h3><p><a href="https://github.com/itchyny/lightline.vim" target="_blank" rel="noopener">Link</a></p>
+<p>一款状态栏插件，能清晰显示出当前模式、文件名、光标所在的行列值等信息，能根据喜好更换官方提供的主题。装上就能用，未深入研究设置。</p>
+<ul>
+<li>Installation<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Plug &#39;itchyny&#x2F;lightline.vim&#39;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<br>
+
+<h3 id="vim-airline状态栏插件"><a href="#vim-airline状态栏插件" class="headerlink" title="vim-airline状态栏插件"></a>vim-airline状态栏插件</h3><blockquote>
+<p>在lightline.vim状态栏插件首页好像说这个airline插件依赖太多其他Vim的功能，或其它插件。我个人在Windows下使用过程中偶有报错，并且对比lightline.vim之后，觉得lightline.vim确实如作者所说的更简洁、轻量。所以转去使用lightline.vim了。</p>
+</blockquote>
+<p>和lightline.vim状态栏插件一样，能显示出当前模式、文件名、光标所在的行列值等信息，能根据喜好更换官方提供的主题。装上就能用，未深入研究设置。</p>
+<hr>
+<br>
+
+<h3 id="vim-snazzy配色插件"><a href="#vim-snazzy配色插件" class="headerlink" title="vim-snazzy配色插件"></a>vim-snazzy配色插件</h3><blockquote>
+<p>其实只是一个配色文件，只是可以通过插件形式安装。</p>
+</blockquote>
+<p><a href="https://github.com/connorholyday/vim-snazzy" target="_blank" rel="noopener">Link</a></p>
+<p>一款很好看的Vim配色插件。</p>
+<ul>
+<li>Installation<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Plug &#39;connorholyday&#x2F;vim-snazzy&#39;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<p>安装完成后，使用<code>:colorscheme snazzy</code>更改配色。如果需要每次打开Vim自动使用本配色文件，则需要在<code>vimrc</code>文件中定入<code>colorscheme snazzy</code>保存。</p>
+<ul>
+<li>Manually Install</li>
+</ul>
+<p>也可以不用插件管理器安装，直接在github下载配色文件<code>snazzy.vim</code>，放到Vim的配色文件目录 <code>~/.vim/colors/</code>，如果是Windows则是在 <code>&lt;your-vim-dir&gt;\vimfiles\colors\</code>。</p>
+<blockquote>
+<p>Windows用插件管理器安装，并配置好vimrc文件后，如果每次运行都报错“没有找到该配色文件”，可用手动安装方法，把配色文件放置在<code>&lt;your-vim-dir&gt;\vimfiles\colors\</code>目录。</p>
+</blockquote>
+<ul>
+<li>背景透明</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let g:SnazzyTransparent &#x3D; 1</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>貌似在Windows下不可用。</p>
+</blockquote>
+<hr>
+<br>
+
+
+<h2 id="未分类"><a href="#未分类" class="headerlink" title="未分类"></a>未分类</h2><h3 id="vimwiki插件"><a href="#vimwiki插件" class="headerlink" title="vimwiki插件"></a>vimwiki插件</h3><p><a href="https://github.com/vimwiki/vimwiki/blob/master/README-cn.md" target="_blank" rel="noopener">vimwiki中文网址</a></p>
 <p>一个提供笔记统一管理和跳转功能的插件</p>
 <p>第一次使用要在vimrc文件中添加设置</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;</span><br><span class="line">&quot; vimwiki plug setting &#123;&#123;&#123;</span><br><span class="line">&quot;</span><br><span class="line"></span><br><span class="line">&quot; 设定默认初始路径，同时改变vimwiki默认的格式（从wiki后缀名改为md）</span><br><span class="line">let g:vimwiki_list &#x3D; [&#123;&#39;path&#39;: &#39;D:\WorkSpace\Hexo\blog\source\_posts&#39;,</span><br><span class="line">                      \ &#39;syntax&#39;: &#39;markdown&#39;, &#39;ext&#39;: &#39;.md&#39;&#125;]</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
@@ -941,7 +1070,7 @@
 <li>vimwiki生成的新文档，与<code>index.md</code>同目录。</li>
 <li>vimwiki打开文件是检索同目录下有没有该文件名，有就打开，没有就创建。（意味着文件间没有层级关系，可以随意调用）</li>
 </ul>
-<h3 id="Key-Shortcuts"><a href="#Key-Shortcuts" class="headerlink" title="Key Shortcuts"></a>Key Shortcuts</h3><p>normal 模式:</p>
+<h4 id="Key-Shortcuts"><a href="#Key-Shortcuts" class="headerlink" title="Key Shortcuts"></a>Key Shortcuts</h4><p>normal 模式:</p>
 <ul>
 <li><code>&lt;Leader&gt;ww</code> – 进入vimwiki（打开默认的 wiki 目录文件）</li>
 <li><code>&lt;Leader&gt;wt</code> – 在新标签（Tab）中打开 wiki 目录文件</li>
@@ -956,14 +1085,14 @@
 <li><code>&lt;Shift-Tab&gt;</code> – 跳到本文件中上一个 wiki 链接</li>
 </ul>
 <p>更多快捷键说明，请阅 <code>:h vimwiki-mappings</code></p>
-<h3 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:VimwikiTOC</span><br></pre></td></tr></table></figure>
+<h4 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:VimwikiTOC</span><br></pre></td></tr></table></figure>
 
 <p>在文章顶部生成TOC</p>
 <blockquote>
 <p>EK：不好用。只能在Vim和vimwiki下跳转，Hexo生成的网页无效。</p>
 </blockquote>
 <hr>
-<h2 id="vim-markdown插件"><a href="#vim-markdown插件" class="headerlink" title="vim-markdown插件"></a>vim-markdown插件</h2><p><a href="">Github地址</a></p>
+<h3 id="vim-markdown插件"><a href="#vim-markdown插件" class="headerlink" title="vim-markdown插件"></a>vim-markdown插件</h3><p><a href="">Github地址</a></p>
 <blockquote>
 <p>这个插件好像没什么用？</p>
 </blockquote>
@@ -977,15 +1106,15 @@
 <p>对齐和补全已存在的<strong>表格</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:TableFormat</span><br></pre></td></tr></table></figure>
 
-<h2 id="Markdown-preview插件"><a href="#Markdown-preview插件" class="headerlink" title="Markdown-preview插件"></a>Markdown-preview插件</h2><p><a href="https://github.com/iamcco/markdown-preview.nvim" target="_blank" rel="noopener">Github主页</a></p>
+<h3 id="Markdown-preview插件"><a href="#Markdown-preview插件" class="headerlink" title="Markdown-preview插件"></a>Markdown-preview插件</h3><p><a href="https://github.com/iamcco/markdown-preview.nvim" target="_blank" rel="noopener">Github主页</a></p>
 <p>一款可以在<strong>编辑的同时同步预览</strong>Markdown生成页面的插件</p>
 <p>个人在vimrc中加入了下面的代码，按<code>&lt;leader&gt;r</code> 取代原命令<code>:MarkdownPreview</code>，打开同步预览功能。</p>
 <p>有时不小心关闭了预览页面，不能再次打开。是因为上次退出没有使用<code>MarkdownPreviewStop</code>命令关闭，执行一次此命令即可恢复。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; “运行”不同格格式的文件</span><br><span class="line">&quot;	https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1ox411R7bo</span><br><span class="line">&quot;	https:&#x2F;&#x2F;github.com&#x2F;theniceboy&#x2F;.vim&#x2F;blob&#x2F;master&#x2F;vimrc</span><br><span class="line">&quot; 按&lt;leader&gt;r 运行</span><br><span class="line">map &lt;leader&gt;r :call CompileRunGcc()&lt;CR&gt;</span><br><span class="line">func! CompileRunGcc()</span><br><span class="line">  exec &quot;w&quot;</span><br><span class="line">  if &amp;filetype &#x3D;&#x3D; &#39;c&#39;</span><br><span class="line">    exec &quot;!g++ % -o %&lt;&quot;</span><br><span class="line">    exec &quot;!time .&#x2F;%&lt;&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;cpp&#39;</span><br><span class="line">    exec &quot;!g++ % -o %&lt;&quot;</span><br><span class="line">    exec &quot;!time .&#x2F;%&lt;&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;java&#39;</span><br><span class="line">    exec &quot;!javac %&quot;</span><br><span class="line">    exec &quot;!time java %&lt;&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;sh&#39;</span><br><span class="line">    :!time bash %</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;python&#39;</span><br><span class="line">    silent! exec &quot;!clear&quot;</span><br><span class="line">    exec &quot;!time python3 %&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;html&#39;</span><br><span class="line">    exec &quot;!firefox % &amp;&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;markdown&#39;</span><br><span class="line">    exec &quot;MarkdownPreview&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;vimwiki&#39;</span><br><span class="line">    exec &quot;MarkdownPreview&quot;</span><br><span class="line">  endif</span><br><span class="line">endfunc</span><br><span class="line"></span><br><span class="line">&quot; 按&lt;leader&gt;rr停止</span><br><span class="line">map &lt;leader&gt;rr :call CompileRunGcc2()&lt;CR&gt;</span><br><span class="line">func! CompileRunGcc2()</span><br><span class="line">  exec &quot;w&quot;</span><br><span class="line">  if &amp;filetype &#x3D;&#x3D; &#39;markdown&#39;</span><br><span class="line">    exec &quot;MarkdownPreviewStop&quot;</span><br><span class="line">  elseif &amp;filetype &#x3D;&#x3D; &#39;vimwiki&#39;</span><br><span class="line">    exec &quot;MarkdownPreviewStop&quot;</span><br><span class="line">  endif</span><br><span class="line">endfunc</span><br></pre></td></tr></table></figure>
 
-<h2 id="easymotion插件"><a href="#easymotion插件" class="headerlink" title="easymotion插件"></a>easymotion插件</h2><p>快速把光标跳转、定位到指定位置</p>
+<h3 id="easymotion插件"><a href="#easymotion插件" class="headerlink" title="easymotion插件"></a>easymotion插件</h3><p>快速把光标跳转、定位到指定位置</p>
 <p><a href="https://www.bilibili.com/video/BV1mE411t76N" target="_blank" rel="noopener">PegasusWang视频《vim easymotion 瞬间移动大法》</a></p>
-<h2 id="vim-markdown-toc插件"><a href="#vim-markdown-toc插件" class="headerlink" title="vim-markdown-toc插件"></a>vim-markdown-toc插件</h2><p>一个可在光标当前位置自动生成目录(<code>Tablc of Content</code>，缩写<code>TOC</code>)的插件，可以跳转、自动更新。</p>
+<h3 id="vim-markdown-toc插件"><a href="#vim-markdown-toc插件" class="headerlink" title="vim-markdown-toc插件"></a>vim-markdown-toc插件</h3><p>一个可在光标当前位置自动生成目录(<code>Tablc of Content</code>，缩写<code>TOC</code>)的插件，可以跳转、自动更新。</p>
 <blockquote>
 <p>现阶段使用主要因为有两点需求：①手机访问Hexo没有TOC显示，无法跳转；②Vim编辑没有TOC，看不到大纲框架，难以编辑（vim-markdown插件有看TOC的功能，学习这个插件，看能否替代）</p>
 </blockquote>
@@ -994,7 +1123,7 @@
 </blockquote>
 <p><a href="https://github.com/mzlogin/vim-markdown-toc" target="_blank" rel="noopener">Github主页</a></p>
 <p><a href="https://mazhuang.org/2015/12/19/vim-markdown-toc/" target="_blank" rel="noopener">中文说明</a></p>
-<h3 id="Commands-1"><a href="#Commands-1" class="headerlink" title="Commands"></a>Commands</h3><ul>
+<h4 id="Commands-1"><a href="#Commands-1" class="headerlink" title="Commands"></a>Commands</h4><ul>
 <li>生成目录</li>
 </ul>
 <p>根据不同的Markdown渲染引擎，共有两条生成目录的命令。</p>
@@ -1024,10 +1153,13 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:RemoveToc</span><br></pre></td></tr></table></figure>
 
-<h3 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h3><figure class="highlight vim"><figcaption><span>Script</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">" This plugin will update existing table of contents on save automatic.</span></span><br><span class="line"><span class="comment">" default: 1</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vmt_auto_update_on_save</span> = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" By default, the :GenTocXXX commands will add &lt;!-- vim-markdown-toc --&gt; fence to the table of contents, it is designed for feature of auto update table of contents on save and :UpdateToc command..</span></span><br><span class="line"><span class="comment">" default: 0</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vmt_dont_insert_fence</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" 生成的TOC，无论是第几级的标题，默认是*号开头。如果下面这个option值改为“1”，则1、2、3级标题的开头分别是 * - + 。</span></span><br><span class="line"><span class="comment">" default: 0</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vmt_cycle_list_item_markers</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" 标题前的符号，默认是*，可改为 * - + 其中一个。</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vmt_list_item_char</span> = <span class="string">"*"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" Include headings before the position you are inserting Table of Contents.</span></span><br><span class="line"><span class="comment">" default: 0</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vmt_include_headings_before</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h4 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h4><figure class="highlight vim"><figcaption><span>Script</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">" This plugin will update existing table of contents on save automatic.</span></span><br><span class="line"><span class="comment">" default: 1</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vmt_auto_update_on_save</span> = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" By default, the :GenTocXXX commands will add &lt;!-- vim-markdown-toc --&gt; fence to the table of contents, it is designed for feature of auto update table of contents on save and :UpdateToc command..</span></span><br><span class="line"><span class="comment">" default: 0</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vmt_dont_insert_fence</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" 生成的TOC，无论是第几级的标题，默认是*号开头。如果下面这个option值改为“1”，则1、2、3级标题的开头分别是 * - + 。</span></span><br><span class="line"><span class="comment">" default: 0</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vmt_cycle_list_item_markers</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" 标题前的符号，默认是*，可改为 * - + 其中一个。</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vmt_list_item_char</span> = <span class="string">"*"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" Include headings before the position you are inserting Table of Contents.</span></span><br><span class="line"><span class="comment">" default: 0</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vmt_include_headings_before</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
-<p>&lt;++&gt;</p>
+
+
 <hr>
+<br>
+
 ]]></content>
       <categories>
         <category>+IT</category>
@@ -1038,61 +1170,6 @@
         <tag>Vim</tag>
         <tag>Plug</tag>
         <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vim遇到的问题</title>
-    <url>/2020/08/02/Vim%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><!-- vim-markdown-toc Redcarpet -->
-
-<ul>
-<li><a href="#字符显示不全-重叠">字符显示不全/重叠</a></li>
-<li><a href="#vim内容复制不到其它程序">Vim内容复制不到其它程序</a></li>
-</ul>
-<!-- vim-markdown-toc -->
-
-
-<a id="more"></a>
-
-<hr>
-<h2 id="字符显示不全-重叠"><a href="#字符显示不全-重叠" class="headerlink" title="字符显示不全/重叠"></a>字符显示不全/重叠</h2><p>【问题】</p>
-<p>一些中文符号（如<code>“”①②→</code>），在Vim中输入时会出现显示不全，或者和旁边的字符重叠的情况。</p>
-<p>【解决】</p>
-<p><a href="http://blog.sina.com.cn/s/blog_46dac66f010006db.html" target="_blank" rel="noopener">参考</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set ambiwidth&#x3D;double</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Vim内容复制不到其它程序"><a href="#Vim内容复制不到其它程序" class="headerlink" title="Vim内容复制不到其它程序"></a>Vim内容复制不到其它程序</h2><p><a href="https://www.zhihu.com/question/19863631" target="_blank" rel="noopener">参考资料：知乎《如何将 Vim 剪贴板里面的东西粘贴到 Vim 之外的地方？》</a></p>
-<p>根据平台不同，要分两种情况。先用下面命令确定你属于哪一种，</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim --version | grep clipboard</span><br></pre></td></tr></table></figure>
-
-<p><strong>情况一</strong></p>
-<p><img src="+clipboard.png" alt="+clipboard"></p>
-<p>如果结果里你找到加号开头的+clipboard， 恭喜你，你的vim没问题</p>
-<ul>
-<li>用 <code>&quot;+y</code> 将选中的内容复制到系统剪贴板，效果和ctrl-c一致。</li>
-<li>用 <code>&quot;+p</code> 将剪贴板内容复制到指定位置，也可以用ctrl-v。</li>
-</ul>
-<p><strong>情况二</strong></p>
-<p>如果找到的是负号开头的<code>-clipboard</code>，说明你的vim不支持系统剪切板。需要先重新安装vim。</p>
-<p>Linux系统</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install vim-gtk</span><br></pre></td></tr></table></figure>
-
-<p>MacOS</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
-
-<p>安装好之后，输入 <code>vim --version | grep clipboard</code> 命令应该已经变成<code>+clipboard</code> 了。</p>
-<p>现在可以回到情况一进行复制了。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>Software</category>
-        <category>Vim</category>
-      </categories>
-      <tags>
-        <tag>Vim</tag>
-        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -1107,6 +1184,7 @@
 <li><a href="#vim的默认变量">Vim的默认变量</a></li>
 <li><a href="#vim中的按键对照表">Vim中的按键对照表</a></li>
 <li><a href="#vim设置-set">Vim设置(set)</a></li>
+<li><a href="#vim配色">Vim配色</a></li>
 <li><a href="#与选中有关的操作">与选中有关的操作</a><ul>
 <li><a href="#1-先选中后操作">1.先选中后操作</a></li>
 <li><a href="#2-不选中的情况下操作">2. 不选中的情况下操作</a><ul>
@@ -1150,7 +1228,7 @@
 
 
 <hr>
-<h1 id="Vim基础"><a href="#Vim基础" class="headerlink" title="Vim基础"></a>Vim基础</h1><h2 id="Vim的模式"><a href="#Vim的模式" class="headerlink" title="Vim的模式"></a>Vim的模式</h2><p>TODO: Vim总共有5种模式？分别是 Normal Mode、Insert Mode、Visual Mode、</p>
+<h1 id="Vim基础"><a href="#Vim基础" class="headerlink" title="Vim基础"></a>Vim基础</h1><h2 id="Vim的模式"><a href="#Vim的模式" class="headerlink" title="Vim的模式"></a>Vim的模式</h2><p>TODO: Vim总共有5种模式？分别是 NORMAL、INSERT、VISUAL、VISUAL BLOCK、(Replace Mode?)</p>
 <p><strong>三种常见的模式：</strong></p>
 <ul>
 <li><strong>Normal Mode</strong></li>
@@ -1258,6 +1336,18 @@
 <hr>
 <br>
 
+<h2 id="Vim配色"><a href="#Vim配色" class="headerlink" title="Vim配色"></a>Vim配色</h2><p>本人使用过两种第三方配色方案，<code>snazzy</code>和<a href="https://github.com/altercation/solarized" target="_blank" rel="noopener">solarized</a>。</p>
+<blockquote>
+<p>由于<code>snazzy</code>在windows下的兼容性好像不好，透明背景功能使用不了（次要），主要还是会对vimrc文档中的备注显示成斜体，windows下的GVim斜体很不清楚，而且最后一个字符经常显示不全，所以弃用了。</p>
+</blockquote>
+<p><strong>安装方法：</strong>一般情况下，安装配色只需要下载配色文件<code>配色名.vim</code>到Vim中用于存放配色文件夹<code>~/.vim/colors/</code>，如果是Windows则是在 <code>&lt;your-vim-dir&gt;\vimfiles\colors\</code>。部分配色文件可通过插件安装方法进行安装。</p>
+<p>安装完成后，使用<code>:colorscheme 配色名</code>更改配色。如果需要每次打开Vim自动使用配色文件，则需要在<code>vimrc</code>文件中加入<code>colorscheme 配色名</code>保存。</p>
+<blockquote>
+<p>Windows用插件管理器安装，配置好vimrc文件后，如果每次运行都报错“没有找到该配色文件”，可用手动安装方法，把配色文件放置在<code>&lt;your-vim-dir&gt;\vimfiles\colors\</code>目录解决。</p>
+</blockquote>
+<hr>
+<br>
+
 <h2 id="与选中有关的操作"><a href="#与选中有关的操作" class="headerlink" title="与选中有关的操作"></a>与选中有关的操作</h2><p>Vim需要操作选中内容，有以下几种办法。</p>
 <ol>
 <li>先选中后操作</li>
@@ -1273,6 +1363,18 @@
 <li><code>x</code> 剪切一个字（如果多选则剪切多个，和<code>d</code>相同）</li>
 <li><code>c</code> 剪切，并进入Insert Mode</li>
 </ul>
+<p>另一种形式的选中后操作：<strong>多行操作</strong></p>
+<ul>
+<li><code>Shift</code>+<code>v</code>进入行选中的Visual Mode，选中多行后，使用<code>:&#39;&lt;,&#39;&gt;normal 内容</code>进行多行编辑</li>
+</ul>
+<p>例如备注多行python代码（即在行首添加“# ”）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:&#39;&lt;,&#39;&gt;normal I#</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>Ctrl</code>+<code>v</code>进入Visual Block Mode，之后光标移动可以选中垂直区域的内容，Block可以理解成“方块”，方块可以是长方型或正方型，例如选中位于不同行的第10-15个字符，同时进行<code>y</code>、<code>d</code>、<code>x</code>、<code>c</code>等操作。</li>
+</ul>
+<p>利用<code>Ctrl</code>+<code>v</code>还可以多行的同一位置添加内容，同样以备注多行python代码为例，在需要备注的行行首使用<code>Ctrl</code>+<code>v</code>选中这些行的第一个字符，然后使用大写<code>I</code>输入<code>#</code>，最后按<ESC>返回，这时被选中的所有行行首都会出现“# ”。</p>
+<p>除了大写<code>I</code>在选中的Block前面加入内容，还可以用大写<code>A</code>在后面加入内容，操作方法相同。</p>
 <h3 id="2-不选中的情况下操作"><a href="#2-不选中的情况下操作" class="headerlink" title="2. 不选中的情况下操作"></a>2. 不选中的情况下操作</h3><p>不选中，但是光标要在需要编辑的行或者单词上。</p>
 <ul>
 <li><code>yy</code> 复制当前行</li>
@@ -1779,6 +1881,61 @@
       </tags>
   </entry>
   <entry>
+    <title>Vim遇到的问题</title>
+    <url>/2020/08/02/Vim%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#字符显示不全-重叠">字符显示不全/重叠</a></li>
+<li><a href="#vim内容复制不到其它程序">Vim内容复制不到其它程序</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+
+<a id="more"></a>
+
+<hr>
+<h2 id="字符显示不全-重叠"><a href="#字符显示不全-重叠" class="headerlink" title="字符显示不全/重叠"></a>字符显示不全/重叠</h2><p>【问题】</p>
+<p>一些中文符号（如<code>“”①②→</code>），在Vim中输入时会出现显示不全，或者和旁边的字符重叠的情况。</p>
+<p>【解决】</p>
+<p><a href="http://blog.sina.com.cn/s/blog_46dac66f010006db.html" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set ambiwidth&#x3D;double</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Vim内容复制不到其它程序"><a href="#Vim内容复制不到其它程序" class="headerlink" title="Vim内容复制不到其它程序"></a>Vim内容复制不到其它程序</h2><p><a href="https://www.zhihu.com/question/19863631" target="_blank" rel="noopener">参考资料：知乎《如何将 Vim 剪贴板里面的东西粘贴到 Vim 之外的地方？》</a></p>
+<p>根据平台不同，要分两种情况。先用下面命令确定你属于哪一种，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim --version | grep clipboard</span><br></pre></td></tr></table></figure>
+
+<p><strong>情况一</strong></p>
+<p><img src="+clipboard.png" alt="+clipboard"></p>
+<p>如果结果里你找到加号开头的+clipboard， 恭喜你，你的vim没问题</p>
+<ul>
+<li>用 <code>&quot;+y</code> 将选中的内容复制到系统剪贴板，效果和ctrl-c一致。</li>
+<li>用 <code>&quot;+p</code> 将剪贴板内容复制到指定位置，也可以用ctrl-v。</li>
+</ul>
+<p><strong>情况二</strong></p>
+<p>如果找到的是负号开头的<code>-clipboard</code>，说明你的vim不支持系统剪切板。需要先重新安装vim。</p>
+<p>Linux系统</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install vim-gtk</span><br></pre></td></tr></table></figure>
+
+<p>MacOS</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
+
+<p>安装好之后，输入 <code>vim --version | grep clipboard</code> 命令应该已经变成<code>+clipboard</code> 了。</p>
+<p>现在可以回到情况一进行复制了。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Software</category>
+        <category>Vim</category>
+      </categories>
+      <tags>
+        <tag>Vim</tag>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows-日常使用</title>
     <url>/2020/07/28/Windows-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<blockquote>
@@ -1954,6 +2111,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020/05/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>index</title>
     <url>/2020/05/14/index/</url>
     <content><![CDATA[<p>vimwiki本地目录（索引），仅用于本地。</p>
@@ -2063,24 +2238,6 @@
 <td align="center"></td>
 </tr>
 </tbody></table>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/05/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
   </entry>
 </search>

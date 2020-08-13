@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"elli999.gitee.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="My Hexo wiki.">
+  <meta name="description" content="My Hexo wiki. Table Of Content   Hexo目录结构 .deploy node_modules public scaffolds source _drafts _posts   themes _config.yml package.json   按需求分类 1. 更换主题 2. 更改网站整体结构 3. 增加网站访问量统计功能 3. 增加评论区 4. 增加搜索功能 （重">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo笔记">
 <meta property="og:url" content="https://elli999.gitee.io/2020/05/15/Hexo%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Eason Kong&#39;s Blog">
-<meta property="og:description" content="My Hexo wiki.">
+<meta property="og:description" content="My Hexo wiki. Table Of Content   Hexo目录结构 .deploy node_modules public scaffolds source _drafts _posts   themes _config.yml package.json   按需求分类 1. 更换主题 2. 更改网站整体结构 3. 增加网站访问量统计功能 3. 增加评论区 4. 增加搜索功能 （重">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-14T16:47:04.000Z">
-<meta property="article:modified_time" content="2020-08-01T16:19:25.658Z">
+<meta property="article:modified_time" content="2020-08-12T16:21:16.173Z">
 <meta property="article:author" content="EK阿墙">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="note">
@@ -242,7 +242,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-02 00:19:25" itemprop="dateModified" datetime="2020-08-02T00:19:25+08:00">2020-08-02</time>
+                <time title="Modified: 2020-08-13 00:21:16" itemprop="dateModified" datetime="2020-08-13T00:21:16+08:00">2020-08-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -278,6 +278,71 @@
 
       
         <p>My Hexo wiki.</p>
+<h1 id="Table-Of-Content"><a href="#Table-Of-Content" class="headerlink" title="Table Of Content"></a>Table Of Content</h1><!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#hexo目录结构">Hexo目录结构</a><ul>
+<li><a href="#deploy">.deploy</a></li>
+<li><a href="#node_modules">node_modules</a></li>
+<li><a href="#public">public</a></li>
+<li><a href="#scaffolds">scaffolds</a></li>
+<li><a href="#source">source</a><ul>
+<li><a href="#drafts">_drafts</a></li>
+<li><a href="#posts">_posts</a></li>
+</ul>
+</li>
+<li><a href="#themes">themes</a></li>
+<li><a href="#config-yml">_config.yml</a></li>
+<li><a href="#package-json">package.json</a></li>
+</ul>
+</li>
+<li><a href="#按需求分类">按需求分类</a><ul>
+<li><a href="#1-更换主题">1. 更换主题</a></li>
+<li><a href="#2-更改网站整体结构">2. 更改网站整体结构</a></li>
+<li><a href="#3-增加网站访问量统计功能">3. 增加网站访问量统计功能</a></li>
+<li><a href="#3-增加评论区">3. 增加评论区</a></li>
+<li><a href="#4-增加搜索功能-（重要！！！）">4. 增加搜索功能 （重要！！！）</a></li>
+<li><a href="#5-插入本地图">5. 插入本地图</a></li>
+<li><a href="#hexo新建文章">Hexo新建文章</a></li>
+</ul>
+</li>
+<li><a href="#bug记录">Bug记录</a><ul>
+<li><a href="#显性bug">显性Bug</a><ul>
+<li><a href="#在-做的标题里，不要用-、">在#做的标题里，不要用<code>{</code>、<code>}</code></a></li>
+</ul>
+</li>
+<li><a href="#隐性bug">隐性Bug</a><ul>
+<li><a href="#首页不显示文章">首页不显示文章</a></li>
+<li><a href="#文章404">文章404</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#弃？">弃？(((</a></li>
+<li><a href="#文章属性">文章属性</a><ul>
+<li><a href="#4-1-1-1-layout">4.1.1.1. layout</a></li>
+<li><a href="#4-1-1-2-title">4.1.1.2. title</a></li>
+<li><a href="#4-1-1-3-date">4.1.1.3. date</a></li>
+<li><a href="#4-1-1-4-updated">4.1.1.4. updated</a></li>
+<li><a href="#4-1-1-5-comments">4.1.1.5. comments</a></li>
+<li><a href="#4-1-1-6-tags">4.1.1.6. tags</a></li>
+<li><a href="#4-1-1-7-categories">4.1.1.7. categories</a></li>
+<li><a href="#4-1-1-8-permalink">4.1.1.8. permalink</a></li>
+<li><a href="#4-1-1-9-description">4.1.1.9. description?</a></li>
+<li><a href="#4-2-生成静态页面">4.2. 生成静态页面</a></li>
+<li><a href="#4-3-在本地建立服务（预览）">4.3. 在本地建立服务（预览）</a></li>
+<li><a href="#4-4-部署到服务器">4.4. 部署到服务器</a></li>
+</ul>
+</li>
+<li><a href="#弃？">弃？)))</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
 <a id="more"></a>
 
 <hr>
@@ -433,6 +498,12 @@
 <li>文章命名</li>
 </ul>
 <p>Windows貌似不能识别带有空格的md文件名（例如：《Linux - 日常使用》，现在已全部统一不用空格，变成《Linux-日常使用》）。使用文件名带空格的md文件，在生成文章后在首页不显示文章（但是貌似在分类中可以找到）</p>
+<hr>
+<br>
+
+<h3 id="文章404"><a href="#文章404" class="headerlink" title="文章404"></a>文章404</h3><p>在本地<code>hexo s</code>可以正常显示，但是deploy之后打开对应文章404，检查本地和服务器均存在该文章的index.html文件，但就是404显示不了。重新hexo clean 、 hexo g也不行。</p>
+<p><strong>解决办法：</strong>把文章日期改了一下，再重新<code>hexo clean &amp;&amp; hexo g -d</code>就可以了。（因为生成的网站里面的文章是按日期分的文件夹路径，所以我的思路是改变日期，相当于改了该文章的路径再重新上传）</p>
+<p><mark>找不到原因。</mark></p>
 <h1 id="—"><a href="#—" class="headerlink" title="—"></a>—</h1><h1 id="—-1"><a href="#—-1" class="headerlink" title="—"></a>—</h1><h1 id="—-2"><a href="#—-2" class="headerlink" title="—"></a>—</h1><h1 id="—-3"><a href="#—-3" class="headerlink" title="—"></a>—</h1><h1 id="—-4"><a href="#—-4" class="headerlink" title="—"></a>—</h1><h1 id="弃？"><a href="#弃？" class="headerlink" title="弃？((("></a>弃？(((</h1><h1 id="文章属性"><a href="#文章属性" class="headerlink" title="文章属性"></a>文章属性</h1><p>文章属性在 <code>hexo new xxx</code> 生成 md 文件时自动创建，在文章头部，包含layout、title、date、updated、comments、tags、categories、permalink属性，其中有部分属性是有default值的，即默认初始属性，如果不改动则以default值为准。</p>
 <p>一般格式如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo部署笔记</span><br><span class="line">date: 2020-05-15 00:47:04</span><br><span class="line">categories:</span><br><span class="line">    - Hexo</span><br><span class="line">tags:</span><br><span class="line">    - hexo</span><br><span class="line">    - 笔记方法学</span><br><span class="line">    - 笔记</span><br><span class="line">    - note</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
@@ -583,7 +654,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo目录结构"><span class="nav-text">Hexo目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#deploy"><span class="nav-text">.deploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-modules"><span class="nav-text">node_modules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#public"><span class="nav-text">public</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scaffolds"><span class="nav-text">scaffolds</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source"><span class="nav-text">source</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#drafts"><span class="nav-text">_drafts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#posts"><span class="nav-text">_posts</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#themes"><span class="nav-text">themes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#config-yml"><span class="nav-text">_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-json"><span class="nav-text">package.json</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按需求分类"><span class="nav-text">按需求分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-更换主题"><span class="nav-text">1. 更换主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-更改网站整体结构"><span class="nav-text">2. 更改网站整体结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-增加网站访问量统计功能"><span class="nav-text">3. 增加网站访问量统计功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-增加评论区"><span class="nav-text">3. 增加评论区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-增加搜索功能-（重要！！！）"><span class="nav-text">4. 增加搜索功能 （重要！！！）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-插入本地图"><span class="nav-text">5. 插入本地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo新建文章"><span class="nav-text">Hexo新建文章</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bug记录"><span class="nav-text">Bug记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#显性Bug"><span class="nav-text">显性Bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-做的标题里，不要用-、"><span class="nav-text">在#做的标题里，不要用{、}</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐性Bug"><span class="nav-text">隐性Bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首页不显示文章"><span class="nav-text">首页不显示文章</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-1"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-2"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-3"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-4"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弃？"><span class="nav-text">弃？(((</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章属性"><span class="nav-text">文章属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-1-layout"><span class="nav-text">4.1.1.1. layout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-2-title"><span class="nav-text">4.1.1.2. title</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-3-date"><span class="nav-text">4.1.1.3. date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-4-updated"><span class="nav-text">4.1.1.4. updated</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-5-comments"><span class="nav-text">4.1.1.5. comments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-6-tags"><span class="nav-text">4.1.1.6. tags</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-7-categories"><span class="nav-text">4.1.1.7. categories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-8-permalink"><span class="nav-text">4.1.1.8. permalink</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-9-description"><span class="nav-text">4.1.1.9. description?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-生成静态页面"><span class="nav-text">4.2. 生成静态页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-在本地建立服务（预览）"><span class="nav-text">4.3. 在本地建立服务（预览）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-部署到服务器"><span class="nav-text">4.4. 部署到服务器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弃？-1"><span class="nav-text">弃？)))</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Table-Of-Content"><span class="nav-text">Table Of Content</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo目录结构"><span class="nav-text">Hexo目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#deploy"><span class="nav-text">.deploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-modules"><span class="nav-text">node_modules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#public"><span class="nav-text">public</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scaffolds"><span class="nav-text">scaffolds</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source"><span class="nav-text">source</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#drafts"><span class="nav-text">_drafts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#posts"><span class="nav-text">_posts</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#themes"><span class="nav-text">themes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#config-yml"><span class="nav-text">_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-json"><span class="nav-text">package.json</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按需求分类"><span class="nav-text">按需求分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-更换主题"><span class="nav-text">1. 更换主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-更改网站整体结构"><span class="nav-text">2. 更改网站整体结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-增加网站访问量统计功能"><span class="nav-text">3. 增加网站访问量统计功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-增加评论区"><span class="nav-text">3. 增加评论区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-增加搜索功能-（重要！！！）"><span class="nav-text">4. 增加搜索功能 （重要！！！）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-插入本地图"><span class="nav-text">5. 插入本地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo新建文章"><span class="nav-text">Hexo新建文章</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bug记录"><span class="nav-text">Bug记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#显性Bug"><span class="nav-text">显性Bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-做的标题里，不要用-、"><span class="nav-text">在#做的标题里，不要用{、}</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐性Bug"><span class="nav-text">隐性Bug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首页不显示文章"><span class="nav-text">首页不显示文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章404"><span class="nav-text">文章404</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-1"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-2"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-3"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-4"><span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弃？"><span class="nav-text">弃？(((</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章属性"><span class="nav-text">文章属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-1-layout"><span class="nav-text">4.1.1.1. layout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-2-title"><span class="nav-text">4.1.1.2. title</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-3-date"><span class="nav-text">4.1.1.3. date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-4-updated"><span class="nav-text">4.1.1.4. updated</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-5-comments"><span class="nav-text">4.1.1.5. comments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-6-tags"><span class="nav-text">4.1.1.6. tags</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-7-categories"><span class="nav-text">4.1.1.7. categories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-8-permalink"><span class="nav-text">4.1.1.8. permalink</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-9-description"><span class="nav-text">4.1.1.9. description?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-生成静态页面"><span class="nav-text">4.2. 生成静态页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-在本地建立服务（预览）"><span class="nav-text">4.3. 在本地建立服务（预览）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-部署到服务器"><span class="nav-text">4.4. 部署到服务器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弃？-1"><span class="nav-text">弃？)))</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
