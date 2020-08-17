@@ -32,47 +32,6 @@
       </tags>
   </entry>
   <entry>
-    <title>HTML笔记</title>
-    <url>/2020/06/18/HTML%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="标签查询"><a href="#标签查询" class="headerlink" title="标签查询"></a>标签查询</h1><h2 id="img"><a href="#img" class="headerlink" title="img"></a>img</h2><p><code>img</code> means image</p>
-<p>一般格式</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;Image&quot; width:100% height:100%&gt;</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<h3 id="改变图像大小"><a href="#改变图像大小" class="headerlink" title="改变图像大小"></a>改变图像大小</h3><p><strong>按像素</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">width:100px</span> <span class="attr">height:100px</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:50px;height:50px;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>按比例</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"zoom:70%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:80%;height:80%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pangeru.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"transform:scale(0.9)"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>第一行的方法好像不行？（待测试！）<br>第三行的0.9即90%的意思。</p>
-<hr>
-<h2 id="mark"><a href="#mark" class="headerlink" title="mark"></a>mark</h2><p>mark标签，作用是高亮标签中的内容</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mark</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Do not forget to buy <span class="tag">&lt;<span class="name">mark</span>&gt;</span>milk<span class="tag">&lt;/<span class="name">mark</span>&gt;</span> today.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<p><img src="mark.png" alt="mark"></p>
-<hr>
-<h1 id="名词-属性-查询"><a href="#名词-属性-查询" class="headerlink" title="名词(属性?)查询"></a>名词(属性?)查询</h1><h2 id="alt"><a href="#alt" class="headerlink" title="alt"></a>alt</h2><p><code>alt</code> means alternate，“替代（文本）”</p>
-<p>当设置了alt属性的元素无法加载显示时，会在html页面留下一个对应大小的空间，里面显示着alt的内容。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;上海鲜花港 - 郁金香&quot;  &#x2F;&gt;</span><br></pre></td></tr></table></figure>
-
-<div align="center"><img src="test.png" alt="上海鲜花港 - 郁金香"  /></div>
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>Coding</category>
-        <category>HTML</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo+Markdown+Vim打造无敌笔记系统</title>
     <url>/2020/06/10/Hexo+Markdown+Vim%E6%89%93%E9%80%A0%E6%97%A0%E6%95%8C%E7%AC%94%E8%AE%B0%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<blockquote>
@@ -262,8 +221,9 @@
 <ul>
 <li>安装方法</li>
 </ul>
-<p>下载<code>plug.vim</code>文件到vim下的<code>autoload</code>目录里面即可</p>
-<p>下载方法，可以到Github主页上直接下载；也可以按照Github主页上的命令行执行命令</p>
+<p>可以使用手动下载法，或者是Github主页上的命令安装法。</p>
+<p>手动下载：下载<code>plug.vim</code>文件存放到windows下的 <code>$HOME/vimfiles/autoload/plug.vim</code> 路径。（如果是Unix系统则放在 <code>~/.vim/autoload/plug.vim</code>）</p>
+<p>命令安装：看上方的Github主页，直接复制命令运行即可。</p>
 <ul>
 <li>配置方法</li>
 </ul>
@@ -372,9 +332,9 @@
       <categories>
         <category>+IT</category>
         <category>Software</category>
-        <category>笔记方法学</category>
         <category>Vim</category>
         <category>Hexo</category>
+        <category>笔记方法学</category>
       </categories>
       <tags>
         <tag>笔记</tag>
@@ -395,11 +355,52 @@
       <categories>
         <category>+IT</category>
         <category>Software</category>
-        <category>笔记方法学</category>
         <category>Hexo</category>
+        <category>笔记方法学</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML笔记</title>
+    <url>/2020/06/18/HTML%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="标签查询"><a href="#标签查询" class="headerlink" title="标签查询"></a>标签查询</h1><h2 id="img"><a href="#img" class="headerlink" title="img"></a>img</h2><p><code>img</code> means image</p>
+<p>一般格式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;Image&quot; width:100% height:100%&gt;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h3 id="改变图像大小"><a href="#改变图像大小" class="headerlink" title="改变图像大小"></a>改变图像大小</h3><p><strong>按像素</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">width:100px</span> <span class="attr">height:100px</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:50px;height:50px;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>按比例</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"zoom:70%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:80%;height:80%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pangeru.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"transform:scale(0.9)"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>第一行的方法好像不行？（待测试！）<br>第三行的0.9即90%的意思。</p>
+<hr>
+<h2 id="mark"><a href="#mark" class="headerlink" title="mark"></a>mark</h2><p>mark标签，作用是高亮标签中的内容</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mark</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Do not forget to buy <span class="tag">&lt;<span class="name">mark</span>&gt;</span>milk<span class="tag">&lt;/<span class="name">mark</span>&gt;</span> today.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<p><img src="mark.png" alt="mark"></p>
+<hr>
+<h1 id="名词-属性-查询"><a href="#名词-属性-查询" class="headerlink" title="名词(属性?)查询"></a>名词(属性?)查询</h1><h2 id="alt"><a href="#alt" class="headerlink" title="alt"></a>alt</h2><p><code>alt</code> means alternate，“替代（文本）”</p>
+<p>当设置了alt属性的元素无法加载显示时，会在html页面留下一个对应大小的空间，里面显示着alt的内容。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;上海鲜花港 - 郁金香&quot;  &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<div align="center"><img src="test.png" alt="上海鲜花港 - 郁金香"  /></div>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Coding</category>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -444,6 +445,196 @@
       <tags>
         <tag>Linux</tag>
         <tag>OS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vim命令</title>
+    <url>/2020/08/03/Vim%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>Vim commands</p>
+<!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#加载设置文件">加载设置文件</a></li>
+<li><a href="#语法高亮">语法高亮</a></li>
+<li><a href="#显示行号">显示行号</a></li>
+<li><a href="#按行号跳转">按行号跳转</a></li>
+<li><a href="#拼写检查（英语）">拼写检查（英语）</a><pre><code>+ [Operations in Normal Mode](#operations-in-normal-mode)
++ [Fix Spelling Errors from Insert Mode](#fix-spelling-errors-from-insert-mode)</code></pre></li>
+<li><a href="#当前文件转换为html格式输出">当前文件转换为html格式输出</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+
+
+<a id="more"></a>
+
+<hr>
+<h2 id="加载设置文件"><a href="#加载设置文件" class="headerlink" title="加载设置文件"></a>加载设置文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:source 文件名</span><br></pre></td></tr></table></figure>
+<p>例如加载默认路径下的vimrc文件 <code>:source $MYVIMRC</code> 。</p>
+<hr>
+<br>
+
+<h2 id="语法高亮"><a href="#语法高亮" class="headerlink" title="语法高亮"></a>语法高亮</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:syntax on</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+
+
+<h2 id="显示行号"><a href="#显示行号" class="headerlink" title="显示行号"></a>显示行号</h2><p>使Vim在每一行前面显示行号。</p>
+<p><a href="https://jeffkreeftmeijer.com/vim-number/" target="_blank" rel="noopener">参考链接</a></p>
+<p><strong>注：下方的每行命令中的第二行均为第一行的缩写！效用相同。</strong> &lt;++&gt;</p>
+<ul>
+<li><strong>方案一：absolute</strong></li>
+</ul>
+<p>所有行按照它的真实行号来显示。</p>
+<p>效果图：</p>
+<p><img src="absolute.png" alt="Absolute line numbers"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; turn absolute line numbers on</span><br><span class="line">set number</span><br><span class="line">set nu</span><br><span class="line"></span><br><span class="line">&quot; turn absolute line numbers off</span><br><span class="line">set nonumber</span><br><span class="line">set nonu</span><br><span class="line"></span><br><span class="line">&quot; toggle absolute line numbers</span><br><span class="line">set number!</span><br><span class="line">set nu!</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>方案二：relative</strong></li>
+</ul>
+<p>以当前行号为基准（显示为0，实际不为0），其它行号为当前行号的相对值。</p>
+<p>效果图：</p>
+<p><img src="relative.png" alt="Relative line numbers"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; turn relative line numbers on</span><br><span class="line">set relativenumber</span><br><span class="line">set rnu</span><br><span class="line"></span><br><span class="line">&quot; turn relative line numbers off</span><br><span class="line">set norelativenumber</span><br><span class="line">set nornu</span><br><span class="line"></span><br><span class="line">&quot; toggle relative line numbers</span><br><span class="line">set relativenumber!</span><br><span class="line">set rnu!</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>方案三：hybrid</strong></li>
+</ul>
+<p>当前行号是绝对值，其它行号为当前行号的相对值。（推荐）</p>
+<p>效果图：</p>
+<p><img src="hybrid.png" alt="Hybrid line numbers"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; turn hybrid line numbers on</span><br><span class="line">set number relativenumber</span><br><span class="line">set nu rnu</span><br><span class="line"></span><br><span class="line">&quot; turn hybrid line numbers off</span><br><span class="line">set nonumber norelativenumber</span><br><span class="line">set nonu nornu</span><br><span class="line"></span><br><span class="line">&quot; toggle hybrid line numbers</span><br><span class="line">set number! relativenumber!</span><br><span class="line">set nu! rnu!</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>分屏行号设置</li>
+</ul>
+<p>如果需要分屏，两屏使用相同的方案显示行号。</p>
+<p>可以改成如下图所示的，活动窗口以hybrid方案显示，非活动窗口以absolute方案显示。（推荐）</p>
+<p><img src="toggle.png" alt="Automatic toggling"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; 设为hybrid方案</span><br><span class="line">set nu rnu</span><br><span class="line"></span><br><span class="line">&quot; 分屏的时候，非活动窗口的行数显示设为绝对值，活动窗口的行数保持相当值</span><br><span class="line">augroup numbertoggle</span><br><span class="line">  autocmd!</span><br><span class="line">  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber</span><br><span class="line">  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber</span><br><span class="line">augroup END</span><br></pre></td></tr></table></figure>
+
+<h2 id="按行号跳转"><a href="#按行号跳转" class="headerlink" title="按行号跳转"></a>按行号跳转</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:行号(数字)</span><br></pre></td></tr></table></figure>
+
+<p>在上面命令中填入要到达的行号即可。</p>
+<blockquote>
+<p>例如<code>:31</code>，即跳转到第31行。</p>
+</blockquote>
+<h2 id="拼写检查（英语）"><a href="#拼写检查（英语）" class="headerlink" title="拼写检查（英语）"></a>拼写检查（英语）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; 开启spell check</span><br><span class="line">:set spell</span><br><span class="line"></span><br><span class="line">&quot; 关闭spell check</span><br><span class="line">:set nospell</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://vimjc.com/vim-spell-check.html" target="_blank" rel="noopener">参考链接</a></p>
+<p>Vim 内置拼写检查器，使用命令 <code>:set spell</code> 可以对当前文件中所有未在字典中出现过的单词进行标记并高亮显示。</p>
+<ul>
+<li><strong>开/关拼写检查功能</strong> <code>map &lt;LEADER&gt;sc :set spell!&lt;CR&gt;</code> （spell check）</li>
+</ul>
+<br>
+
+<h4 id="Operations-in-Normal-Mode"><a href="#Operations-in-Normal-Mode" class="headerlink" title="Operations in Normal Mode"></a>Operations in Normal Mode</h4><p>开启功能后，可以使用以下快捷键：</p>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">effect</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">]s</td>
+<td align="center">跳转到下个拼写错误</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">[s</td>
+<td align="center">跳转到上个拼写错误</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">z=</td>
+<td align="center">当前单词的推荐集合（需光标移至错误单词上方）</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">zg</td>
+<td align="center">添加单词到拼写文件</td>
+<td align="center"><code>:h zg</code></td>
+</tr>
+<tr>
+<td align="center">zw</td>
+<td align="center">从拼写文件删除当前单词</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">zug</td>
+<td align="center">撤销对当前单词的 zg 或 zw修改</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p><code>z=</code>： Vim的拼写检查提供修改建议功能，把光标移动到标记为拼写错误的词上方，按<code>z=</code>会出现修改建议，按数字选择需要的建议即可完成自动修改。</p>
+<p><code>zg</code>： Vim 有时会错误的把一些词标记为拼写错误, 是因为该词未收录在词典中。把光标移动到需要添加的词上方，使用 <code>zg</code> 命令(参考 :h zg)把光标处的词添加到拼写文件来教 Vim 识别该词。</p>
+<p><code>zw</code>： Vim 还提供了一个互补的 <code>zw</code> 命令, 可以把光标处的单词标记为拼写错误。 </p>
+<p><code>zug</code>： 事实上, <code>zg</code> 或 <code>zw</code> 命令, 会添加或删除拼写文件中的单词。 Vim 为这种情况提供了专用的 <code>zug</code> 撤销命令, 它可以恢复对光标下单词的<code>zg</code> 或 <code>zw</code> 命令的操作</p>
+<blockquote>
+<p>Vim 在拼写文件中记录添加到字典的单词, 以便它们在其他会话中也可以使用. 拼写文件的名称是用语言和文件编码命名的。</p>
+</blockquote>
+<blockquote>
+<p>例如, 如果我们正在使用UTF-8编码的文件, 并且拼写检查器使用英语词典, 则使用 zg 命令添加的单词将会记录在名为 ~/.vim/spell/en.utf-8.add 的文件中</p>
+</blockquote>
+<br>
+
+<h4 id="Fix-Spelling-Errors-from-Insert-Mode"><a href="#Fix-Spelling-Errors-from-Insert-Mode" class="headerlink" title="Fix Spelling Errors from Insert Mode"></a>Fix Spelling Errors from Insert Mode</h4><p> 我们可以在插入模式使用 <code>&lt;C-x&gt;s</code>(参考 <code>:h compl-spelling</code>) 命令来修复此错误, 它会触发一个弹出的自动补菜单可供选择。</p>
+<p>可供弹出式菜单使用的命令</p>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">effect</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><C-n></td>
+<td align="center">下一个项(next)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-p></td>
+<td align="center">上一个项(previous)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-y></td>
+<td align="center">确认使用当前选中的项(yes)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-e></td>
+<td align="center">还原最早输入的文本(exit)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-h></td>
+<td align="center">从当前匹配项中删除一个字符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-l></td>
+<td align="center">从当前匹配项中增加一个字符</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="当前文件转换为html格式输出"><a href="#当前文件转换为html格式输出" class="headerlink" title="当前文件转换为html格式输出"></a>当前文件转换为html格式输出</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:%TOhtml</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Software</category>
+        <category>Vim</category>
+      </categories>
+      <tags>
+        <tag>Vim</tag>
+        <tag>vimrc</tag>
       </tags>
   </entry>
   <entry>
@@ -724,204 +915,14 @@
       <categories>
         <category>+IT</category>
         <category>Software</category>
-        <category>笔记方法学</category>
         <category>Hexo</category>
+        <category>笔记方法学</category>
       </categories>
       <tags>
         <tag>笔记</tag>
         <tag>note</tag>
         <tag>笔记方法学</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vim命令</title>
-    <url>/2020/08/03/Vim%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>Vim commands</p>
-<!-- vim-markdown-toc Redcarpet -->
-
-<ul>
-<li><a href="#加载设置文件">加载设置文件</a></li>
-<li><a href="#语法高亮">语法高亮</a></li>
-<li><a href="#显示行号">显示行号</a></li>
-<li><a href="#按行号跳转">按行号跳转</a></li>
-<li><a href="#拼写检查（英语）">拼写检查（英语）</a><pre><code>+ [Operations in Normal Mode](#operations-in-normal-mode)
-+ [Fix Spelling Errors from Insert Mode](#fix-spelling-errors-from-insert-mode)</code></pre></li>
-<li><a href="#当前文件转换为html格式输出">当前文件转换为html格式输出</a></li>
-</ul>
-<!-- vim-markdown-toc -->
-
-
-
-<a id="more"></a>
-
-<hr>
-<h2 id="加载设置文件"><a href="#加载设置文件" class="headerlink" title="加载设置文件"></a>加载设置文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:source 文件名</span><br></pre></td></tr></table></figure>
-<p>例如加载默认路径下的vimrc文件 <code>:source $MYVIMRC</code> 。</p>
-<hr>
-<br>
-
-<h2 id="语法高亮"><a href="#语法高亮" class="headerlink" title="语法高亮"></a>语法高亮</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:syntax on</span><br></pre></td></tr></table></figure>
-
-<hr>
-<br>
-
-
-<h2 id="显示行号"><a href="#显示行号" class="headerlink" title="显示行号"></a>显示行号</h2><p>使Vim在每一行前面显示行号。</p>
-<p><a href="https://jeffkreeftmeijer.com/vim-number/" target="_blank" rel="noopener">参考链接</a></p>
-<p><strong>注：下方的每行命令中的第二行均为第一行的缩写！效用相同。</strong> &lt;++&gt;</p>
-<ul>
-<li><strong>方案一：absolute</strong></li>
-</ul>
-<p>所有行按照它的真实行号来显示。</p>
-<p>效果图：</p>
-<p><img src="absolute.png" alt="Absolute line numbers"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; turn absolute line numbers on</span><br><span class="line">set number</span><br><span class="line">set nu</span><br><span class="line"></span><br><span class="line">&quot; turn absolute line numbers off</span><br><span class="line">set nonumber</span><br><span class="line">set nonu</span><br><span class="line"></span><br><span class="line">&quot; toggle absolute line numbers</span><br><span class="line">set number!</span><br><span class="line">set nu!</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>方案二：relative</strong></li>
-</ul>
-<p>以当前行号为基准（显示为0，实际不为0），其它行号为当前行号的相对值。</p>
-<p>效果图：</p>
-<p><img src="relative.png" alt="Relative line numbers"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; turn relative line numbers on</span><br><span class="line">set relativenumber</span><br><span class="line">set rnu</span><br><span class="line"></span><br><span class="line">&quot; turn relative line numbers off</span><br><span class="line">set norelativenumber</span><br><span class="line">set nornu</span><br><span class="line"></span><br><span class="line">&quot; toggle relative line numbers</span><br><span class="line">set relativenumber!</span><br><span class="line">set rnu!</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>方案三：hybrid</strong></li>
-</ul>
-<p>当前行号是绝对值，其它行号为当前行号的相对值。（推荐）</p>
-<p>效果图：</p>
-<p><img src="hybrid.png" alt="Hybrid line numbers"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; turn hybrid line numbers on</span><br><span class="line">set number relativenumber</span><br><span class="line">set nu rnu</span><br><span class="line"></span><br><span class="line">&quot; turn hybrid line numbers off</span><br><span class="line">set nonumber norelativenumber</span><br><span class="line">set nonu nornu</span><br><span class="line"></span><br><span class="line">&quot; toggle hybrid line numbers</span><br><span class="line">set number! relativenumber!</span><br><span class="line">set nu! rnu!</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>分屏行号设置</li>
-</ul>
-<p>如果需要分屏，两屏使用相同的方案显示行号。</p>
-<p>可以改成如下图所示的，活动窗口以hybrid方案显示，非活动窗口以absolute方案显示。（推荐）</p>
-<p><img src="toggle.png" alt="Automatic toggling"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; 设为hybrid方案</span><br><span class="line">set nu rnu</span><br><span class="line"></span><br><span class="line">&quot; 分屏的时候，非活动窗口的行数显示设为绝对值，活动窗口的行数保持相当值</span><br><span class="line">augroup numbertoggle</span><br><span class="line">  autocmd!</span><br><span class="line">  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber</span><br><span class="line">  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber</span><br><span class="line">augroup END</span><br></pre></td></tr></table></figure>
-
-<h2 id="按行号跳转"><a href="#按行号跳转" class="headerlink" title="按行号跳转"></a>按行号跳转</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:行号(数字)</span><br></pre></td></tr></table></figure>
-
-<p>在上面命令中填入要到达的行号即可。</p>
-<blockquote>
-<p>例如<code>:31</code>，即跳转到第31行。</p>
-</blockquote>
-<h2 id="拼写检查（英语）"><a href="#拼写检查（英语）" class="headerlink" title="拼写检查（英语）"></a>拼写检查（英语）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; 开启spell check</span><br><span class="line">:set spell</span><br><span class="line"></span><br><span class="line">&quot; 关闭spell check</span><br><span class="line">:set nospell</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://vimjc.com/vim-spell-check.html" target="_blank" rel="noopener">参考链接</a></p>
-<p>Vim 内置拼写检查器，使用命令 <code>:set spell</code> 可以对当前文件中所有未在字典中出现过的单词进行标记并高亮显示。</p>
-<ul>
-<li><strong>开/关拼写检查功能</strong> <code>map &lt;LEADER&gt;sc :set spell!&lt;CR&gt;</code> （spell check）</li>
-</ul>
-<br>
-
-<h4 id="Operations-in-Normal-Mode"><a href="#Operations-in-Normal-Mode" class="headerlink" title="Operations in Normal Mode"></a>Operations in Normal Mode</h4><p>开启功能后，可以使用以下快捷键：</p>
-<table>
-<thead>
-<tr>
-<th align="center">Command</th>
-<th align="center">effect</th>
-<th align="center">备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">]s</td>
-<td align="center">跳转到下个拼写错误</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">[s</td>
-<td align="center">跳转到上个拼写错误</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">z=</td>
-<td align="center">当前单词的推荐集合（需光标移至错误单词上方）</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">zg</td>
-<td align="center">添加单词到拼写文件</td>
-<td align="center"><code>:h zg</code></td>
-</tr>
-<tr>
-<td align="center">zw</td>
-<td align="center">从拼写文件删除当前单词</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">zug</td>
-<td align="center">撤销对当前单词的 zg 或 zw修改</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p><code>z=</code>： Vim的拼写检查提供修改建议功能，把光标移动到标记为拼写错误的词上方，按<code>z=</code>会出现修改建议，按数字选择需要的建议即可完成自动修改。</p>
-<p><code>zg</code>： Vim 有时会错误的把一些词标记为拼写错误, 是因为该词未收录在词典中。把光标移动到需要添加的词上方，使用 <code>zg</code> 命令(参考 :h zg)把光标处的词添加到拼写文件来教 Vim 识别该词。</p>
-<p><code>zw</code>： Vim 还提供了一个互补的 <code>zw</code> 命令, 可以把光标处的单词标记为拼写错误。 </p>
-<p><code>zug</code>： 事实上, <code>zg</code> 或 <code>zw</code> 命令, 会添加或删除拼写文件中的单词。 Vim 为这种情况提供了专用的 <code>zug</code> 撤销命令, 它可以恢复对光标下单词的<code>zg</code> 或 <code>zw</code> 命令的操作</p>
-<blockquote>
-<p>Vim 在拼写文件中记录添加到字典的单词, 以便它们在其他会话中也可以使用. 拼写文件的名称是用语言和文件编码命名的。</p>
-</blockquote>
-<blockquote>
-<p>例如, 如果我们正在使用UTF-8编码的文件, 并且拼写检查器使用英语词典, 则使用 zg 命令添加的单词将会记录在名为 ~/.vim/spell/en.utf-8.add 的文件中</p>
-</blockquote>
-<br>
-
-<h4 id="Fix-Spelling-Errors-from-Insert-Mode"><a href="#Fix-Spelling-Errors-from-Insert-Mode" class="headerlink" title="Fix Spelling Errors from Insert Mode"></a>Fix Spelling Errors from Insert Mode</h4><p> 我们可以在插入模式使用 <code>&lt;C-x&gt;s</code>(参考 <code>:h compl-spelling</code>) 命令来修复此错误, 它会触发一个弹出的自动补菜单可供选择。</p>
-<p>可供弹出式菜单使用的命令</p>
-<table>
-<thead>
-<tr>
-<th align="center">Command</th>
-<th align="center">effect</th>
-<th align="center">备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><C-n></td>
-<td align="center">下一个项(next)</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><C-p></td>
-<td align="center">上一个项(previous)</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><C-y></td>
-<td align="center">确认使用当前选中的项(yes)</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><C-e></td>
-<td align="center">还原最早输入的文本(exit)</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><C-h></td>
-<td align="center">从当前匹配项中删除一个字符</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><C-l></td>
-<td align="center">从当前匹配项中增加一个字符</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<h2 id="当前文件转换为html格式输出"><a href="#当前文件转换为html格式输出" class="headerlink" title="当前文件转换为html格式输出"></a>当前文件转换为html格式输出</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:%TOhtml</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>Software</category>
-        <category>Vim</category>
-      </categories>
-      <tags>
-        <tag>Vim</tag>
-        <tag>vimrc</tag>
       </tags>
   </entry>
   <entry>
@@ -1173,6 +1174,173 @@
       </tags>
   </entry>
   <entry>
+    <title>Vim遇到的问题</title>
+    <url>/2020/08/02/Vim%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#字符显示不全-重叠">字符显示不全/重叠</a></li>
+<li><a href="#vim内容复制不到其它程序">Vim内容复制不到其它程序</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+
+<a id="more"></a>
+
+<hr>
+<h2 id="字符显示不全-重叠"><a href="#字符显示不全-重叠" class="headerlink" title="字符显示不全/重叠"></a>字符显示不全/重叠</h2><p>【问题】</p>
+<p>一些中文符号（如<code>“”①②→</code>），在Vim中输入时会出现显示不全，或者和旁边的字符重叠的情况。</p>
+<p>【解决】</p>
+<p><a href="http://blog.sina.com.cn/s/blog_46dac66f010006db.html" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set ambiwidth&#x3D;double</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Vim内容复制不到其它程序"><a href="#Vim内容复制不到其它程序" class="headerlink" title="Vim内容复制不到其它程序"></a>Vim内容复制不到其它程序</h2><p><a href="https://www.zhihu.com/question/19863631" target="_blank" rel="noopener">参考资料：知乎《如何将 Vim 剪贴板里面的东西粘贴到 Vim 之外的地方？》</a></p>
+<p>根据平台不同，要分两种情况。先用下面命令确定你属于哪一种，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim --version | grep clipboard</span><br></pre></td></tr></table></figure>
+
+<p><strong>情况一</strong></p>
+<p><img src="+clipboard.png" alt="+clipboard"></p>
+<p>如果结果里你找到加号开头的+clipboard， 恭喜你，你的vim没问题</p>
+<ul>
+<li>用 <code>&quot;+y</code> 将选中的内容复制到系统剪贴板，效果和ctrl-c一致。</li>
+<li>用 <code>&quot;+p</code> 将剪贴板内容复制到指定位置，也可以用ctrl-v。</li>
+</ul>
+<p><strong>情况二</strong></p>
+<p>如果找到的是负号开头的<code>-clipboard</code>，说明你的vim不支持系统剪切板。需要先重新安装vim。</p>
+<p>Linux系统</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install vim-gtk</span><br></pre></td></tr></table></figure>
+
+<p>MacOS</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
+
+<p>安装好之后，输入 <code>vim --version | grep clipboard</code> 命令应该已经变成<code>+clipboard</code> 了。</p>
+<p>现在可以回到情况一进行复制了。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Software</category>
+        <category>Vim</category>
+      </categories>
+      <tags>
+        <tag>Vim</tag>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>index</title>
+    <url>/2020/05/14/index/</url>
+    <content><![CDATA[<p>vimwiki本地目录（索引），仅用于本地。</p>
+<a id="more"></a>
+
+<hr>
+<h1 id="未分类"><a href="#未分类" class="headerlink" title="未分类"></a>未分类</h1><p><a href="hello-world">hello world</a></p>
+<hr>
+<p>== 缩进法 ==</p>
+<hr>
+<h1 id="IT"><a href="#IT" class="headerlink" title="IT"></a>IT</h1><pre><code>## Coding
+
+    ### HTML
+    [HTML笔记](HTML笔记)
+
+## OS
+
+    ### Linux
+    [Linux-日常使用](Linux-日常使用)
+    [Linux笔记](Linux笔记)
+
+        #### Ubuntu
+
+
+    ### Windows
+    [Windows-日常使用](Windows-日常使用)
+
+## Software
+[Github笔记](Github笔记)
+
+    ### Hexo
+    [Hexo笔记](Hexo笔记)
+    [Hexo基础](Hexo基础)
+    [Hexo+Markdown+Vim打造无敌笔记系统](Hexo+Markdown+Vim打造无敌笔记系统)
+
+    ### Vim
+    [Vim笔记](Vim笔记)
+    [Vim命令](Vim命令)
+    [Vim插件](Vim插件)
+    [Vim遇到的问题](Vim遇到的问题)</code></pre><hr>
+<h1 id="笔记方法学"><a href="#笔记方法学" class="headerlink" title="笔记方法学"></a>笔记方法学</h1><p><a href="Hexo笔记">Hexo笔记</a><br><a href="Hexo基础">Hexo基础</a><br><a href="Hexo+Markdown+Vim打造无敌笔记系统">Hexo+Markdown+Vim打造无敌笔记系统</a></p>
+<p>== 表格法1 ==</p>
+<blockquote>
+<p>初步：不好看，不直观。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">笔记方法学</td>
+<td align="center"><a href="Hexo+Markdown+Vim打造无敌笔记系统">Hexo+Markdown+Vim打造无敌笔记系统</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">笔记方法学</td>
+<td align="center"><a href="Hexo笔记">Hexo笔记</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">Coding</td>
+<td align="center">HTML</td>
+<td align="center"><a href="HTML笔记">HTML笔记</a></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">OS</td>
+<td align="center">Linux</td>
+<td align="center"><a href="Linux-日常使用">Linux-日常使用</a></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">OS</td>
+<td align="center">Linux</td>
+<td align="center"><a href="Linux笔记">Linux笔记</a></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">OS</td>
+<td align="center">Linux</td>
+<td align="center">Ubuntu</td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">OS</td>
+<td align="center">Windows</td>
+<td align="center"><a href="Windows-日常使用">Windows-日常使用</a></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">Software</td>
+<td align="center"><a href="VIM笔记">VIM笔记</a></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">Software</td>
+<td align="center"><a href="Github笔记">Github笔记</a></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
     <title>Vim笔记</title>
     <url>/2020/06/19/Vim%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>My Vim wiki.</p>
@@ -1185,7 +1353,7 @@
 <li><a href="#vim中的按键对照表">Vim中的按键对照表</a></li>
 <li><a href="#vim设置-set">Vim设置(set)</a></li>
 <li><a href="#vim配色">Vim配色</a></li>
-<li><a href="#与选中有关的操作">与选中有关的操作</a><ul>
+<li><a href="#与选中有关的操作-y-d-x-c">与选中有关的操作(y d x c)</a><ul>
 <li><a href="#1-先选中后操作">1.先选中后操作</a></li>
 <li><a href="#2-不选中的情况下操作">2. 不选中的情况下操作</a><ul>
 <li><a href="#in">in</a></li>
@@ -1195,7 +1363,7 @@
 </li>
 </ul>
 </li>
-<li><a href="#标签页">标签页</a></li>
+<li><a href="#tab-标签页">tab 标签页</a></li>
 <li><a href="#分屏">分屏</a></li>
 <li><a href="#录制功能">录制功能</a></li>
 </ul>
@@ -1348,14 +1516,12 @@
 <hr>
 <br>
 
-<h2 id="与选中有关的操作"><a href="#与选中有关的操作" class="headerlink" title="与选中有关的操作"></a>与选中有关的操作</h2><p>Vim需要操作选中内容，有以下几种办法。</p>
+<h2 id="与选中有关的操作-y-d-x-c"><a href="#与选中有关的操作-y-d-x-c" class="headerlink" title="与选中有关的操作(y d x c)"></a>与选中有关的操作(y d x c)</h2><p>即选中内容后，对内容进行编辑的操作，包括复制、剪切（删除）、添加内容等。</p>
+<p>Vim需要编辑选中内容，有以下几种办法。</p>
 <ol>
 <li>先选中后操作</li>
 <li>不选中的情况下操作</li>
 </ol>
-<blockquote>
-<p>涉及了在Normal模式下的v、y、x、c、d等的操作。</p>
-</blockquote>
 <h3 id="1-先选中后操作"><a href="#1-先选中后操作" class="headerlink" title="1.先选中后操作"></a>1.先选中后操作</h3><p>通过Visual Mode可以选中内容。选中后可以使用以下操作：</p>
 <ul>
 <li><code>y</code> 复制</li>
@@ -1407,11 +1573,14 @@
 <p>平时我们使用<code>f</code>或者<code>F</code>，是在当前行向后/向前搜索字符。</p>
 <p>例如： 在<code>hello &quot;how are you&quot;</code>中，如果我们的光标在行首，使用<code>fr</code>，光标会移动到中间的字母”r”上。</p>
 <p>我们可以使用<code>yf</code> <code>df</code> <code>cf</code> 后面接字符来进行快速修改。</p>
-<p>还是上面的例子，在<code>hello &quot;how are you&quot;</code>中按<code>dfo</code>可快速删除由光标开始到”o”的内容，结果是<code>&quot;how are you&quot;</code>。</p>
+<p>还是上面的例子，在<code>hello &quot;how are you&quot;</code>中按<code>dfo</code>可快速删除由光标开始到第一个”o”的内容，结果是<code>&quot;how are you&quot;</code>。</p>
 <hr>
 <br>
 
-<h2 id="标签页"><a href="#标签页" class="headerlink" title="标签页"></a>标签页</h2><table>
+<h2 id="tab-标签页"><a href="#tab-标签页" class="headerlink" title="tab 标签页"></a>tab 标签页</h2><ul>
+<li>tab标签页命令</li>
+</ul>
+<table>
 <thead>
 <tr>
 <th align="center">Command</th>
@@ -1428,6 +1597,76 @@
 <td align="center">:tabe 文件名</td>
 <td align="center">在新标签页打开文档</td>
 <td align="center">等同<code>:tabnew</code></td>
+</tr>
+<tr>
+<td align="center">:tabs</td>
+<td align="center">显示所有标签页</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:tabn</td>
+<td align="center">下一个标签页</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:tabp</td>
+<td align="center">上一个标签页</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:tabc</td>
+<td align="center">关闭当前标签页</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:tabo</td>
+<td align="center">关闭其他标签页</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:tabn n</td>
+<td align="center">切换到第n个标签页，比如 :tabn 3 切换到第三个标签页</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:tabm n</td>
+<td align="center">把当前标签移动到第n个位置</td>
+<td align="center">貌似是从0开始?</td>
+</tr>
+<tr>
+<td align="center">:tabfirst</td>
+<td align="center">切换到第一个标签页</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:tablast</td>
+<td align="center">切换到最后一个标签页</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:tab help</td>
+<td align="center">在标签页打开帮助</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:tab drop <file></td>
+<td align="center">如果文件已被其他标签页和窗口打开则跳过去，否则新标签打开</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:tab split</td>
+<td align="center">在新的标签页中打开当前窗口里的文件</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:tab ball</td>
+<td align="center">将缓存中所有文件用标签页打开</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:set showtabline=?</td>
+<td align="center">设置为 0 就不显示标签页标签，1会按需显示，2会永久显示</td>
+<td align="center"></td>
 </tr>
 </tbody></table>
 <table>
@@ -1448,7 +1687,17 @@
 <td align="center">切换到上一个标签页</td>
 <td align="center"></td>
 </tr>
+<tr>
+<td align="center">ngt</td>
+<td align="center">切换到第n个标签页，比如 2gt 将会切换到第二个标签页</td>
+<td align="center"></td>
+</tr>
 </tbody></table>
+<ul>
+<li>Vimrc标签页设置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; tab标签页快速跳转及新建、删除</span><br><span class="line">map tk :tabe&lt;CR&gt;</span><br><span class="line">map tj :tabs&lt;CR&gt;</span><br><span class="line">map th :tabp&lt;CR&gt;</span><br><span class="line">map tl :tabn&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <br>
 
@@ -1467,12 +1716,32 @@
 <tbody><tr>
 <td align="center">:sp [文件名]</td>
 <td align="center">split</td>
-<td align="left">增加一个横向的分屏</td>
+<td align="left">以当前窗口的水平中线增加一个分屏</td>
 </tr>
 <tr>
 <td align="center">:vsp [文件名]</td>
 <td align="center">vertical split</td>
-<td align="left">增加一个纵向的分屏</td>
+<td align="left">以当前窗口的垂直中线增加一个分屏</td>
+</tr>
+<tr>
+<td align="center">:set splitright</td>
+<td align="center"></td>
+<td align="left">设定为：水平分屏后，光标自动移动到右边的窗口上</td>
+</tr>
+<tr>
+<td align="center">:set nosplitright</td>
+<td align="center"></td>
+<td align="left">设定为：水平分屏后，光标不移动（默认在左边的窗口）</td>
+</tr>
+<tr>
+<td align="center">:set splitbelow</td>
+<td align="center"></td>
+<td align="left">设定为：垂直分屏后，光标自动移动到下边的窗口上</td>
+</tr>
+<tr>
+<td align="center">:set nosplitbelow</td>
+<td align="center"></td>
+<td align="left">设定为：垂直分屏后，光标不移动（默认在上边的窗口）</td>
 </tr>
 </tbody></table>
 <ul>
@@ -1496,6 +1765,11 @@
 <td align="left">切换到下一个窗口</td>
 </tr>
 <tr>
+<td align="center">p</td>
+<td align="center">previous</td>
+<td align="left">切换到上一个窗口</td>
+</tr>
+<tr>
 <td align="center">r</td>
 <td align="center">reverse</td>
 <td align="left">互换窗口</td>
@@ -1514,6 +1788,61 @@
 <td align="center">o</td>
 <td align="center">other</td>
 <td align="left">关闭其它窗口（除当前以外的所有）</td>
+</tr>
+<tr>
+<td align="center">t</td>
+<td align="center">top</td>
+<td align="left">移动到最top的窗口（最左上）</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td align="center">below</td>
+<td align="left">移动到最below的窗口（最右下）</td>
+</tr>
+<tr>
+<td align="center">h</td>
+<td align="center"></td>
+<td align="left">光标跳至当前窗口的左边窗口上</td>
+</tr>
+<tr>
+<td align="center">j</td>
+<td align="center"></td>
+<td align="left">光标跳至当前窗口的下边窗口上</td>
+</tr>
+<tr>
+<td align="center">k</td>
+<td align="center"></td>
+<td align="left">光标跳至当前窗口的上边窗口上</td>
+</tr>
+<tr>
+<td align="center">l</td>
+<td align="center"></td>
+<td align="left">光标跳至当前窗口的右边窗口上</td>
+</tr>
+<tr>
+<td align="center">H</td>
+<td align="center"></td>
+<td align="left">当前窗口移到最左边</td>
+</tr>
+<tr>
+<td align="center">J</td>
+<td align="center"></td>
+<td align="left">当前窗口移到最下边</td>
+</tr>
+<tr>
+<td align="center">K</td>
+<td align="center"></td>
+<td align="left">当前窗口移到最上边</td>
+</tr>
+<tr>
+<td align="center">L</td>
+<td align="center"></td>
+<td align="left">当前窗口移到最右边</td>
+</tr>
+<tr>
+<td align="center">T</td>
+<td align="center">tab</td>
+<td align="left">put current window into a new tab</td>
 </tr>
 </tbody></table>
 <ul>
@@ -1557,6 +1886,13 @@
 <blockquote>
 <p>调整窗口宽高的命令可以和数字连用，例如按：<code>5</code> <code>CTRL W</code> <code>+</code> 等于连续 5 次增加高度。</p>
 </blockquote>
+<ul>
+<li>Vimrc分屏设置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; 快捷分屏，并把光标跳到新分出来的窗口上</span><br><span class="line">map Th :set nosplitright&lt;CR&gt;:vsplit&lt;CR&gt;</span><br><span class="line">map Tj :set splitbelow&lt;CR&gt;:split&lt;CR&gt;</span><br><span class="line">map Tk :set nosplitbelow&lt;CR&gt;:split&lt;CR&gt;</span><br><span class="line">map Tl :set splitright&lt;CR&gt;:vsplit&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">&quot; 使用alt + hjkl跳转到指定分屏窗口</span><br><span class="line">nnoremap &lt;A-h&gt; &lt;C-w&gt;h</span><br><span class="line">nnoremap &lt;A-j&gt; &lt;C-w&gt;j</span><br><span class="line">nnoremap &lt;A-k&gt; &lt;C-w&gt;k</span><br><span class="line">nnoremap &lt;A-l&gt; &lt;C-w&gt;l</span><br><span class="line"></span><br><span class="line">&quot; 设定分屏窗口大小</span><br><span class="line">map &lt;UP&gt; :resize +1&lt;CR&gt;</span><br><span class="line">map &lt;DOWN&gt; :resize -1&lt;CR&gt;</span><br><span class="line">map &lt;left&gt; :vertical resize -1&lt;CR&gt;</span><br><span class="line">map &lt;right&gt; :vertical resize +1&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+
+
+
 <hr>
 <br>
 
@@ -1881,61 +2217,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vim遇到的问题</title>
-    <url>/2020/08/02/Vim%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><!-- vim-markdown-toc Redcarpet -->
-
-<ul>
-<li><a href="#字符显示不全-重叠">字符显示不全/重叠</a></li>
-<li><a href="#vim内容复制不到其它程序">Vim内容复制不到其它程序</a></li>
-</ul>
-<!-- vim-markdown-toc -->
-
-
-<a id="more"></a>
-
-<hr>
-<h2 id="字符显示不全-重叠"><a href="#字符显示不全-重叠" class="headerlink" title="字符显示不全/重叠"></a>字符显示不全/重叠</h2><p>【问题】</p>
-<p>一些中文符号（如<code>“”①②→</code>），在Vim中输入时会出现显示不全，或者和旁边的字符重叠的情况。</p>
-<p>【解决】</p>
-<p><a href="http://blog.sina.com.cn/s/blog_46dac66f010006db.html" target="_blank" rel="noopener">参考</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set ambiwidth&#x3D;double</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Vim内容复制不到其它程序"><a href="#Vim内容复制不到其它程序" class="headerlink" title="Vim内容复制不到其它程序"></a>Vim内容复制不到其它程序</h2><p><a href="https://www.zhihu.com/question/19863631" target="_blank" rel="noopener">参考资料：知乎《如何将 Vim 剪贴板里面的东西粘贴到 Vim 之外的地方？》</a></p>
-<p>根据平台不同，要分两种情况。先用下面命令确定你属于哪一种，</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim --version | grep clipboard</span><br></pre></td></tr></table></figure>
-
-<p><strong>情况一</strong></p>
-<p><img src="+clipboard.png" alt="+clipboard"></p>
-<p>如果结果里你找到加号开头的+clipboard， 恭喜你，你的vim没问题</p>
-<ul>
-<li>用 <code>&quot;+y</code> 将选中的内容复制到系统剪贴板，效果和ctrl-c一致。</li>
-<li>用 <code>&quot;+p</code> 将剪贴板内容复制到指定位置，也可以用ctrl-v。</li>
-</ul>
-<p><strong>情况二</strong></p>
-<p>如果找到的是负号开头的<code>-clipboard</code>，说明你的vim不支持系统剪切板。需要先重新安装vim。</p>
-<p>Linux系统</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install vim-gtk</span><br></pre></td></tr></table></figure>
-
-<p>MacOS</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
-
-<p>安装好之后，输入 <code>vim --version | grep clipboard</code> 命令应该已经变成<code>+clipboard</code> 了。</p>
-<p>现在可以回到情况一进行复制了。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>Software</category>
-        <category>Vim</category>
-      </categories>
-      <tags>
-        <tag>Vim</tag>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows-日常使用</title>
     <url>/2020/07/28/Windows-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<blockquote>
@@ -2126,118 +2407,6 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>index</title>
-    <url>/2020/05/14/index/</url>
-    <content><![CDATA[<p>vimwiki本地目录（索引），仅用于本地。</p>
-<a id="more"></a>
-
-<hr>
-<h1 id="未分类"><a href="#未分类" class="headerlink" title="未分类"></a>未分类</h1><p><a href="hello-world">hello world</a></p>
-<hr>
-<p>== 缩进法 ==</p>
-<hr>
-<h1 id="IT"><a href="#IT" class="headerlink" title="IT"></a>IT</h1><pre><code>## Coding
-
-    ### HTML
-    [HTML笔记](HTML笔记)
-
-## OS
-
-    ### Linux
-    [Linux-日常使用](Linux-日常使用)
-    [Linux笔记](Linux笔记)
-
-        #### Ubuntu
-
-
-    ### Windows
-    [Windows-日常使用](Windows-日常使用)
-
-## Software
-[Github笔记](Github笔记)
-
-    ### Hexo
-    [Hexo笔记](Hexo笔记)
-    [Hexo基础](Hexo基础)
-    [Hexo+Markdown+Vim打造无敌笔记系统](Hexo+Markdown+Vim打造无敌笔记系统)
-
-    ### Vim
-    [Vim笔记](Vim笔记)
-    [Vim命令](Vim命令)
-    [Vim插件](Vim插件)
-    [Vim遇到的问题](Vim遇到的问题)</code></pre><hr>
-<h1 id="笔记方法学"><a href="#笔记方法学" class="headerlink" title="笔记方法学"></a>笔记方法学</h1><p><a href="Hexo笔记">Hexo笔记</a><br><a href="Hexo基础">Hexo基础</a><br><a href="Hexo+Markdown+Vim打造无敌笔记系统">Hexo+Markdown+Vim打造无敌笔记系统</a></p>
-<p>== 表格法1 ==</p>
-<blockquote>
-<p>初步：不好看，不直观。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">笔记方法学</td>
-<td align="center"><a href="Hexo+Markdown+Vim打造无敌笔记系统">Hexo+Markdown+Vim打造无敌笔记系统</a></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">笔记方法学</td>
-<td align="center"><a href="Hexo笔记">Hexo笔记</a></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">Coding</td>
-<td align="center">HTML</td>
-<td align="center"><a href="HTML笔记">HTML笔记</a></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">OS</td>
-<td align="center">Linux</td>
-<td align="center"><a href="Linux-日常使用">Linux-日常使用</a></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">OS</td>
-<td align="center">Linux</td>
-<td align="center"><a href="Linux笔记">Linux笔记</a></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">OS</td>
-<td align="center">Linux</td>
-<td align="center">Ubuntu</td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">OS</td>
-<td align="center">Windows</td>
-<td align="center"><a href="Windows-日常使用">Windows-日常使用</a></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">Software</td>
-<td align="center"><a href="VIM笔记">VIM笔记</a></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">Software</td>
-<td align="center"><a href="Github笔记">Github笔记</a></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
 ]]></content>
   </entry>
 </search>
