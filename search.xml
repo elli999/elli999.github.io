@@ -32,6 +32,222 @@
       </tags>
   </entry>
   <entry>
+    <title>Go笔记</title>
+    <url>/2020/08/17/Go%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>My Go wiki.</p>
+<!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#go命令">Go命令</a><ul>
+<li><a href="#go-build">go build</a></li>
+<li><a href="#go-install">go install</a></li>
+</ul>
+</li>
+<li><a href="#编译">编译</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+<a id="more"></a>
+
+<hr>
+<h1 id="Go命令"><a href="#Go命令" class="headerlink" title="Go命令"></a>Go命令</h1><h2 id="go-build"><a href="#go-build" class="headerlink" title="go build"></a>go build</h2><p>把当前路径下的go文件编译成可执行的程序。</p>
+<ul>
+<li>go build -o 文件名</li>
+</ul>
+<ul>
+<li>跨平台编译</li>
+</ul>
+<p><code>go build</code>默认得到的是当前操作系统的可执行文件，下面介绍在一个系统下编译另一个系统的可执行文件。</p>
+<p>以<strong>编译Linux平台64位程序</strong>为例：</p>
+<p>在terminal下指定目标操作系统的平台和处理器架构</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">SET CGO_ENABLED=<span class="number">0</span>  <span class="comment">// 禁用CGO</span></span><br><span class="line">SET GOOS=linux  <span class="comment">// 目标平台是linux</span></span><br><span class="line">SET GOARCH=amd64  <span class="comment">// 目标处理器架构是amd64</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用了cgo的代码是不支持跨平台编译的</p>
+</blockquote>
+<p>设置好后正常使用<code>go build</code>进行编译即可得到Linux下的可执行文件。</p>
+<p>对其他系统进行编译的操作方法也是一样，只需要把<code>SET GOOS=系统名</code>进行对应更换即可，其中windows平台就是填写<code>windows</code>，linux平台就是<code>linux</code>，而Mac是<code>darwin</code>，其它不变。</p>
+<h2 id="go-install"><a href="#go-install" class="headerlink" title="go install"></a>go install</h2><p><code>go install</code>就是把编译完成后得到的可执行文件放置到<code>GOPATH</code>的<code>bin</code>目录下。因为环境变量中配置了该目录，所以可以在任何路径运行可执行文件。</p>
+<br>
+
+<hr>
+<h1 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h1><p>使用terminal进入项目文件夹内，运行<code>go build</code>命令进行编译。</p>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Coding</category>
+        <category>Go</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+        <tag>coding</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Go语言安装与配置</title>
+    <url>/2020/08/17/Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>Go语言的安装与配置，以及常见问题。</p>
+<!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#下载">下载</a></li>
+<li><a href="#安装">安装</a><ul>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#mac">Mac</a></li>
+<li><a href="#检查安装情况">检查安装情况</a></li>
+</ul>
+</li>
+<li><a href="#配置环境变量">配置环境变量</a></li>
+<li><a href="#go开发编辑器">Go开发编辑器</a><ul>
+<li><a href="#goland">Goland</a></li>
+<li><a href="#vs-code">VS Code</a></li>
+</ul>
+</li>
+<li><a href="#hello-world">Hello World!</a></li>
+<li><a href="#参考">参考</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+<a id="more"></a>
+
+<hr>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>国内的Go官方镜像站：<a href="https://golang.google.cn/dl/" target="_blank" rel="noopener">https://golang.google.cn/dl/</a> （推荐）</p>
+<p>Go官网下载地址：<a href="https://golang.org/dl/" target="_blank" rel="noopener">https://golang.org/dl/</a> （可能会出现访问不了的情况）</p>
+<p>Windows平台和Mac平台推荐下载可执行文件版（就是带有安装过程的安装包），Linux平台下载压缩文件版。</p>
+<br>
+
+<hr>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>Go提供的安装包安装过程很简单，下载<code>64位的msi安装包</code>后，双击运行，只有安装路径可供选择，没有任何其它选项，设置好路径后便可以一直“下一步”完成安装。</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>TODO</p>
+<h2 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h2><p>下载可执行文件版，直接点击下一步安装即可，默认会将go安装到<code>/usr/local/go</code>目录下。 </p>
+<h2 id="检查安装情况"><a href="#检查安装情况" class="headerlink" title="检查安装情况"></a>检查安装情况</h2><p>安装过程执行完毕后，可以打开终端窗口，输入<code>go version</code>命令，如果显示了Go的版本信息，则说明安装成功。</p>
+<br>
+
+<hr>
+<h1 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h1><p>这里我的Go语言安装路径为<code>D:\Go\</code>，另外计划把工作路径放在<code>D:\WorkSpace\Go\</code>下。下面以这两个路径为例进行配置。</p>
+<p><code>GOROOT</code>和<code>GOPATH</code>都是环境变量，其中<code>GOROOT</code>是我们安装go开发包的路径，<code>GOPATH</code>是工作路径（放置代码的地方）。</p>
+<blockquote>
+<p>下面内容只在windows下部署过，其它系统未试，但理论上应该是差不多的。</p>
+</blockquote>
+<ul>
+<li>在<code>用户环境变量</code>中配置<code>GOPATH</code>，值为工作路径，我的是<code>D:\WorkSpace\Go\</code>。</li>
+<li>在<code>用户环境变量</code>中的<code>Path</code>添加一行，值为工作路径下的<code>bin</code>目录，我的是<code>D:\WorkSpace\Go\bin</code>。</li>
+<li>在<code>系统环境变量</code>中配置<code>GOROOT</code>为Go语言安装路径，我的是<code>D:\Go\</code>。</li>
+<li>在<code>系统环境变量</code>中的<code>Path</code>添加一行，值为Go语言安装路径下的<code>bin</code>目录，我的是<code>D:\Go\bin</code>。</li>
+</ul>
+<blockquote>
+<p>上面变量如果不存在，则自行创建；如果存在，则更改路径即可。<br>Windows需要重启生效。</p>
+</blockquote>
+<br>
+
+<hr>
+<h1 id="Go开发编辑器"><a href="#Go开发编辑器" class="headerlink" title="Go开发编辑器"></a>Go开发编辑器</h1><p>Go采用的是UTF-8编码的文本文件存放源代码，理论上使用任何一款文本编辑器都可以做Go语言开发，推荐的有VS Code和Goland。VS Code是微软开源的编辑器，而Goland是jetbrains出品的付费IDE。</p>
+<blockquote>
+<p>补充说明：由于VS Code对go mod模式的支持暂时还不够完善，建议大家使用Goland编辑器。</p>
+</blockquote>
+<blockquote>
+<p>Goland是IDE，VS Code是编辑器。</p>
+</blockquote>
+<h2 id="Goland"><a href="#Goland" class="headerlink" title="Goland"></a>Goland</h2><p>由于是付费软件，网上有很多教程，这里就不提供了。</p>
+<h2 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a>VS Code</h2><p>安装比较简单，去官网下载对应系统和版本即可。</p>
+<p>下面说说插件安装</p>
+<!-- consider to delete the first pic below, if it didn't animat -->
+
+<p><img src="VSC%E6%B1%89%E5%8C%96.png" alt="VSC汉化"></p>
+<p><img src="VSC%E7%95%8C%E9%9D%A2.png" alt="VSC界面"></p>
+<p>现在我们要为我们的VS Code编辑器安装Go扩展插件，让它支持Go语言开发。点击上图中的“管理扩展”按钮。</p>
+<p><img src="VSC%E6%8F%92%E4%BB%B6.png" alt="VSC插件"></p>
+<p>点击“管理扩展”按钮后搜索“Go”，出来的第一个插件（上图）选择安装即可。</p>
+<p>后面我们在第一次写Go代码时，VS Code会在右下角弹出提示，自动推荐很多Go插件，选择全部安装即可（Install all）。</p>
+<ul>
+<li>Windows下VSCode切换cmd.exe作为默认终端</li>
+</ul>
+<p>如果你打开VS Code的终端界面出现如下图场景（注意观察红框圈中部分），那么你的VS Code此时正使用powershell作为默认终端：</p>
+<p>![VSC powershell](VSC powershell.png)</p>
+<p>建议改为<code>cmd.exe</code>作为默认的终端工具：</p>
+<p>![VSC cmd1](VSC cmd1.png)</p>
+<p>此时，VS Code正上方中间位置会弹出如下界面，参照下图挪动鼠标使光标选中后缀为cmd.exe的那一个，然后点击鼠标左键。</p>
+<p>![VSC cmd2](VSC cmd2.png)</p>
+<p>最后重启VS Code中已经打开的终端或者直接重启VS Code就可以了。</p>
+<p>如果没有出现下拉三角，也没有关系，按下<code>Ctrl</code>+<code>Shift</code>+<code>P</code>，VS Code正上方会出现一个框，你按照下图输入shell，然后点击指定选项即可出现上面的界面了。 </p>
+<p>![VSC cmd3](VSC cmd3.png)</p>
+<br>
+
+<hr>
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><p>为了检查安装成果，现在我们来创建第一个Go项目——<code>hello</code>。我们创建一个hello目录。</p>
+<p>通过VS Code在该目录下新建一个名为<code>main.go</code>的文件：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main  <span class="comment">// 声明 main 包，表明当前是一个可执行程序</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span>  <span class="comment">// 导入内置 fmt 包</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;  <span class="comment">// main函数，是程序执行的入口</span></span><br><span class="line">	fmt.Println(<span class="string">"Hello World!"</span>)  <span class="comment">// 在终端打印 Hello World!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在VS Code的Terminal中，进入该目录（可以在VS Code中对该目录右键，打开Terminal），然后执行<code>go build</code>命令进行编译。</p>
+<blockquote>
+<p>或者在其他目录执行以下命令： <code>go build hello</code> 。go编译器会去GOPATH的src目录下查找你要编译的<code>hello</code>项目。</p>
+</blockquote>
+<p>编译得到的可执行文件会保存在执行编译命令的当前目录下，如果是windows平台会在当前目录下找到<code>hello.exe</code>可执行文件。</p>
+<p>可在终端直接执行该<code>hello.exe</code>文件：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">c:\xxxxx\hello&gt;hello.exe</span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
+<p>可以见到输出结果为<code>Hello World!</code>文本。至此Go安装成功！</p>
+<br>
+
+<hr>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.liwenzhou.com/posts/Go/go_menu/" target="_blank" rel="noopener">李文周的博客 - 《Go语言学习之路》</a></p>
+<br>
+
+<hr>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Coding</category>
+        <category>Go</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+        <tag>coding</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML笔记</title>
+    <url>/2020/06/18/HTML%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="标签查询"><a href="#标签查询" class="headerlink" title="标签查询"></a>标签查询</h1><h2 id="img"><a href="#img" class="headerlink" title="img"></a>img</h2><p><code>img</code> means image</p>
+<p>一般格式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;Image&quot; width:100% height:100%&gt;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h3 id="改变图像大小"><a href="#改变图像大小" class="headerlink" title="改变图像大小"></a>改变图像大小</h3><p><strong>按像素</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">width:100px</span> <span class="attr">height:100px</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:50px;height:50px;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>按比例</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"zoom:70%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:80%;height:80%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pangeru.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"transform:scale(0.9)"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>第一行的方法好像不行？（待测试！）<br>第三行的0.9即90%的意思。</p>
+<hr>
+<h2 id="mark"><a href="#mark" class="headerlink" title="mark"></a>mark</h2><p>mark标签，作用是高亮标签中的内容</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mark</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Do not forget to buy <span class="tag">&lt;<span class="name">mark</span>&gt;</span>milk<span class="tag">&lt;/<span class="name">mark</span>&gt;</span> today.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<p><img src="mark.png" alt="mark"></p>
+<hr>
+<h1 id="名词-属性-查询"><a href="#名词-属性-查询" class="headerlink" title="名词(属性?)查询"></a>名词(属性?)查询</h1><h2 id="alt"><a href="#alt" class="headerlink" title="alt"></a>alt</h2><p><code>alt</code> means alternate，“替代（文本）”</p>
+<p>当设置了alt属性的元素无法加载显示时，会在html页面留下一个对应大小的空间，里面显示着alt的内容。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;上海鲜花港 - 郁金香&quot;  &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<div align="center"><img src="test.png" alt="上海鲜花港 - 郁金香"  /></div>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Coding</category>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo+Markdown+Vim打造无敌笔记系统</title>
     <url>/2020/06/10/Hexo+Markdown+Vim%E6%89%93%E9%80%A0%E6%97%A0%E6%95%8C%E7%AC%94%E8%AE%B0%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<blockquote>
@@ -332,9 +548,9 @@
       <categories>
         <category>+IT</category>
         <category>Software</category>
+        <category>笔记方法学</category>
         <category>Vim</category>
         <category>Hexo</category>
-        <category>笔记方法学</category>
       </categories>
       <tags>
         <tag>笔记</tag>
@@ -355,286 +571,11 @@
       <categories>
         <category>+IT</category>
         <category>Software</category>
-        <category>Hexo</category>
         <category>笔记方法学</category>
+        <category>Hexo</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML笔记</title>
-    <url>/2020/06/18/HTML%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="标签查询"><a href="#标签查询" class="headerlink" title="标签查询"></a>标签查询</h1><h2 id="img"><a href="#img" class="headerlink" title="img"></a>img</h2><p><code>img</code> means image</p>
-<p>一般格式</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;Image&quot; width:100% height:100%&gt;</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<h3 id="改变图像大小"><a href="#改变图像大小" class="headerlink" title="改变图像大小"></a>改变图像大小</h3><p><strong>按像素</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">width:100px</span> <span class="attr">height:100px</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:50px;height:50px;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>按比例</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"zoom:70%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"bili.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"width:80%;height:80%;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pangeru.png"</span> <span class="attr">alt</span>=<span class="string">"Image"</span> <span class="attr">style</span>=<span class="string">"transform:scale(0.9)"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>第一行的方法好像不行？（待测试！）<br>第三行的0.9即90%的意思。</p>
-<hr>
-<h2 id="mark"><a href="#mark" class="headerlink" title="mark"></a>mark</h2><p>mark标签，作用是高亮标签中的内容</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mark</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Do not forget to buy <span class="tag">&lt;<span class="name">mark</span>&gt;</span>milk<span class="tag">&lt;/<span class="name">mark</span>&gt;</span> today.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<p><img src="mark.png" alt="mark"></p>
-<hr>
-<h1 id="名词-属性-查询"><a href="#名词-属性-查询" class="headerlink" title="名词(属性?)查询"></a>名词(属性?)查询</h1><h2 id="alt"><a href="#alt" class="headerlink" title="alt"></a>alt</h2><p><code>alt</code> means alternate，“替代（文本）”</p>
-<p>当设置了alt属性的元素无法加载显示时，会在html页面留下一个对应大小的空间，里面显示着alt的内容。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;test.png&quot; alt&#x3D;&quot;上海鲜花港 - 郁金香&quot;  &#x2F;&gt;</span><br></pre></td></tr></table></figure>
-
-<div align="center"><img src="test.png" alt="上海鲜花港 - 郁金香"  /></div>
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>Coding</category>
-        <category>HTML</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux-日常使用</title>
-    <url>/2020/07/29/Linux-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<!-- 简介 -->
-<blockquote>
-<p>Linux系统的所有日常使用技巧汇总</p>
-</blockquote>
-<a id="more"></a>
-
-
-<hr>
-<hr>
-<h2 id="在终端打开当前目录的GUI文件管理器"><a href="#在终端打开当前目录的GUI文件管理器" class="headerlink" title="在终端打开当前目录的GUI文件管理器"></a>在终端打开当前目录的GUI文件管理器</h2><ul>
-<li>Ubuntu 20.4</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nautilus .</span><br></pre></td></tr></table></figure>
-
-<hr>
-<hr>
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>OS</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux笔记</title>
-    <url>/2020/07/22/Linux%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>OS</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>OS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vim命令</title>
-    <url>/2020/08/03/Vim%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>Vim commands</p>
-<!-- vim-markdown-toc Redcarpet -->
-
-<ul>
-<li><a href="#加载设置文件">加载设置文件</a></li>
-<li><a href="#语法高亮">语法高亮</a></li>
-<li><a href="#显示行号">显示行号</a></li>
-<li><a href="#按行号跳转">按行号跳转</a></li>
-<li><a href="#拼写检查（英语）">拼写检查（英语）</a><pre><code>+ [Operations in Normal Mode](#operations-in-normal-mode)
-+ [Fix Spelling Errors from Insert Mode](#fix-spelling-errors-from-insert-mode)</code></pre></li>
-<li><a href="#当前文件转换为html格式输出">当前文件转换为html格式输出</a></li>
-</ul>
-<!-- vim-markdown-toc -->
-
-
-
-<a id="more"></a>
-
-<hr>
-<h2 id="加载设置文件"><a href="#加载设置文件" class="headerlink" title="加载设置文件"></a>加载设置文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:source 文件名</span><br></pre></td></tr></table></figure>
-<p>例如加载默认路径下的vimrc文件 <code>:source $MYVIMRC</code> 。</p>
-<hr>
-<br>
-
-<h2 id="语法高亮"><a href="#语法高亮" class="headerlink" title="语法高亮"></a>语法高亮</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:syntax on</span><br></pre></td></tr></table></figure>
-
-<hr>
-<br>
-
-
-<h2 id="显示行号"><a href="#显示行号" class="headerlink" title="显示行号"></a>显示行号</h2><p>使Vim在每一行前面显示行号。</p>
-<p><a href="https://jeffkreeftmeijer.com/vim-number/" target="_blank" rel="noopener">参考链接</a></p>
-<p><strong>注：下方的每行命令中的第二行均为第一行的缩写！效用相同。</strong> &lt;++&gt;</p>
-<ul>
-<li><strong>方案一：absolute</strong></li>
-</ul>
-<p>所有行按照它的真实行号来显示。</p>
-<p>效果图：</p>
-<p><img src="absolute.png" alt="Absolute line numbers"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; turn absolute line numbers on</span><br><span class="line">set number</span><br><span class="line">set nu</span><br><span class="line"></span><br><span class="line">&quot; turn absolute line numbers off</span><br><span class="line">set nonumber</span><br><span class="line">set nonu</span><br><span class="line"></span><br><span class="line">&quot; toggle absolute line numbers</span><br><span class="line">set number!</span><br><span class="line">set nu!</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>方案二：relative</strong></li>
-</ul>
-<p>以当前行号为基准（显示为0，实际不为0），其它行号为当前行号的相对值。</p>
-<p>效果图：</p>
-<p><img src="relative.png" alt="Relative line numbers"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; turn relative line numbers on</span><br><span class="line">set relativenumber</span><br><span class="line">set rnu</span><br><span class="line"></span><br><span class="line">&quot; turn relative line numbers off</span><br><span class="line">set norelativenumber</span><br><span class="line">set nornu</span><br><span class="line"></span><br><span class="line">&quot; toggle relative line numbers</span><br><span class="line">set relativenumber!</span><br><span class="line">set rnu!</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>方案三：hybrid</strong></li>
-</ul>
-<p>当前行号是绝对值，其它行号为当前行号的相对值。（推荐）</p>
-<p>效果图：</p>
-<p><img src="hybrid.png" alt="Hybrid line numbers"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; turn hybrid line numbers on</span><br><span class="line">set number relativenumber</span><br><span class="line">set nu rnu</span><br><span class="line"></span><br><span class="line">&quot; turn hybrid line numbers off</span><br><span class="line">set nonumber norelativenumber</span><br><span class="line">set nonu nornu</span><br><span class="line"></span><br><span class="line">&quot; toggle hybrid line numbers</span><br><span class="line">set number! relativenumber!</span><br><span class="line">set nu! rnu!</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>分屏行号设置</li>
-</ul>
-<p>如果需要分屏，两屏使用相同的方案显示行号。</p>
-<p>可以改成如下图所示的，活动窗口以hybrid方案显示，非活动窗口以absolute方案显示。（推荐）</p>
-<p><img src="toggle.png" alt="Automatic toggling"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; 设为hybrid方案</span><br><span class="line">set nu rnu</span><br><span class="line"></span><br><span class="line">&quot; 分屏的时候，非活动窗口的行数显示设为绝对值，活动窗口的行数保持相当值</span><br><span class="line">augroup numbertoggle</span><br><span class="line">  autocmd!</span><br><span class="line">  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber</span><br><span class="line">  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber</span><br><span class="line">augroup END</span><br></pre></td></tr></table></figure>
-
-<h2 id="按行号跳转"><a href="#按行号跳转" class="headerlink" title="按行号跳转"></a>按行号跳转</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:行号(数字)</span><br></pre></td></tr></table></figure>
-
-<p>在上面命令中填入要到达的行号即可。</p>
-<blockquote>
-<p>例如<code>:31</code>，即跳转到第31行。</p>
-</blockquote>
-<h2 id="拼写检查（英语）"><a href="#拼写检查（英语）" class="headerlink" title="拼写检查（英语）"></a>拼写检查（英语）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; 开启spell check</span><br><span class="line">:set spell</span><br><span class="line"></span><br><span class="line">&quot; 关闭spell check</span><br><span class="line">:set nospell</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://vimjc.com/vim-spell-check.html" target="_blank" rel="noopener">参考链接</a></p>
-<p>Vim 内置拼写检查器，使用命令 <code>:set spell</code> 可以对当前文件中所有未在字典中出现过的单词进行标记并高亮显示。</p>
-<ul>
-<li><strong>开/关拼写检查功能</strong> <code>map &lt;LEADER&gt;sc :set spell!&lt;CR&gt;</code> （spell check）</li>
-</ul>
-<br>
-
-<h4 id="Operations-in-Normal-Mode"><a href="#Operations-in-Normal-Mode" class="headerlink" title="Operations in Normal Mode"></a>Operations in Normal Mode</h4><p>开启功能后，可以使用以下快捷键：</p>
-<table>
-<thead>
-<tr>
-<th align="center">Command</th>
-<th align="center">effect</th>
-<th align="center">备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">]s</td>
-<td align="center">跳转到下个拼写错误</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">[s</td>
-<td align="center">跳转到上个拼写错误</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">z=</td>
-<td align="center">当前单词的推荐集合（需光标移至错误单词上方）</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">zg</td>
-<td align="center">添加单词到拼写文件</td>
-<td align="center"><code>:h zg</code></td>
-</tr>
-<tr>
-<td align="center">zw</td>
-<td align="center">从拼写文件删除当前单词</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">zug</td>
-<td align="center">撤销对当前单词的 zg 或 zw修改</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p><code>z=</code>： Vim的拼写检查提供修改建议功能，把光标移动到标记为拼写错误的词上方，按<code>z=</code>会出现修改建议，按数字选择需要的建议即可完成自动修改。</p>
-<p><code>zg</code>： Vim 有时会错误的把一些词标记为拼写错误, 是因为该词未收录在词典中。把光标移动到需要添加的词上方，使用 <code>zg</code> 命令(参考 :h zg)把光标处的词添加到拼写文件来教 Vim 识别该词。</p>
-<p><code>zw</code>： Vim 还提供了一个互补的 <code>zw</code> 命令, 可以把光标处的单词标记为拼写错误。 </p>
-<p><code>zug</code>： 事实上, <code>zg</code> 或 <code>zw</code> 命令, 会添加或删除拼写文件中的单词。 Vim 为这种情况提供了专用的 <code>zug</code> 撤销命令, 它可以恢复对光标下单词的<code>zg</code> 或 <code>zw</code> 命令的操作</p>
-<blockquote>
-<p>Vim 在拼写文件中记录添加到字典的单词, 以便它们在其他会话中也可以使用. 拼写文件的名称是用语言和文件编码命名的。</p>
-</blockquote>
-<blockquote>
-<p>例如, 如果我们正在使用UTF-8编码的文件, 并且拼写检查器使用英语词典, 则使用 zg 命令添加的单词将会记录在名为 ~/.vim/spell/en.utf-8.add 的文件中</p>
-</blockquote>
-<br>
-
-<h4 id="Fix-Spelling-Errors-from-Insert-Mode"><a href="#Fix-Spelling-Errors-from-Insert-Mode" class="headerlink" title="Fix Spelling Errors from Insert Mode"></a>Fix Spelling Errors from Insert Mode</h4><p> 我们可以在插入模式使用 <code>&lt;C-x&gt;s</code>(参考 <code>:h compl-spelling</code>) 命令来修复此错误, 它会触发一个弹出的自动补菜单可供选择。</p>
-<p>可供弹出式菜单使用的命令</p>
-<table>
-<thead>
-<tr>
-<th align="center">Command</th>
-<th align="center">effect</th>
-<th align="center">备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><C-n></td>
-<td align="center">下一个项(next)</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><C-p></td>
-<td align="center">上一个项(previous)</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><C-y></td>
-<td align="center">确认使用当前选中的项(yes)</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><C-e></td>
-<td align="center">还原最早输入的文本(exit)</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><C-h></td>
-<td align="center">从当前匹配项中删除一个字符</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><C-l></td>
-<td align="center">从当前匹配项中增加一个字符</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<h2 id="当前文件转换为html格式输出"><a href="#当前文件转换为html格式输出" class="headerlink" title="当前文件转换为html格式输出"></a>当前文件转换为html格式输出</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:%TOhtml</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>Software</category>
-        <category>Vim</category>
-      </categories>
-      <tags>
-        <tag>Vim</tag>
-        <tag>vimrc</tag>
       </tags>
   </entry>
   <entry>
@@ -915,14 +856,248 @@
       <categories>
         <category>+IT</category>
         <category>Software</category>
-        <category>Hexo</category>
         <category>笔记方法学</category>
+        <category>Hexo</category>
       </categories>
       <tags>
         <tag>笔记</tag>
         <tag>note</tag>
         <tag>笔记方法学</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux-日常使用</title>
+    <url>/2020/07/29/Linux-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<!-- 简介 -->
+<blockquote>
+<p>Linux系统的所有日常使用技巧汇总</p>
+</blockquote>
+<a id="more"></a>
+
+
+<hr>
+<hr>
+<h2 id="在终端打开当前目录的GUI文件管理器"><a href="#在终端打开当前目录的GUI文件管理器" class="headerlink" title="在终端打开当前目录的GUI文件管理器"></a>在终端打开当前目录的GUI文件管理器</h2><ul>
+<li>Ubuntu 20.4</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nautilus .</span><br></pre></td></tr></table></figure>
+
+<hr>
+<hr>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>OS</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux笔记</title>
+    <url>/2020/07/22/Linux%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>OS</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>OS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vim命令</title>
+    <url>/2020/08/03/Vim%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>Vim commands</p>
+<!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#加载设置文件">加载设置文件</a></li>
+<li><a href="#语法高亮">语法高亮</a></li>
+<li><a href="#显示行号">显示行号</a></li>
+<li><a href="#按行号跳转">按行号跳转</a></li>
+<li><a href="#拼写检查（英语）">拼写检查（英语）</a><pre><code>+ [Operations in Normal Mode](#operations-in-normal-mode)
++ [Fix Spelling Errors from Insert Mode](#fix-spelling-errors-from-insert-mode)</code></pre></li>
+<li><a href="#当前文件转换为html格式输出">当前文件转换为html格式输出</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+
+
+<a id="more"></a>
+
+<hr>
+<h2 id="加载设置文件"><a href="#加载设置文件" class="headerlink" title="加载设置文件"></a>加载设置文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:source 文件名</span><br></pre></td></tr></table></figure>
+<p>例如加载默认路径下的vimrc文件 <code>:source $MYVIMRC</code> 。</p>
+<hr>
+<br>
+
+<h2 id="语法高亮"><a href="#语法高亮" class="headerlink" title="语法高亮"></a>语法高亮</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:syntax on</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+
+
+<h2 id="显示行号"><a href="#显示行号" class="headerlink" title="显示行号"></a>显示行号</h2><p>使Vim在每一行前面显示行号。</p>
+<p><a href="https://jeffkreeftmeijer.com/vim-number/" target="_blank" rel="noopener">参考链接</a></p>
+<p><strong>注：下方的每行命令中的第二行均为第一行的缩写！效用相同。</strong> &lt;++&gt;</p>
+<ul>
+<li><strong>方案一：absolute</strong></li>
+</ul>
+<p>所有行按照它的真实行号来显示。</p>
+<p>效果图：</p>
+<p><img src="absolute.png" alt="Absolute line numbers"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; turn absolute line numbers on</span><br><span class="line">set number</span><br><span class="line">set nu</span><br><span class="line"></span><br><span class="line">&quot; turn absolute line numbers off</span><br><span class="line">set nonumber</span><br><span class="line">set nonu</span><br><span class="line"></span><br><span class="line">&quot; toggle absolute line numbers</span><br><span class="line">set number!</span><br><span class="line">set nu!</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>方案二：relative</strong></li>
+</ul>
+<p>以当前行号为基准（显示为0，实际不为0），其它行号为当前行号的相对值。</p>
+<p>效果图：</p>
+<p><img src="relative.png" alt="Relative line numbers"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; turn relative line numbers on</span><br><span class="line">set relativenumber</span><br><span class="line">set rnu</span><br><span class="line"></span><br><span class="line">&quot; turn relative line numbers off</span><br><span class="line">set norelativenumber</span><br><span class="line">set nornu</span><br><span class="line"></span><br><span class="line">&quot; toggle relative line numbers</span><br><span class="line">set relativenumber!</span><br><span class="line">set rnu!</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>方案三：hybrid</strong></li>
+</ul>
+<p>当前行号是绝对值，其它行号为当前行号的相对值。（推荐）</p>
+<p>效果图：</p>
+<p><img src="hybrid.png" alt="Hybrid line numbers"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; turn hybrid line numbers on</span><br><span class="line">set number relativenumber</span><br><span class="line">set nu rnu</span><br><span class="line"></span><br><span class="line">&quot; turn hybrid line numbers off</span><br><span class="line">set nonumber norelativenumber</span><br><span class="line">set nonu nornu</span><br><span class="line"></span><br><span class="line">&quot; toggle hybrid line numbers</span><br><span class="line">set number! relativenumber!</span><br><span class="line">set nu! rnu!</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>分屏行号设置</li>
+</ul>
+<p>如果需要分屏，两屏使用相同的方案显示行号。</p>
+<p>可以改成如下图所示的，活动窗口以hybrid方案显示，非活动窗口以absolute方案显示。（推荐）</p>
+<p><img src="toggle.png" alt="Automatic toggling"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; 设为hybrid方案</span><br><span class="line">set nu rnu</span><br><span class="line"></span><br><span class="line">&quot; 分屏的时候，非活动窗口的行数显示设为绝对值，活动窗口的行数保持相当值</span><br><span class="line">augroup numbertoggle</span><br><span class="line">  autocmd!</span><br><span class="line">  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber</span><br><span class="line">  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber</span><br><span class="line">augroup END</span><br></pre></td></tr></table></figure>
+
+<h2 id="按行号跳转"><a href="#按行号跳转" class="headerlink" title="按行号跳转"></a>按行号跳转</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:行号(数字)</span><br></pre></td></tr></table></figure>
+
+<p>在上面命令中填入要到达的行号即可。</p>
+<blockquote>
+<p>例如<code>:31</code>，即跳转到第31行。</p>
+</blockquote>
+<h2 id="拼写检查（英语）"><a href="#拼写检查（英语）" class="headerlink" title="拼写检查（英语）"></a>拼写检查（英语）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; 开启spell check</span><br><span class="line">:set spell</span><br><span class="line"></span><br><span class="line">&quot; 关闭spell check</span><br><span class="line">:set nospell</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://vimjc.com/vim-spell-check.html" target="_blank" rel="noopener">参考链接</a></p>
+<p>Vim 内置拼写检查器，使用命令 <code>:set spell</code> 可以对当前文件中所有未在字典中出现过的单词进行标记并高亮显示。</p>
+<ul>
+<li><strong>开/关拼写检查功能</strong> <code>map &lt;LEADER&gt;sc :set spell!&lt;CR&gt;</code> （spell check）</li>
+</ul>
+<br>
+
+<h4 id="Operations-in-Normal-Mode"><a href="#Operations-in-Normal-Mode" class="headerlink" title="Operations in Normal Mode"></a>Operations in Normal Mode</h4><p>开启功能后，可以使用以下快捷键：</p>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">effect</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">]s</td>
+<td align="center">跳转到下个拼写错误</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">[s</td>
+<td align="center">跳转到上个拼写错误</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">z=</td>
+<td align="center">当前单词的推荐集合（需光标移至错误单词上方）</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">zg</td>
+<td align="center">添加单词到拼写文件</td>
+<td align="center"><code>:h zg</code></td>
+</tr>
+<tr>
+<td align="center">zw</td>
+<td align="center">从拼写文件删除当前单词</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">zug</td>
+<td align="center">撤销对当前单词的 zg 或 zw修改</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p><code>z=</code>： Vim的拼写检查提供修改建议功能，把光标移动到标记为拼写错误的词上方，按<code>z=</code>会出现修改建议，按数字选择需要的建议即可完成自动修改。</p>
+<p><code>zg</code>： Vim 有时会错误的把一些词标记为拼写错误, 是因为该词未收录在词典中。把光标移动到需要添加的词上方，使用 <code>zg</code> 命令(参考 :h zg)把光标处的词添加到拼写文件来教 Vim 识别该词。</p>
+<p><code>zw</code>： Vim 还提供了一个互补的 <code>zw</code> 命令, 可以把光标处的单词标记为拼写错误。 </p>
+<p><code>zug</code>： 事实上, <code>zg</code> 或 <code>zw</code> 命令, 会添加或删除拼写文件中的单词。 Vim 为这种情况提供了专用的 <code>zug</code> 撤销命令, 它可以恢复对光标下单词的<code>zg</code> 或 <code>zw</code> 命令的操作</p>
+<blockquote>
+<p>Vim 在拼写文件中记录添加到字典的单词, 以便它们在其他会话中也可以使用. 拼写文件的名称是用语言和文件编码命名的。</p>
+</blockquote>
+<blockquote>
+<p>例如, 如果我们正在使用UTF-8编码的文件, 并且拼写检查器使用英语词典, 则使用 zg 命令添加的单词将会记录在名为 ~/.vim/spell/en.utf-8.add 的文件中</p>
+</blockquote>
+<br>
+
+<h4 id="Fix-Spelling-Errors-from-Insert-Mode"><a href="#Fix-Spelling-Errors-from-Insert-Mode" class="headerlink" title="Fix Spelling Errors from Insert Mode"></a>Fix Spelling Errors from Insert Mode</h4><p> 我们可以在插入模式使用 <code>&lt;C-x&gt;s</code>(参考 <code>:h compl-spelling</code>) 命令来修复此错误, 它会触发一个弹出的自动补菜单可供选择。</p>
+<p>可供弹出式菜单使用的命令</p>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">effect</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><C-n></td>
+<td align="center">下一个项(next)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-p></td>
+<td align="center">上一个项(previous)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-y></td>
+<td align="center">确认使用当前选中的项(yes)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-e></td>
+<td align="center">还原最早输入的文本(exit)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-h></td>
+<td align="center">从当前匹配项中删除一个字符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><C-l></td>
+<td align="center">从当前匹配项中增加一个字符</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="当前文件转换为html格式输出"><a href="#当前文件转换为html格式输出" class="headerlink" title="当前文件转换为html格式输出"></a>当前文件转换为html格式输出</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:%TOhtml</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Software</category>
+        <category>Vim</category>
+      </categories>
+      <tags>
+        <tag>Vim</tag>
+        <tag>vimrc</tag>
       </tags>
   </entry>
   <entry>
@@ -1227,118 +1402,6 @@
         <tag>Vim</tag>
         <tag>bug</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>index</title>
-    <url>/2020/05/14/index/</url>
-    <content><![CDATA[<p>vimwiki本地目录（索引），仅用于本地。</p>
-<a id="more"></a>
-
-<hr>
-<h1 id="未分类"><a href="#未分类" class="headerlink" title="未分类"></a>未分类</h1><p><a href="hello-world">hello world</a></p>
-<hr>
-<p>== 缩进法 ==</p>
-<hr>
-<h1 id="IT"><a href="#IT" class="headerlink" title="IT"></a>IT</h1><pre><code>## Coding
-
-    ### HTML
-    [HTML笔记](HTML笔记)
-
-## OS
-
-    ### Linux
-    [Linux-日常使用](Linux-日常使用)
-    [Linux笔记](Linux笔记)
-
-        #### Ubuntu
-
-
-    ### Windows
-    [Windows-日常使用](Windows-日常使用)
-
-## Software
-[Github笔记](Github笔记)
-
-    ### Hexo
-    [Hexo笔记](Hexo笔记)
-    [Hexo基础](Hexo基础)
-    [Hexo+Markdown+Vim打造无敌笔记系统](Hexo+Markdown+Vim打造无敌笔记系统)
-
-    ### Vim
-    [Vim笔记](Vim笔记)
-    [Vim命令](Vim命令)
-    [Vim插件](Vim插件)
-    [Vim遇到的问题](Vim遇到的问题)</code></pre><hr>
-<h1 id="笔记方法学"><a href="#笔记方法学" class="headerlink" title="笔记方法学"></a>笔记方法学</h1><p><a href="Hexo笔记">Hexo笔记</a><br><a href="Hexo基础">Hexo基础</a><br><a href="Hexo+Markdown+Vim打造无敌笔记系统">Hexo+Markdown+Vim打造无敌笔记系统</a></p>
-<p>== 表格法1 ==</p>
-<blockquote>
-<p>初步：不好看，不直观。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">笔记方法学</td>
-<td align="center"><a href="Hexo+Markdown+Vim打造无敌笔记系统">Hexo+Markdown+Vim打造无敌笔记系统</a></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">笔记方法学</td>
-<td align="center"><a href="Hexo笔记">Hexo笔记</a></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">Coding</td>
-<td align="center">HTML</td>
-<td align="center"><a href="HTML笔记">HTML笔记</a></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">OS</td>
-<td align="center">Linux</td>
-<td align="center"><a href="Linux-日常使用">Linux-日常使用</a></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">OS</td>
-<td align="center">Linux</td>
-<td align="center"><a href="Linux笔记">Linux笔记</a></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">OS</td>
-<td align="center">Linux</td>
-<td align="center">Ubuntu</td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">OS</td>
-<td align="center">Windows</td>
-<td align="center"><a href="Windows-日常使用">Windows-日常使用</a></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">Software</td>
-<td align="center"><a href="VIM笔记">VIM笔记</a></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">IT</td>
-<td align="center">Software</td>
-<td align="center"><a href="Github笔记">Github笔记</a></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-]]></content>
   </entry>
   <entry>
     <title>Vim笔记</title>
@@ -2407,6 +2470,132 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>index</title>
+    <url>/2020/05/14/index/</url>
+    <content><![CDATA[<p>vimwiki本地目录（索引），仅用于本地。</p>
+<!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#未分类">未分类</a></li>
+<li><a href="#it">IT</a></li>
+<li><a href="#笔记方法学">笔记方法学</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+<a id="more"></a>
+
+<hr>
+<h1 id="未分类"><a href="#未分类" class="headerlink" title="未分类"></a>未分类</h1><p><a href="hello-world">hello world</a></p>
+<hr>
+<p>== 缩进法 ==</p>
+<hr>
+<h1 id="IT"><a href="#IT" class="headerlink" title="IT"></a>IT</h1><pre><code>## Coding
+
+    ### Go
+    [Go笔记](Go笔记)
+    [Go语言安装与配置](Go语言安装与配置)
+
+    ### HTML
+    [HTML笔记](HTML笔记)
+
+
+## OS
+
+    ### Linux
+    [Linux-日常使用](Linux-日常使用)
+    [Linux笔记](Linux笔记)
+
+        #### Ubuntu
+
+
+    ### Windows
+    [Windows-日常使用](Windows-日常使用)
+
+## Software
+[Github笔记](Github笔记)
+
+    ### Hexo
+    [Hexo笔记](Hexo笔记)
+    [Hexo基础](Hexo基础)
+    [Hexo+Markdown+Vim打造无敌笔记系统](Hexo+Markdown+Vim打造无敌笔记系统)
+
+    ### Vim
+    [Vim笔记](Vim笔记)
+    [Vim命令](Vim命令)
+    [Vim插件](Vim插件)
+    [Vim遇到的问题](Vim遇到的问题)</code></pre><hr>
+<h1 id="笔记方法学"><a href="#笔记方法学" class="headerlink" title="笔记方法学"></a>笔记方法学</h1><p><a href="Hexo笔记">Hexo笔记</a><br><a href="Hexo基础">Hexo基础</a><br><a href="Hexo+Markdown+Vim打造无敌笔记系统">Hexo+Markdown+Vim打造无敌笔记系统</a></p>
+<p>== 表格法1 ==</p>
+<blockquote>
+<p>初步：不好看，不直观。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">笔记方法学</td>
+<td align="center"><a href="Hexo+Markdown+Vim打造无敌笔记系统">Hexo+Markdown+Vim打造无敌笔记系统</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">笔记方法学</td>
+<td align="center"><a href="Hexo笔记">Hexo笔记</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">Coding</td>
+<td align="center">HTML</td>
+<td align="center"><a href="HTML笔记">HTML笔记</a></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">OS</td>
+<td align="center">Linux</td>
+<td align="center"><a href="Linux-日常使用">Linux-日常使用</a></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">OS</td>
+<td align="center">Linux</td>
+<td align="center"><a href="Linux笔记">Linux笔记</a></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">OS</td>
+<td align="center">Linux</td>
+<td align="center">Ubuntu</td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">OS</td>
+<td align="center">Windows</td>
+<td align="center"><a href="Windows-日常使用">Windows-日常使用</a></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">Software</td>
+<td align="center"><a href="VIM笔记">VIM笔记</a></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">IT</td>
+<td align="center">Software</td>
+<td align="center"><a href="Github笔记">Github笔记</a></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
 ]]></content>
   </entry>
 </search>

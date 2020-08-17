@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ek_favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/ek_favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-loading-bar.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"elli999.gitee.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Go语言的安装与配置，以及常见问题。    下载 安装 Windows Linux Mac 检查安装情况   配置环境变量 Go开发编辑器 Goland VS Code   Hello World! 参考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go语言安装与配置">
+<meta property="og:url" content="https://elli999.gitee.io/2020/08/17/Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Eason Kong&#39;s Blog">
+<meta property="og:description" content="Go语言的安装与配置，以及常见问题。    下载 安装 Windows Linux Mac 检查安装情况   配置环境变量 Go开发编辑器 Goland VS Code   Hello World! 参考">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://elli999.gitee.io/2020/08/17/Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VSC%E6%B1%89%E5%8C%96.png">
+<meta property="og:image" content="https://elli999.gitee.io/2020/08/17/Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VSC%E7%95%8C%E9%9D%A2.png">
+<meta property="og:image" content="https://elli999.gitee.io/2020/08/17/Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VSC%E6%8F%92%E4%BB%B6.png">
+<meta property="article:published_time" content="2020-08-17T12:01:08.000Z">
+<meta property="article:modified_time" content="2020-08-17T14:40:27.262Z">
+<meta property="article:author" content="EK阿墙">
+<meta property="article:tag" content="Go">
+<meta property="article:tag" content="coding">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://elli999.gitee.io/2020/08/17/Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VSC%E6%B1%89%E5%8C%96.png">
+
+<link rel="canonical" href="https://elli999.gitee.io/2020/08/17/Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Go语言安装与配置 | Eason Kong's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Eason Kong's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Study Notes</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">20</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/elli999" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://elli999.gitee.io/2020/08/17/Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ek_avatar.jpg">
+      <meta itemprop="name" content="EK阿墙">
+      <meta itemprop="description" content="少年辛苦终身事，莫向光阴惰寸功。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Eason Kong's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Go语言安装与配置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-08-17 20:01:08 / Modified: 22:40:27" itemprop="dateCreated datePublished" datetime="2020-08-17T20:01:08+08:00">2020-08-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/" itemprop="url" rel="index"><span itemprop="name">+IT</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/Coding/" itemprop="url" rel="index"><span itemprop="name">Coding</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/Coding/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Go语言的安装与配置，以及常见问题。</p>
+<!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#下载">下载</a></li>
+<li><a href="#安装">安装</a><ul>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#mac">Mac</a></li>
+<li><a href="#检查安装情况">检查安装情况</a></li>
+</ul>
+</li>
+<li><a href="#配置环境变量">配置环境变量</a></li>
+<li><a href="#go开发编辑器">Go开发编辑器</a><ul>
+<li><a href="#goland">Goland</a></li>
+<li><a href="#vs-code">VS Code</a></li>
+</ul>
+</li>
+<li><a href="#hello-world">Hello World!</a></li>
+<li><a href="#参考">参考</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+<a id="more"></a>
+
+<hr>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>国内的Go官方镜像站：<a href="https://golang.google.cn/dl/" target="_blank" rel="noopener">https://golang.google.cn/dl/</a> （推荐）</p>
+<p>Go官网下载地址：<a href="https://golang.org/dl/" target="_blank" rel="noopener">https://golang.org/dl/</a> （可能会出现访问不了的情况）</p>
+<p>Windows平台和Mac平台推荐下载可执行文件版（就是带有安装过程的安装包），Linux平台下载压缩文件版。</p>
+<br>
+
+<hr>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>Go提供的安装包安装过程很简单，下载<code>64位的msi安装包</code>后，双击运行，只有安装路径可供选择，没有任何其它选项，设置好路径后便可以一直“下一步”完成安装。</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>TODO</p>
+<h2 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h2><p>下载可执行文件版，直接点击下一步安装即可，默认会将go安装到<code>/usr/local/go</code>目录下。 </p>
+<h2 id="检查安装情况"><a href="#检查安装情况" class="headerlink" title="检查安装情况"></a>检查安装情况</h2><p>安装过程执行完毕后，可以打开终端窗口，输入<code>go version</code>命令，如果显示了Go的版本信息，则说明安装成功。</p>
+<br>
+
+<hr>
+<h1 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h1><p>这里我的Go语言安装路径为<code>D:\Go\</code>，另外计划把工作路径放在<code>D:\WorkSpace\Go\</code>下。下面以这两个路径为例进行配置。</p>
+<p><code>GOROOT</code>和<code>GOPATH</code>都是环境变量，其中<code>GOROOT</code>是我们安装go开发包的路径，<code>GOPATH</code>是工作路径（放置代码的地方）。</p>
+<blockquote>
+<p>下面内容只在windows下部署过，其它系统未试，但理论上应该是差不多的。</p>
+</blockquote>
+<ul>
+<li>在<code>用户环境变量</code>中配置<code>GOPATH</code>，值为工作路径，我的是<code>D:\WorkSpace\Go\</code>。</li>
+<li>在<code>用户环境变量</code>中的<code>Path</code>添加一行，值为工作路径下的<code>bin</code>目录，我的是<code>D:\WorkSpace\Go\bin</code>。</li>
+<li>在<code>系统环境变量</code>中配置<code>GOROOT</code>为Go语言安装路径，我的是<code>D:\Go\</code>。</li>
+<li>在<code>系统环境变量</code>中的<code>Path</code>添加一行，值为Go语言安装路径下的<code>bin</code>目录，我的是<code>D:\Go\bin</code>。</li>
+</ul>
+<blockquote>
+<p>上面变量如果不存在，则自行创建；如果存在，则更改路径即可。<br>Windows需要重启生效。</p>
+</blockquote>
+<br>
+
+<hr>
+<h1 id="Go开发编辑器"><a href="#Go开发编辑器" class="headerlink" title="Go开发编辑器"></a>Go开发编辑器</h1><p>Go采用的是UTF-8编码的文本文件存放源代码，理论上使用任何一款文本编辑器都可以做Go语言开发，推荐的有VS Code和Goland。VS Code是微软开源的编辑器，而Goland是jetbrains出品的付费IDE。</p>
+<blockquote>
+<p>补充说明：由于VS Code对go mod模式的支持暂时还不够完善，建议大家使用Goland编辑器。</p>
+</blockquote>
+<blockquote>
+<p>Goland是IDE，VS Code是编辑器。</p>
+</blockquote>
+<h2 id="Goland"><a href="#Goland" class="headerlink" title="Goland"></a>Goland</h2><p>由于是付费软件，网上有很多教程，这里就不提供了。</p>
+<h2 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a>VS Code</h2><p>安装比较简单，去官网下载对应系统和版本即可。</p>
+<p>下面说说插件安装</p>
+<!-- consider to delete the first pic below, if it didn't animat -->
+
+<p><img src="VSC%E6%B1%89%E5%8C%96.png" alt="VSC汉化"></p>
+<p><img src="VSC%E7%95%8C%E9%9D%A2.png" alt="VSC界面"></p>
+<p>现在我们要为我们的VS Code编辑器安装Go扩展插件，让它支持Go语言开发。点击上图中的“管理扩展”按钮。</p>
+<p><img src="VSC%E6%8F%92%E4%BB%B6.png" alt="VSC插件"></p>
+<p>点击“管理扩展”按钮后搜索“Go”，出来的第一个插件（上图）选择安装即可。</p>
+<p>后面我们在第一次写Go代码时，VS Code会在右下角弹出提示，自动推荐很多Go插件，选择全部安装即可（Install all）。</p>
+<ul>
+<li>Windows下VSCode切换cmd.exe作为默认终端</li>
+</ul>
+<p>如果你打开VS Code的终端界面出现如下图场景（注意观察红框圈中部分），那么你的VS Code此时正使用powershell作为默认终端：</p>
+<p>![VSC powershell](VSC powershell.png)</p>
+<p>建议改为<code>cmd.exe</code>作为默认的终端工具：</p>
+<p>![VSC cmd1](VSC cmd1.png)</p>
+<p>此时，VS Code正上方中间位置会弹出如下界面，参照下图挪动鼠标使光标选中后缀为cmd.exe的那一个，然后点击鼠标左键。</p>
+<p>![VSC cmd2](VSC cmd2.png)</p>
+<p>最后重启VS Code中已经打开的终端或者直接重启VS Code就可以了。</p>
+<p>如果没有出现下拉三角，也没有关系，按下<code>Ctrl</code>+<code>Shift</code>+<code>P</code>，VS Code正上方会出现一个框，你按照下图输入shell，然后点击指定选项即可出现上面的界面了。 </p>
+<p>![VSC cmd3](VSC cmd3.png)</p>
+<br>
+
+<hr>
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><p>为了检查安装成果，现在我们来创建第一个Go项目——<code>hello</code>。我们创建一个hello目录。</p>
+<p>通过VS Code在该目录下新建一个名为<code>main.go</code>的文件：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main  <span class="comment">// 声明 main 包，表明当前是一个可执行程序</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span>  <span class="comment">// 导入内置 fmt 包</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;  <span class="comment">// main函数，是程序执行的入口</span></span><br><span class="line">	fmt.Println(<span class="string">"Hello World!"</span>)  <span class="comment">// 在终端打印 Hello World!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在VS Code的Terminal中，进入该目录（可以在VS Code中对该目录右键，打开Terminal），然后执行<code>go build</code>命令进行编译。</p>
+<blockquote>
+<p>或者在其他目录执行以下命令： <code>go build hello</code> 。go编译器会去GOPATH的src目录下查找你要编译的<code>hello</code>项目。</p>
+</blockquote>
+<p>编译得到的可执行文件会保存在执行编译命令的当前目录下，如果是windows平台会在当前目录下找到<code>hello.exe</code>可执行文件。</p>
+<p>可在终端直接执行该<code>hello.exe</code>文件：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c:\xxxxx\hello&gt;hello.exe</span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
+<p>可以见到输出结果为<code>Hello World!</code>文本。至此Go安装成功！</p>
+<br>
+
+<hr>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.liwenzhou.com/posts/Go/go_menu/" target="_blank" rel="noopener">李文周的博客 - 《Go语言学习之路》</a></p>
+<br>
+
+<hr>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="EK阿墙 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="EK阿墙 Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Go/" rel="tag"># Go</a>
+              <a href="/tags/coding/" rel="tag"># coding</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/03/Vim%E5%91%BD%E4%BB%A4/" rel="prev" title="Vim命令">
+      <i class="fa fa-chevron-left"></i> Vim命令
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/17/Go%E7%AC%94%E8%AE%B0/" rel="next" title="Go笔记">
+      Go笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载"><span class="nav-text">下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows"><span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac"><span class="nav-text">Mac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检查安装情况"><span class="nav-text">检查安装情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置环境变量"><span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Go开发编辑器"><span class="nav-text">Go开发编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Goland"><span class="nav-text">Goland</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VS-Code"><span class="nav-text">VS Code</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hello-World"><span class="nav-text">Hello World!</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="EK阿墙"
+      src="/images/ek_avatar.jpg">
+  <p class="site-author-name" itemprop="name">EK阿墙</p>
+  <div class="site-description" itemprop="description">少年辛苦终身事，莫向光阴惰寸功。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/elli999" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;elli999" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:easonkk@foxmail.com" title="E-Mail → mailto:easonkk@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/32177782" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;32177782" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>BiliBili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">EK阿墙</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
