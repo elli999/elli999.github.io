@@ -166,12 +166,12 @@
 <p>如果你打开VS Code的终端界面出现如下图场景（注意观察红框圈中部分），那么你的VS Code此时正使用powershell作为默认终端：</p>
 <p>![VSC powershell](VSC powershell.png)</p>
 <p>建议改为<code>cmd.exe</code>作为默认的终端工具：</p>
-<p>![VSC cmd1](VSC cmd1.png)</p>
+<p><img src="VSC_cmd1.png" alt="VSC_cmd1"></p>
 <p>此时，VS Code正上方中间位置会弹出如下界面，参照下图挪动鼠标使光标选中后缀为cmd.exe的那一个，然后点击鼠标左键。</p>
-<p>![VSC cmd2](VSC cmd2.png)</p>
+<p><img src="VSC_cmd2.png" alt="VSC_cmd2"></p>
 <p>最后重启VS Code中已经打开的终端或者直接重启VS Code就可以了。</p>
 <p>如果没有出现下拉三角，也没有关系，按下<code>Ctrl</code>+<code>Shift</code>+<code>P</code>，VS Code正上方会出现一个框，你按照下图输入shell，然后点击指定选项即可出现上面的界面了。 </p>
-<p>![VSC cmd3](VSC cmd3.png)</p>
+<p><img src="VSC_cmd3.png" alt="VSC_cmd3"></p>
 <br>
 
 <hr>
@@ -560,25 +560,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo基础</title>
-    <url>/2020/08/01/Hexo%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<p>Hexo基础</p>
-<a id="more"></a>
-
-<hr>
-<h1 id="Hexo官方插件"><a href="#Hexo官方插件" class="headerlink" title="Hexo官方插件"></a>Hexo官方插件</h1><p>Hexo官方网站内有很多插件，可以自行查看，根据需要进行添加。</p>
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>Software</category>
-        <category>笔记方法学</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo笔记</title>
     <url>/2020/05/15/Hexo%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>My Hexo wiki.</p>
@@ -618,6 +599,7 @@
 <li><a href="#隐性bug">隐性Bug</a><ul>
 <li><a href="#首页不显示文章">首页不显示文章</a></li>
 <li><a href="#文章404">文章404</a></li>
+<li><a href="#图片不显示">图片不显示</a></li>
 </ul>
 </li>
 </ul>
@@ -788,6 +770,10 @@
 <li>可以直接复制或者新建md文件放入 <code>_posts</code> 文件夹内</li>
 <li>Windows貌似不能识别带有空格的md文件名（例如：《Linux - 日常使用》，现在已全部统一不用空格，变成《Linux-日常使用》）。使用文件名带空格的md文件，在生成文章后在首页不显示文章（但是貌似在分类中可以找到）</li>
 </ul>
+<hr>
+<br>
+<br>
+
 <h1 id="Bug记录"><a href="#Bug记录" class="headerlink" title="Bug记录"></a>Bug记录</h1><h2 id="显性Bug"><a href="#显性Bug" class="headerlink" title="显性Bug"></a>显性Bug</h2><blockquote>
 <p>显性Bug即不可以使用，使用前就报错。</p>
 </blockquote>
@@ -795,6 +781,9 @@
 <blockquote>
 <p>看报错代码，应该是生成HTML页面时，<code>{</code>、<code>}</code>会混入HTML代码中。</p>
 </blockquote>
+<hr>
+<br>
+
 <h2 id="隐性Bug"><a href="#隐性Bug" class="headerlink" title="隐性Bug"></a>隐性Bug</h2><blockquote>
 <p>隐性Bug即可以使用，不报错，但是用的时候发现问题。</p>
 </blockquote>
@@ -803,11 +792,18 @@
 </ul>
 <p>Windows貌似不能识别带有空格的md文件名（例如：《Linux - 日常使用》，现在已全部统一不用空格，变成《Linux-日常使用》）。使用文件名带空格的md文件，在生成文章后在首页不显示文章（但是貌似在分类中可以找到）</p>
 <hr>
-<br>
-
 <h3 id="文章404"><a href="#文章404" class="headerlink" title="文章404"></a>文章404</h3><p>在本地<code>hexo s</code>可以正常显示，但是deploy之后打开对应文章404，检查本地和服务器均存在该文章的index.html文件，但就是404显示不了。重新hexo clean 、 hexo g也不行。</p>
 <p><strong>解决办法：</strong>把文章日期改了一下，再重新<code>hexo clean &amp;&amp; hexo g -d</code>就可以了。（因为生成的网站里面的文章是按日期分的文件夹路径，所以我的思路是改变日期，相当于改了该文章的路径再重新上传）</p>
 <p><mark>找不到原因。</mark></p>
+<hr>
+<h3 id="图片不显示"><a href="#图片不显示" class="headerlink" title="图片不显示"></a>图片不显示</h3><ol>
+<li>图片文件名不能有空格</li>
+</ol>
+<p>例如<code>![VSC cmd1](VSC cmd1.png)</code>，这样显示不了。</p>
+<p>解决方案：可以用驼峰命名，或者是下划线 <code>_</code> 替代空格。</p>
+<hr>
+<br>
+
 <h1 id="—"><a href="#—" class="headerlink" title="—"></a>—</h1><h1 id="—-1"><a href="#—-1" class="headerlink" title="—"></a>—</h1><h1 id="—-2"><a href="#—-2" class="headerlink" title="—"></a>—</h1><h1 id="—-3"><a href="#—-3" class="headerlink" title="—"></a>—</h1><h1 id="—-4"><a href="#—-4" class="headerlink" title="—"></a>—</h1><h1 id="弃？"><a href="#弃？" class="headerlink" title="弃？((("></a>弃？(((</h1><h1 id="文章属性"><a href="#文章属性" class="headerlink" title="文章属性"></a>文章属性</h1><p>文章属性在 <code>hexo new xxx</code> 生成 md 文件时自动创建，在文章头部，包含layout、title、date、updated、comments、tags、categories、permalink属性，其中有部分属性是有default值的，即默认初始属性，如果不改动则以default值为准。</p>
 <p>一般格式如下：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo部署笔记</span><br><span class="line">date: 2020-05-15 00:47:04</span><br><span class="line">categories:</span><br><span class="line">    - Hexo</span><br><span class="line">tags:</span><br><span class="line">    - hexo</span><br><span class="line">    - 笔记方法学</span><br><span class="line">    - 笔记</span><br><span class="line">    - note</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
@@ -864,6 +860,25 @@
         <tag>note</tag>
         <tag>笔记方法学</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo基础</title>
+    <url>/2020/08/01/Hexo%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p>Hexo基础</p>
+<a id="more"></a>
+
+<hr>
+<h1 id="Hexo官方插件"><a href="#Hexo官方插件" class="headerlink" title="Hexo官方插件"></a>Hexo官方插件</h1><p>Hexo官方网站内有很多插件，可以自行查看，根据需要进行添加。</p>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Software</category>
+        <category>笔记方法学</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1346,61 +1361,6 @@
         <tag>Vim</tag>
         <tag>Plug</tag>
         <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vim遇到的问题</title>
-    <url>/2020/08/02/Vim%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><!-- vim-markdown-toc Redcarpet -->
-
-<ul>
-<li><a href="#字符显示不全-重叠">字符显示不全/重叠</a></li>
-<li><a href="#vim内容复制不到其它程序">Vim内容复制不到其它程序</a></li>
-</ul>
-<!-- vim-markdown-toc -->
-
-
-<a id="more"></a>
-
-<hr>
-<h2 id="字符显示不全-重叠"><a href="#字符显示不全-重叠" class="headerlink" title="字符显示不全/重叠"></a>字符显示不全/重叠</h2><p>【问题】</p>
-<p>一些中文符号（如<code>“”①②→</code>），在Vim中输入时会出现显示不全，或者和旁边的字符重叠的情况。</p>
-<p>【解决】</p>
-<p><a href="http://blog.sina.com.cn/s/blog_46dac66f010006db.html" target="_blank" rel="noopener">参考</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set ambiwidth&#x3D;double</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Vim内容复制不到其它程序"><a href="#Vim内容复制不到其它程序" class="headerlink" title="Vim内容复制不到其它程序"></a>Vim内容复制不到其它程序</h2><p><a href="https://www.zhihu.com/question/19863631" target="_blank" rel="noopener">参考资料：知乎《如何将 Vim 剪贴板里面的东西粘贴到 Vim 之外的地方？》</a></p>
-<p>根据平台不同，要分两种情况。先用下面命令确定你属于哪一种，</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim --version | grep clipboard</span><br></pre></td></tr></table></figure>
-
-<p><strong>情况一</strong></p>
-<p><img src="+clipboard.png" alt="+clipboard"></p>
-<p>如果结果里你找到加号开头的+clipboard， 恭喜你，你的vim没问题</p>
-<ul>
-<li>用 <code>&quot;+y</code> 将选中的内容复制到系统剪贴板，效果和ctrl-c一致。</li>
-<li>用 <code>&quot;+p</code> 将剪贴板内容复制到指定位置，也可以用ctrl-v。</li>
-</ul>
-<p><strong>情况二</strong></p>
-<p>如果找到的是负号开头的<code>-clipboard</code>，说明你的vim不支持系统剪切板。需要先重新安装vim。</p>
-<p>Linux系统</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install vim-gtk</span><br></pre></td></tr></table></figure>
-
-<p>MacOS</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
-
-<p>安装好之后，输入 <code>vim --version | grep clipboard</code> 命令应该已经变成<code>+clipboard</code> 了。</p>
-<p>现在可以回到情况一进行复制了。</p>
-<hr>
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>Software</category>
-        <category>Vim</category>
-      </categories>
-      <tags>
-        <tag>Vim</tag>
-        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -2280,6 +2240,79 @@
       </tags>
   </entry>
   <entry>
+    <title>Vim遇到的问题</title>
+    <url>/2020/08/02/Vim%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#字符显示不全-重叠">字符显示不全/重叠</a></li>
+<li><a href="#vim内容复制不到其它程序">Vim内容复制不到其它程序</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+
+<a id="more"></a>
+
+<hr>
+<h2 id="字符显示不全-重叠"><a href="#字符显示不全-重叠" class="headerlink" title="字符显示不全/重叠"></a>字符显示不全/重叠</h2><p>【问题】</p>
+<p>一些中文符号（如<code>“”①②→</code>），在Vim中输入时会出现显示不全，或者和旁边的字符重叠的情况。</p>
+<p>【解决】</p>
+<p><a href="http://blog.sina.com.cn/s/blog_46dac66f010006db.html" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set ambiwidth&#x3D;double</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Vim内容复制不到其它程序"><a href="#Vim内容复制不到其它程序" class="headerlink" title="Vim内容复制不到其它程序"></a>Vim内容复制不到其它程序</h2><p><a href="https://www.zhihu.com/question/19863631" target="_blank" rel="noopener">参考资料：知乎《如何将 Vim 剪贴板里面的东西粘贴到 Vim 之外的地方？》</a></p>
+<p>根据平台不同，要分两种情况。先用下面命令确定你属于哪一种，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim --version | grep clipboard</span><br></pre></td></tr></table></figure>
+
+<p><strong>情况一</strong></p>
+<p><img src="+clipboard.png" alt="+clipboard"></p>
+<p>如果结果里你找到加号开头的+clipboard， 恭喜你，你的vim没问题</p>
+<ul>
+<li>用 <code>&quot;+y</code> 将选中的内容复制到系统剪贴板，效果和ctrl-c一致。</li>
+<li>用 <code>&quot;+p</code> 将剪贴板内容复制到指定位置，也可以用ctrl-v。</li>
+</ul>
+<p><strong>情况二</strong></p>
+<p>如果找到的是负号开头的<code>-clipboard</code>，说明你的vim不支持系统剪切板。需要先重新安装vim。</p>
+<p>Linux系统</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install vim-gtk</span><br></pre></td></tr></table></figure>
+
+<p>MacOS</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install vim</span><br></pre></td></tr></table></figure>
+
+<p>安装好之后，输入 <code>vim --version | grep clipboard</code> 命令应该已经变成<code>+clipboard</code> 了。</p>
+<p>现在可以回到情况一进行复制了。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Software</category>
+        <category>Vim</category>
+      </categories>
+      <tags>
+        <tag>Vim</tag>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/05/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Windows-日常使用</title>
     <url>/2020/07/28/Windows-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<blockquote>
@@ -2453,24 +2486,6 @@
         <tag>OS</tag>
         <tag>Windows</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/05/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>index</title>
