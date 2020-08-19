@@ -164,7 +164,7 @@
 <li>Windows下VSCode切换cmd.exe作为默认终端</li>
 </ul>
 <p>如果你打开VS Code的终端界面出现如下图场景（注意观察红框圈中部分），那么你的VS Code此时正使用powershell作为默认终端：</p>
-<p>![VSC powershell](VSC powershell.png)</p>
+<p><img src="VSC_powershell.png" alt="VSC_powershell"></p>
 <p>建议改为<code>cmd.exe</code>作为默认的终端工具：</p>
 <p><img src="VSC_cmd1.png" alt="VSC_cmd1"></p>
 <p>此时，VS Code正上方中间位置会弹出如下界面，参照下图挪动鼠标使光标选中后缀为cmd.exe的那一个，然后点击鼠标左键。</p>
@@ -548,318 +548,15 @@
       <categories>
         <category>+IT</category>
         <category>Software</category>
-        <category>笔记方法学</category>
         <category>Vim</category>
         <category>Hexo</category>
+        <category>笔记方法学</category>
       </categories>
       <tags>
         <tag>笔记</tag>
         <tag>note</tag>
         <tag>VIM</tag>
         <tag>笔记方法学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo笔记</title>
-    <url>/2020/05/15/Hexo%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>My Hexo wiki.</p>
-<h1 id="Table-Of-Content"><a href="#Table-Of-Content" class="headerlink" title="Table Of Content"></a>Table Of Content</h1><!-- vim-markdown-toc Redcarpet -->
-
-<ul>
-<li><a href="#hexo目录结构">Hexo目录结构</a><ul>
-<li><a href="#deploy">.deploy</a></li>
-<li><a href="#node_modules">node_modules</a></li>
-<li><a href="#public">public</a></li>
-<li><a href="#scaffolds">scaffolds</a></li>
-<li><a href="#source">source</a><ul>
-<li><a href="#drafts">_drafts</a></li>
-<li><a href="#posts">_posts</a></li>
-</ul>
-</li>
-<li><a href="#themes">themes</a></li>
-<li><a href="#config-yml">_config.yml</a></li>
-<li><a href="#package-json">package.json</a></li>
-</ul>
-</li>
-<li><a href="#按需求分类">按需求分类</a><ul>
-<li><a href="#1-更换主题">1. 更换主题</a></li>
-<li><a href="#2-更改网站整体结构">2. 更改网站整体结构</a></li>
-<li><a href="#3-增加网站访问量统计功能">3. 增加网站访问量统计功能</a></li>
-<li><a href="#3-增加评论区">3. 增加评论区</a></li>
-<li><a href="#4-增加搜索功能-（重要！！！）">4. 增加搜索功能 （重要！！！）</a></li>
-<li><a href="#5-插入本地图">5. 插入本地图</a></li>
-<li><a href="#hexo新建文章">Hexo新建文章</a></li>
-</ul>
-</li>
-<li><a href="#bug记录">Bug记录</a><ul>
-<li><a href="#显性bug">显性Bug</a><ul>
-<li><a href="#在-做的标题里，不要用-、">在#做的标题里，不要用<code>{</code>、<code>}</code></a></li>
-</ul>
-</li>
-<li><a href="#隐性bug">隐性Bug</a><ul>
-<li><a href="#首页不显示文章">首页不显示文章</a></li>
-<li><a href="#文章404">文章404</a></li>
-<li><a href="#图片不显示">图片不显示</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#">—</a></li>
-<li><a href="#">—</a></li>
-<li><a href="#">—</a></li>
-<li><a href="#">—</a></li>
-<li><a href="#">—</a></li>
-<li><a href="#弃？">弃？(((</a></li>
-<li><a href="#文章属性">文章属性</a><ul>
-<li><a href="#4-1-1-1-layout">4.1.1.1. layout</a></li>
-<li><a href="#4-1-1-2-title">4.1.1.2. title</a></li>
-<li><a href="#4-1-1-3-date">4.1.1.3. date</a></li>
-<li><a href="#4-1-1-4-updated">4.1.1.4. updated</a></li>
-<li><a href="#4-1-1-5-comments">4.1.1.5. comments</a></li>
-<li><a href="#4-1-1-6-tags">4.1.1.6. tags</a></li>
-<li><a href="#4-1-1-7-categories">4.1.1.7. categories</a></li>
-<li><a href="#4-1-1-8-permalink">4.1.1.8. permalink</a></li>
-<li><a href="#4-1-1-9-description">4.1.1.9. description?</a></li>
-<li><a href="#4-2-生成静态页面">4.2. 生成静态页面</a></li>
-<li><a href="#4-3-在本地建立服务（预览）">4.3. 在本地建立服务（预览）</a></li>
-<li><a href="#4-4-部署到服务器">4.4. 部署到服务器</a></li>
-</ul>
-</li>
-<li><a href="#弃？">弃？)))</a></li>
-</ul>
-<!-- vim-markdown-toc -->
-
-<a id="more"></a>
-
-<hr>
-<h1 id="Hexo目录结构"><a href="#Hexo目录结构" class="headerlink" title="Hexo目录结构"></a>Hexo目录结构</h1><p>补图</p>
-<h2 id="deploy"><a href="#deploy" class="headerlink" title=".deploy"></a>.deploy</h2><p>需要部署的文件</p>
-<h2 id="node-modules"><a href="#node-modules" class="headerlink" title="node_modules"></a>node_modules</h2><p>hexo插件</p>
-<h2 id="public"><a href="#public" class="headerlink" title="public"></a>public</h2><p><strong>生成的静态网页文件</strong>：当使用hexo generate命令时，hexo会从source中把所有内容生成为静态网页文件并存放在此文件夹。即此文件夹便是完整的网站内容，后续使用hexo deploy部署时，也是只上传这个文件夹。</p>
-<h2 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h2><p><a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">模版</a> 文件夹。当您新建文章时，Hexo会根据 scaffold 来建立文件。</p>
-</br>
-
-<p>Hexo的模版是指在新建的文章文件中默认填充的内容。例如，如果您修改 scaffold/post.md中的 Front-matter 内容，那么每次新建一篇文章时都会包含这个修改。</p>
-<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p><strong>生成静态网页前的源文件</strong>：如md文件、图片文件、404、favicon、CNAME等。使用hexo new命令生成的md文件便是存放于此。后续使用hexo generate时便把内容转化为静态网页文件，保存在public文件夹。</p>
-<h3 id="drafts"><a href="#drafts" class="headerlink" title="_drafts"></a>_drafts</h3><p>草稿</p>
-<h3 id="posts"><a href="#posts" class="headerlink" title="_posts"></a>_posts</h3><p>文章</p>
-<h2 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h2><p>Hexo的主题目录：把从网上下载的Hexo主题放在这里，并在全局 _config.yml 配置文件中将 theme： xxxx 改为对应的新主题名，就会成功更改主题。（“xxxx” 的内容要和 theme 文件夹内的主题文件夹名字相同）</p>
-<h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><p>网站的 <a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">配置</a> 信息，您可以在此配置大部分的参数。</p>
-<blockquote>
-<p>EK： 全局配置文件：在这里可以更改如主题、部署目标地址、网站名、拥有者名等内容。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>title</td>
-<td>网站标题</td>
-</tr>
-<tr>
-<td>subtitle     网站副标题</td>
-<td></td>
-</tr>
-<tr>
-<td>description     网站描述</td>
-<td></td>
-</tr>
-<tr>
-<td>keywords     网站的关键词。使用半角逗号 , 分隔多个关键词。</td>
-<td></td>
-</tr>
-<tr>
-<td>author     您的名字</td>
-<td></td>
-</tr>
-<tr>
-<td>language     网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 zh-Hans和 zh-CN。</td>
-<td></td>
-</tr>
-<tr>
-<td>timezone     网站时区。Hexo 默认使用您电脑的时区。请参考 时区列表 进行设置，如 America/New_York, Japan, 和 UTC 。一般的，对于中国大陆地区可以使用 Asia/Shanghai。</td>
-<td></td>
-</tr>
-</tbody></table>
-<p>其中，<code>description</code>主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。author参数用于主题显示文章的作者。</p>
-<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>应用程序的信息。<a href="https://ejs.co" target="_blank" rel="noopener">EJS</a>, <a href="learnboost.github.io/stylus/">Stylus</a> 和 <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a> renderer 已默认安装，您可以自由移除。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;hexo-site&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;0.0.0&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;hexo&quot;: &quot;^3.8.0&quot;,</span><br><span class="line">    &quot;hexo-generator-archive&quot;: &quot;^0.1.5&quot;,</span><br><span class="line">    &quot;hexo-generator-category&quot;: &quot;^0.1.3&quot;,</span><br><span class="line">    &quot;hexo-generator-index&quot;: &quot;^0.2.1&quot;,</span><br><span class="line">    &quot;hexo-generator-tag&quot;: &quot;^0.2.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-ejs&quot;: &quot;^0.3.1&quot;,</span><br><span class="line">    &quot;hexo-renderer-stylus&quot;: &quot;^0.3.3&quot;,</span><br><span class="line">    &quot;hexo-renderer-marked&quot;: &quot;^0.3.2&quot;,</span><br><span class="line">    &quot;hexo-server&quot;: &quot;^0.3.3&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>.deploy</li>
-<li>node_modules</li>
-<li>public</li>
-<li>scaffolds</li>
-<li>source<br>博客正文 ………<ul>
-<li>_drafts<br>草稿 ………</li>
-<li>_posts<br>文章 ………</li>
-</ul>
-</li>
-<li>theme<br>主题</li>
-<li>_config.yml</li>
-<li>package.json</li>
-</ul>
-<hr>
-<h1 id="按需求分类"><a href="#按需求分类" class="headerlink" title="按需求分类"></a>按需求分类</h1><h2 id="1-更换主题"><a href="#1-更换主题" class="headerlink" title="1. 更换主题"></a>1. 更换主题</h2><p>见上方目录结构章节中的 theme 文件夹讲解</p>
-<h2 id="2-更改网站整体结构"><a href="#2-更改网站整体结构" class="headerlink" title="2. 更改网站整体结构"></a>2. 更改网站整体结构</h2><p>在 theme 内对应的主题下更改代码（需要网页开发技能，可看主题的官方文档，跟着指导去进行修改）</p>
-<h2 id="3-增加网站访问量统计功能"><a href="#3-增加网站访问量统计功能" class="headerlink" title="3. 增加网站访问量统计功能"></a>3. 增加网站访问量统计功能</h2><p>利用“不蒜子”提供的服务： ibruce.info/2015/04/04/busuanzi/</p>
-<p>注：其它也可以，可以找同类的替代品。但是静态网站本身无法完成动态内容，必须要借助类似这种外来服务才能增加诸如统计计数、评论等功能。</p>
-<h2 id="3-增加评论区"><a href="#3-增加评论区" class="headerlink" title="3. 增加评论区"></a>3. 增加评论区</h2><blockquote>
-<p>好像需要备案，不然有人发布不良言论会影响网站。</p>
-</blockquote>
-<p>1、 Disqus（被墙）<br>2、 来必力 livere.com<br>3、 多说（好像没了）<br>4、 畅言 changyan.kuaizhan.com</p>
-<h2 id="4-增加搜索功能-（重要！！！）"><a href="#4-增加搜索功能-（重要！！！）" class="headerlink" title="4. 增加搜索功能 （重要！！！）"></a>4. 增加搜索功能 （重要！！！）</h2><p>1、 swiftype.com （好像收费了）</p>
-<p>原理：在你注册后，它就爬虫你的网站所有内容，建立索引在自己的服务器</p>
-<p>2、 自定义 site 语法进行跳转</p>
-<p>原理： 相当于在搜索引擎输入 “ site:taobao.com 铅笔“，前提是这个搜索引擎已经收录了你的内容（爬取）</p>
-<h2 id="5-插入本地图"><a href="#5-插入本地图" class="headerlink" title="5. 插入本地图"></a>5. 插入本地图</h2><p><strong>方法一：</strong></p>
-<p>把图片（这里举例是test.jpg）放入blog/source/images 下 （“images”可以改为其它名称）</p>
-<blockquote>
-<p>应该只要放入source文件夹下任意位置都可以，这里放入<code>source\images</code>只是为了方便统一管理</p>
-</blockquote>
-<p>在md文件中，使用<code>![](images/test.jpg)</code> 完成插入</p>
-<p><strong>方法二：</strong></p>
-<p>在 <code>_config.yml</code> 把<code>post_asset_folder</code>设为<code>true</code>，然后把当前文章所用的图片，保存到文章所在目录下的同名文件夹下，最后用 <code>![](图片文件名.jpg)</code> 方式引用即可。</p>
-<blockquote>
-<p><code>_config.yml</code>在网站的根目录下，是Hexo的主配置文件，一般不要随便改动。</p>
-</blockquote>
-<h2 id="Hexo新建文章"><a href="#Hexo新建文章" class="headerlink" title="Hexo新建文章"></a>Hexo新建文章</h2><ul>
-<li>可以直接复制或者新建md文件放入 <code>_posts</code> 文件夹内</li>
-<li>Windows貌似不能识别带有空格的md文件名（例如：《Linux - 日常使用》，现在已全部统一不用空格，变成《Linux-日常使用》）。使用文件名带空格的md文件，在生成文章后在首页不显示文章（但是貌似在分类中可以找到）</li>
-</ul>
-<hr>
-<br>
-<br>
-
-<h1 id="Bug记录"><a href="#Bug记录" class="headerlink" title="Bug记录"></a>Bug记录</h1><h2 id="显性Bug"><a href="#显性Bug" class="headerlink" title="显性Bug"></a>显性Bug</h2><blockquote>
-<p>显性Bug即不可以使用，使用前就报错。</p>
-</blockquote>
-<h3 id="在-做的标题里，不要用-、"><a href="#在-做的标题里，不要用-、" class="headerlink" title="在#做的标题里，不要用{、}"></a>在#做的标题里，不要用<code>{</code>、<code>}</code></h3><p>在#做的标题里，不要用<code>{</code>、<code>}</code>，会导致<code>hexo g</code>失败。</p>
-<blockquote>
-<p>看报错代码，应该是生成HTML页面时，<code>{</code>、<code>}</code>会混入HTML代码中。</p>
-</blockquote>
-<hr>
-<br>
-
-<h2 id="隐性Bug"><a href="#隐性Bug" class="headerlink" title="隐性Bug"></a>隐性Bug</h2><blockquote>
-<p>隐性Bug即可以使用，不报错，但是用的时候发现问题。</p>
-</blockquote>
-<h3 id="首页不显示文章"><a href="#首页不显示文章" class="headerlink" title="首页不显示文章"></a>首页不显示文章</h3><ul>
-<li>文章命名</li>
-</ul>
-<p>Windows貌似不能识别带有空格的md文件名（例如：《Linux - 日常使用》，现在已全部统一不用空格，变成《Linux-日常使用》）。使用文件名带空格的md文件，在生成文章后在首页不显示文章（但是貌似在分类中可以找到）</p>
-<hr>
-<h3 id="文章404"><a href="#文章404" class="headerlink" title="文章404"></a>文章404</h3><p>在本地<code>hexo s</code>可以正常显示，但是deploy之后打开对应文章404，检查本地和服务器均存在该文章的index.html文件，但就是404显示不了。重新hexo clean 、 hexo g也不行。</p>
-<p><strong>解决办法：</strong>把文章日期改了一下，再重新<code>hexo clean &amp;&amp; hexo g -d</code>就可以了。（因为生成的网站里面的文章是按日期分的文件夹路径，所以我的思路是改变日期，相当于改了该文章的路径再重新上传）</p>
-<p><mark>找不到原因。</mark></p>
-<hr>
-<h3 id="图片不显示"><a href="#图片不显示" class="headerlink" title="图片不显示"></a>图片不显示</h3><ol>
-<li>图片文件名不能有空格</li>
-</ol>
-<p>例如<code>![VSC cmd1](VSC cmd1.png)</code>，这样显示不了。</p>
-<p>解决方案：可以用驼峰命名，或者是下划线 <code>_</code> 替代空格。</p>
-<hr>
-<br>
-
-<h1 id="—"><a href="#—" class="headerlink" title="—"></a>—</h1><h1 id="—-1"><a href="#—-1" class="headerlink" title="—"></a>—</h1><h1 id="—-2"><a href="#—-2" class="headerlink" title="—"></a>—</h1><h1 id="—-3"><a href="#—-3" class="headerlink" title="—"></a>—</h1><h1 id="—-4"><a href="#—-4" class="headerlink" title="—"></a>—</h1><h1 id="弃？"><a href="#弃？" class="headerlink" title="弃？((("></a>弃？(((</h1><h1 id="文章属性"><a href="#文章属性" class="headerlink" title="文章属性"></a>文章属性</h1><p>文章属性在 <code>hexo new xxx</code> 生成 md 文件时自动创建，在文章头部，包含layout、title、date、updated、comments、tags、categories、permalink属性，其中有部分属性是有default值的，即默认初始属性，如果不改动则以default值为准。</p>
-<p>一般格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo部署笔记</span><br><span class="line">date: 2020-05-15 00:47:04</span><br><span class="line">categories:</span><br><span class="line">    - Hexo</span><br><span class="line">tags:</span><br><span class="line">    - hexo</span><br><span class="line">    - 笔记方法学</span><br><span class="line">    - 笔记</span><br><span class="line">    - note</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>部分属性如有需要可自行添加</p>
-<h2 id="4-1-1-1-layout"><a href="#4-1-1-1-layout" class="headerlink" title="4.1.1.1. layout"></a>4.1.1.1. layout</h2><h2 id="4-1-1-2-title"><a href="#4-1-1-2-title" class="headerlink" title="4.1.1.2. title"></a>4.1.1.2. title</h2><h2 id="4-1-1-3-date"><a href="#4-1-1-3-date" class="headerlink" title="4.1.1.3. date"></a>4.1.1.3. date</h2><p>Published date</p>
-<blockquote>
-<p><strong>Default</strong>： File created date</p>
-</blockquote>
-<h2 id="4-1-1-4-updated"><a href="#4-1-1-4-updated" class="headerlink" title="4.1.1.4. updated"></a>4.1.1.4. updated</h2><p>Updated date</p>
-<blockquote>
-<p><strong>Default</strong>: File updated date</p>
-</blockquote>
-<h2 id="4-1-1-5-comments"><a href="#4-1-1-5-comments" class="headerlink" title="4.1.1.5. comments"></a>4.1.1.5. comments</h2><p>Enables comment feature for the post</p>
-<blockquote>
-<p><strong>Default</strong>: true</p>
-</blockquote>
-<h2 id="4-1-1-6-tags"><a href="#4-1-1-6-tags" class="headerlink" title="4.1.1.6. tags"></a>4.1.1.6. tags</h2><p>定义文章的标签属性 ( Not available for pages )</p>
-<p>按如下格式填写即可</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tags:</span><br><span class="line">    - tag1</span><br><span class="line">    - tag2</span><br><span class="line">    - ...</span><br></pre></td></tr></table></figure>
-
-<p>或</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tags: [标签1,标签2,标签3]</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-1-1-7-categories"><a href="#4-1-1-7-categories" class="headerlink" title="4.1.1.7. categories"></a>4.1.1.7. categories</h2><p>定义文章的标签属性 ( Not available for pages )</p>
-<p>按如下格式填写即可</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">    - 分类名</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-1-1-8-permalink"><a href="#4-1-1-8-permalink" class="headerlink" title="4.1.1.8. permalink"></a>4.1.1.8. permalink</h2><p>Overrides the default permalink of the post</p>
-<h2 id="4-1-1-9-description"><a href="#4-1-1-9-description" class="headerlink" title="4.1.1.9. description?"></a>4.1.1.9. description?</h2><p>应该还有一个 <code>description?</code> 属性，用于写入当前文章的 excerpt（摘要），放在首页，能令首页不显示全文，只显示文章的 description（描述）</p>
-<p>注意：要在<a title="\blog\theme\主题名\">主题目录</a>下的<code>_config.yml</code>文件，把下方的命令改为“true”，这个功能才能生效。（应该是这样，待测试！）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">excerpt_description: true</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-2-生成静态页面"><a href="#4-2-生成静态页面" class="headerlink" title="4.2. 生成静态页面"></a>4.2. 生成静态页面</h2><blockquote>
-<p>进行这一步操作前建议先使用 <code>hexo clean</code> 命令</p>
-</blockquote>
-<p>当文章内容完成编辑以后，同样的回到blog目录下的命令行，执行 <code>hexo generate</code> 命令，Hexo便会把source中的内容生成为静态网页内容，存放在public目录下。（此目录就是网站目录）</p>
-<h2 id="4-3-在本地建立服务（预览）"><a href="#4-3-在本地建立服务（预览）" class="headerlink" title="4.3. 在本地建立服务（预览）"></a>4.3. 在本地建立服务（预览）</h2><p>只要 public 目录有内容，便可以使用 <code>hexo server</code> 命令在本机创建端口号为4000的http访问服务，然后就可以在浏览器通过 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 访问网站，预览效果。</p>
-<p>（一般用于预览成果，没有问题后便可进行后续的部署到远程服务器）</p>
-<h2 id="4-4-部署到服务器"><a href="#4-4-部署到服务器" class="headerlink" title="4.4. 部署到服务器"></a>4.4. 部署到服务器</h2><blockquote>
-<p>第一次进行这一步操作前要先在 _config.yml 文件内填写好部署的目标地址信息</p>
-</blockquote>
-<p>当静态网页生成好以后，便可以执行 <code>hexo deploy</code> 命令，把public目录下的内容部署到目标地址（可以是私有服务器，或者是Github之类的网站）</p>
-<h1 id="弃？-1"><a href="#弃？-1" class="headerlink" title="弃？)))"></a>弃？)))</h1><hr>
-]]></content>
-      <categories>
-        <category>+IT</category>
-        <category>Software</category>
-        <category>笔记方法学</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>note</tag>
-        <tag>笔记方法学</tag>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -874,11 +571,331 @@
       <categories>
         <category>+IT</category>
         <category>Software</category>
-        <category>笔记方法学</category>
         <category>Hexo</category>
+        <category>笔记方法学</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo�ʼ�</title>
+    <url>/2020/05/15/Hexo%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>My Hexo wiki.</p>
+<h1 id="Table-Of-Content"><a href="#Table-Of-Content" class="headerlink" title="Table Of Content"></a>Table Of Content</h1><!-- vim-markdown-toc Redcarpet -->
+
+<ul>
+<li><a href="#hexoĿ¼�ṹ">HexoĿ¼�ṹ</a><ul>
+<li><a href="#deploy">.deploy</a></li>
+<li><a href="#node_modules">node_modules</a></li>
+<li><a href="#public">public</a></li>
+<li><a href="#scaffolds">scaffolds</a></li>
+<li><a href="#source">source</a><ul>
+<li><a href="#drafts">_drafts</a></li>
+<li><a href="#posts">_posts</a></li>
+</ul>
+</li>
+<li><a href="#themes">themes</a></li>
+<li><a href="#config-yml">_config.yml</a></li>
+<li><a href="#package-json">package.json</a></li>
+</ul>
+</li>
+<li><a href="#���������">���������</a><ul>
+<li><a href="#hexo�½�����">Hexo�½�����</a></li>
+<li><a href="#��������">��������</a></li>
+<li><a href="#������վ������ͳ�ƹ���">������վ������ͳ�ƹ���</a></li>
+<li><a href="#����������">����������</a></li>
+<li><a href="#������������-����Ҫ��������">������������ ����Ҫ��������</a></li>
+<li><a href="#���뱾��ͼ">���뱾��ͼ</a></li>
+<li><a href="#ʹ��mermaid">ʹ��mermaid</a></li>
+</ul>
+</li>
+<li><a href="#bug��¼">Bug��¼</a><ul>
+<li><a href="#����bug">����Bug</a><ul>
+<li><a href="#��-���ı������Ҫ��-��">��#���ı������Ҫ��<code>{</code>��<code>}</code></a></li>
+</ul>
+</li>
+<li><a href="#����bug">����Bug</a><ul>
+<li><a href="#��ҳ����ʾ����">��ҳ����ʾ����</a></li>
+<li><a href="#����404">����404</a></li>
+<li><a href="#ͼƬ����ʾ">ͼƬ����ʾ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#">—</a></li>
+<li><a href="#����">����(((</a></li>
+<li><a href="#��������">��������</a><ul>
+<li><a href="#4-1-1-1-layout">4.1.1.1. layout</a></li>
+<li><a href="#4-1-1-2-title">4.1.1.2. title</a></li>
+<li><a href="#4-1-1-3-date">4.1.1.3. date</a></li>
+<li><a href="#4-1-1-4-updated">4.1.1.4. updated</a></li>
+<li><a href="#4-1-1-5-comments">4.1.1.5. comments</a></li>
+<li><a href="#4-1-1-6-tags">4.1.1.6. tags</a></li>
+<li><a href="#4-1-1-7-categories">4.1.1.7. categories</a></li>
+<li><a href="#4-1-1-8-permalink">4.1.1.8. permalink</a></li>
+<li><a href="#4-1-1-9-description">4.1.1.9. description?</a></li>
+<li><a href="#4-2-���ɾ�̬ҳ��">4.2. ���ɾ�̬ҳ��</a></li>
+<li><a href="#4-3-�ڱ��ؽ�������Ԥ����">4.3. �ڱ��ؽ�������Ԥ����</a></li>
+<li><a href="#4-4-���𵽷�����">4.4. ���𵽷�����</a></li>
+</ul>
+</li>
+<li><a href="#����">����)))</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+
+<a id="more"></a>
+
+<hr>
+<h1 id="HexoL¼�u"><a href="#HexoL¼�u" class="headerlink" title="HexoĿ¼�ṹ"></a>HexoĿ¼�ṹ</h1><p>��ͼ</p>
+<ul>
+<li>.deploy</li>
+<li>node_modules</li>
+<li>public</li>
+<li>scaffolds</li>
+<li>source<ul>
+<li>_drafts</li>
+<li>_posts</li>
+</ul>
+</li>
+<li>theme</li>
+<li>_config.yml</li>
+<li>package.json</li>
+</ul>
+<h2 id="deploy"><a href="#deploy" class="headerlink" title=".deploy"></a>.deploy</h2><p>��Ҫ������ļ�</p>
+<h2 id="node-modules"><a href="#node-modules" class="headerlink" title="node_modules"></a>node_modules</h2><p>hexo���</p>
+<h2 id="public"><a href="#public" class="headerlink" title="public"></a>public</h2><p><strong>���ɵľ�̬��ҳ�ļ�</strong>����ʹ��hexo generate����ʱ��hexo���source�а�������������Ϊ��̬��ҳ�ļ�������ڴ��ļ��С������ļ��б�����������վ���ݣ�����ʹ��hexo deploy����ʱ��Ҳ��ֻ�ϴ�����ļ��С�</p>
+<h2 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h2><p><a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">ģ��</a> �ļ��С������½�����ʱ��Hexo����� scaffold �������ļ���</p>
+</br>
+
+<p>Hexo��ģ����ָ���½��������ļ���Ĭ���������ݡ����磬������޸� scaffold/post.md�е� Front-matter ���ݣ���ôÿ���½�һƪ����ʱ�����������޸ġ�</p>
+<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p><strong>���ɾ�̬��ҳǰ��Դ�ļ�</strong>����md�ļ���ͼƬ�ļ���404��favicon��CNAME�ȡ�ʹ��hexo new�������ɵ�md�ļ����Ǵ���ڴˡ�����ʹ��hexo generateʱ�������ת��Ϊ��̬��ҳ�ļ���������public�ļ��С�</p>
+<h3 id="drafts"><a href="#drafts" class="headerlink" title="_drafts"></a>_drafts</h3><p>�ݸ�</p>
+<h3 id="posts"><a href="#posts" class="headerlink" title="_posts"></a>_posts</h3><p>����</p>
+<h2 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h2><p>Hexo������Ŀ¼���Ѵ��������ص�Hexo��������������ȫ�� _config.yml �����ļ��н� theme�� xxxx ��Ϊ��Ӧ�������������ͻ�ɹ��������⡣����xxxx�� ������Ҫ�� theme �ļ����ڵ������ļ���������ͬ��</p>
+<h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><p>��վ�� <a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">����</a> ��Ϣ���������ڴ����ô󲿷ֵĲ�����</p>
+<blockquote>
+<p>EK�� ȫ�������ļ�����������Ը��������⡢����Ŀ���ַ����վ����ӵ�����������ݡ�</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">����</th>
+<th align="center">����</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">title</td>
+<td align="center">��վ����</td>
+</tr>
+<tr>
+<td align="center">subtitle</td>
+<td align="center">��վ������</td>
+</tr>
+<tr>
+<td align="center">description</td>
+<td align="center">��վ����</td>
+</tr>
+<tr>
+<td align="center">keywords</td>
+<td align="center">��վ�Ĺؼ��ʡ�ʹ�ð�Ƕ��� , �ָ�����ؼ��ʡ�</td>
+</tr>
+<tr>
+<td align="center">author</td>
+<td align="center">��������</td>
+</tr>
+<tr>
+<td align="center">language</td>
+<td align="center">��վʹ�õ����ԡ����ڼ��������û���˵��ʹ�ò�ͬ�����������Ҫ���óɲ�ͬ��ֵ����ο����������ĵ��������ã��������� zh-Hans�� zh-CN��</td>
+</tr>
+<tr>
+<td align="center">timezone</td>
+<td align="center">��վʱ����Hexo Ĭ��ʹ�������Ե�ʱ������ο� ʱ���б� �������ã��� America/New_York, Japan, �� UTC ��һ��ģ������й���½��������ʹ�� Asia/Shanghai��</td>
+</tr>
+</tbody></table>
+<p>���У�<code>description</code>��Ҫ����SEO��������������һ��������վ��ļ�������ͨ�����������а�������վ�Ĺؼ��ʡ�author��������������ʾ���µ����ߡ�</p>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>Ӧ�ó������Ϣ��<a href="https://ejs.co" target="_blank" rel="noopener">EJS</a>, <a href="learnboost.github.io/stylus/">Stylus</a> �� <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a> renderer ��Ĭ�ϰ�װ�������������Ƴ���</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;hexo-site&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;0.0.0&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;hexo&quot;: &quot;^3.8.0&quot;,</span><br><span class="line">    &quot;hexo-generator-archive&quot;: &quot;^0.1.5&quot;,</span><br><span class="line">    &quot;hexo-generator-category&quot;: &quot;^0.1.3&quot;,</span><br><span class="line">    &quot;hexo-generator-index&quot;: &quot;^0.2.1&quot;,</span><br><span class="line">    &quot;hexo-generator-tag&quot;: &quot;^0.2.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-ejs&quot;: &quot;^0.3.1&quot;,</span><br><span class="line">    &quot;hexo-renderer-stylus&quot;: &quot;^0.3.3&quot;,</span><br><span class="line">    &quot;hexo-renderer-marked&quot;: &quot;^0.3.2&quot;,</span><br><span class="line">    &quot;hexo-server&quot;: &quot;^0.3.3&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+
+<h1 id="���������"><a href="#���������" class="headerlink" title="���������"></a>���������</h1><h2 id="Hexo�½�����"><a href="#Hexo�½�����" class="headerlink" title="Hexo�½�����"></a>Hexo�½�����</h2><p>�����ַ�����</p>
+<p><strong>����һ��</strong></p>
+<p>����վĿ¼��ʹ��<code>hexo new &quot;������&quot;</code>�����½����£�hexo���Զ���<code>_posts</code>�ļ���������<code>������.md</code>�ļ����ļ����Դ�post��ģ�����ݣ�Ĭ�ϴ���<code>Front-matter</code>���ݣ���</p>
+<p><strong>��������</strong></p>
+<p>ֱ�Ӹ��ƻ����½�md�ļ����� <code>_posts</code> �ļ����ڣ�����Ҫ�Լ�����<code>Front-matter</code>��</p>
+<blockquote>
+<p>Hexoò�Ʋ���ʶ����пո��md�ļ��������磺<code>Linux - �ճ�ʹ��.md</code>��������ȫ��ͳһ���ÿո񣬱��<code>Linux-�ճ�ʹ��.md</code>����ʹ���ļ������ո��md�ļ������������º�����ҳ����ʾ���£�����ò���ڷ����п����ҵ�����ԭ��Ӧ������Ϊ���ɵ�URL�м䲻�ܺ��пո񣬶�HexoĬ���ǵ����ļ�������URL�ģ�����Hexo���ֿո����Զ���Ϊ <code>-</code> �������<code>hexo new &quot;Visual Studio Code�ʼ�</code>�����Ӧ���ɵ�md�ļ���Ϊ<code>Visual-Studio-Code�ʼ�</code>��</p>
+</blockquote>
+<hr>
+<h2 id="��������"><a href="#��������" class="headerlink" title="��������"></a>��������</h2><p>���Ϸ�Ŀ¼�ṹ�½��е� theme �ļ��н���</p>
+<hr>
+<h2 id="������վ������ͳ�ƹ���"><a href="#������վ������ͳ�ƹ���" class="headerlink" title="������վ������ͳ�ƹ���"></a>������վ������ͳ�ƹ���</h2><p>���á������ӡ��ṩ�ķ��� ibruce.info/2015/04/04/busuanzi/</p>
+<p>ע������Ҳ���ԣ�������ͬ������Ʒ�����Ǿ�̬��վ�����޷���ɶ�̬���ݣ�����Ҫ�������������������������������ͳ�Ƽ��������۵ȹ��ܡ�</p>
+<hr>
+<h2 id="����������"><a href="#����������" class="headerlink" title="����������"></a>����������</h2><blockquote>
+<p>������Ҫ��������Ȼ���˷����������ۻ�Ӱ����վ��</p>
+</blockquote>
+<p>1�� Disqus����ǽ��<br>2�� ������ livere.com<br>3�� ��˵������û�ˣ�<br>4�� ���� changyan.kuaizhan.com</p>
+<hr>
+<h2 id="������������-����Ҫ��������"><a href="#������������-����Ҫ��������" class="headerlink" title="������������ ����Ҫ��������"></a>������������ ����Ҫ��������</h2><p>1�� swiftype.com �������շ��ˣ�</p>
+<p>ԭ��������ע����������������վ�������ݣ������������Լ��ķ�����</p>
+<p>2�� �Զ��� site �﷨������ת</p>
+<p>ԭ���� �൱���������������� �� site:taobao.com Ǧ�ʡ���ǰ����������������Ѿ���¼��������ݣ���ȡ��</p>
+<hr>
+<h2 id="���뱾��ͼ"><a href="#���뱾��ͼ" class="headerlink" title="���뱾��ͼ"></a>���뱾��ͼ</h2><p><strong>����һ��</strong></p>
+<p>��ͼƬ�����������test.jpg������blog/source/images �� ����images�����Ը�Ϊ�������ƣ�</p>
+<blockquote>
+<p>Ӧ��ֻҪ����source�ļ���������λ�ö����ԣ��������<code>source\images</code>ֻ��Ϊ�˷���ͳһ����</p>
+</blockquote>
+<p>��md�ļ��У�ʹ��<code>![](images/test.jpg)</code> ��ɲ���</p>
+<p><strong>��������</strong></p>
+<p>�� <code>_config.yml</code> ��<code>post_asset_folder</code>��Ϊ<code>true</code>��Ȼ��ѵ�ǰ�������õ�ͼƬ�����浽��������Ŀ¼�µ�ͬ���ļ����£������ <code>![](ͼƬ�ļ���.jpg)</code> ��ʽ���ü��ɡ�</p>
+<blockquote>
+<p><code>_config.yml</code>����վ�ĸ�Ŀ¼�£���Hexo���������ļ���һ�㲻Ҫ���Ķ���</p>
+</blockquote>
+<hr>
+<h2 id="ʹ��mermaid"><a href="#ʹ��mermaid" class="headerlink" title="ʹ��mermaid"></a>ʹ��mermaid</h2><blockquote>
+<p><strong>What’s mermaid?</strong><br>һ����Javascript���������Խ����Markdown���棬�Ѵ�����Ⱦ�ɸ���ͼ���Ĺ��ߡ�<br>����ٷ����ӣ���Ҫ����ʾͼ��֪��������ʲô���У���<br><a href="https://github.com/mermaid-js/mermaid" target="_blank" rel="noopener">https://github.com/mermaid-js/mermaid</a><br>�ٷ��ĵ���<a href="https://mermaid-js.github.io/mermaid/#/flowchart" target="_blank" rel="noopener">https://mermaid-js.github.io/mermaid/#/flowchart</a><br>mermaid����Flowchart����ͼ��Sequence Diagram����ͼ��Gantt����ͼ��Class Diagram��State Diagram��Pie Chart��״ͼ�ȡ�</p>
+</blockquote>
+<p><strong>Hexoʹ��mermaid��˼·��</strong></p>
+<p>�������ǿ��԰�װ���ָ��������⣬������������next���������ļ����ҵ���֧��mermaid�ģ���������fluidҲ���Լ�����ҳע��֧��mermaid�����Կ����Ʋ����������⣬һ�����Ѿ��ṩ��mermaid��ʹ��֧�ֵġ�</p>
+<p>�����Ͽ����ܶ�̴̳󲿷��ǽ�ͨ����װ�������������Ҹ���ûʹ�ù���Ӧ������������Ѿ�֧�ֵ�����£���ʱ�Ҿ���ʹ�������Դ���mermaid��Ⱦ���ܣ���Ϊ���Ĳ�����ܻ�������������⣬�����������󣩡�</p>
+<blockquote>
+<p>��������ʹ��next�����Դ��ģ��﷨��ʽ�ʹ�ͳ�Ĳ�һ����Vim�µ�”MarkdownPreview”�������Ԥ����</p>
+</blockquote>
+<p>�����Ҫʹ�ò�����ҿ����Ƚ϶������Ƽ�ʹ�õ���������ֱ���<a href="https://github.com/webappdevelp/hexo-filter-mermaid-diagrams" target="_blank" rel="noopener">hexo-filter-mermaid-diagrams</a> ��<a href="https://github.com/bubkoo/hexo-filter-flowchart" target="_blank" rel="noopener">hexo-filter-flowchart</a> �������кܶ�̳̣�ʹ������һ�����ɡ�</p>
+<p><strong>�����Դ���mermaidʹ�÷�����</strong></p>
+<p>�����Ҹ�����ʹ��<code>next</code>����ģ��������������Ϊ��˵����</p>
+<p>��Hexo�����վ���ҵ�<code>theme\next\_config.yml</code>�ļ������ļ�������������ļ������ļ�������<code>mermaid</code>���õ��������ݡ�</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Tags Settings</span><br><span class="line"># See: https:&#x2F;&#x2F;theme-next.js.org&#x2F;docs&#x2F;tag-plugins&#x2F;</span><br><span class="line"># EK���������⣬���Tag����Front-matter�������������tag������ʹ�ñ�ǩ�������������в���������ý�����͵�Ԫ�أ����������Ƶ&#123;% youtube video-id %&#125;������顢PDF��Mermaid�ȣ������link��</span><br><span class="line"># ---------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"># Note tag (bs-callout)</span><br><span class="line">note:</span><br><span class="line">  # Note tag style values:</span><br><span class="line">  #  - simple    bs-callout old alert style. Default.</span><br><span class="line">  #  - modern    bs-callout new (v2-v3) alert style.</span><br><span class="line">  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span><br><span class="line">  #  - disabled  disable all CSS styles import of note tag.</span><br><span class="line">  style: simple</span><br><span class="line">  icons: false</span><br><span class="line">  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span><br><span class="line">  # Offset also applied to label tag variables. This option can work with disabled note tag.</span><br><span class="line">  light_bg_offset: 0</span><br><span class="line"></span><br><span class="line"># Tabs tag</span><br><span class="line">tabs:</span><br><span class="line">  transition:</span><br><span class="line">    tabs: false</span><br><span class="line">    labels: true</span><br><span class="line"></span><br><span class="line"># PDF tag</span><br><span class="line"># NexT will try to load pdf files natively, if failed, pdf.js will be used.</span><br><span class="line"># So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.</span><br><span class="line"># See: https:&#x2F;&#x2F;github.com&#x2F;next-theme&#x2F;theme-next-pdf</span><br><span class="line">pdf:</span><br><span class="line">  enable: false</span><br><span class="line">  # Default height</span><br><span class="line">  height: 500px</span><br><span class="line"></span><br><span class="line"># Mermaid tag</span><br><span class="line">mermaid:</span><br><span class="line">  enable: true</span><br><span class="line">  # Available themes: default | dark | forest | neutral</span><br><span class="line">  theme: forest</span><br></pre></td></tr></table></figure>
+
+<p>���Կ�������һ��next���еģ�����<code>Tags</code>���׼���Ĭ�ϵ�<code>mermaid</code>��<code>enable</code>����Ϊ<code>false</code>��������Ϊ<code>true</code>�������<code>theme</code>��mermaid�����⣬������Ϊ��ɫ������</p>
+<blockquote>
+<p>�����ṩ��һ��ʹ���ĵ�����ַ<a href="https://theme-next.js.org/docs/tag-plugins/" target="_blank" rel="noopener">https://theme-next.js.org/docs/tag-plugins/</a>�������в��ġ�</p>
+</blockquote>
+<p>���ڿ�����md�ĵ���ʹ��mermaid�ˡ�</p>
+<p>���ø�ʽ���£�</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% mermaid type %&#125;</span><br><span class="line"></span><br><span class="line">����</span><br><span class="line"></span><br><span class="line">&#123;% endmermaid %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>����<code>type</code>����Ҫ��д�ģ�����ʹ�õ�ͼ����ͬ���ɸ�����Ҫ��д<code>graph TD</code>��<code>graph LR</code>��<code>sequenceDiagram</code>��<code>gantt</code>��<code>classDiagram</code>��<code>stateDiagram</code>��<code>pie</code>��<code>journey</code>�ȡ�����ʹ���﷨���Һ���д�ġ�Mermaid�ʼǡ�����TODO����μӳ���������</p>
+<hr>
+<br>
+
+<h1 id="Bug��¼"><a href="#Bug��¼" class="headerlink" title="Bug��¼"></a>Bug��¼</h1><h2 id="����Bug"><a href="#����Bug" class="headerlink" title="����Bug"></a>����Bug</h2><blockquote>
+<p>����Bug��������ʹ�ã�ʹ��ǰ�ͱ�����</p>
+</blockquote>
+<h3 id="��-���i������Ҫ��-��"><a href="#��-���i������Ҫ��-��" class="headerlink" title="��#���ı������Ҫ��{��}"></a>��#���ı������Ҫ��<code>{</code>��<code>}</code></h3><p>��#���ı������Ҫ��<code>{</code>��<code>}</code>���ᵼ��<code>hexo g</code>ʧ�ܡ�</p>
+<blockquote>
+<p>���������룬Ӧ��������HTMLҳ��ʱ��<code>{</code>��<code>}</code>�����HTML�����С�</p>
+</blockquote>
+<hr>
+<br>
+
+<h2 id="����Bug-1"><a href="#����Bug-1" class="headerlink" title="����Bug"></a>����Bug</h2><blockquote>
+<p>����Bug������ʹ�ã��������������õ�ʱ�������⡣</p>
+</blockquote>
+<h3 id="��ҳ����ʾ����"><a href="#��ҳ����ʾ����" class="headerlink" title="��ҳ����ʾ����"></a>��ҳ����ʾ����</h3><ul>
+<li>��������</li>
+</ul>
+<p>Hexoò�Ʋ���ʶ����пո��md�ļ��������磺<code>Linux - �ճ�ʹ��.md</code>��������ȫ��ͳһ���ÿո񣬱��<code>Linux-�ճ�ʹ��.md</code>����ʹ���ļ������ո��md�ļ������������º�����ҳ����ʾ���£�����ò���ڷ����п����ҵ���</p>
+<p>������ʹ��<code>hexo new &quot;Visual Studio Code�ʼ�</code>�����µıʼ�ʱ������Hexo���ɵ��ļ���Ϊ<code>Visual-Studio-Code�ʼ�.md</code>�����ǿ�����Hexo Server�м������£�������Ϊ������ʾ��<code>Visual Studio Code�ʼ�</code>��ͬʱ�����Ӻ��ֵ�ַΪ<code>http://localhost:4000/2020/08/18/Visual-Studio-Code�ʼ�/</code>��</p>
+<p>�Ʋ���ۣ�ӡ���У�����û�м�����ַ�Ǵ��пո�ģ���Hexo�Ĺ���ԭ���ǰ�<code>example.md</code>ֱ��ת��Ϊͬ����<code>example</code>���ļ��У�ͬʱ�ڸ��ļ���������������md�ļ���ͬ��<code>index.html</code>�ļ����Լ���md�ļ����õĸ�����ͼƬ�����ƽ�ȥ</p>
+<p>������<code>example.md</code>Ϊ��</p>
+<p>��ΪURL���ܴ��пո�</p>
+<pre class="mermaid" style="text-align: center;">
+graph LR
+A[example.md]
+B{�ļ������Ƿ��пո�}
+C(ԭ�ļ���<����>)
+D(�ո��Ϊ����)
+A --> B
+B -->|�޿ո�| C
+B -->|�пո�| D
+</pre>
+
+<hr>
+<h3 id="����404"><a href="#����404" class="headerlink" title="����404"></a>����404</h3><p>�ڱ���<code>hexo s</code>����������ʾ������deploy֮��򿪶�Ӧ����404����鱾�غͷ����������ڸ����µ�index.html�ļ���������404��ʾ���ˡ�����hexo clean �� hexo gҲ���С�</p>
+<p><strong>����취��</strong>���������ڸ���һ�£�������<code>hexo clean &amp;&amp; hexo g -d</code>�Ϳ����ˡ�����Ϊ���ɵ���վ����������ǰ����ڷֵ��ļ���·���������ҵ�˼·�Ǹı����ڣ��൱�ڸ��˸����µ�·���������ϴ���</p>
+<p><mark>�Ҳ���ԭ��</mark></p>
+<hr>
+<h3 id="ͼT����ʾ"><a href="#ͼT����ʾ" class="headerlink" title="ͼƬ����ʾ"></a>ͼƬ����ʾ</h3><ol>
+<li>ͼƬ�ļ��������пո�</li>
+</ol>
+<blockquote>
+<p>���ְ汾��hexo-cli:3.1.0��node:12.16.3</p>
+</blockquote>
+<p>����<code>![VSC powershell](VSC powershell.png)</code>��������ʾ���ˡ�</p>
+<p>���������</p>
+<ul>
+<li>�������շ�����</li>
+<li>���»��� <code>_</code> ����ո�</li>
+<li>��HTML��ʽ����ͼƬ��δ�ԣ�Ӧ�ÿ��ԣ�</li>
+</ul>
+<hr>
+<br>
+
+<h1 id="—"><a href="#—" class="headerlink" title="—"></a>—</h1><h1 id="—-1"><a href="#—-1" class="headerlink" title="—"></a>—</h1><h1 id="—-2"><a href="#—-2" class="headerlink" title="—"></a>—</h1><h1 id="—-3"><a href="#—-3" class="headerlink" title="—"></a>—</h1><h1 id="—-4"><a href="#—-4" class="headerlink" title="—"></a>—</h1><h1 id="����"><a href="#����" class="headerlink" title="����((("></a>����(((</h1><h1 id="��������-1"><a href="#��������-1" class="headerlink" title="��������"></a>��������</h1><p>���������� <code>hexo new xxx</code> ���� md �ļ�ʱ�Զ�������������ͷ��������layout��title��date��updated��comments��tags��categories��permalink���ԣ������в�����������defaultֵ�ģ���Ĭ�ϳ�ʼ���ԣ�������Ķ�����defaultֵΪ׼��</p>
+<p>һ���ʽ���£�</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo����ʼ�</span><br><span class="line">date: 2020-05-15 00:47:04</span><br><span class="line">categories:</span><br><span class="line">    - Hexo</span><br><span class="line">tags:</span><br><span class="line">    - hexo</span><br><span class="line">    - �ʼǷ���ѧ</span><br><span class="line">    - �ʼ�</span><br><span class="line">    - note</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>��������������Ҫ����������</p>
+<h2 id="4-1-1-1-layout"><a href="#4-1-1-1-layout" class="headerlink" title="4.1.1.1. layout"></a>4.1.1.1. layout</h2><h2 id="4-1-1-2-title"><a href="#4-1-1-2-title" class="headerlink" title="4.1.1.2. title"></a>4.1.1.2. title</h2><h2 id="4-1-1-3-date"><a href="#4-1-1-3-date" class="headerlink" title="4.1.1.3. date"></a>4.1.1.3. date</h2><p>Published date</p>
+<blockquote>
+<p><strong>Default</strong>�� File created date</p>
+</blockquote>
+<h2 id="4-1-1-4-updated"><a href="#4-1-1-4-updated" class="headerlink" title="4.1.1.4. updated"></a>4.1.1.4. updated</h2><p>Updated date</p>
+<blockquote>
+<p><strong>Default</strong>: File updated date</p>
+</blockquote>
+<h2 id="4-1-1-5-comments"><a href="#4-1-1-5-comments" class="headerlink" title="4.1.1.5. comments"></a>4.1.1.5. comments</h2><p>Enables comment feature for the post</p>
+<blockquote>
+<p><strong>Default</strong>: true</p>
+</blockquote>
+<h2 id="4-1-1-6-tags"><a href="#4-1-1-6-tags" class="headerlink" title="4.1.1.6. tags"></a>4.1.1.6. tags</h2><p>�������µı�ǩ���� ( Not available for pages )</p>
+<p>�����¸�ʽ��д����</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tags:</span><br><span class="line">    - tag1</span><br><span class="line">    - tag2</span><br><span class="line">    - ...</span><br></pre></td></tr></table></figure>
+
+<p>��</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tags: [��ǩ1,��ǩ2,��ǩ3]</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-1-1-7-categories"><a href="#4-1-1-7-categories" class="headerlink" title="4.1.1.7. categories"></a>4.1.1.7. categories</h2><p>�������µı�ǩ���� ( Not available for pages )</p>
+<p>�����¸�ʽ��д����</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">    - ������</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-1-1-8-permalink"><a href="#4-1-1-8-permalink" class="headerlink" title="4.1.1.8. permalink"></a>4.1.1.8. permalink</h2><p>Overrides the default permalink of the post</p>
+<h2 id="4-1-1-9-description"><a href="#4-1-1-9-description" class="headerlink" title="4.1.1.9. description?"></a>4.1.1.9. description?</h2><p>Ӧ�û���һ�� <code>description?</code> ���ԣ�����д�뵱ǰ���µ� excerpt��ժҪ����������ҳ��������ҳ����ʾȫ�ģ�ֻ��ʾ���µ� description��������</p>
+<p>ע�⣺Ҫ��<a title="\blog\theme\������\">����Ŀ¼</a>�µ�<code>_config.yml</code>�ļ������·��������Ϊ��true����������ܲ�����Ч����Ӧ���������������ԣ���</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">excerpt_description: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-2-���ɾ�̬ҳ��"><a href="#4-2-���ɾ�̬ҳ��" class="headerlink" title="4.2. ���ɾ�̬ҳ��"></a>4.2. ���ɾ�̬ҳ��</h2><blockquote>
+<p>������һ������ǰ������ʹ�� <code>hexo clean</code> ����</p>
+</blockquote>
+<p>������������ɱ༭�Ժ�ͬ���Ļص�blogĿ¼�µ������У�ִ�� <code>hexo generate</code> ���Hexo����source�е���������Ϊ��̬��ҳ���ݣ������publicĿ¼�¡�����Ŀ¼������վĿ¼��</p>
+<h2 id="4-3-�ڱ��ؽ�������Ԥ����"><a href="#4-3-�ڱ��ؽ�������Ԥ����" class="headerlink" title="4.3. �ڱ��ؽ�������Ԥ����"></a>4.3. �ڱ��ؽ�������Ԥ����</h2><p>ֻҪ public Ŀ¼�����ݣ������ʹ�� <code>hexo server</code> �����ڱ��������˿ں�Ϊ4000��http���ʷ���Ȼ��Ϳ����������ͨ�� <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ������վ��Ԥ��Ч����</p>
+<p>��һ������Ԥ���ɹ���û��������ɽ��к����Ĳ���Զ�̷�������</p>
+<h2 id="4-4-���𵽷�����"><a href="#4-4-���𵽷�����" class="headerlink" title="4.4. ���𵽷�����"></a>4.4. ���𵽷�����</h2><blockquote>
+<p>��һ�ν�����һ������ǰҪ���� _config.yml �ļ�����д�ò����Ŀ���ַ��Ϣ</p>
+</blockquote>
+<p>����̬��ҳ���ɺ��Ժ󣬱����ִ�� <code>hexo deploy</code> �����publicĿ¼�µ����ݲ���Ŀ���ַ��������˽�з�������������Github֮�����վ��</p>
+<h1 id="����-1"><a href="#����-1" class="headerlink" title="����)))"></a>����)))</h1><hr>
+]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Software</category>
+        <category>�ʼǷ���ѧ</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>note</tag>
+        <tag>hexo</tag>
+        <tag>�ʼǷ���ѧ</tag>
+        <tag>�ʼ�</tag>
       </tags>
   </entry>
   <entry>
@@ -2295,22 +2312,50 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/05/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+    <title>Visual Studio Code笔记</title>
+    <url>/2020/08/18/Visual-Studio-Code%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>Visual Studio Code的一些使用技巧。</p>
+<!-- vim-markdown-toc Redcarpet -->
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="#snippits">Snippits</a></li>
+</ul>
+<!-- vim-markdown-toc -->
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Snippits"><a href="#Snippits" class="headerlink" title="Snippits"></a>Snippits</h2><p>Snippits即“片段”的意思，在这里指可以帮我们实现快速录入的功能，例如输入<code>pln</code>，软件就会询问我们是否替换为<code>println</code>。</p>
+<ul>
+<li>配置方法</li>
+</ul>
+<p>在软件中按<code>Ctrl/Command</code>+<code>Shift</code>+<code>P</code>，按下图输入<code>&gt;snippets</code>，鼠标点选“首选项：配置用户代码片段”。</p>
+<p><img src="snippets_command.png" alt="snippets_command"></p>
+<p>因为VS Code可以作为多种程序开发语言的编辑器，所以对应在配置snippets的时候，也可以选择对应的编程语言进行配置。配置完成后VS Code会自动根据你正在编辑的语言，使用对应的snippets。</p>
+<p><img src="snippets_choose.png" alt="snippets_choose"></p>
+<p>这里我们以go语言为例，在下图输入/选择<code>go (Go)</code>。</p>
+<p><img src="snippets_choose_go.png" alt="snippets_choose_go"></p>
+<p>现在，成功打开Go语言的snippets配置文件</p>
+<p><img src="snippets_go_edit.png" alt="snippets_go_edit"></p>
+<p>编辑方法模板：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;自定义一个名字&quot;:&#123;</span><br><span class="line">    &quot;prefix&quot;: &quot;这里填用户需要输入的内容&quot;,</span><br><span class="line">    &quot;body&quot;: &quot;这里是替换的内容&quot;,</span><br><span class="line">    &quot;description&quot;: &quot;对这个功能描述的提示信息&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>其中<code>$0</code>表示替换后光标停留的位置。</p>
+<p>下面举例说明。例：实现输入<code>pln</code>时，软件提供<code>fmt.Println()</code>文本给我们选择替换。输入<code>pf</code>时，软件提供<code>fmt.Printf(&quot;&quot;)</code>文本。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;println&quot;:&#123;</span><br><span class="line">		&quot;prefix&quot;: &quot;pln&quot;,</span><br><span class="line">		&quot;body&quot;:&quot;fmt.Println($0)&quot;,</span><br><span class="line">		&quot;description&quot;: &quot;输出行&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	&quot;printf&quot;:&#123;</span><br><span class="line">		&quot;prefix&quot;: &quot;pf&quot;,</span><br><span class="line">		&quot;body&quot;: &quot;fmt.Printf(\&quot;$0\&quot;)&quot;,</span><br><span class="line">		&quot;description&quot;: &quot;printf输出&quot;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编写完成后保存并关闭文件即可生效。</p>
+<p>以后我们每次需要输出行时，只需要输入文本<code>pln</code>，VS Code便会弹出当前的<code>pln</code>代码可替换的提示，在弹出框体后，再次按Enter或者Tab即可完成替换。</p>
 ]]></content>
+      <categories>
+        <category>+IT</category>
+        <category>Software</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+        <tag>编辑器</tag>
+        <tag>software</tag>
+      </tags>
   </entry>
   <entry>
     <title>Windows-日常使用</title>
@@ -2488,6 +2533,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020/05/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>index</title>
     <url>/2020/05/14/index/</url>
     <content><![CDATA[<p>vimwiki本地目录（索引），仅用于本地。</p>
@@ -2531,6 +2594,7 @@
 
 ## Software
 [Github笔记](Github笔记)
+[Visual Studio Code笔记](Visual-Studio-Code笔记)
 
     ### Hexo
     [Hexo笔记](Hexo笔记)
